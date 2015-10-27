@@ -1,0 +1,17 @@
+c:\users\jimmi\documents\visual studio 2013\Projects\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.exe.config
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.exe.config
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.exe
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.pdb
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.xml
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.CreacionKPIs.resources
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Resources.resources
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbproj.GenerateResource.Cache
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.exe
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.xml
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.pdb
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\PrimerControlWindows.dll
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\PrimerControlWindows.pdb
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\PracticaExamen.dll
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\bin\Debug\PracticaExamen.pdb
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.AsignacionKPIs.resources
+C:\Users\Jimmi\Documents\GitHub\ProyectoKPI\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
