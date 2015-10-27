@@ -32,6 +32,7 @@ Partial Class CreacionKPIs
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.descKPI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lstCampo = New System.Windows.Forms.ComboBox()
         Me.btnRestar = New System.Windows.Forms.Button()
         Me.btnDividir = New System.Windows.Forms.Button()
@@ -41,7 +42,6 @@ Partial Class CreacionKPIs
         Me.txtFormula = New System.Windows.Forms.TextBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.txtValor = New System.Windows.Forms.TextBox()
-        Me.descKPI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,7 +87,7 @@ Partial Class CreacionKPIs
         Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.TextBox1.Location = New System.Drawing.Point(120, 128)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(375, 29)
+        Me.TextBox1.Size = New System.Drawing.Size(375, 25)
         Me.TextBox1.TabIndex = 4
         '
         'Label4
@@ -105,7 +105,7 @@ Partial Class CreacionKPIs
         Me.TextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.TextBox4.Location = New System.Drawing.Point(120, 237)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(121, 29)
+        Me.TextBox4.Size = New System.Drawing.Size(121, 25)
         Me.TextBox4.TabIndex = 10
         '
         'Label7
@@ -149,6 +149,12 @@ Partial Class CreacionKPIs
         Me.DataGridView1.Size = New System.Drawing.Size(290, 372)
         Me.DataGridView1.TabIndex = 17
         '
+        'descKPI
+        '
+        Me.descKPI.HeaderText = "Descripcion"
+        Me.descKPI.Name = "descKPI"
+        Me.descKPI.ReadOnly = True
+        '
         'lstCampo
         '
         Me.lstCampo.AutoCompleteCustomSource.AddRange(New String() {"Llamadas", "Llamadas Efectivas"})
@@ -156,7 +162,7 @@ Partial Class CreacionKPIs
         Me.lstCampo.Items.AddRange(New Object() {"", "Llamadas", "Llamadas efectivas"})
         Me.lstCampo.Location = New System.Drawing.Point(86, 338)
         Me.lstCampo.Name = "lstCampo"
-        Me.lstCampo.Size = New System.Drawing.Size(121, 26)
+        Me.lstCampo.Size = New System.Drawing.Size(121, 23)
         Me.lstCampo.TabIndex = 18
         '
         'btnRestar
@@ -253,7 +259,7 @@ Partial Class CreacionKPIs
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(120, 185)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 26)
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 23)
         Me.ComboBox2.TabIndex = 21
         '
         'txtValor
@@ -263,18 +269,12 @@ Partial Class CreacionKPIs
         Me.txtValor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.txtValor.Location = New System.Drawing.Point(225, 335)
         Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(93, 29)
+        Me.txtValor.Size = New System.Drawing.Size(93, 25)
         Me.txtValor.TabIndex = 22
-        '
-        'descKPI
-        '
-        Me.descKPI.HeaderText = "Descripcion"
-        Me.descKPI.Name = "descKPI"
-        Me.descKPI.ReadOnly = True
         '
         'CreacionKPIs
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1162, 633)
