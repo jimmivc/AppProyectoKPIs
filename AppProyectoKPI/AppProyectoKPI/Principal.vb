@@ -55,9 +55,17 @@
     End Sub
 
     Private Sub mnu_GestionarProspectos_Click(sender As Object, e As EventArgs) Handles mnu_GestionarProspectos.Click
-        Dim gestionarProspectos As New GestionProspectos
-        gestionarProspectos.MdiParent = Me
-        gestionarProspectos.Show()
+        'Dim gestionarProspectos As New GestionProspectos
+        'gestionarProspectos.MdiParent = Me
+        'gestionarProspectos.ShowDialog(Me)
+
+        Dim p2 As New GestionProspectos()
+
+        p2.MdiParent = Me.MdiParent
+
+        p2.ShowDialog()
+
+
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click

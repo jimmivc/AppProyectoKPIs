@@ -438,6 +438,7 @@ Partial Class GestionProspectos
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "GestionProspectos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión de Prospectos"
         Me.RegistroProspecto.ResumeLayout(False)
         Me.RegistroProspecto.PerformLayout()
