@@ -54,6 +54,7 @@
       <HintPath>..\..\..\..\Visual Studio 2013\Projects\PrimerControlWindows\PrimerControlWindows\bin\Debug\PrimerControlWindows.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
@@ -85,12 +86,25 @@
     <Compile Include="AsignacionKPIs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BL\CargaDataGrids.vb" />
+    <Compile Include="BL\ContactoController.vb" />
     <Compile Include="CreacionKPIs.Designer.vb">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </Compile>
     <Compile Include="CreacionKPIs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GestionProspectos.Designer.vb">
+      <DependentUpon>GestionProspectos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionProspectos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\AreaInteres.vb" />
+    <Compile Include="Model\Contacto.vb" />
+    <Compile Include="Model\Prospecto.vb" />
+    <Compile Include="Model\Seguimiento.vb" />
+    <Compile Include="Model\TiposFormaContacto.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -127,6 +141,9 @@
     <EmbeddedResource Include="CreacionKPIs.resx">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionProspectos.resx">
+      <DependentUpon>GestionProspectos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +166,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
