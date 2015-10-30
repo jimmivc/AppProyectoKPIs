@@ -51,4 +51,11 @@
         Next
 
     End Sub
+
+    Private Sub mnu_123_Click(sender As Object, e As EventArgs) Handles mnu_123.Click
+        Dim crearKpi As New CreacionKPIs
+        crearKpi.MdiParent = Me
+        crearKpi.Visible = True
+
+    End Sub
 End Class

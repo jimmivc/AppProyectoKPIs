@@ -4,9 +4,12 @@
     Dim operador As Boolean = False
     Dim detalle As Boolean = True
 
-    Private Sub btnAgregarValor_Click(sender As Object, e As EventArgs) Handles btnAgregarValor.Click
-        armarFormula(txtValor.Text)
-        txtValor.Text = ""
+    Private Sub btnAgregarValor_Click(sender As Object, e As EventArgs) Handles btnAgregarValor.Click, Button2.Click
+        If (txtValor.Text <> "") Then
+            armarFormula(txtValor.Text)
+            txtValor.Text = ""
+        End If
+
     End Sub
 
     Private Sub btnOperador_Click(sender As Object, e As EventArgs) Handles btnSumar.Click, btnRestar.Click, btnMultiplicar.Click, btnDividir.Click
