@@ -34,3 +34,13 @@ C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\Ap
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.exe
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.xml
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.pdb
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.exe
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.pdb
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.xml
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.AsignacionKPIs.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.CreacionKPIs.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Principal.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Resources.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbproj.GenerateResource.Cache
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.GestionProspectos.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
