@@ -4,7 +4,7 @@
     Dim operador As Boolean = False
     Dim detalle As Boolean = True
 
-    Private Sub btnAgregarValor_Click(sender As Object, e As EventArgs) Handles btnAgregarValor.Click, Button2.Click
+    Private Sub btnAgregarValor_Click(sender As Object, e As EventArgs) Handles btnAgregarValor.Click
         If (txtValor.Text <> "") Then
             armarFormula(txtValor.Text)
             txtValor.Text = ""
@@ -69,7 +69,20 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        txtFormula.Text += "hola nicole"
-        DataGridView1.Rows.Add(New Object() {"hola"})
+        'txtFormula.Text += "hola nicole"
+        'DataGridView1.Rows.Add(New Object() {"hola"})
+    End Sub
+
+    Private Sub btnConfigurar_Click(sender As Object, e As EventArgs) Handles btnConfigurar.Click
+        Try
+            Dim objetivo As Double = txtObjetivo.Text
+            Dim configurarObjetivo As New ElegirRangoKPI(txtObjetivo.Text)
+
+            configurarObjetivo.Parent = Me.ParentForm
+            configurarObjetivo.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show("Objetivo no valido")
+        End Try
+
     End Sub
 End Class

@@ -94,6 +94,12 @@
     <Compile Include="CreacionKPIs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ElegirRangoKPI.Designer.vb">
+      <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ElegirRangoKPI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionProspectos.Designer.vb">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreacionKPIs.resx">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElegirRangoKPI.resx">
+      <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>

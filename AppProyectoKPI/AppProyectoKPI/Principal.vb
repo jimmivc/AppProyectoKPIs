@@ -54,13 +54,6 @@
 
     End Sub
 
-<<<<<<< HEAD
-    Private Sub mnu_123_Click(sender As Object, e As EventArgs) Handles mnu_123.Click
-        Dim crearKpi As New CreacionKPIs
-        crearKpi.MdiParent = Me
-        crearKpi.Visible = True
-
-=======
     Private Sub mnu_GestionarProspectos_Click(sender As Object, e As EventArgs) Handles mnu_GestionarProspectos.Click
         'Dim gestionarProspectos As New GestionProspectos
         'gestionarProspectos.MdiParent = Me
@@ -77,6 +70,14 @@
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
->>>>>>> develop
+    End Sub
+
+    Private Sub mnu_Kpis_Click(sender As Object, e As EventArgs) Handles mnu_Kpis.Click
+        Dim p2 As New CreacionKPIs
+
+        p2.MdiParent = Me.MdiParent
+
+        p2.ShowDialog()
+
     End Sub
 End Class
