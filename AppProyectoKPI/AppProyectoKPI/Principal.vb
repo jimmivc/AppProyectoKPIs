@@ -1,7 +1,9 @@
 ﻿Public Class Principal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         activarColorFondoMDI(sender, e)
-        Dim permisos() As Integer = {11, 111, 1111, 1112, 112, 113, 114, 12, 121, 122, 123, 13, 131, 132, 133, 134, 14, 141, 142, 143}
+        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "GenerarRegistroMercadeo", "AsignarKpis",
+            "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi",
+            "FuentesProspectos", "Seguridad", "Usuarios", "Roles", "Permisos"}
         accederMenuPrincipal(permisos)
 
     End Sub
@@ -18,7 +20,7 @@
         Next
     End Sub
 
-    Private Sub accederMenuPrincipal(ByVal permisos() As Integer)
+    Private Sub accederMenuPrincipal(ByVal permisos() As String)
         Dim i As Integer
         Dim isItem As Boolean
         For q As Integer = 0 To permisos.Length - 1
@@ -26,7 +28,7 @@
             isItem = False
             While i < MenuStrip1.Items.Count And isItem = False
                 Dim opcion As New ToolStripMenuItem
-                opcion.Name = "mnu_" + permisos(q).ToString
+                opcion.Name = "mnu_" + permisos(q)
                 If MenuStrip1.Items.Item(i).Name = opcion.Name Then
                     MenuStrip1.Items.Item(i).Visible = True
                     Dim op As ToolStripMenuItem = MenuStrip1.Items.Item(i)
@@ -37,13 +39,13 @@
             End While
         Next
     End Sub
-    Private Sub accederSubMenus(ByVal permisos() As Integer, ByVal op As ToolStripMenuItem)
+    Private Sub accederSubMenus(ByVal permisos() As String, ByVal op As ToolStripMenuItem)
 
         Dim opcion As New ToolStripMenuItem
 
         For Each subMenu As ToolStripMenuItem In op.DropDownItems
             For k As Integer = 0 To permisos.Length - 1
-                opcion.Name = "mnu_" + permisos(k).ToString
+                opcion.Name = "mnu_" + permisos(k)
                 If subMenu.Name = opcion.Name Then
                     subMenu.Visible = True
                 End If
@@ -52,10 +54,29 @@
 
     End Sub
 
+<<<<<<< HEAD
     Private Sub mnu_123_Click(sender As Object, e As EventArgs) Handles mnu_123.Click
         Dim crearKpi As New CreacionKPIs
         crearKpi.MdiParent = Me
         crearKpi.Visible = True
 
+=======
+    Private Sub mnu_GestionarProspectos_Click(sender As Object, e As EventArgs) Handles mnu_GestionarProspectos.Click
+        'Dim gestionarProspectos As New GestionProspectos
+        'gestionarProspectos.MdiParent = Me
+        'gestionarProspectos.ShowDialog(Me)
+
+        Dim p2 As New GestionProspectos()
+
+        p2.MdiParent = Me.MdiParent
+
+        p2.ShowDialog()
+
+
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Me.Close()
+>>>>>>> develop
     End Sub
 End Class
