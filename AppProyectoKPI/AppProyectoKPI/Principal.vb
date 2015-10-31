@@ -61,9 +61,7 @@
 
         Dim p2 As New GestionProspectos()
 
-        p2.MdiParent = Me.MdiParent
-
-        p2.ShowDialog()
+        abrirVentana(p2)
 
 
     End Sub
@@ -73,11 +71,19 @@
     End Sub
 
     Private Sub mnu_Kpis_Click(sender As Object, e As EventArgs) Handles mnu_Kpis.Click
-        Dim p2 As New CreacionKPIs
+        Dim form As New CreacionKPIs
 
-        p2.MdiParent = Me.MdiParent
-
-        p2.ShowDialog()
-
+        abrirVentana(form)
     End Sub
+
+    Private Sub abrirVentana(form As Form)
+        Dim active As Form = Me.ActiveMdiChild
+        If (Not active Is Nothing) Then
+            active.Close()
+        End If
+        form.MdiParent = Me
+        form.WindowState = FormWindowState.Maximized
+        form.Show()
+    End Sub
+
 End Class

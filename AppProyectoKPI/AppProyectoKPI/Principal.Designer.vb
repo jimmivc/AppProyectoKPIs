@@ -134,7 +134,7 @@ Partial Class Principal
         Me.mnu_Eventos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_Eventos.Image = CType(resources.GetObject("mnu_Eventos.Image"), System.Drawing.Image)
         Me.mnu_Eventos.Name = "mnu_Eventos"
-        Me.mnu_Eventos.Size = New System.Drawing.Size(179, 26)
+        Me.mnu_Eventos.Size = New System.Drawing.Size(155, 26)
         Me.mnu_Eventos.Text = "Eventos"
         Me.mnu_Eventos.Visible = False
         '
@@ -144,7 +144,7 @@ Partial Class Principal
         Me.mnu_Entidades.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_Entidades.Image = CType(resources.GetObject("mnu_Entidades.Image"), System.Drawing.Image)
         Me.mnu_Entidades.Name = "mnu_Entidades"
-        Me.mnu_Entidades.Size = New System.Drawing.Size(179, 26)
+        Me.mnu_Entidades.Size = New System.Drawing.Size(155, 26)
         Me.mnu_Entidades.Text = "Entidades"
         Me.mnu_Entidades.Visible = False
         '
@@ -154,7 +154,7 @@ Partial Class Principal
         Me.mnu_Kpis.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_Kpis.Image = CType(resources.GetObject("mnu_Kpis.Image"), System.Drawing.Image)
         Me.mnu_Kpis.Name = "mnu_Kpis"
-        Me.mnu_Kpis.Size = New System.Drawing.Size(179, 26)
+        Me.mnu_Kpis.Size = New System.Drawing.Size(155, 26)
         Me.mnu_Kpis.Text = "Kpis"
         Me.mnu_Kpis.Visible = False
         '
