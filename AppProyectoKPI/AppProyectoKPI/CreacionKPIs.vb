@@ -3,6 +3,7 @@
     Dim formula As List(Of String) = New List(Of String)
     Dim operador As Boolean = False
     Dim detalle As Boolean = True
+    Dim limiteDefinido As Boolean = False
 
     Private Sub btnAgregarValor_Click(sender As Object, e As EventArgs) Handles btnAgregarValor.Click
         If (txtValor.Text <> "") Then
@@ -69,8 +70,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'txtFormula.Text += "hola nicole"
-        'DataGridView1.Rows.Add(New Object() {"hola"})
+
     End Sub
 
     Private Sub btnConfigurar_Click(sender As Object, e As EventArgs) Handles btnConfigurar.Click
@@ -79,7 +79,12 @@
             Dim configurarObjetivo As New ElegirRangoKPI(txtObjetivo.Text)
 
             configurarObjetivo.Parent = Me.ParentForm
-            configurarObjetivo.ShowDialog()
+            If (configurarObjetivo.ShowDialog() = System.Windows.Forms.DialogResult.OK) Then
+                Dim limiteSuperior As Double = configurarObjetivo.lstLimiteSuperior.GetItemText(configurarObjetivo.lstLimiteSuperior.SelectedIndex)
+                Dim limiteInferior As Double = configurarObjetivo.lstLimiteInferior.GetItemText(configurarObjetivo.lstLimiteInferior.SelectedIndex)
+                limiteDefinido = True
+                txtFormula.Text = limiteInferior.ToString + limiteSuperior.ToString + limiteDefinido.ToString
+            End If
         Catch ex As Exception
             MessageBox.Show("Objetivo no valido")
         End Try

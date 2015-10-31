@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="Model\AreaInteres.vb" />
     <Compile Include="Model\Contacto.vb" />
+    <Compile Include="Model\KPI.vb" />
     <Compile Include="Model\Prospecto.vb" />
     <Compile Include="Model\Seguimiento.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
