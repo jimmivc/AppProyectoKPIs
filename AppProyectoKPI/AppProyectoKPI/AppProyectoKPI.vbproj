@@ -144,6 +144,9 @@
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
