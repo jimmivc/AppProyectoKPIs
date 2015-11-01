@@ -22,6 +22,7 @@ Partial Class ElegirRangoKPI
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ElegirRangoKPI))
         Me.lstLimiteInferior = New System.Windows.Forms.ComboBox()
         Me.lstLimiteSuperior = New System.Windows.Forms.ComboBox()
         Me.rojo = New System.Windows.Forms.Label()
@@ -127,6 +128,7 @@ Partial Class ElegirRangoKPI
         Me.Controls.Add(Me.rojo)
         Me.Controls.Add(Me.lstLimiteSuperior)
         Me.Controls.Add(Me.lstLimiteInferior)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ElegirRangoKPI"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Elegir Rango KPI"

@@ -130,7 +130,7 @@ Partial Class CreacionKPIs
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(552, 559)
+        Me.Button1.Location = New System.Drawing.Point(530, 537)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 29)
         Me.Button1.TabIndex = 16
@@ -173,7 +173,7 @@ Partial Class CreacionKPIs
         Me.btnRestar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.btnRestar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRestar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnRestar.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestar.ForeColor = System.Drawing.Color.Silver
         Me.btnRestar.Location = New System.Drawing.Point(401, 331)
         Me.btnRestar.Name = "btnRestar"
@@ -189,7 +189,7 @@ Partial Class CreacionKPIs
         Me.btnDividir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.btnDividir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDividir.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnDividir.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDividir.ForeColor = System.Drawing.Color.Silver
         Me.btnDividir.Location = New System.Drawing.Point(444, 331)
         Me.btnDividir.Name = "btnDividir"
@@ -205,7 +205,7 @@ Partial Class CreacionKPIs
         Me.btnSumar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.btnSumar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.btnSumar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSumar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnSumar.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSumar.ForeColor = System.Drawing.Color.Silver
         Me.btnSumar.Location = New System.Drawing.Point(357, 331)
         Me.btnSumar.Name = "btnSumar"
@@ -237,7 +237,7 @@ Partial Class CreacionKPIs
         Me.btnMultiplicar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.btnMultiplicar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMultiplicar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnMultiplicar.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMultiplicar.ForeColor = System.Drawing.Color.Silver
         Me.btnMultiplicar.Location = New System.Drawing.Point(487, 331)
         Me.btnMultiplicar.Name = "btnMultiplicar"

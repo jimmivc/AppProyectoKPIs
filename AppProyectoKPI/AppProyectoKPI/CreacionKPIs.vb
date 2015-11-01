@@ -38,6 +38,11 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Metodo que sirve para armar la formula del indicador kpi, recive un valor y lo agrega al arreglo de la formula
+    ''' </summary>
+    ''' <param name="dato">tabla,operador o valor</param>
+    ''' <remarks></remarks>
     Private Sub armarFormula(dato As String)
 
         If (operador = False And Not isOperador(dato)) Then
@@ -90,12 +95,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If (Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
             If (Not variable(variable.Count - 1).Equals("operador")) Then
-                txtFormula.Text = txtFormula.Text + lstFormatoKPI.SelectedItem.ToString + txtObjetivo.Text + txtDescripcion.Text + limiteDefinido.ToString()
-
-                For i As Integer = 0 To variable.Count - 1
-                    txtFormula.Text += variable(i).ToString() + ":" + formula(i).ToString()
-                Next
-
+                MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteDefinido))
             Else
                 MessageBox.Show("Formula incompleta")
             End If
