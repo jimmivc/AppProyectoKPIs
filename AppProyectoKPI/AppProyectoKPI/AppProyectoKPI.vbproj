@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="BL\CargaDataGrids.vb" />
     <Compile Include="BL\ContactoController.vb" />
+    <Compile Include="BL\loginController.vb" />
     <Compile Include="CreacionKPIs.Designer.vb">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </Compile>
@@ -105,6 +106,7 @@
     <Compile Include="Model\Prospecto.vb" />
     <Compile Include="Model\Seguimiento.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
+    <Compile Include="Model\Usuario.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
