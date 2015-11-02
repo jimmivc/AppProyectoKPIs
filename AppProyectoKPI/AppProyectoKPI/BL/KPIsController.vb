@@ -3,7 +3,7 @@ Imports System.Configuration
 
 Public Class KPIsController
 
-    Shared Function registrarIndicadorKPI(descripcion As String, formato As String, objetivo As Double, formula As List(Of String), variables As List(Of String), limiteDefinido As Boolean) As String
+    Shared Function registrarIndicadorKPI(descripcion As String, formato As String, objetivo As Double, formula As List(Of String), variables As List(Of String), limiteSup As Integer, limiteInf As Integer) As String
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("kpis", Method.POST)
         Dim result As String
@@ -14,7 +14,7 @@ Public Class KPIsController
             formulaCompleta.Add(New DetalleFormula(i, variables(i), formula(i)))
         Next
 
-        Dim kpi = New KPI(0, descripcion, formato, objetivo, New ParametroKPI(30, 10), formulaCompleta)
+        Dim kpi = New KPI(0, descripcion, formato, objetivo, New ParametroKPI(limiteSup, limiteInf), formulaCompleta)
         'cargar url parameters
         request.AddJsonBody(kpi)
         'execute the request
@@ -40,4 +40,17 @@ Public Class KPIsController
         Return response.Data
 
     End Function
+
+    Shared Function consultarKPI(idKPI As Integer) As KPI
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/{id}", Method.GET)
+
+        request.AddUrlSegment("id", idKPI)
+        'execute the request
+        Dim response = client.Execute(Of KPI)(request)
+
+        Return response.Data
+
+    End Function
+
 End Class

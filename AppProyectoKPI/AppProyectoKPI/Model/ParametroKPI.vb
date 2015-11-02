@@ -24,4 +24,9 @@
         LimiteSuperior = limitSup
         LimiteInferior = limitInf
     End Sub
+
+    Sub New()
+
+    End Sub
+
 End Class

@@ -1,10 +1,12 @@
-﻿Public Class CreacionKPIs
+﻿Public Class ConsultarKPI
 
     Dim formula As List(Of String) = New List(Of String)
     Dim variable As List(Of String) = New List(Of String)
     Dim operador As Boolean = False
     Dim detalle As Boolean = True
     Dim limiteDefinido As Boolean = False
+    Dim limiteSuperior As Integer
+    Dim limiteInferior As Integer
 
     Sub New()
 
@@ -12,13 +14,8 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Dim bs As BindingSource = New BindingSource()
-        bs.DataSource = KPIsController.listarIndicadoresKPI()
+        actualizarListaKPIs()
 
-        dtgListarKPIs.DataSource = bs
-        'dtgListarKPIs.Columns.Remove("Parametro")
-
-        bs.ResetBindings(False)
     End Sub
 
     ''' <summary>
@@ -133,7 +130,11 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If (Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
             If (Not variable(variable.Count - 1).Equals("operador")) Then
-                MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteDefinido))
+                If (Not limiteDefinido) Then
+                    calcularLimite()
+                End If
+                MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+                actualizarListaKPIs()
             Else
                 MessageBox.Show("Formula incompleta")
             End If
@@ -154,14 +155,50 @@
             Dim configurarObjetivo As New ElegirRangoKPI(txtObjetivo.Text)
 
             If (configurarObjetivo.ShowDialog() = System.Windows.Forms.DialogResult.OK) Then
-                Dim limiteSuperior As Double = configurarObjetivo.lstLimiteSuperior.GetItemText(configurarObjetivo.lstLimiteSuperior.SelectedIndex)
-                Dim limiteInferior As Double = configurarObjetivo.lstLimiteInferior.GetItemText(configurarObjetivo.lstLimiteInferior.SelectedIndex)
+                limiteSuperior = configurarObjetivo.lstLimiteSuperior.GetItemText(configurarObjetivo.lstLimiteSuperior.SelectedIndex)
+                limiteInferior = configurarObjetivo.lstLimiteInferior.GetItemText(configurarObjetivo.lstLimiteInferior.SelectedIndex)
                 limiteDefinido = True
                 'txtFormula.Text = limiteInferior.ToString + limiteSuperior.ToString + limiteDefinido.ToString
             End If
         Catch ex As Exception
             MessageBox.Show("Objetivo no valido")
         End Try
+
+    End Sub
+
+    Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
+        formula = New List(Of String)
+        variable = New List(Of String)
+        txtFormula.Text = ""
+        operador = False
+        detalle = True
+    End Sub
+
+    Private Sub calcularLimite()
+        Dim objetivo As Integer = txtObjetivo.Text
+        limiteSuperior = objetivo
+        limiteInferior = objetivo / 2
+
+    End Sub
+
+    Private Sub actualizarListaKPIs()
+        Dim bs As BindingSource = New BindingSource()
+        bs.DataSource = KPIsController.listarIndicadoresKPI()
+        dtgListarKPIs.DataSource = bs
+        bs.ResetBindings(False)
+    End Sub
+
+    Private Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
+        For Each row As DataGridViewRow In dtgListarKPIs.SelectedRows
+
+            Dim kpi As KPI = TryCast(row.DataBoundItem, KPI)
+            If kpi IsNot Nothing Then
+                MessageBox.Show(kpi.KPIID)
+                Dim kpiConsultado = KPIsController.consultarKPI(kpi.KPIID)
+
+            End If
+
+        Next
 
     End Sub
 End Class
