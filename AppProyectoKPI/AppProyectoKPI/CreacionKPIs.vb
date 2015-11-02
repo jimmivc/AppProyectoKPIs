@@ -1,4 +1,4 @@
-﻿Public Class ConsultarKPI
+﻿Public Class CreacionKPIs
 
     Dim formula As List(Of String) = New List(Of String)
     Dim variable As List(Of String) = New List(Of String)
@@ -195,7 +195,7 @@
             If kpi IsNot Nothing Then
                 MessageBox.Show(kpi.KPIID)
                 Dim kpiConsultado = KPIsController.consultarKPI(kpi.KPIID)
-
+                MessageBox.Show(kpiConsultado.Formula(0).TipoDato)
             End If
 
         Next

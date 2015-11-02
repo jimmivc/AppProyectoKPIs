@@ -1,0 +1,14 @@
+diff a/AppProyectoKPI/AppProyectoKPI/AppProyectoKPI.vbproj b/AppProyectoKPI/AppProyectoKPI/AppProyectoKPI.vbproj	(rejected hunks)
+@@ -93,6 +93,12 @@
+     <Compile Include="BL\CargaDataGrids.vb" />
+     <Compile Include="BL\ContactoController.vb" />
+     <Compile Include="BL\KPIsController.vb" />
++    <Compile Include="ConsultarKPIs.Designer.vb">
++      <DependentUpon>ConsultarKPIs.vb</DependentUpon>
++    </Compile>
++    <Compile Include="ConsultarKPIs.vb">
++      <SubType>Form</SubType>
++    </Compile>
+     <Compile Include="CreacionKPIs.Designer.vb">
+       <DependentUpon>CreacionKPIs.vb</DependentUpon>
+     </Compile>
