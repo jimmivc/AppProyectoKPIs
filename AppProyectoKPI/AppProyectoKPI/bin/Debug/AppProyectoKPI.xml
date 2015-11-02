@@ -37,9 +37,44 @@ AppProyectoKPI
 	<remarks></remarks>
 </member><member name="M:AppProyectoKPI.CreacionKPIs.armarFormula(System.String)">
 	<summary>
- Metodo que sirve para armar la formula del indicador kpi, recive un valor y lo agrega al arreglo de la formula
+ Metodo que sirve para armar la formula del indicador kpi, recibe un valor y lo agrega al arreglo de la formula
  </summary>
 	<param name="dato">tabla,operador o valor</param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.lstCampo_SelectedIndexChanged(System.Object,System.EventArgs)">
+	<summary>
+ metodo que agrega el nombre del campo a la formula
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.isOperador(System.String)">
+	<summary>
+ Validacion si el dato que llega es un operador matematico o no
+ </summary>
+	<param name="dato"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.txtValor_TextChanged(System.Object,System.EventArgs)">
+	<summary>
+ Metodo que evita que el usuario ingrese valores que no sean numeros
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.Button1_Click(System.Object,System.EventArgs)">
+	<summary>
+ Validaciones de todos los campos, evento para registrar todos los datos ingresados por el usuario
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.btnConfigurar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Evento cuando el usuario configura un rango deseado para el despliegue del resultado kpi 
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
 	<remarks></remarks>
 </member>
 </members>

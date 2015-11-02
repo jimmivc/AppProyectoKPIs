@@ -6,6 +6,21 @@
     Dim detalle As Boolean = True
     Dim limiteDefinido As Boolean = False
 
+    Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Dim bs As BindingSource = New BindingSource()
+        bs.DataSource = KPIsController.listarIndicadoresKPI()
+
+        dtgListarKPIs.DataSource = bs
+        'dtgListarKPIs.Columns.Remove("Parametro")
+
+        bs.ResetBindings(False)
+    End Sub
+
     ''' <summary>
     ''' Evento para el boton agregar valor, valida el valor ingresado por el usuario y lo agrega a un arreglo
     ''' para su posterior envio al api
@@ -39,7 +54,7 @@
     End Sub
 
     ''' <summary>
-    ''' Metodo que sirve para armar la formula del indicador kpi, recive un valor y lo agrega al arreglo de la formula
+    ''' Metodo que sirve para armar la formula del indicador kpi, recibe un valor y lo agrega al arreglo de la formula
     ''' </summary>
     ''' <param name="dato">tabla,operador o valor</param>
     ''' <remarks></remarks>
@@ -64,7 +79,12 @@
             txtFormula.Text += dat
         Next
     End Sub
-
+    ''' <summary>
+    ''' metodo que agrega el nombre del campo a la formula
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub lstCampo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstCampo.SelectedIndexChanged
         If (lstCampo.SelectedIndex <> 0) Then
             armarFormula(lstCampo.SelectedItem)
@@ -73,7 +93,12 @@
 
 
     End Sub
-
+    ''' <summary>
+    ''' Validacion si el dato que llega es un operador matematico o no
+    ''' </summary>
+    ''' <param name="dato"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Private Function isOperador(dato As String) As Boolean
         Dim resul As Boolean
         If (dato.Equals("+") Or dato.Equals("-") Or dato.Equals("/") Or dato.Equals("*")) Then
@@ -84,14 +109,27 @@
         Return resul
     End Function
 
-    Private Sub txtValor_TextChanged(sender As Object, e As EventArgs) Handles txtValor.TextChanged
+    ''' <summary>
+    ''' Metodo que evita que el usuario ingrese valores que no sean numeros
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub txtValor_TextChanged(sender As Object, e As EventArgs) Handles txtValor.TextChanged, txtObjetivo.TextChanged
+        Dim textbox = CType(sender, TextBox)
         Try
-            Convert.ToInt32(txtValor.Text)
+            Convert.ToDouble(textbox.Text)
         Catch ex As Exception
-            txtValor.Text = ""
+            textbox.Text = ""
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Validaciones de todos los campos, evento para registrar todos los datos ingresados por el usuario
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If (Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
             If (Not variable(variable.Count - 1).Equals("operador")) Then
@@ -104,6 +142,12 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Evento cuando el usuario configura un rango deseado para el despliegue del resultado kpi 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnConfigurar_Click(sender As Object, e As EventArgs) Handles btnConfigurar.Click
         Try
             Dim objetivo As Double = txtObjetivo.Text
