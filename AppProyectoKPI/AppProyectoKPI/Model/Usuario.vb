@@ -83,4 +83,12 @@
         End Set
     End Property
 
+    Public Sub CambiarEstado(x As Boolean)
+        If x = True Then
+            _IsActivo = True
+        Else
+            IsActivo = False
+        End If
+    End Sub
+
 End Class

@@ -86,4 +86,8 @@
         form.Show()
     End Sub
 
+    Private Sub mnu_Usuarios_Click(sender As Object, e As EventArgs) Handles mnu_Usuarios.Click
+        Dim xg As New Usuarios()
+        abrirVentana(xg)
+    End Sub
 End Class
