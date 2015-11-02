@@ -195,7 +195,8 @@
             If kpi IsNot Nothing Then
                 MessageBox.Show(kpi.KPIID)
                 Dim kpiConsultado = KPIsController.consultarKPI(kpi.KPIID)
-                MessageBox.Show(kpiConsultado.Formula(0).TipoDato)
+                Dim consulta As New ConsultarKPI(kpiConsultado)
+                consulta.ShowDialog()
             End If
 
         Next

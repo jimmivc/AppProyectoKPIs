@@ -93,6 +93,12 @@
     <Compile Include="BL\CargaDataGrids.vb" />
     <Compile Include="BL\ContactoController.vb" />
     <Compile Include="BL\KPIsController.vb" />
+    <Compile Include="ConsultarKPI.Designer.vb">
+      <DependentUpon>ConsultarKPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarKPI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreacionKPIs.Designer.vb">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AsignacionKPIs.resx">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarKPI.resx">
+      <DependentUpon>ConsultarKPI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreacionKPIs.resx">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>

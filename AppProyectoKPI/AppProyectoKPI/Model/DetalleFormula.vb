@@ -52,7 +52,7 @@
     End Property
 
     Sub New(pconsecutivo As Integer, ptipoDato As String, pdato As String)
-        If (ptipoDato.Equals("tabla")) Then
+        If (ptipoDato.Equals("campo")) Then
             Tabla = pdato
         ElseIf (ptipoDato.Equals("operador")) Then
             DescCampoOperador = pdato
