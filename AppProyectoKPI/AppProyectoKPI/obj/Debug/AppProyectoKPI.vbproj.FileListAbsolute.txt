@@ -80,3 +80,6 @@ C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.exe
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.pdb
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.IniciarSesion.resources
+C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.dll
+C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.xml
+C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.ElegirRangoKPI.resources
