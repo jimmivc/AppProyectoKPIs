@@ -128,7 +128,7 @@
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If (Not txtDescripcion.Text.ToString And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
+        If (Not txtDescripcion.Text.Equals("") And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
             If (Not variable(variable.Count - 1).Equals("operador")) Then
                 If (Not limiteDefinido) Then
                     calcularLimite()
