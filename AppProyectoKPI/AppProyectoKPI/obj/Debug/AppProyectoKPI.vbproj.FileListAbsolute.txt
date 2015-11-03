@@ -43,4 +43,7 @@ C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\Ap
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Resources.resources
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbproj.GenerateResource.Cache
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.GestionProspectos.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.ListarProspectos.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.dll
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.xml
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache

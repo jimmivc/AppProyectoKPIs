@@ -24,19 +24,19 @@ Partial Class GestionProspectos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionProspectos))
         Me.RegistroProspecto = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.cbxEstatus = New System.Windows.Forms.ComboBox()
+        Me.cbxIsPromociones = New System.Windows.Forms.ComboBox()
+        Me.cbxIsTrabajando = New System.Windows.Forms.ComboBox()
+        Me.cbxEvento = New System.Windows.Forms.ComboBox()
+        Me.txtLugarTrabajo = New System.Windows.Forms.TextBox()
+        Me.txtLugarEstudio = New System.Windows.Forms.TextBox()
+        Me.txtAnioBachillerato = New System.Windows.Forms.TextBox()
+        Me.txtFechaNac = New System.Windows.Forms.TextBox()
+        Me.txtEdad = New System.Windows.Forms.TextBox()
+        Me.txtApellidos = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.txtAlias = New System.Windows.Forms.TextBox()
+        Me.txtIdentificacion = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -53,8 +53,12 @@ Partial Class GestionProspectos
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.FormasContacto = New System.Windows.Forms.GroupBox()
         Me.dtg_FormasContacto = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.RegistroProspecto.SuspendLayout()
         Me.FormasContacto.SuspendLayout()
         CType(Me.dtg_FormasContacto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,19 +66,19 @@ Partial Class GestionProspectos
         '
         'RegistroProspecto
         '
-        Me.RegistroProspecto.Controls.Add(Me.ComboBox1)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox13)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox12)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox11)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox10)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox9)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox7)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox6)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox5)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox4)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox3)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox2)
-        Me.RegistroProspecto.Controls.Add(Me.TextBox1)
+        Me.RegistroProspecto.Controls.Add(Me.cbxEstatus)
+        Me.RegistroProspecto.Controls.Add(Me.cbxIsPromociones)
+        Me.RegistroProspecto.Controls.Add(Me.cbxIsTrabajando)
+        Me.RegistroProspecto.Controls.Add(Me.cbxEvento)
+        Me.RegistroProspecto.Controls.Add(Me.txtLugarTrabajo)
+        Me.RegistroProspecto.Controls.Add(Me.txtLugarEstudio)
+        Me.RegistroProspecto.Controls.Add(Me.txtAnioBachillerato)
+        Me.RegistroProspecto.Controls.Add(Me.txtFechaNac)
+        Me.RegistroProspecto.Controls.Add(Me.txtEdad)
+        Me.RegistroProspecto.Controls.Add(Me.txtApellidos)
+        Me.RegistroProspecto.Controls.Add(Me.txtNombre)
+        Me.RegistroProspecto.Controls.Add(Me.txtAlias)
+        Me.RegistroProspecto.Controls.Add(Me.txtIdentificacion)
         Me.RegistroProspecto.Controls.Add(Me.Label15)
         Me.RegistroProspecto.Controls.Add(Me.Label14)
         Me.RegistroProspecto.Controls.Add(Me.Label13)
@@ -100,135 +104,135 @@ Partial Class GestionProspectos
         Me.RegistroProspecto.TabStop = False
         Me.RegistroProspecto.Text = "Registro de prospecto"
         '
-        'ComboBox1
+        'cbxEstatus
         '
-        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(167, 250)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(182, 25)
-        Me.ComboBox1.TabIndex = 29
+        Me.cbxEstatus.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.cbxEstatus.Font = New System.Drawing.Font("Century Gothic", 8.0!)
+        Me.cbxEstatus.FormattingEnabled = True
+        Me.cbxEstatus.Location = New System.Drawing.Point(167, 381)
+        Me.cbxEstatus.Name = "cbxEstatus"
+        Me.cbxEstatus.Size = New System.Drawing.Size(182, 24)
+        Me.cbxEstatus.TabIndex = 32
         '
-        'TextBox13
+        'cbxIsPromociones
         '
-        Me.TextBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox13.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox13.Location = New System.Drawing.Point(167, 382)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox13.TabIndex = 28
+        Me.cbxIsPromociones.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.cbxIsPromociones.Font = New System.Drawing.Font("Century Gothic", 8.0!)
+        Me.cbxIsPromociones.FormattingEnabled = True
+        Me.cbxIsPromociones.Location = New System.Drawing.Point(167, 303)
+        Me.cbxIsPromociones.Name = "cbxIsPromociones"
+        Me.cbxIsPromociones.Size = New System.Drawing.Size(182, 24)
+        Me.cbxIsPromociones.TabIndex = 31
         '
-        'TextBox12
+        'cbxIsTrabajando
         '
-        Me.TextBox12.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox12.Location = New System.Drawing.Point(167, 356)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox12.TabIndex = 27
+        Me.cbxIsTrabajando.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.cbxIsTrabajando.Font = New System.Drawing.Font("Century Gothic", 8.0!)
+        Me.cbxIsTrabajando.FormattingEnabled = True
+        Me.cbxIsTrabajando.Location = New System.Drawing.Point(167, 277)
+        Me.cbxIsTrabajando.Name = "cbxIsTrabajando"
+        Me.cbxIsTrabajando.Size = New System.Drawing.Size(182, 24)
+        Me.cbxIsTrabajando.TabIndex = 30
         '
-        'TextBox11
+        'cbxEvento
         '
-        Me.TextBox11.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox11.Location = New System.Drawing.Point(167, 330)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox11.TabIndex = 26
+        Me.cbxEvento.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.cbxEvento.Font = New System.Drawing.Font("Century Gothic", 8.0!)
+        Me.cbxEvento.FormattingEnabled = True
+        Me.cbxEvento.Location = New System.Drawing.Point(167, 251)
+        Me.cbxEvento.Name = "cbxEvento"
+        Me.cbxEvento.Size = New System.Drawing.Size(182, 24)
+        Me.cbxEvento.TabIndex = 29
         '
-        'TextBox10
+        'txtLugarTrabajo
         '
-        Me.TextBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox10.Location = New System.Drawing.Point(167, 304)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox10.TabIndex = 25
+        Me.txtLugarTrabajo.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtLugarTrabajo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLugarTrabajo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtLugarTrabajo.Location = New System.Drawing.Point(167, 356)
+        Me.txtLugarTrabajo.Name = "txtLugarTrabajo"
+        Me.txtLugarTrabajo.Size = New System.Drawing.Size(182, 23)
+        Me.txtLugarTrabajo.TabIndex = 27
         '
-        'TextBox9
+        'txtLugarEstudio
         '
-        Me.TextBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox9.Location = New System.Drawing.Point(167, 278)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox9.TabIndex = 24
+        Me.txtLugarEstudio.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtLugarEstudio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLugarEstudio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtLugarEstudio.Location = New System.Drawing.Point(167, 330)
+        Me.txtLugarEstudio.Name = "txtLugarEstudio"
+        Me.txtLugarEstudio.Size = New System.Drawing.Size(182, 23)
+        Me.txtLugarEstudio.TabIndex = 26
         '
-        'TextBox7
+        'txtAnioBachillerato
         '
-        Me.TextBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox7.Location = New System.Drawing.Point(167, 226)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox7.TabIndex = 22
+        Me.txtAnioBachillerato.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtAnioBachillerato.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAnioBachillerato.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtAnioBachillerato.Location = New System.Drawing.Point(167, 226)
+        Me.txtAnioBachillerato.Name = "txtAnioBachillerato"
+        Me.txtAnioBachillerato.Size = New System.Drawing.Size(182, 23)
+        Me.txtAnioBachillerato.TabIndex = 22
         '
-        'TextBox6
+        'txtFechaNac
         '
-        Me.TextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox6.Location = New System.Drawing.Point(167, 200)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox6.TabIndex = 21
+        Me.txtFechaNac.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtFechaNac.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFechaNac.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtFechaNac.Location = New System.Drawing.Point(167, 200)
+        Me.txtFechaNac.Name = "txtFechaNac"
+        Me.txtFechaNac.Size = New System.Drawing.Size(182, 23)
+        Me.txtFechaNac.TabIndex = 21
         '
-        'TextBox5
+        'txtEdad
         '
-        Me.TextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox5.Location = New System.Drawing.Point(167, 174)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox5.TabIndex = 20
+        Me.txtEdad.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtEdad.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEdad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtEdad.Location = New System.Drawing.Point(167, 174)
+        Me.txtEdad.Name = "txtEdad"
+        Me.txtEdad.Size = New System.Drawing.Size(182, 23)
+        Me.txtEdad.TabIndex = 20
         '
-        'TextBox4
+        'txtApellidos
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox4.Location = New System.Drawing.Point(167, 148)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox4.TabIndex = 19
+        Me.txtApellidos.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtApellidos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApellidos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtApellidos.Location = New System.Drawing.Point(167, 148)
+        Me.txtApellidos.Name = "txtApellidos"
+        Me.txtApellidos.Size = New System.Drawing.Size(182, 23)
+        Me.txtApellidos.TabIndex = 19
         '
-        'TextBox3
+        'txtNombre
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox3.Location = New System.Drawing.Point(167, 122)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox3.TabIndex = 18
+        Me.txtNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtNombre.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtNombre.Location = New System.Drawing.Point(167, 122)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(182, 23)
+        Me.txtNombre.TabIndex = 18
         '
-        'TextBox2
+        'txtAlias
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox2.Location = New System.Drawing.Point(167, 96)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox2.TabIndex = 17
+        Me.txtAlias.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtAlias.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlias.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtAlias.Location = New System.Drawing.Point(167, 96)
+        Me.txtAlias.Name = "txtAlias"
+        Me.txtAlias.Size = New System.Drawing.Size(182, 23)
+        Me.txtAlias.TabIndex = 17
         '
-        'TextBox1
+        'txtIdentificacion
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(167, 70)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(183, 23)
-        Me.TextBox1.TabIndex = 16
+        Me.txtIdentificacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdentificacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtIdentificacion.Location = New System.Drawing.Point(167, 70)
+        Me.txtIdentificacion.Name = "txtIdentificacion"
+        Me.txtIdentificacion.Size = New System.Drawing.Size(182, 23)
+        Me.txtIdentificacion.TabIndex = 16
         '
         'Label15
         '
@@ -238,7 +242,7 @@ Partial Class GestionProspectos
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(152, 21)
         Me.Label15.TabIndex = 15
-        Me.Label15.Text = "Estatus:"
+        Me.Label15.Text = "Está Habilitado:"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label14
@@ -282,7 +286,7 @@ Partial Class GestionProspectos
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(152, 21)
         Me.Label11.TabIndex = 11
-        Me.Label11.Text = "Estatus laboral:"
+        Me.Label11.Text = "Trabaja:"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label10
@@ -311,7 +315,7 @@ Partial Class GestionProspectos
         '
         Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(9, 202)
+        Me.Label8.Location = New System.Drawing.Point(9, 201)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(152, 21)
         Me.Label8.TabIndex = 8
@@ -322,7 +326,7 @@ Partial Class GestionProspectos
         '
         Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(9, 176)
+        Me.Label7.Location = New System.Drawing.Point(9, 177)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 21)
         Me.Label7.TabIndex = 7
@@ -380,7 +384,7 @@ Partial Class GestionProspectos
         Me.txtId.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.txtId.Location = New System.Drawing.Point(167, 44)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(183, 23)
+        Me.txtId.Size = New System.Drawing.Size(182, 23)
         Me.txtId.TabIndex = 2
         '
         'Label2
@@ -391,17 +395,32 @@ Partial Class GestionProspectos
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(152, 21)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Id:"
+        Me.Label2.Text = "Código:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Silver
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 36)
+        Me.Label1.Location = New System.Drawing.Point(6, 37)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(347, 5)
+        Me.Label1.Size = New System.Drawing.Size(346, 5)
         Me.Label1.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.Button1.ForeColor = System.Drawing.Color.Silver
+        Me.Button1.Location = New System.Drawing.Point(371, 44)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(73, 27)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Listar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'FormasContacto
         '
@@ -420,10 +439,47 @@ Partial Class GestionProspectos
         Me.dtg_FormasContacto.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.dtg_FormasContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtg_FormasContacto.GridColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.dtg_FormasContacto.Location = New System.Drawing.Point(9, 23)
+        Me.dtg_FormasContacto.Location = New System.Drawing.Point(9, 24)
         Me.dtg_FormasContacto.Name = "dtg_FormasContacto"
         Me.dtg_FormasContacto.Size = New System.Drawing.Size(341, 128)
         Me.dtg_FormasContacto.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(451, 5)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(689, 564)
+        Me.Panel1.TabIndex = 2
+        '
+        'btnRegistrar
+        '
+        Me.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrar.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
+        Me.btnRegistrar.ForeColor = System.Drawing.Color.Silver
+        Me.btnRegistrar.Location = New System.Drawing.Point(371, 112)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.Size = New System.Drawing.Size(73, 27)
+        Me.btnRegistrar.TabIndex = 3
+        Me.btnRegistrar.Text = "Registrar"
+        Me.btnRegistrar.UseVisualStyleBackColor = False
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
+        Me.btnNuevo.ForeColor = System.Drawing.Color.Silver
+        Me.btnNuevo.Location = New System.Drawing.Point(371, 78)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(73, 27)
+        Me.btnNuevo.TabIndex = 4
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'GestionProspectos
         '
@@ -431,8 +487,12 @@ Partial Class GestionProspectos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1144, 571)
+        Me.Controls.Add(Me.btnNuevo)
+        Me.Controls.Add(Me.btnRegistrar)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.FormasContacto)
         Me.Controls.Add(Me.RegistroProspecto)
+        Me.Controls.Add(Me.Button1)
         Me.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -440,6 +500,7 @@ Partial Class GestionProspectos
         Me.Name = "GestionProspectos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión de Prospectos"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.RegistroProspecto.ResumeLayout(False)
         Me.RegistroProspecto.PerformLayout()
         Me.FormasContacto.ResumeLayout(False)
@@ -465,19 +526,23 @@ Partial Class GestionProspectos
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents txtAnioBachillerato As TextBox
+    Friend WithEvents txtFechaNac As TextBox
+    Friend WithEvents txtEdad As TextBox
+    Friend WithEvents txtApellidos As TextBox
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents txtAlias As TextBox
+    Friend WithEvents txtIdentificacion As TextBox
+    Friend WithEvents cbxEvento As ComboBox
+    Friend WithEvents txtLugarTrabajo As TextBox
+    Friend WithEvents txtLugarEstudio As TextBox
     Friend WithEvents FormasContacto As GroupBox
     Friend WithEvents dtg_FormasContacto As DataGridView
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents cbxEstatus As ComboBox
+    Friend WithEvents cbxIsPromociones As ComboBox
+    Friend WithEvents cbxIsTrabajando As ComboBox
+    Friend WithEvents btnRegistrar As Button
+    Friend WithEvents btnNuevo As Button
 End Class

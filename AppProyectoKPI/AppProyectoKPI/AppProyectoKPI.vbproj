@@ -53,6 +53,10 @@
     <Reference Include="PrimerControlWindows">
       <HintPath>..\..\..\..\Visual Studio 2013\Projects\PrimerControlWindows\PrimerControlWindows\bin\Debug\PrimerControlWindows.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -88,10 +92,19 @@
     </Compile>
     <Compile Include="BL\CargaDataGrids.vb" />
     <Compile Include="BL\ContactoController.vb" />
+    <Compile Include="BL\EventoBL.vb" />
+    <Compile Include="BL\Paneles.vb" />
+    <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="CreacionKPIs.Designer.vb">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </Compile>
     <Compile Include="CreacionKPIs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarProspectos.Designer.vb">
+      <DependentUpon>ListarProspectos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProspectos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionProspectos.Designer.vb">
@@ -102,6 +115,7 @@
     </Compile>
     <Compile Include="Model\AreaInteres.vb" />
     <Compile Include="Model\Contacto.vb" />
+    <Compile Include="Model\Evento.vb" />
     <Compile Include="Model\Prospecto.vb" />
     <Compile Include="Model\Seguimiento.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
@@ -141,6 +155,9 @@
     <EmbeddedResource Include="CreacionKPIs.resx">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListarProspectos.resx">
+      <DependentUpon>ListarProspectos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +182,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

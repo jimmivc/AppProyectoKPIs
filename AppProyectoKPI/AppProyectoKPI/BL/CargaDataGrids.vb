@@ -1,5 +1,5 @@
 ﻿Public Class CargaDataGrids
-    Shared Sub llenarGrid(ByVal grid As DataGridView, ByVal objetos As List(Of Object))
+    Shared Sub llenarGrid(ByVal grid As DataGridView, ByVal objetos As Object)
         Dim bs As BindingSource = New BindingSource()
         bs.DataSource = objetos
         grid.DataSource = bs
