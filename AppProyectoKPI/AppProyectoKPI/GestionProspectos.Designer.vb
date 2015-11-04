@@ -53,10 +53,10 @@ Partial Class GestionProspectos
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnListarProspectos = New System.Windows.Forms.Button()
         Me.FormasContacto = New System.Windows.Forms.GroupBox()
         Me.dtg_FormasContacto = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlGestionProspectos = New System.Windows.Forms.Panel()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.RegistroProspecto.SuspendLayout()
@@ -407,20 +407,20 @@ Partial Class GestionProspectos
         Me.Label1.Size = New System.Drawing.Size(346, 5)
         Me.Label1.TabIndex = 0
         '
-        'Button1
+        'btnListarProspectos
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
-        Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(371, 44)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(73, 27)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Listar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnListarProspectos.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnListarProspectos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnListarProspectos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnListarProspectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListarProspectos.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnListarProspectos.ForeColor = System.Drawing.Color.Silver
+        Me.btnListarProspectos.Location = New System.Drawing.Point(371, 44)
+        Me.btnListarProspectos.Name = "btnListarProspectos"
+        Me.btnListarProspectos.Size = New System.Drawing.Size(73, 27)
+        Me.btnListarProspectos.TabIndex = 2
+        Me.btnListarProspectos.Text = "Listar"
+        Me.btnListarProspectos.UseVisualStyleBackColor = False
         '
         'FormasContacto
         '
@@ -444,12 +444,12 @@ Partial Class GestionProspectos
         Me.dtg_FormasContacto.Size = New System.Drawing.Size(341, 128)
         Me.dtg_FormasContacto.TabIndex = 0
         '
-        'Panel1
+        'pnlGestionProspectos
         '
-        Me.Panel1.Location = New System.Drawing.Point(451, 5)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(689, 564)
-        Me.Panel1.TabIndex = 2
+        Me.pnlGestionProspectos.Location = New System.Drawing.Point(451, 5)
+        Me.pnlGestionProspectos.Name = "pnlGestionProspectos"
+        Me.pnlGestionProspectos.Size = New System.Drawing.Size(689, 564)
+        Me.pnlGestionProspectos.TabIndex = 2
         '
         'btnRegistrar
         '
@@ -489,10 +489,10 @@ Partial Class GestionProspectos
         Me.ClientSize = New System.Drawing.Size(1144, 571)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnRegistrar)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.pnlGestionProspectos)
         Me.Controls.Add(Me.FormasContacto)
         Me.Controls.Add(Me.RegistroProspecto)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnListarProspectos)
         Me.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -538,8 +538,8 @@ Partial Class GestionProspectos
     Friend WithEvents txtLugarEstudio As TextBox
     Friend WithEvents FormasContacto As GroupBox
     Friend WithEvents dtg_FormasContacto As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnListarProspectos As Button
+    Friend WithEvents pnlGestionProspectos As Panel
     Friend WithEvents cbxEstatus As ComboBox
     Friend WithEvents cbxIsPromociones As ComboBox
     Friend WithEvents cbxIsTrabajando As ComboBox

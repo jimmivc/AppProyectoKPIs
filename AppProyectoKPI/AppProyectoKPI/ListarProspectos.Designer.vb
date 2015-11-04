@@ -22,17 +22,34 @@ Partial Class ListarProspectos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dtgListaProspectos = New System.Windows.Forms.DataGridView()
         CType(Me.dtgListaProspectos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dtgListaProspectos
         '
+        Me.dtgListaProspectos.AllowUserToOrderColumns = True
         Me.dtgListaProspectos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.dtgListaProspectos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dtgListaProspectos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dtgListaProspectos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgListaProspectos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgListaProspectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgListaProspectos.Location = New System.Drawing.Point(2, 3)
+        Me.dtgListaProspectos.Location = New System.Drawing.Point(2, 44)
+        Me.dtgListaProspectos.MultiSelect = False
         Me.dtgListaProspectos.Name = "dtgListaProspectos"
-        Me.dtgListaProspectos.Size = New System.Drawing.Size(614, 313)
+        Me.dtgListaProspectos.ReadOnly = True
+        Me.dtgListaProspectos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dtgListaProspectos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtgListaProspectos.Size = New System.Drawing.Size(586, 382)
         Me.dtgListaProspectos.TabIndex = 0
         '
         'ListarProspectos
@@ -40,7 +57,7 @@ Partial Class ListarProspectos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(619, 327)
+        Me.ClientSize = New System.Drawing.Size(591, 433)
         Me.Controls.Add(Me.dtgListaProspectos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ListarProspectos"

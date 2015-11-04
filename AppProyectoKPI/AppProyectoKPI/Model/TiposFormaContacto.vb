@@ -1,16 +1,23 @@
 ﻿Public Class TiposFormaContacto
-    Public Class TiposFormaContacto
 
-        Private _idProspecto As Integer
+    Private _tipoFormaContactoID As Integer
+    Private _descTipoFormaContacto As String
 
-        Private _item As Integer
+    Public Property TipoFormaContactoID As Integer
+        Get
+            Return _tipoFormaContactoID
+        End Get
+        Set(value As Integer)
+            _tipoFormaContactoID = value
+        End Set
+    End Property
 
-        Private _idGrupoEmpresarial As Integer
-
-        Private _idTipoFormaContacto As Integer
-
-        Private _descFormaContacto As String
-
-        Private _Estatus As Integer
-    End Class
+    Public Property DescTipoFormaContacto As String
+        Get
+            Return _descTipoFormaContacto
+        End Get
+        Set(value As String)
+            _descTipoFormaContacto = value
+        End Set
+    End Property
 End Class

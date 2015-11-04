@@ -15,7 +15,7 @@ Public Class Contacto
 
     Private _estatus As Integer
 
-    Private _tipoFormaContacto As TiposFormaContacto
+    Private _tipoFormaContacto As FormasContacto
 
 
     Public Sub New()
@@ -83,11 +83,11 @@ Public Class Contacto
             End Set
         End Property
 
-        Public Property TipoFormaContacto As TiposFormaContacto
+        Public Property TipoFormaContacto As FormasContacto
             Get
                 Return _tipoFormaContacto
             End Get
-            Set(value As TiposFormaContacto)
+            Set(value As FormasContacto)
                 _tipoFormaContacto = value
             End Set
         End Property

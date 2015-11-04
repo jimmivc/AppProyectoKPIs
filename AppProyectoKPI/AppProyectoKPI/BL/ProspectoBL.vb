@@ -2,35 +2,32 @@
 Imports RestSharp
 Imports System.Net
 Imports System.IO
-
+Imports Newtonsoft.Json
 
 Public Class ProspectoBL
 
     Private Shared listaProspectos As List(Of Prospecto)
     Private Shared prospecto As Prospecto
+
     'Solicitar al backend el las respuestas'
     Shared Function ObtenerProspecto(ByVal id As Integer) As Prospecto
         ' MsgBox("entro a obtener")
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Prospectoes/{id}", Method.GET)
-
         'Cargar url parameters
         request.AddUrlSegment("id", id)
-
-
         Try
             'Execute 
-            Dim response = client.Execute(Of Prospecto)(request)
+            request.RequestFormat = DataFormat.Json
+            Dim response = client.Execute(request)
+            Dim prospecto As Prospecto = JsonConvert.DeserializeObject(Of Prospecto)(response.Content)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return response.Data
-            Else
-                Return response.Data
+                Return prospecto
             End If
         Catch ex As Exception
             MsgBox("Error" + "  " + ex.Message)
         End Try
     End Function
-
 
     Shared Function RegistrarProspecto(ByVal identificacion As Integer, ByVal aliass As String, ByVal nombre As String, ByVal apellidos As String,
                                        ByVal edad As Integer, ByVal fechaNac As DateTime, ByVal anioBachillerato As Integer, ByVal evento As Integer,
@@ -71,11 +68,28 @@ Public Class ProspectoBL
     End Function
 
     Shared Function getProspecto() As Prospecto
-
-
         Return prospecto
     End Function
 
+    Shared Function getListaProspecto() As List(Of Prospecto)
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes", Method.GET)
+
+        Try
+            'Execute 
+            request.RequestFormat = DataFormat.Json
+            Dim response = client.Execute(request)
+            Dim prospectos As List(Of Prospecto) = JsonConvert.DeserializeObject(Of List(Of Prospecto))(response.Content)
+            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                Return prospectos
+
+            End If
+
+        Catch ex As Exception
+            MsgBox("Error" + "  " + ex.Message)
+        End Try
+
+    End Function
 
 
 End Class

@@ -47,6 +47,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PracticaExamen">
       <HintPath>..\..\..\..\Visual Studio 2013\Projects\PracticaExamen\PracticaExamen\bin\Debug\PracticaExamen.dll</HintPath>
     </Reference>
@@ -116,9 +120,12 @@
     <Compile Include="Model\AreaInteres.vb" />
     <Compile Include="Model\Contacto.vb" />
     <Compile Include="Model\Evento.vb" />
+    <Compile Include="Model\GrupoEmpresarial.vb" />
     <Compile Include="Model\Prospecto.vb" />
     <Compile Include="Model\Seguimiento.vb" />
+    <Compile Include="Model\FormasContacto.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
+    <Compile Include="Model\Usuario.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -184,7 +191,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="My Project\DataSources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

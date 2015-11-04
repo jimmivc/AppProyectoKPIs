@@ -47,3 +47,5 @@ C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\Ap
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.dll
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.xml
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\Newtonsoft.Json.xml

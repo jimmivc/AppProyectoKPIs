@@ -2,6 +2,8 @@
 Imports RestSharp
 Imports System.Net
 Imports System.IO
+Imports Newtonsoft.Json
+
 Public Class EventoBL
 
 
@@ -13,15 +15,13 @@ Public Class EventoBL
         ' MsgBox("entro a obtener")
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Eventoes", Method.GET)
-
-        'Cargar url parameters
-        'request.AddUrlSegment("id", id)
-
         Try
             'Execute 
             Dim response = client.Execute(Of List(Of Evento))(request)
+            Dim eventos As List(Of Evento) = JsonConvert.DeserializeObject(Of List(Of Evento))(response.Content)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return response.Data
+                Return eventos
+                'MsgBox(response.Data.ToString)
             End If
         Catch ex As Exception
             MsgBox("Error" + "  " + ex.Message)
