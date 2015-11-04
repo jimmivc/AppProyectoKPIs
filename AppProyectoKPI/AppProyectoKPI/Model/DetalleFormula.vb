@@ -1,4 +1,17 @@
 ﻿Public Class DetalleFormula
+
+    Private _id As Integer
+    Public Property DetalleFormulaID As Integer
+        Get
+            Return _id
+        End Get
+        Set(value As Integer)
+            _id = value
+        End Set
+    End Property
+
+
+
     Private _consecutivo As Integer
     Private _tipoDato As String
     Private _tabla As String

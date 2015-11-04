@@ -53,4 +53,55 @@ Public Class KPIsController
 
     End Function
 
+    Shared Function modificarKPI(modificar As Integer, descripcion As String, formato As Object, objetivo As String, formula As List(Of String), variables As List(Of String), limiteSup As Integer, limiteInf As Integer) As String
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/{id}", Method.PUT)
+        Dim result As String
+
+        'Dim formulaCompleta As List(Of DetalleFormula) = New List(Of DetalleFormula)
+
+        'For i As Integer = 0 To formula.Count - 1
+        '    formulaCompleta.Add(New DetalleFormula(i, variables(i), formula(i)))
+        'Next
+
+        Dim kpi = New KPI(modificar, descripcion, formato, objetivo, New ParametroKPI(limiteSup, limiteInf), Nothing)
+        kpi.Estado = True
+        'cargar url parameters
+        request.AddUrlSegment("id", modificar)
+        request.AddJsonBody(kpi)
+        'execute the request
+        Dim response = client.Execute(request)
+        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
+            result = "Indicador KPI modificado"
+            'Return response.Data
+        Else
+            result = response.ErrorMessage
+            'Return response.Data
+        End If
+        Return result
+    End Function
+
+    Shared Function deshabilitarKPI(id As Integer) As String
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/{id}", Method.PUT)
+        Dim result As String
+
+        Dim kpi = New KPI()
+        kpi.KPIID = id
+        kpi.Estado = False
+        'cargar url parameters
+        request.AddUrlSegment("id", id)
+        request.AddJsonBody(kpi)
+        'execute the request
+        Dim response = client.Execute(request)
+        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
+            result = "Indicador KPI modificado"
+            'Return response.Data
+        Else
+            result = response.ErrorMessage
+            'Return response.Data
+        End If
+        Return result
+    End Function
+
 End Class

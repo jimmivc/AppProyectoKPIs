@@ -8,6 +8,8 @@
     Dim limiteSuperior As Integer
     Dim limiteInferior As Integer
 
+    Dim modificar As Integer
+
     Sub New()
 
         ' This call is required by the designer.
@@ -127,20 +129,13 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If (Not txtDescripcion.Text.Equals("") And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
-            If (Not variable(variable.Count - 1).Equals("operador")) Then
-                If (Not limiteDefinido) Then
-                    calcularLimite()
-                End If
-                MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
-                actualizarListaKPIs()
-            Else
-                MessageBox.Show("Formula incompleta")
-            End If
-        Else
-            MessageBox.Show("Datos incompletos")
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+
+        If (validarCampos()) Then
+            MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+            actualizarListaKPIs()
         End If
+
     End Sub
 
     ''' <summary>
@@ -193,13 +188,131 @@
 
             Dim kpi As KPI = TryCast(row.DataBoundItem, KPI)
             If kpi IsNot Nothing Then
-                MessageBox.Show(kpi.KPIID)
                 Dim kpiConsultado = KPIsController.consultarKPI(kpi.KPIID)
                 Dim consulta As New ConsultarKPI(kpiConsultado)
                 consulta.ShowDialog()
             End If
+        Next
+
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+        btnModificar.Visible = False
+        btnRegistrar.Visible = False
+        btnGuardar.Visible = True
+        btnCancelar.Visible = True
+        btnBorrar.PerformClick()
+
+        btnSumar.Visible = False
+        btnRestar.Visible = False
+        btnMultiplicar.Visible = False
+        btnDividir.Visible = False
+
+        txtValor.Visible = False
+        btnAgregarValor.Visible = False
+
+        lstCampo.Visible = False
+        txtObjetivo.Enabled = False
+
+
+        For Each row As DataGridViewRow In dtgListarKPIs.SelectedRows
+
+            Dim kpi As KPI = TryCast(row.DataBoundItem, KPI)
+            If kpi IsNot Nothing Then
+                Dim kpiConsultado = KPIsController.consultarKPI(kpi.KPIID)
+                txtDescripcion.Text = kpiConsultado.DescKpi
+                txtObjetivo.Text = kpiConsultado.Objetivo
+                lstFormatoKPI.SelectedIndex = lstFormatoKPI.FindString(kpiConsultado.Formato)
+
+                For Each param As DetalleFormula In kpiConsultado.Formula
+                    If (param.TipoDato.Equals("campo")) Then
+                        txtFormula.Text += param.Tabla
+                        formula.Add(param.Tabla)
+                        variable.Add("campo")
+                    ElseIf (param.TipoDato.Equals("operador")) Then
+                        txtFormula.Text += param.DescCampoOperador
+                        formula.Add(param.DescCampoOperador)
+                        variable.Add("operador")
+                    ElseIf (param.TipoDato.Equals("valor")) Then
+                        txtFormula.Text += param.Valor.ToString
+                        formula.Add(param.Valor)
+                        variable.Add("valor")
+                    End If
+                    modificar = kpiConsultado.KPIID
+                Next
+
+                limiteSuperior = kpiConsultado.Parametro.LimiteSuperior
+                limiteInferior = kpiConsultado.Parametro.LimiteInferior
+                limiteDefinido = True
+
+            End If
 
         Next
 
+    End Sub
+
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        If (validarCampos()) Then
+            MessageBox.Show(KPIsController.modificarKPI(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+            actualizarListaKPIs()
+            btnCancelar.PerformClick()
+        End If
+    End Sub
+
+    Private Function validarCampos() As Boolean
+        Dim result = False
+
+        If (Not txtDescripcion.Text.Equals("") And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
+            If (Not variable(variable.Count - 1).Equals("operador")) Then
+                If (Not limiteDefinido) Then
+                    calcularLimite()
+                End If
+                result = True
+            Else
+                MessageBox.Show("Formula incompleta")
+            End If
+        Else
+            MessageBox.Show("Datos incompletos")
+        End If
+
+        Return result
+    End Function
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        btnGuardar.Visible = False
+        btnCancelar.Visible = False
+        btnModificar.Visible = True
+        btnRegistrar.Visible = True
+
+        txtDescripcion.Clear()
+        txtValor.Clear()
+        txtFormula.Clear()
+        txtObjetivo.Clear()
+        limiteDefinido = False
+
+        btnSumar.Visible = True
+        btnRestar.Visible = True
+        btnMultiplicar.Visible = True
+        btnDividir.Visible = True
+
+        txtValor.Visible = True
+        btnAgregarValor.Visible = True
+
+        lstCampo.Visible = True
+
+        txtObjetivo.Enabled = True
+    End Sub
+
+    Private Sub btnDeshabilitar_Click(sender As Object, e As EventArgs) Handles btnDeshabilitar.Click
+        For Each row As DataGridViewRow In dtgListarKPIs.SelectedRows
+
+            Dim kpi As KPI = TryCast(row.DataBoundItem, KPI)
+            If kpi IsNot Nothing Then
+                MessageBox.Show(KPIsController.deshabilitarKPI(kpi.KPIID))
+                actualizarListaKPIs()
+            End If
+        Next
     End Sub
 End Class

@@ -7,6 +7,8 @@
     Private _parametro As ParametroKPI
     Private _formula As List(Of DetalleFormula)
 
+    Private _estado As Boolean
+
     Public Sub New()
 
     End Sub
@@ -55,7 +57,6 @@
         End Set
     End Property
 
-
     Public Property Parametro As ParametroKPI
         Get
             Return _parametro
@@ -74,4 +75,12 @@
         End Set
     End Property
 
+    Public Property Estado As Boolean
+        Get
+            Return _estado
+        End Get
+        Set(value As Boolean)
+            _estado = value
+        End Set
+    End Property
 End Class
