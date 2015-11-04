@@ -4,7 +4,7 @@
 
     Shared Function crearUsuario() As Boolean
 
-        user = New Usuario()
+        user = Usuario.Instance()
         Return True
 
     End Function

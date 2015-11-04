@@ -91,8 +91,8 @@
         abrirVentana(xg)
     End Sub
 
-    Private Sub mnu_ImportarProspecto_Click(sender As Object, e As EventArgs) Handles mnu_ImportarProspecto.Click
-        Dim xy As New IniciarSesion()
+    Private Sub mnu_Roles_Click(sender As Object, e As EventArgs) Handles mnu_Roles.Click
+        Dim xy As New Roles()
         abrirVentana(xy)
     End Sub
 End Class

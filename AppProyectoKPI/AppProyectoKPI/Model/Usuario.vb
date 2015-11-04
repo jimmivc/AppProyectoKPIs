@@ -8,7 +8,9 @@
     Private _Contrasena As String
     Private _IsActivo As Boolean
 
-    Public Sub New()
+    Private Shared InstanciaUsuario As Usuario = Nothing
+
+    Private Sub New()
 
         _IdUsuario = 1
         _Cedula = 114680511
@@ -19,6 +21,16 @@
         _IsActivo = True
 
     End Sub
+
+    Public Shared ReadOnly Property Instance()
+        Get
+            If (InstanciaUsuario Is Nothing) Then
+                InstanciaUsuario = New Usuario()
+            End If
+
+            Return InstanciaUsuario
+        End Get
+    End Property
 
     Public Property Cedula As Integer
         Get

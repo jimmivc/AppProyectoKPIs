@@ -18,6 +18,7 @@
 
         If valid = True Then
             Principal.Show()
+            Me.Hide()
         End If
 
         Dim enc As New Encrypt(TextBoxPass.Text)
