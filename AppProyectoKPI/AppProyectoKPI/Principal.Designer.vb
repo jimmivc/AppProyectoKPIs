@@ -215,7 +215,7 @@ Partial Class Principal
         '
         Me.mnu_Usuarios.Image = CType(resources.GetObject("mnu_Usuarios.Image"), System.Drawing.Image)
         Me.mnu_Usuarios.Name = "mnu_Usuarios"
-        Me.mnu_Usuarios.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Usuarios.Size = New System.Drawing.Size(135, 26)
         Me.mnu_Usuarios.Text = "Usuarios"
         Me.mnu_Usuarios.Visible = False
         '
@@ -223,7 +223,7 @@ Partial Class Principal
         '
         Me.mnu_Roles.Image = CType(resources.GetObject("mnu_Roles.Image"), System.Drawing.Image)
         Me.mnu_Roles.Name = "mnu_Roles"
-        Me.mnu_Roles.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Roles.Size = New System.Drawing.Size(135, 26)
         Me.mnu_Roles.Text = "Roles"
         Me.mnu_Roles.Visible = False
         '
@@ -231,7 +231,7 @@ Partial Class Principal
         '
         Me.mnu_Permisos.Image = CType(resources.GetObject("mnu_Permisos.Image"), System.Drawing.Image)
         Me.mnu_Permisos.Name = "mnu_Permisos"
-        Me.mnu_Permisos.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Permisos.Size = New System.Drawing.Size(135, 26)
         Me.mnu_Permisos.Text = "Permisos"
         Me.mnu_Permisos.Visible = False
         '

@@ -90,4 +90,9 @@
         Dim xg As New Usuarios()
         abrirVentana(xg)
     End Sub
+
+    Private Sub mnu_ImportarProspecto_Click(sender As Object, e As EventArgs) Handles mnu_ImportarProspecto.Click
+        Dim xy As New IniciarSesion()
+        abrirVentana(xy)
+    End Sub
 End Class

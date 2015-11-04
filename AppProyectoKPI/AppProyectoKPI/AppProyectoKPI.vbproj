@@ -115,6 +115,7 @@
     <Compile Include="Model\Accion.vb" />
     <Compile Include="Model\AreaInteres.vb" />
     <Compile Include="Model\Contacto.vb" />
+    <Compile Include="Model\Encrypt.vb" />
     <Compile Include="Model\KPI.vb" />
     <Compile Include="Model\Permiso.vb" />
     <Compile Include="Model\Prospecto.vb" />
