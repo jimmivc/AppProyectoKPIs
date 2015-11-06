@@ -59,6 +59,7 @@ Partial Class GestionProspectos
         Me.pnlGestionProspectos = New System.Windows.Forms.Panel()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnAgregarContacto = New System.Windows.Forms.Button()
         Me.RegistroProspecto.SuspendLayout()
         Me.FormasContacto.SuspendLayout()
         CType(Me.dtg_FormasContacto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -380,10 +381,12 @@ Partial Class GestionProspectos
         'txtId
         '
         Me.txtId.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtId.Enabled = False
         Me.txtId.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.txtId.Location = New System.Drawing.Point(167, 44)
         Me.txtId.Name = "txtId"
+        Me.txtId.ReadOnly = True
         Me.txtId.Size = New System.Drawing.Size(182, 23)
         Me.txtId.TabIndex = 2
         '
@@ -436,11 +439,17 @@ Partial Class GestionProspectos
         '
         'dtg_FormasContacto
         '
+        Me.dtg_FormasContacto.AllowUserToAddRows = False
+        Me.dtg_FormasContacto.AllowUserToDeleteRows = False
+        Me.dtg_FormasContacto.AllowUserToOrderColumns = True
         Me.dtg_FormasContacto.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.dtg_FormasContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtg_FormasContacto.GridColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.dtg_FormasContacto.Location = New System.Drawing.Point(9, 24)
+        Me.dtg_FormasContacto.MultiSelect = False
         Me.dtg_FormasContacto.Name = "dtg_FormasContacto"
+        Me.dtg_FormasContacto.ReadOnly = True
+        Me.dtg_FormasContacto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtg_FormasContacto.Size = New System.Drawing.Size(341, 128)
         Me.dtg_FormasContacto.TabIndex = 0
         '
@@ -481,12 +490,28 @@ Partial Class GestionProspectos
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
+        'btnAgregarContacto
+        '
+        Me.btnAgregarContacto.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnAgregarContacto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnAgregarContacto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnAgregarContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarContacto.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
+        Me.btnAgregarContacto.ForeColor = System.Drawing.Color.Silver
+        Me.btnAgregarContacto.Location = New System.Drawing.Point(371, 435)
+        Me.btnAgregarContacto.Name = "btnAgregarContacto"
+        Me.btnAgregarContacto.Size = New System.Drawing.Size(73, 27)
+        Me.btnAgregarContacto.TabIndex = 5
+        Me.btnAgregarContacto.Text = "Agregar"
+        Me.btnAgregarContacto.UseVisualStyleBackColor = False
+        '
         'GestionProspectos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1144, 571)
+        Me.Controls.Add(Me.btnAgregarContacto)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnRegistrar)
         Me.Controls.Add(Me.pnlGestionProspectos)
@@ -545,4 +570,5 @@ Partial Class GestionProspectos
     Friend WithEvents cbxIsTrabajando As ComboBox
     Friend WithEvents btnRegistrar As Button
     Friend WithEvents btnNuevo As Button
+    Friend WithEvents btnAgregarContacto As Button
 End Class

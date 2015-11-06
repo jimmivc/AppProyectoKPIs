@@ -29,10 +29,12 @@ Partial Class ListarProspectos
         '
         'dtgListaProspectos
         '
+        Me.dtgListaProspectos.AllowUserToAddRows = False
+        Me.dtgListaProspectos.AllowUserToDeleteRows = False
         Me.dtgListaProspectos.AllowUserToOrderColumns = True
         Me.dtgListaProspectos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.dtgListaProspectos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dtgListaProspectos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dtgListaProspectos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dtgListaProspectos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray
@@ -49,6 +51,7 @@ Partial Class ListarProspectos
         Me.dtgListaProspectos.ReadOnly = True
         Me.dtgListaProspectos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtgListaProspectos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtgListaProspectos.ShowEditingIcon = False
         Me.dtgListaProspectos.Size = New System.Drawing.Size(586, 382)
         Me.dtgListaProspectos.TabIndex = 0
         '

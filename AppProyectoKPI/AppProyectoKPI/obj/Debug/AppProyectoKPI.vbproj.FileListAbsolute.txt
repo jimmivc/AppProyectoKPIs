@@ -49,3 +49,4 @@ C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\Re
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.AgregarContacto.resources

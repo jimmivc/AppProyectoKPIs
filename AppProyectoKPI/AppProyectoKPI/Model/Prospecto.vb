@@ -21,6 +21,31 @@ Public Class Prospecto
     Private _evento As Evento
     Private _formasContacto As List(Of FormasContacto)
 
+    Sub New()
+
+    End Sub
+    Sub New(ByVal id As Integer, ByVal identificacion As Integer, ByVal aliass As String, ByVal nombre As String, ByVal apellidos As String,
+                                       ByVal edad As Integer, ByVal fechaNac As DateTime, ByVal anioBachillerato As Integer, ByVal evento As Evento,
+                                       ByVal isTrabajando As Boolean, ByVal isPromociones As Boolean, ByVal lugarEstudio As String, ByVal lugarTrabajo As String,
+                                       ByVal isHabilitado As String)
+        Me.ProspectoID = id
+        Me.Identificacion = identificacion
+        Me.Alias = aliass
+        Me.Nombre = nombre
+        Me.Apellidos = apellidos
+        Me.Edad = edad
+        Me.FechaNac = fechaNac
+        Me.AnioBachillerato = anioBachillerato
+        Me.Evento = evento
+        Me.IsTrabajando = isTrabajando
+        Me.IsInscritoPromociones = isPromociones
+        Me.LugarEstudioAnterior = lugarEstudio
+        Me.LugarTrabajo = lugarTrabajo
+        Me.IsHabilitado = isHabilitado
+        Me.FechaIngresoBase = DateTime.Now
+
+
+    End Sub
     Public Property ProspectoID As Integer
         Get
             Return _prospectoID

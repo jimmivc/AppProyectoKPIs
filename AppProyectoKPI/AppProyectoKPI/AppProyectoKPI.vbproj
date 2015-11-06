@@ -88,6 +88,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarContacto.Designer.vb">
+      <DependentUpon>AgregarContacto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarContacto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AsignacionKPIs.Designer.vb">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
     </Compile>
@@ -99,6 +105,7 @@
     <Compile Include="BL\EventoBL.vb" />
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
+    <Compile Include="BL\Validaciones.vb" />
     <Compile Include="CreacionKPIs.Designer.vb">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </Compile>
@@ -156,6 +163,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AgregarContacto.resx">
+      <DependentUpon>AgregarContacto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsignacionKPIs.resx">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
     </EmbeddedResource>

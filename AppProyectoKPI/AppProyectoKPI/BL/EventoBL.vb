@@ -28,6 +28,25 @@ Public Class EventoBL
         End Try
     End Function
 
+    Shared Function ObtenerEventoXId(ByVal id As Integer) As Evento
+        ' MsgBox("entro a obtener")
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Eventoes/{id}", Method.GET)
+
+        request.AddUrlSegment("id", id)
+        Try
+            'Execute 
+            Dim response = client.Execute(Of Evento)(request)
+            Dim evento As Evento = JsonConvert.DeserializeObject(Of Evento)(response.Content)
+            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                Return evento
+                'MsgBox(response.Data.ToString)
+            End If
+        Catch ex As Exception
+            MsgBox("Error" + "  " + ex.Message)
+        End Try
+    End Function
+
     Shared Function getEvento() As Evento
         Return evento
     End Function

@@ -29,42 +29,78 @@ Public Class ProspectoBL
         End Try
     End Function
 
-    Shared Function RegistrarProspecto(ByVal identificacion As Integer, ByVal aliass As String, ByVal nombre As String, ByVal apellidos As String,
-                                       ByVal edad As Integer, ByVal fechaNac As DateTime, ByVal anioBachillerato As Integer, ByVal evento As Integer,
-                                       ByVal isTrabajando As Boolean, ByVal isPromociones As Boolean, ByVal lugarEstudio As String, ByVal lugarTrabajo As String,
-                                       ByVal isHabilitado As Boolean, ByVal usuario As Integer) As Boolean
-        ' MsgBox("entro a obtener")
+    Shared Function IsProspecto(ByVal id As Integer) As Boolean
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("Prospectoes", Method.POST)
-
+        Dim request = New RestRequest("Prospectoes/is/{id}", Method.GET)
         'Cargar url parameters
-        request.AddUrlSegment("ProspectoId", 1)
-        request.AddUrlSegment("Identificacion", identificacion)
-        request.AddUrlSegment("Alias", aliass)
-        request.AddUrlSegment("Nombre", nombre)
-        request.AddUrlSegment("Apellidos", apellidos)
-        request.AddUrlSegment("Edad", edad)
-        request.AddUrlSegment("FechaNac", fechaNac)
-        request.AddUrlSegment("AnioBachillerato", anioBachillerato)
-        request.AddUrlSegment("FechaIngresoBase", DateTime.Now)
-        request.AddUrlSegment("IsTrabajando", isTrabajando)
-        request.AddUrlSegment("IsInscritoPromociones", isPromociones)
-        request.AddUrlSegment("LugarEstudioAnterior", lugarEstudio)
-        request.AddUrlSegment("LugarTrabajo", lugarTrabajo)
-        request.AddUrlSegment("IsHabilitado", isHabilitado)
-
-
+        request.AddUrlSegment("id", id)
         Try
             'Execute 
-            Dim response = client.Execute(Of Prospecto)(request)
+            request.RequestFormat = DataFormat.Json
+            Dim response = client.Execute(request)
+            Dim prospecto As Prospecto = JsonConvert.DeserializeObject(Of Prospecto)(response.Content)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+
                 Return True
             Else
                 Return False
             End If
         Catch ex As Exception
-            MsgBox("ErrorRaro" + "  " + ex.Message)
+            MsgBox("Error" + "  " + ex.Message)
+            Return False
         End Try
+    End Function
+
+
+    Shared Function RegistrarProspecto(ByVal id As Integer, ByVal identificacion As Integer, ByVal aliass As String, ByVal nombre As String, ByVal apellidos As String,
+                                       ByVal edad As Integer, ByVal fechaNac As DateTime, ByVal anioBachillerato As Integer, ByVal evento As Evento,
+                                       ByVal isTrabajando As Boolean, ByVal isPromociones As Boolean, ByVal lugarEstudio As String, ByVal lugarTrabajo As String,
+                                       ByVal isHabilitado As String) As Boolean
+
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+
+        If (IsProspecto(id)) Then
+
+            Dim request = New RestRequest("Prospectoes/{id}", Method.PUT)
+            request.RequestFormat = DataFormat.Json
+            'Cargar url parameters
+
+
+            request.AddUrlSegment("id", id)
+            request.AddBody(New Prospecto(id, identificacion, aliass, nombre, apellidos, edad, fechaNac, anioBachillerato, evento, isTrabajando,
+                                          isPromociones, lugarEstudio, lugarTrabajo, isHabilitado))
+
+            Try
+                'Execute 
+                Dim response = client.Execute(request)
+                If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                    Return True
+                Else
+                    Return True
+                End If
+            Catch ex As Exception
+                MsgBox("Error:" + "  " + ex.Message)
+                Return False
+            End Try
+        Else
+            Dim request = New RestRequest("Prospectoes", Method.POST)
+            request.RequestFormat = DataFormat.Json
+            'Cargar url parameters
+            request.AddBody(New Prospecto(id, identificacion, aliass, nombre, apellidos, edad, fechaNac, anioBachillerato, evento, isTrabajando,
+                                          isPromociones, lugarEstudio, lugarTrabajo, isHabilitado))
+            Try
+                'Execute 
+                Dim response = client.Execute(Of Prospecto)(request)
+                If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                    Return True
+                Else
+                    Return False
+                End If
+            Catch ex As Exception
+                MsgBox("Error:" + "  " + ex.Message)
+                Return False
+            End Try
+        End If
     End Function
 
     Shared Function getProspecto() As Prospecto

@@ -12,8 +12,9 @@
         Try
             With dtg
                 .BorderStyle = BorderStyle.Fixed3D
-                .RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised
+                .RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
                 .RowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240)
+                .CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
                 .AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(215, 215, 215)
                 .EnableHeadersVisualStyles = False
                 .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 210, 245)
