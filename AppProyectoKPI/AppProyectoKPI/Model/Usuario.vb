@@ -1,24 +1,24 @@
 ﻿Public Class Usuario
 
-    Private _IdUsuario As Integer
-    Private _Cedula As Integer
-    Private _Nombre As String
-    Private _Apellidos As String
-    Private _Correo As String
-    Private _Contrasena As String
-    Private _IsActivo As Boolean
+    Private _idUsuario As Integer
+    Private _cedula As Integer
+    Private _nombre As String
+    Private _apellidos As String
+    Private _correo As String
+    Private _contrasena As String
+    Private _isActivo As Boolean
 
     Private Shared InstanciaUsuario As Usuario = Nothing
 
     Private Sub New()
 
-        _IdUsuario = 1
-        _Cedula = 114680511
-        _Nombre = "Hernan"
-        _Apellidos = "Saenz Piedra"
-        _Correo = "admin@innova.com"
-        _Contrasena = "1234"
-        _IsActivo = True
+        IdUsuario = 1
+        Cedula = 114680511
+        Nombre = "Hernan"
+        Apellidos = "Saenz Piedra"
+        Correo = "admin@innova.com"
+        Contrasena = "1234"
+        IsActivo = True
 
     End Sub
 
@@ -32,72 +32,72 @@
         End Get
     End Property
 
-    Public Property Cedula As Integer
-        Get
-            Return _IdUsuario
-        End Get
-        Set(value As Integer)
-            _IdUsuario = value
-        End Set
-    End Property
-
     Public Property IdUsuario As Integer
         Get
-            Return _IdUsuario
+            Return _idUsuario
         End Get
         Set(value As Integer)
-            _IdUsuario = value
+            _idUsuario = value
         End Set
     End Property
 
-    Public Property Nombre As Integer
+    Public Property Cedula As Integer
         Get
-            Return _Nombre
+            Return _cedula
         End Get
         Set(value As Integer)
-            _Nombre = value
+            _cedula = value
         End Set
     End Property
 
-    Public Property Apellidos As Integer
+    Public Property Nombre As String
         Get
-            Return _Apellidos
+            Return _nombre
         End Get
-        Set(value As Integer)
-            _Apellidos = value
+        Set(value As String)
+            _nombre = value
         End Set
     End Property
 
-    Public Property Correo As Integer
+    Public Property Apellidos As String
         Get
-            Return _Correo
+            Return _apellidos
         End Get
-        Set(value As Integer)
-            _Correo = value
+        Set(value As String)
+            _apellidos = value
         End Set
     End Property
 
-    Public Property Contrasena As Integer
+    Public Property Correo As String
         Get
-            Return _Contrasena
+            Return _correo
         End Get
-        Set(value As Integer)
-            _Contrasena = value
+        Set(value As String)
+            _correo = value
         End Set
     End Property
 
-    Public Property IsActivo As Integer
+    Public Property Contrasena As String
         Get
-            Return _IsActivo
+            Return _contrasena
         End Get
-        Set(value As Integer)
-            _IsActivo = value
+        Set(value As String)
+            _contrasena = value
+        End Set
+    End Property
+
+    Public Property IsActivo As Boolean
+        Get
+            Return _isActivo
+        End Get
+        Set(value As Boolean)
+            _isActivo = value
         End Set
     End Property
 
     Public Sub CambiarEstado(x As Boolean)
         If x = True Then
-            _IsActivo = True
+            IsActivo = True
         Else
             IsActivo = False
         End If

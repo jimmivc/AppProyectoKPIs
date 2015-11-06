@@ -39,14 +39,15 @@ Partial Class Usuarios
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Contrasena = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rol = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Deshabilitado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Rol = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Deshabilitado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -210,10 +211,10 @@ Partial Class Usuarios
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellidos, Me.Identificacion, Me.Correo, Me.Contrasena, Me.Rol, Me.Deshabilitado})
-        Me.DataGridView1.Location = New System.Drawing.Point(363, 61)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificacion, Me.Nombre, Me.Apellidos, Me.Correo, Me.Contrasena, Me.Rol, Me.Deshabilitado, Me.Modificar})
+        Me.DataGridView1.Location = New System.Drawing.Point(344, 61)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(745, 451)
+        Me.DataGridView1.Size = New System.Drawing.Size(788, 451)
         Me.DataGridView1.TabIndex = 23
         '
         'Label2
@@ -221,11 +222,33 @@ Partial Class Usuarios
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(359, 18)
+        Me.Label2.Location = New System.Drawing.Point(340, 18)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(187, 26)
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Listado de Usuarios"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.Button1.ForeColor = System.Drawing.Color.Silver
+        Me.Button1.Location = New System.Drawing.Point(344, 529)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(200, 26)
+        Me.Button1.TabIndex = 25
+        Me.Button1.Text = "Guardar Cambios"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Identificacion
+        '
+        Me.Identificacion.HeaderText = "ID"
+        Me.Identificacion.Name = "Identificacion"
+        Me.Identificacion.Width = 70
         '
         'Nombre
         '
@@ -236,11 +259,6 @@ Partial Class Usuarios
         '
         Me.Apellidos.HeaderText = "Apellidos"
         Me.Apellidos.Name = "Apellidos"
-        '
-        'Identificacion
-        '
-        Me.Identificacion.HeaderText = "ID"
-        Me.Identificacion.Name = "Identificacion"
         '
         'Correo
         '
@@ -257,28 +275,22 @@ Partial Class Usuarios
         Me.Rol.HeaderText = "Rol"
         Me.Rol.Name = "Rol"
         Me.Rol.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Rol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'Deshabilitado
         '
         Me.Deshabilitado.HeaderText = "Deshabilitado"
         Me.Deshabilitado.Name = "Deshabilitado"
+        Me.Deshabilitado.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Deshabilitado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'Button1
+        'Modificar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
-        Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(363, 529)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 26)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Guardar Cambios"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Modificar.HeaderText = "Modificar"
+        Me.Modificar.Name = "Modificar"
+        Me.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Modificar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Modificar.Text = "X"
+        Me.Modificar.Width = 75
         '
         'Usuarios
         '
@@ -327,12 +339,13 @@ Partial Class Usuarios
     Friend WithEvents btnRegistrar As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Identificacion As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Apellidos As DataGridViewTextBoxColumn
-    Friend WithEvents Identificacion As DataGridViewTextBoxColumn
     Friend WithEvents Correo As DataGridViewTextBoxColumn
     Friend WithEvents Contrasena As DataGridViewTextBoxColumn
-    Friend WithEvents Rol As DataGridViewComboBoxColumn
-    Friend WithEvents Deshabilitado As DataGridViewCheckBoxColumn
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Rol As DataGridViewTextBoxColumn
+    Friend WithEvents Deshabilitado As DataGridViewTextBoxColumn
+    Friend WithEvents Modificar As DataGridViewButtonColumn
 End Class

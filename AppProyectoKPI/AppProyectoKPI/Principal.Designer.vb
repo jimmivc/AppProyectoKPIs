@@ -58,7 +58,7 @@ Partial Class Principal
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.MenuStrip1.Size = New System.Drawing.Size(872, 26)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 26)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -133,7 +133,7 @@ Partial Class Principal
         Me.mnu_Eventos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_Eventos.Image = CType(resources.GetObject("mnu_Eventos.Image"), System.Drawing.Image)
         Me.mnu_Eventos.Name = "mnu_Eventos"
-        Me.mnu_Eventos.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Eventos.Size = New System.Drawing.Size(138, 26)
         Me.mnu_Eventos.Text = "Eventos"
         Me.mnu_Eventos.Visible = False
         '
@@ -143,7 +143,7 @@ Partial Class Principal
         Me.mnu_Entidades.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_Entidades.Image = CType(resources.GetObject("mnu_Entidades.Image"), System.Drawing.Image)
         Me.mnu_Entidades.Name = "mnu_Entidades"
-        Me.mnu_Entidades.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Entidades.Size = New System.Drawing.Size(138, 26)
         Me.mnu_Entidades.Text = "Entidades"
         Me.mnu_Entidades.Visible = False
         '
@@ -153,7 +153,7 @@ Partial Class Principal
         Me.mnu_Kpis.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_Kpis.Image = CType(resources.GetObject("mnu_Kpis.Image"), System.Drawing.Image)
         Me.mnu_Kpis.Name = "mnu_Kpis"
-        Me.mnu_Kpis.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Kpis.Size = New System.Drawing.Size(138, 26)
         Me.mnu_Kpis.Text = "Kpis"
         Me.mnu_Kpis.Visible = False
         '
@@ -215,7 +215,7 @@ Partial Class Principal
         '
         Me.mnu_Usuarios.Image = CType(resources.GetObject("mnu_Usuarios.Image"), System.Drawing.Image)
         Me.mnu_Usuarios.Name = "mnu_Usuarios"
-        Me.mnu_Usuarios.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Usuarios.Size = New System.Drawing.Size(135, 26)
         Me.mnu_Usuarios.Text = "Usuarios"
         Me.mnu_Usuarios.Visible = False
         '
@@ -223,7 +223,7 @@ Partial Class Principal
         '
         Me.mnu_Roles.Image = CType(resources.GetObject("mnu_Roles.Image"), System.Drawing.Image)
         Me.mnu_Roles.Name = "mnu_Roles"
-        Me.mnu_Roles.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Roles.Size = New System.Drawing.Size(135, 26)
         Me.mnu_Roles.Text = "Roles"
         Me.mnu_Roles.Visible = False
         '
@@ -231,7 +231,7 @@ Partial Class Principal
         '
         Me.mnu_Permisos.Image = CType(resources.GetObject("mnu_Permisos.Image"), System.Drawing.Image)
         Me.mnu_Permisos.Name = "mnu_Permisos"
-        Me.mnu_Permisos.Size = New System.Drawing.Size(156, 26)
+        Me.mnu_Permisos.Size = New System.Drawing.Size(135, 26)
         Me.mnu_Permisos.Text = "Permisos"
         Me.mnu_Permisos.Visible = False
         '
@@ -247,7 +247,7 @@ Partial Class Principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(872, 514)
+        Me.ClientSize = New System.Drawing.Size(1164, 642)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True

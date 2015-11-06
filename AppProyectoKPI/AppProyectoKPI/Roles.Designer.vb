@@ -30,6 +30,9 @@ Partial Class Roles
         Me.lblPermiso = New System.Windows.Forms.Label()
         Me.ComboBxPermisos = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,9 +41,6 @@ Partial Class Roles
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -123,6 +123,22 @@ Partial Class Roles
         Me.DataGridView1.Size = New System.Drawing.Size(447, 355)
         Me.DataGridView1.TabIndex = 23
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Descripción"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 200
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Ver Permisos"
+        Me.Column3.Name = "Column3"
+        '
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.Transparent
@@ -191,22 +207,6 @@ Partial Class Roles
         Me.Column7.HeaderText = "Seleccionar"
         Me.Column7.Name = "Column7"
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Descripción"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 200
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Ver Permisos"
-        Me.Column3.Name = "Column3"
-        '
         'Roles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -224,6 +224,8 @@ Partial Class Roles
         Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.lblDesc)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximumSize = New System.Drawing.Size(1160, 610)
+        Me.MinimumSize = New System.Drawing.Size(1160, 610)
         Me.Name = "Roles"
         Me.Text = "Roles"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

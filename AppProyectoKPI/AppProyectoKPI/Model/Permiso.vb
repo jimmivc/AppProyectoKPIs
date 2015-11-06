@@ -1,34 +1,35 @@
-﻿Public Class Permiso
+﻿Imports AppProyectoKPI
 
-    Private _IdPermiso As Integer
-    Private _Descripcion As String
-    Private _Accion As Accion()
+Public Class Permiso
+
+    Private _idPermiso As Integer
+    Private _descripcion As String
+    Private _accion As String()
 
     Public Property IdPermiso As Integer
         Get
-            Return _IdPermiso
+            Return _idPermiso
         End Get
         Set(value As Integer)
-            _IdPermiso = value
+            _idPermiso = value
         End Set
     End Property
 
     Public Property Descripcion As String
         Get
-            Return _Descripcion
+            Return _descripcion
         End Get
         Set(value As String)
-            _Descripcion = value
+            _descripcion = value
         End Set
     End Property
 
     Public Property Accion As Accion()
         Get
-            Return _Accion
+            Return _accion
         End Get
         Set(value As Accion())
-            _Accion = value
+            _accion = value
         End Set
     End Property
-
 End Class

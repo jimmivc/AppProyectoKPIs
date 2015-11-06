@@ -112,7 +112,6 @@
     <Compile Include="GestionProspectos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model\Accion.vb" />
     <Compile Include="Model\AreaInteres.vb" />
     <Compile Include="Model\Contacto.vb" />
     <Compile Include="Model\Encrypt.vb" />
