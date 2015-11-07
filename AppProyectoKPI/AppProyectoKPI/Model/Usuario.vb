@@ -1,6 +1,6 @@
 ﻿Public Class Usuario
 
-    Private _idUsuario As Integer
+    Private _usuarioID As Integer
     Private _cedula As Integer
     Private _nombre As String
     Private _apellidos As String
@@ -8,36 +8,30 @@
     Private _contrasena As String
     Private _isActivo As Boolean
 
-    Private Shared InstanciaUsuario As Usuario = Nothing
+    Private _rol As Rol
+
+    'Private Shared InstanciaUsuario As Usuario = Nothing
 
     Private Sub New()
 
-        IdUsuario = 1
-        Cedula = 114680511
-        Nombre = "Hernan"
-        Apellidos = "Saenz Piedra"
-        Correo = "admin@innova.com"
-        Contrasena = "1234"
-        IsActivo = True
-
     End Sub
 
-    Public Shared ReadOnly Property Instance()
-        Get
-            If (InstanciaUsuario Is Nothing) Then
-                InstanciaUsuario = New Usuario()
-            End If
+    'Public Shared ReadOnly Property Instance()
+    '    Get
+    '        If (InstanciaUsuario Is Nothing) Then
+    '            InstanciaUsuario = New Usuario()
+    '        End If
 
-            Return InstanciaUsuario
-        End Get
-    End Property
+    '        Return InstanciaUsuario
+    '    End Get
+    'End Property
 
-    Public Property IdUsuario As Integer
+    Public Property UsuarioID As Integer
         Get
-            Return _idUsuario
+            Return _usuarioID
         End Get
         Set(value As Integer)
-            _idUsuario = value
+            _usuarioID = value
         End Set
     End Property
 
@@ -102,5 +96,14 @@
             IsActivo = False
         End If
     End Sub
+
+    Public Property Rol As Rol
+        Get
+            Return _rol
+        End Get
+        Set(value As Rol)
+            _rol = value
+        End Set
+    End Property
 
 End Class

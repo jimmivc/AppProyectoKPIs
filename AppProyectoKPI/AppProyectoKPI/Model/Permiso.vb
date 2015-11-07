@@ -6,6 +6,10 @@ Public Class Permiso
     Private _descripcion As String
     Private _accion As String
 
+    Private Sub New()
+
+    End Sub
+
     Public Property IdPermiso As Integer
         Get
             Return _idPermiso

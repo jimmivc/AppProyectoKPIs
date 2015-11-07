@@ -6,6 +6,10 @@ Public Class Rol
     Private _descripcion As String
     Private _permisos As List(Of Permiso)
 
+    Private Sub New()
+
+    End Sub
+
     Public Property IdRol As Integer
         Get
             Return _idRol

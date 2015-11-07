@@ -2,12 +2,12 @@
 
     Private Shared user As Usuario
 
-    Shared Function crearUsuario() As Boolean
+    'Shared Function crearUsuario() As Boolean
 
-        user = Usuario.Instance()
-        Return True
+    '    user = Usuario
+    '    Return True
 
-    End Function
+    'End Function
 
     Shared Function getUser() As Usuario
 

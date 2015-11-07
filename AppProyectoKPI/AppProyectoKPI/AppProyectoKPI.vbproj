@@ -94,6 +94,7 @@
     <Compile Include="BL\ContactoController.vb" />
     <Compile Include="BL\loginController.vb" />
     <Compile Include="BL\KPIsController.vb" />
+    <Compile Include="BL\UsuariosBL.vb" />
     <Compile Include="CreacionKPIs.Designer.vb">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </Compile>
@@ -200,6 +201,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Usuario.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

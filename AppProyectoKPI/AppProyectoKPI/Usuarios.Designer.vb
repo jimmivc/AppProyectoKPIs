@@ -22,6 +22,7 @@ Partial Class Usuarios
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Usuarios))
         Me.CombBxRol = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -37,18 +38,19 @@ Partial Class Usuarios
         Me.txtBxCorreo = New System.Windows.Forms.TextBox()
         Me.txtBxID = New System.Windows.Forms.TextBox()
         Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dtgUsuarios = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Contrasena = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rol = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Deshabilitado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApellidosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CorreoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContrasenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IsActivoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CombBxRol
@@ -208,14 +210,16 @@ Partial Class Usuarios
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'dtgUsuarios
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificacion, Me.Nombre, Me.Apellidos, Me.Correo, Me.Contrasena, Me.Rol, Me.Deshabilitado, Me.Modificar})
-        Me.DataGridView1.Location = New System.Drawing.Point(344, 61)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(788, 451)
-        Me.DataGridView1.TabIndex = 23
+        Me.dtgUsuarios.AutoGenerateColumns = False
+        Me.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidosDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn, Me.ContrasenaDataGridViewTextBoxColumn, Me.IsActivoDataGridViewCheckBoxColumn})
+        Me.dtgUsuarios.DataSource = Me.UsuarioBindingSource
+        Me.dtgUsuarios.Location = New System.Drawing.Point(344, 61)
+        Me.dtgUsuarios.Name = "dtgUsuarios"
+        Me.dtgUsuarios.Size = New System.Drawing.Size(788, 451)
+        Me.dtgUsuarios.TabIndex = 23
         '
         'Label2
         '
@@ -241,56 +245,54 @@ Partial Class Usuarios
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(200, 26)
         Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Guardar Cambios"
+        Me.Button1.Text = "Editar"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Identificacion
+        'UsuarioBindingSource
         '
-        Me.Identificacion.HeaderText = "ID"
-        Me.Identificacion.Name = "Identificacion"
-        Me.Identificacion.Width = 70
+        Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
         '
-        'Nombre
+        'IdUsuarioDataGridViewTextBoxColumn
         '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
+        Me.IdUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario"
+        Me.IdUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario"
+        Me.IdUsuarioDataGridViewTextBoxColumn.Name = "IdUsuarioDataGridViewTextBoxColumn"
         '
-        'Apellidos
+        'CedulaDataGridViewTextBoxColumn
         '
-        Me.Apellidos.HeaderText = "Apellidos"
-        Me.Apellidos.Name = "Apellidos"
+        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula"
+        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "Cedula"
+        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
         '
-        'Correo
+        'NombreDataGridViewTextBoxColumn
         '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
         '
-        'Contrasena
+        'ApellidosDataGridViewTextBoxColumn
         '
-        Me.Contrasena.HeaderText = "Contraseña"
-        Me.Contrasena.Name = "Contrasena"
+        Me.ApellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos"
+        Me.ApellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos"
+        Me.ApellidosDataGridViewTextBoxColumn.Name = "ApellidosDataGridViewTextBoxColumn"
         '
-        'Rol
+        'CorreoDataGridViewTextBoxColumn
         '
-        Me.Rol.HeaderText = "Rol"
-        Me.Rol.Name = "Rol"
-        Me.Rol.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CorreoDataGridViewTextBoxColumn.DataPropertyName = "Correo"
+        Me.CorreoDataGridViewTextBoxColumn.HeaderText = "Correo"
+        Me.CorreoDataGridViewTextBoxColumn.Name = "CorreoDataGridViewTextBoxColumn"
         '
-        'Deshabilitado
+        'ContrasenaDataGridViewTextBoxColumn
         '
-        Me.Deshabilitado.HeaderText = "Deshabilitado"
-        Me.Deshabilitado.Name = "Deshabilitado"
-        Me.Deshabilitado.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Deshabilitado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.ContrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena"
+        Me.ContrasenaDataGridViewTextBoxColumn.HeaderText = "Contrasena"
+        Me.ContrasenaDataGridViewTextBoxColumn.Name = "ContrasenaDataGridViewTextBoxColumn"
         '
-        'Modificar
+        'IsActivoDataGridViewCheckBoxColumn
         '
-        Me.Modificar.HeaderText = "Modificar"
-        Me.Modificar.Name = "Modificar"
-        Me.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Modificar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Modificar.Text = "X"
-        Me.Modificar.Width = 75
+        Me.IsActivoDataGridViewCheckBoxColumn.DataPropertyName = "IsActivo"
+        Me.IsActivoDataGridViewCheckBoxColumn.HeaderText = "IsActivo"
+        Me.IsActivoDataGridViewCheckBoxColumn.Name = "IsActivoDataGridViewCheckBoxColumn"
         '
         'Usuarios
         '
@@ -299,7 +301,7 @@ Partial Class Usuarios
         Me.ClientSize = New System.Drawing.Size(1144, 572)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dtgUsuarios)
         Me.Controls.Add(Me.btnRegistrar)
         Me.Controls.Add(Me.txtBxID)
         Me.Controls.Add(Me.txtBxCorreo)
@@ -317,7 +319,8 @@ Partial Class Usuarios
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Usuarios"
         Me.Text = "Usuarios"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -337,15 +340,15 @@ Partial Class Usuarios
     Friend WithEvents txtBxCorreo As TextBox
     Friend WithEvents txtBxID As TextBox
     Friend WithEvents btnRegistrar As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtgUsuarios As DataGridView
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents Identificacion As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Apellidos As DataGridViewTextBoxColumn
-    Friend WithEvents Correo As DataGridViewTextBoxColumn
-    Friend WithEvents Contrasena As DataGridViewTextBoxColumn
-    Friend WithEvents Rol As DataGridViewTextBoxColumn
-    Friend WithEvents Deshabilitado As DataGridViewTextBoxColumn
-    Friend WithEvents Modificar As DataGridViewButtonColumn
+    Friend WithEvents UsuarioBindingSource As BindingSource
+    Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ApellidosDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CorreoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ContrasenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IsActivoDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
 End Class

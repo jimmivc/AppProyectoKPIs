@@ -1,10 +1,20 @@
 ﻿Public Class Usuarios
-    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        If txtBxNombre Is Nothing Or txtBxApellidos Is Nothing Or txtBxID Is Nothing Or txtBxCorreo Is
-            Nothing Or txtBxContrasena Is Nothing Or CombBxRol Is Nothing Then
 
-            MessageBox.Show("Por favor rellene todos los campos requeridos")
+    Sub New()
 
-        End If
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        actualizarListaUsuarios()
+
     End Sub
+
+    Private Sub actualizarListaUsuarios()
+        Dim bs As BindingSource = New BindingSource()
+        bs.DataSource = UsuariosBL.listarUsuarios()
+        dtgUsuarios.DataSource = bs
+        bs.ResetBindings(False)
+    End Sub
+
 End Class
