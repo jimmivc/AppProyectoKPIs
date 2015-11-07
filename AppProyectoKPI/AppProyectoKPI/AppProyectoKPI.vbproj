@@ -47,11 +47,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PracticaExamen">
-      <HintPath>..\..\..\..\Visual Studio 2013\Projects\PracticaExamen\PracticaExamen\bin\Debug\PracticaExamen.dll</HintPath>
-    </Reference>
-    <Reference Include="PrimerControlWindows">
-      <HintPath>..\..\..\..\Visual Studio 2013\Projects\PrimerControlWindows\PrimerControlWindows\bin\Debug\PrimerControlWindows.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
