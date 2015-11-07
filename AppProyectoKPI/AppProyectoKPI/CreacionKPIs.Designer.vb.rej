@@ -1,0 +1,8 @@
+diff a/AppProyectoKPI/AppProyectoKPI/CreacionKPIs.Designer.vb b/AppProyectoKPI/AppProyectoKPI/CreacionKPIs.Designer.vb	(rejected hunks)
+@@ -1,5 +1,5 @@
+ ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+-Partial Class CreacionKPIs
++Partial Class ConsultarKPI
+     Inherits System.Windows.Forms.Form
+ 
+     'Form reemplaza a Dispose para limpiar la lista de componentes.

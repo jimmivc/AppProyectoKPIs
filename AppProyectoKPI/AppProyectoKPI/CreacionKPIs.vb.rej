@@ -1,0 +1,15 @@
+diff a/AppProyectoKPI/AppProyectoKPI/CreacionKPIs.vb b/AppProyectoKPI/AppProyectoKPI/CreacionKPIs.vb	(rejected hunks)
+@@ -1,10 +0,12 @@
+-﻿Public Class CreacionKPIs
++﻿Public Class ConsultarKPI
+ 
+     Dim formula As List(Of String) = New List(Of String)
+     Dim variable As List(Of String) = New List(Of String)
+     Dim operador As Boolean = False
+     Dim detalle As Boolean = True
+     Dim limiteDefinido As Boolean = False
++    Dim limiteSuperior As Integer
++    Dim limiteInferior As Integer
+ 
+     Sub New()
+ 
