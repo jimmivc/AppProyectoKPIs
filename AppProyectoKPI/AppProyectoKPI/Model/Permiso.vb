@@ -4,7 +4,7 @@ Public Class Permiso
 
     Private _idPermiso As Integer
     Private _descripcion As String
-    Private _accion As String()
+    Private _accion As String
 
     Public Property IdPermiso As Integer
         Get
@@ -24,11 +24,11 @@ Public Class Permiso
         End Set
     End Property
 
-    Public Property Accion As Accion()
+    Public Property Accion As String
         Get
             Return _accion
         End Get
-        Set(value As Accion())
+        Set(value As String)
             _accion = value
         End Set
     End Property
