@@ -134,6 +134,7 @@
         If (validarCampos()) Then
             MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
             actualizarListaKPIs()
+            btnCancelar.PerformClick()
         End If
 
     End Sub
@@ -214,7 +215,9 @@
 
         lstCampo.Visible = False
         txtObjetivo.Enabled = False
+        btnBorrar.Visible = False
 
+        btnConfigurar.Enabled = False
 
         For Each row As DataGridViewRow In dtgListarKPIs.SelectedRows
 
@@ -296,6 +299,8 @@
         btnRestar.Visible = True
         btnMultiplicar.Visible = True
         btnDividir.Visible = True
+        btnBorrar.Visible = True
+        btnConfigurar.Enabled = True
 
         txtValor.Visible = True
         btnAgregarValor.Visible = True
@@ -314,5 +319,6 @@
                 actualizarListaKPIs()
             End If
         Next
+        btnCancelar.PerformClick()
     End Sub
 End Class

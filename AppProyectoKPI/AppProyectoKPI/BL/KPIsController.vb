@@ -83,19 +83,19 @@ Public Class KPIsController
 
     Shared Function deshabilitarKPI(id As Integer) As String
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("kpis/{id}", Method.PUT)
+        Dim request = New RestRequest("kpis/deshabilitar/{id}", Method.PUT)
         Dim result As String
 
-        Dim kpi = New KPI()
-        kpi.KPIID = id
-        kpi.Estado = False
+        'Dim kpi = New KPI()
+        'kpi.KPIID = id
+        'kpi.Estado = False
         'cargar url parameters
         request.AddUrlSegment("id", id)
-        request.AddJsonBody(kpi)
+        'request.AddJsonBody(kpi)
         'execute the request
         Dim response = client.Execute(request)
         If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
-            result = "Indicador KPI modificado"
+            result = "Indicador KPI deshabilitado"
             'Return response.Data
         Else
             result = response.ErrorMessage
