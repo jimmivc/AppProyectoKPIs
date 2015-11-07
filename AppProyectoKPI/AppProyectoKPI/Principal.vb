@@ -1,5 +1,4 @@
 ﻿Public Class Principal
-    Public Shadows acceso As Boolean = True
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         activarColorFondoMDI(sender, e)
         Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "GenerarRegistroMercadeo", "AsignarKpis",
@@ -56,12 +55,35 @@
     End Sub
 
     Private Sub mnu_GestionarProspectos_Click(sender As Object, e As EventArgs) Handles mnu_GestionarProspectos.Click
-        Dim gestionarProspectos As New GestionProspectos
-        gestionarProspectos.MdiParent = Me
-        gestionarProspectos.Show()
+        'Dim gestionarProspectos As New GestionProspectos
+        'gestionarProspectos.MdiParent = Me
+        'gestionarProspectos.ShowDialog(Me)
+
+        Dim p2 As New GestionProspectos()
+
+        abrirVentana(p2)
+
+
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
     End Sub
+
+    Private Sub mnu_Kpis_Click(sender As Object, e As EventArgs) Handles mnu_Kpis.Click
+        Dim form As New CreacionKPIs
+
+        abrirVentana(form)
+    End Sub
+
+    Private Sub abrirVentana(form As Form)
+        Dim active As Form = Me.ActiveMdiChild
+        If (Not active Is Nothing) Then
+            active.Close()
+        End If
+        form.MdiParent = Me
+        form.WindowState = FormWindowState.Maximized
+        form.Show()
+    End Sub
+
 End Class

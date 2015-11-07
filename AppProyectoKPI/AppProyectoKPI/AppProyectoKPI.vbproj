@@ -46,18 +46,7 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PracticaExamen">
-      <HintPath>..\..\..\..\Visual Studio 2013\Projects\PracticaExamen\PracticaExamen\bin\Debug\PracticaExamen.dll</HintPath>
-    </Reference>
-    <Reference Include="PrimerControlWindows">
-      <HintPath>..\..\..\..\Visual Studio 2013\Projects\PrimerControlWindows\PrimerControlWindows\bin\Debug\PrimerControlWindows.dll</HintPath>
-    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -89,12 +78,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarContacto.Designer.vb">
-      <DependentUpon>AgregarContacto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AgregarContacto.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AsignacionKPIs.Designer.vb">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
     </Compile>
@@ -103,23 +86,17 @@
     </Compile>
     <Compile Include="BL\CargaDataGrids.vb" />
     <Compile Include="BL\ContactoController.vb" />
-    <Compile Include="BL\EventoBL.vb" />
-    <Compile Include="BL\FormasContactoBL.vb" />
-    <Compile Include="BL\GrupoEmpresarialBL.vb" />
-    <Compile Include="BL\Paneles.vb" />
-    <Compile Include="BL\ProspectoBL.vb" />
-    <Compile Include="BL\TiposFormaContactoBL.vb" />
-    <Compile Include="BL\Validaciones.vb" />
+    <Compile Include="BL\KPIsController.vb" />
     <Compile Include="CreacionKPIs.Designer.vb">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </Compile>
     <Compile Include="CreacionKPIs.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListarProspectos.Designer.vb">
-      <DependentUpon>ListarProspectos.vb</DependentUpon>
+    <Compile Include="ElegirRangoKPI.Designer.vb">
+      <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
     </Compile>
-    <Compile Include="ListarProspectos.vb">
+    <Compile Include="ElegirRangoKPI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionProspectos.Designer.vb">
@@ -130,13 +107,10 @@
     </Compile>
     <Compile Include="Model\AreaInteres.vb" />
     <Compile Include="Model\Contacto.vb" />
-    <Compile Include="Model\Evento.vb" />
-    <Compile Include="Model\GrupoEmpresarial.vb" />
+    <Compile Include="Model\KPI.vb" />
     <Compile Include="Model\Prospecto.vb" />
     <Compile Include="Model\Seguimiento.vb" />
-    <Compile Include="Model\FormasContacto.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
-    <Compile Include="Model\Usuario.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -167,17 +141,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AgregarContacto.resx">
-      <DependentUpon>AgregarContacto.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AsignacionKPIs.resx">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreacionKPIs.resx">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListarProspectos.resx">
-      <DependentUpon>ListarProspectos.vb</DependentUpon>
+    <EmbeddedResource Include="ElegirRangoKPI.resx">
+      <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
@@ -205,9 +176,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="My Project\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
