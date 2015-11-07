@@ -17,4 +17,14 @@
         bs.ResetBindings(False)
     End Sub
 
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+        Dim nombre = txtBxNombre.Text
+        Dim apellidos = txtBxApellidos.Text
+        Dim cedula = txtBxID.Text
+        Dim correo = txtBxCorreo.Text
+        Dim pass = txtBxContrasena.Text
+        Dim enc = New Encrypt(pass)
+        pass = enc.EncryptData(pass)
+        Dim rol = CombBxRol.Text
+    End Sub
 End Class

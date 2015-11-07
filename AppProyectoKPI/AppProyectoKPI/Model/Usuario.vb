@@ -12,7 +12,7 @@
 
     'Private Shared InstanciaUsuario As Usuario = Nothing
 
-    Private Sub New()
+    Public Sub New()
 
     End Sub
 

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Usuarios
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Usuarios
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Usuarios))
@@ -42,13 +42,6 @@ Partial Class Usuarios
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IdUsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ApellidosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CorreoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContrasenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IsActivoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -212,10 +205,7 @@ Partial Class Usuarios
         '
         'dtgUsuarios
         '
-        Me.dtgUsuarios.AutoGenerateColumns = False
         Me.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuarioDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidosDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn, Me.ContrasenaDataGridViewTextBoxColumn, Me.IsActivoDataGridViewCheckBoxColumn})
-        Me.dtgUsuarios.DataSource = Me.UsuarioBindingSource
         Me.dtgUsuarios.Location = New System.Drawing.Point(344, 61)
         Me.dtgUsuarios.Name = "dtgUsuarios"
         Me.dtgUsuarios.Size = New System.Drawing.Size(788, 451)
@@ -251,48 +241,6 @@ Partial Class Usuarios
         'UsuarioBindingSource
         '
         Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
-        '
-        'IdUsuarioDataGridViewTextBoxColumn
-        '
-        Me.IdUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario"
-        Me.IdUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario"
-        Me.IdUsuarioDataGridViewTextBoxColumn.Name = "IdUsuarioDataGridViewTextBoxColumn"
-        '
-        'CedulaDataGridViewTextBoxColumn
-        '
-        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula"
-        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "Cedula"
-        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'ApellidosDataGridViewTextBoxColumn
-        '
-        Me.ApellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos"
-        Me.ApellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos"
-        Me.ApellidosDataGridViewTextBoxColumn.Name = "ApellidosDataGridViewTextBoxColumn"
-        '
-        'CorreoDataGridViewTextBoxColumn
-        '
-        Me.CorreoDataGridViewTextBoxColumn.DataPropertyName = "Correo"
-        Me.CorreoDataGridViewTextBoxColumn.HeaderText = "Correo"
-        Me.CorreoDataGridViewTextBoxColumn.Name = "CorreoDataGridViewTextBoxColumn"
-        '
-        'ContrasenaDataGridViewTextBoxColumn
-        '
-        Me.ContrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena"
-        Me.ContrasenaDataGridViewTextBoxColumn.HeaderText = "Contrasena"
-        Me.ContrasenaDataGridViewTextBoxColumn.Name = "ContrasenaDataGridViewTextBoxColumn"
-        '
-        'IsActivoDataGridViewCheckBoxColumn
-        '
-        Me.IsActivoDataGridViewCheckBoxColumn.DataPropertyName = "IsActivo"
-        Me.IsActivoDataGridViewCheckBoxColumn.HeaderText = "IsActivo"
-        Me.IsActivoDataGridViewCheckBoxColumn.Name = "IsActivoDataGridViewCheckBoxColumn"
         '
         'Usuarios
         '
@@ -344,11 +292,4 @@ Partial Class Usuarios
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents UsuarioBindingSource As BindingSource
-    Friend WithEvents IdUsuarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ApellidosDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CorreoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ContrasenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents IsActivoDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
 End Class

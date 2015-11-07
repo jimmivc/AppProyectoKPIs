@@ -2,29 +2,31 @@
 
 Public Class Rol
 
-    Private _idRol As Integer
-    Private _descripcion As String
+    Private _rolID As Integer
+    Private _nombre As String
     Private _permisos As List(Of Permiso)
+    Private _usuarios As List(Of Usuario)
+    Private _listaIndicadores As List(Of KPI)
 
-    Private Sub New()
+    Public Sub New()
 
     End Sub
 
-    Public Property IdRol As Integer
+    Public Property RolID As Integer
         Get
-            Return _idRol
+            Return _rolID
         End Get
         Set(value As Integer)
-            _idRol = value
+            _rolID = value
         End Set
     End Property
 
-    Public Property Descripcion As String
+    Public Property Nombre As String
         Get
-            Return _descripcion
+            Return _nombre
         End Get
         Set(value As String)
-            _descripcion = value
+            _nombre = value
         End Set
     End Property
 
@@ -34,6 +36,24 @@ Public Class Rol
         End Get
         Set(value As List(Of Permiso))
             _permisos = value
+        End Set
+    End Property
+
+    Public Property IndicadoresKPI As List(Of KPI)
+        Get
+            Return _listaIndicadores
+        End Get
+        Set(value As List(Of KPI))
+            _listaIndicadores = value
+        End Set
+    End Property
+
+    Public Property Usuarios As List(Of Usuario)
+        Get
+            Return _usuarios
+        End Get
+        Set(value As List(Of Usuario))
+            _usuarios = value
         End Set
     End Property
 End Class
