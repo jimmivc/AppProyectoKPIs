@@ -18,9 +18,9 @@ Public Class TiposFormaContactoBL
         Try
             'Execute 
             Dim response = client.Execute(Of List(Of TiposFormaContacto))(request)
-            Dim tiposFormasContactos As List(Of TiposFormaContacto) = JsonConvert.DeserializeObject(Of List(Of TiposFormaContacto))(response.Content)
+            'Dim tiposFormasContactos As List(Of TiposFormaContacto) = JsonConvert.DeserializeObject(Of List(Of TiposFormaContacto))(response.Content)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return tiposFormasContactos
+                Return response.Data
                 'MsgBox(response.Data.ToString)
             End If
         Catch ex As Exception
@@ -37,9 +37,9 @@ Public Class TiposFormaContactoBL
         Try
             'Execute 
             Dim response = client.Execute(Of TiposFormaContacto)(request)
-            Dim tiposFormaContacto As TiposFormaContacto = JsonConvert.DeserializeObject(Of TiposFormaContacto)(response.Content)
+            'Dim tiposFormaContacto As TiposFormaContacto = JsonConvert.DeserializeObject(Of TiposFormaContacto)(response.Content)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return tiposFormaContacto
+                Return response.Data
                 'MsgBox(response.Data.ToString)
             End If
         Catch ex As Exception

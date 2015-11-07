@@ -18,9 +18,9 @@ Public Class EventoBL
         Try
             'Execute 
             Dim response = client.Execute(Of List(Of Evento))(request)
-            Dim eventos As List(Of Evento) = JsonConvert.DeserializeObject(Of List(Of Evento))(response.Content)
+            'Dim eventos As List(Of Evento) = JsonConvert.DeserializeObject(Of List(Of Evento))(response.Content)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return eventos
+                Return response.Data
                 'MsgBox(response.Data.ToString)
             End If
         Catch ex As Exception
@@ -37,9 +37,9 @@ Public Class EventoBL
         Try
             'Execute 
             Dim response = client.Execute(Of Evento)(request)
-            Dim evento As Evento = JsonConvert.DeserializeObject(Of Evento)(response.Content)
+            'Dim evento As Evento = JsonConvert.DeserializeObject(Of Evento)(response.Content)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return evento
+                Return response.Data
                 'MsgBox(response.Data.ToString)
             End If
         Catch ex As Exception
