@@ -10,8 +10,6 @@
         End Set
     End Property
 
-
-
     Private _consecutivo As Integer
     Private _tipoDato As String
     Private _tabla As String

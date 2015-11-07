@@ -86,4 +86,9 @@
         form.Show()
     End Sub
 
+    Private Sub mnu_AsignarKpis_Click(sender As Object, e As EventArgs) Handles mnu_AsignarKpis.Click
+        Dim form As New AsignacionKPIs
+
+        abrirVentana(form)
+    End Sub
 End Class

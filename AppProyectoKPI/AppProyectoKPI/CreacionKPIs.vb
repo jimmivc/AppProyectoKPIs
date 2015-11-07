@@ -134,7 +134,7 @@
         If (validarCampos()) Then
             MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
             actualizarListaKPIs()
-            btnCancelar.PerformClick()
+
         End If
 
     End Sub
@@ -308,6 +308,33 @@
         lstCampo.Visible = True
 
         txtObjetivo.Enabled = True
+
+        formula.Clear()
+    End Sub
+
+    Private Sub reiniciarTodo()
+
+        txtDescripcion.Clear()
+        txtValor.Clear()
+        txtFormula.Clear()
+        txtObjetivo.Clear()
+        limiteDefinido = False
+
+        btnSumar.Visible = True
+        btnRestar.Visible = True
+        btnMultiplicar.Visible = True
+        btnDividir.Visible = True
+        btnBorrar.Visible = True
+        btnConfigurar.Enabled = True
+
+        txtValor.Visible = True
+        btnAgregarValor.Visible = True
+
+        lstCampo.Visible = True
+
+        txtObjetivo.Enabled = True
+
+        formula.Clear()
     End Sub
 
     Private Sub btnDeshabilitar_Click(sender As Object, e As EventArgs) Handles btnDeshabilitar.Click
