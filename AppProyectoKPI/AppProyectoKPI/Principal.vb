@@ -86,4 +86,13 @@
         form.Show()
     End Sub
 
+    Private Sub mnu_Usuarios_Click(sender As Object, e As EventArgs) Handles mnu_Usuarios.Click
+        Dim xg As New Usuarios()
+        abrirVentana(xg)
+    End Sub
+
+    Private Sub mnu_Roles_Click(sender As Object, e As EventArgs) Handles mnu_Roles.Click
+        Dim xy As New Roles()
+        abrirVentana(xy)
+    End Sub
 End Class
