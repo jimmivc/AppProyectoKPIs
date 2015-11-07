@@ -19,12 +19,12 @@ Public Class ListarProspectos
         gestionProspectos.cargarProspectoPantalla(dtgListaProspectos.Item(0, i).Value)
 
     End Sub
-    Private Sub dtgListaProspectos_ColumnHeaderMouseClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dtgListaProspectos.ColumnHeaderMouseClick
-        Dim c As Integer
-        c = dtgListaProspectos.CurrentCell.ColumnIndex
-        MsgBox(c)
-        ' dtgListaProspectos.Sort(dtgListaProspectos.Columns(i))
-    End Sub
+    'Private Sub dtgListaProspectos_ColumnHeaderMouseClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dtgListaProspectos.ColumnHeaderMouseClick
+    'Dim c As Integer
+    '   c = dtgListaProspectos.CurrentCell.ColumnIndex
+    ' MsgBox(c)
+    ' dtgListaProspectos.Sort(dtgListaProspectos.Columns(i))
+    'End Sub
 
 
 End Class

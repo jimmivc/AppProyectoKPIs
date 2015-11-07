@@ -5,6 +5,7 @@ Imports System.IO
 
 Public Class GestionProspectos
     Private formListarProspectos As New ListarProspectos(Me)
+    Private idFormaContacto As Integer
     Private Sub GestionProspectos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ContactoController.CrearContacto()
         '
@@ -266,6 +267,42 @@ Public Class GestionProspectos
         Validaciones.VerificarNumeros(e)
     End Sub
 
+    Private Sub btnAgregarContacto_Click(sender As Object, e As EventArgs) Handles btnAgregarContacto.Click
+        Dim id = txtId.Text
+        If (id = "") Then
+            MsgBox("Debe seleccionar un prospecto o registrar uno nuevo para agregar una forma de contacto")
+        Else
+            Dim response = ProspectoBL.ObtenerProspecto(id)
+            If (response.ProspectoID = Nothing) Then
+                MsgBox("Seleccionó un prospecto vacío")
+            Else
+                Dim agregarFormaContacto As New AgregarContacto(response, 0)
+                agregarFormaContacto.ShowDialog()
+            End If
+        End If
+    End Sub
 
 
+    Private Sub dtg_FormasContacto_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dtg_FormasContacto.CellClick
+        Dim i As Integer
+        i = dtg_FormasContacto.CurrentRow.Index
+        idFormaContacto = dtg_FormasContacto.Item(4, i).Value
+
+
+    End Sub
+
+    Private Sub btnModificarContacto_Click(sender As Object, e As EventArgs) Handles btnModificarContacto.Click
+        Dim id = txtId.Text
+        If (id = "") Then
+            MsgBox("Debe seleccionar un prospecto o registrar uno nuevo para agregar una forma de contacto")
+        Else
+            Dim response = ProspectoBL.ObtenerProspecto(id)
+            If (response.ProspectoID = Nothing) Then
+                MsgBox("Seleccionó un prospecto vacío")
+            Else
+                Dim agregarFormaContacto As New AgregarContacto(response, idFormaContacto)
+                agregarFormaContacto.ShowDialog()
+            End If
+        End If
+    End Sub
 End Class

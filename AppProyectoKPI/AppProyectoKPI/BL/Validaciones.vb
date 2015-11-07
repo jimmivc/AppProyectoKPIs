@@ -24,4 +24,8 @@
             MsgBox("Debe incluir letras en este campo")
         End If
     End Function
+
+    Shared Function CadenaNoVacia(ByVal texto As String)
+        Return texto <> ""
+    End Function
 End Class

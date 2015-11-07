@@ -60,6 +60,7 @@ Partial Class GestionProspectos
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnAgregarContacto = New System.Windows.Forms.Button()
+        Me.btnModificarContacto = New System.Windows.Forms.Button()
         Me.RegistroProspecto.SuspendLayout()
         Me.FormasContacto.SuspendLayout()
         CType(Me.dtg_FormasContacto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -505,12 +506,28 @@ Partial Class GestionProspectos
         Me.btnAgregarContacto.Text = "Agregar"
         Me.btnAgregarContacto.UseVisualStyleBackColor = False
         '
+        'btnModificarContacto
+        '
+        Me.btnModificarContacto.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnModificarContacto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnModificarContacto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnModificarContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificarContacto.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
+        Me.btnModificarContacto.ForeColor = System.Drawing.Color.Silver
+        Me.btnModificarContacto.Location = New System.Drawing.Point(371, 468)
+        Me.btnModificarContacto.Name = "btnModificarContacto"
+        Me.btnModificarContacto.Size = New System.Drawing.Size(73, 27)
+        Me.btnModificarContacto.TabIndex = 6
+        Me.btnModificarContacto.Text = "Modificar"
+        Me.btnModificarContacto.UseVisualStyleBackColor = False
+        '
         'GestionProspectos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1144, 571)
+        Me.Controls.Add(Me.btnModificarContacto)
         Me.Controls.Add(Me.btnAgregarContacto)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnRegistrar)
@@ -571,4 +588,5 @@ Partial Class GestionProspectos
     Friend WithEvents btnRegistrar As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnAgregarContacto As Button
+    Friend WithEvents btnModificarContacto As Button
 End Class

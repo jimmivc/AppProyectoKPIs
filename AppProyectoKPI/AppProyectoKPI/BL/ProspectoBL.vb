@@ -19,10 +19,9 @@ Public Class ProspectoBL
         Try
             'Execute 
             request.RequestFormat = DataFormat.Json
-            Dim response = client.Execute(request)
-            Dim prospecto As Prospecto = JsonConvert.DeserializeObject(Of Prospecto)(response.Content)
+            Dim response = client.Execute(Of Prospecto)(request)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return prospecto
+                Return response.Data
             End If
         Catch ex As Exception
             MsgBox("Error" + "  " + ex.Message)
@@ -37,8 +36,7 @@ Public Class ProspectoBL
         Try
             'Execute 
             request.RequestFormat = DataFormat.Json
-            Dim response = client.Execute(request)
-            Dim prospecto As Prospecto = JsonConvert.DeserializeObject(Of Prospecto)(response.Content)
+            Dim response = client.Execute(Of Prospecto)(request)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
 
                 Return True
@@ -113,11 +111,10 @@ Public Class ProspectoBL
 
         Try
             'Execute 
-            request.RequestFormat = DataFormat.Json
-            Dim response = client.Execute(request)
-            Dim prospectos As List(Of Prospecto) = JsonConvert.DeserializeObject(Of List(Of Prospecto))(response.Content)
+
+            Dim response = client.Execute(Of List(Of Prospecto))(request)
             If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return prospectos
+                Return response.Data
 
             End If
 
