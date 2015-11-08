@@ -6,6 +6,7 @@
 
     Private _parametro As ParametroKPI
     Private _formula As List(Of DetalleFormula)
+    Private _roles As List(Of Rol)
 
     Private _estado As Boolean
 
@@ -81,6 +82,15 @@
         End Get
         Set(value As Boolean)
             _estado = value
+        End Set
+    End Property
+
+    Public Property RolesAsignados As List(Of Rol)
+        Get
+            Return _roles
+        End Get
+        Set(value As List(Of Rol))
+            _roles = value
         End Set
     End Property
 End Class

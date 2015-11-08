@@ -33,10 +33,6 @@ Partial Class CreacionKPIs
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dtgListarKPIs = New System.Windows.Forms.DataGridView()
-        Me.DescKpiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FormatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ObjetivoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KPIBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.lstCampo = New System.Windows.Forms.ComboBox()
         Me.btnRestar = New System.Windows.Forms.Button()
         Me.btnDividir = New System.Windows.Forms.Button()
@@ -54,6 +50,10 @@ Partial Class CreacionKPIs
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.DescKpiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FormatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ObjetivoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KPIBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dtgListarKPIs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KPIBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -158,39 +158,13 @@ Partial Class CreacionKPIs
         Me.dtgListarKPIs.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DescKpiDataGridViewTextBoxColumn, Me.FormatoDataGridViewTextBoxColumn, Me.ObjetivoDataGridViewTextBoxColumn})
         Me.dtgListarKPIs.DataSource = Me.KPIBindingSource
         Me.dtgListarKPIs.Location = New System.Drawing.Point(644, 99)
+        Me.dtgListarKPIs.MultiSelect = False
         Me.dtgListarKPIs.Name = "dtgListarKPIs"
         Me.dtgListarKPIs.ReadOnly = True
         Me.dtgListarKPIs.RowTemplate.Height = 24
         Me.dtgListarKPIs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgListarKPIs.Size = New System.Drawing.Size(446, 379)
         Me.dtgListarKPIs.TabIndex = 17
-        '
-        'DescKpiDataGridViewTextBoxColumn
-        '
-        Me.DescKpiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DescKpiDataGridViewTextBoxColumn.DataPropertyName = "DescKpi"
-        Me.DescKpiDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescKpiDataGridViewTextBoxColumn.Name = "DescKpiDataGridViewTextBoxColumn"
-        Me.DescKpiDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DescKpiDataGridViewTextBoxColumn.Width = 112
-        '
-        'FormatoDataGridViewTextBoxColumn
-        '
-        Me.FormatoDataGridViewTextBoxColumn.DataPropertyName = "Formato"
-        Me.FormatoDataGridViewTextBoxColumn.HeaderText = "Formato"
-        Me.FormatoDataGridViewTextBoxColumn.Name = "FormatoDataGridViewTextBoxColumn"
-        Me.FormatoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ObjetivoDataGridViewTextBoxColumn
-        '
-        Me.ObjetivoDataGridViewTextBoxColumn.DataPropertyName = "Objetivo"
-        Me.ObjetivoDataGridViewTextBoxColumn.HeaderText = "Objetivo"
-        Me.ObjetivoDataGridViewTextBoxColumn.Name = "ObjetivoDataGridViewTextBoxColumn"
-        Me.ObjetivoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'KPIBindingSource
-        '
-        Me.KPIBindingSource.DataSource = GetType(AppProyectoKPI.KPI)
         '
         'lstCampo
         '
@@ -436,6 +410,34 @@ Partial Class CreacionKPIs
         Me.btnCancelar.UseVisualStyleBackColor = False
         Me.btnCancelar.Visible = False
         '
+        'DescKpiDataGridViewTextBoxColumn
+        '
+        Me.DescKpiDataGridViewTextBoxColumn.DataPropertyName = "DescKpi"
+        Me.DescKpiDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescKpiDataGridViewTextBoxColumn.Name = "DescKpiDataGridViewTextBoxColumn"
+        Me.DescKpiDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescKpiDataGridViewTextBoxColumn.Width = 140
+        '
+        'FormatoDataGridViewTextBoxColumn
+        '
+        Me.FormatoDataGridViewTextBoxColumn.DataPropertyName = "Formato"
+        Me.FormatoDataGridViewTextBoxColumn.HeaderText = "Formato"
+        Me.FormatoDataGridViewTextBoxColumn.Name = "FormatoDataGridViewTextBoxColumn"
+        Me.FormatoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FormatoDataGridViewTextBoxColumn.Width = 130
+        '
+        'ObjetivoDataGridViewTextBoxColumn
+        '
+        Me.ObjetivoDataGridViewTextBoxColumn.DataPropertyName = "Objetivo"
+        Me.ObjetivoDataGridViewTextBoxColumn.HeaderText = "Objetivo"
+        Me.ObjetivoDataGridViewTextBoxColumn.Name = "ObjetivoDataGridViewTextBoxColumn"
+        Me.ObjetivoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ObjetivoDataGridViewTextBoxColumn.Width = 130
+        '
+        'KPIBindingSource
+        '
+        Me.KPIBindingSource.DataSource = GetType(AppProyectoKPI.KPI)
+        '
         'CreacionKPIs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -502,9 +504,6 @@ Partial Class CreacionKPIs
     Friend WithEvents txtValor As System.Windows.Forms.TextBox
     Friend WithEvents btnConfigurar As System.Windows.Forms.Button
     Friend WithEvents KPIBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents DescKpiDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FormatoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ObjetivoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents btnConsultar As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
@@ -512,4 +511,7 @@ Partial Class CreacionKPIs
     Friend WithEvents btnBorrar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents DescKpiDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FormatoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ObjetivoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

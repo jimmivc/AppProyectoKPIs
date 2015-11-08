@@ -178,10 +178,8 @@
     End Sub
 
     Private Sub actualizarListaKPIs()
-        Dim bs As BindingSource = New BindingSource()
-        bs.DataSource = KPIsController.listarIndicadoresKPI()
-        dtgListarKPIs.DataSource = bs
-        bs.ResetBindings(False)
+        CargaDataGrids.llenarGrid(dtgListarKPIs, KPIsController.listarIndicadoresKPI())
+
     End Sub
 
     Private Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
