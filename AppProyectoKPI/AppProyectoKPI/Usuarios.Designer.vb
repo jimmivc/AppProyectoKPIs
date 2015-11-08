@@ -205,9 +205,14 @@ Partial Class Usuarios
         '
         'dtgUsuarios
         '
+        Me.dtgUsuarios.AllowUserToAddRows = False
+        Me.dtgUsuarios.AllowUserToDeleteRows = False
+        Me.dtgUsuarios.AllowUserToResizeColumns = False
+        Me.dtgUsuarios.AllowUserToResizeRows = False
         Me.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgUsuarios.Location = New System.Drawing.Point(344, 61)
         Me.dtgUsuarios.Name = "dtgUsuarios"
+        Me.dtgUsuarios.ReadOnly = True
         Me.dtgUsuarios.Size = New System.Drawing.Size(788, 451)
         Me.dtgUsuarios.TabIndex = 23
         '

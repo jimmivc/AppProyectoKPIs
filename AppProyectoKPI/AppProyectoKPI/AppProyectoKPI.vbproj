@@ -99,6 +99,7 @@
     <Compile Include="BL\KPIsController.vb" />
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
+    <Compile Include="BL\RolesBL.vb" />
     <Compile Include="BL\TiposFormaContactoBL.vb" />
     <Compile Include="BL\UsuariosBL.vb" />
     <Compile Include="BL\Validaciones.vb" />

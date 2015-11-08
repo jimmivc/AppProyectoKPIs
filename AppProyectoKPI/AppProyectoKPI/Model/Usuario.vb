@@ -5,6 +5,7 @@
     Private _apellidos As String
     Private _correo As String
     Private _contrasena As String
+    Private _cedula As String
     Private _isActivo As Boolean
 
     Public Property UsuarioID As Integer
@@ -49,6 +50,15 @@
         End Get
         Set(value As String)
             _contrasena = value
+        End Set
+    End Property
+
+    Public Property Cedula As String
+        Get
+            Return _cedula
+        End Get
+        Set(value As String)
+            _cedula = value
         End Set
     End Property
 
