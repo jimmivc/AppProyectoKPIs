@@ -7,6 +7,19 @@
 
         ' Add any initialization after the InitializeComponent() call.
         actualizarListaUsuarios()
+        actualizarRoles()
+
+    End Sub
+
+    Private Sub actualizarRoles()
+        Dim controller = New RolesBL
+        Dim roles As List(Of Rol) = RolesBL.listarRoles
+
+        Dim count As Integer = roles.Count
+
+        For i = 0 To roles.Count - 1
+            CombBxRol.Items.Add(roles(i).Nombre.ToString)
+        Next
 
     End Sub
 
@@ -26,5 +39,17 @@
         Dim enc = New Encrypt(pass)
         pass = enc.EncryptData(pass)
         Dim rol = CombBxRol.Text
+        Dim rolID As Integer
+
+        Dim roles As List(Of Rol) = RolesBL.listarRoles
+
+        For i = 0 To roles.Count - 1
+            If roles(i).Nombre.ToString.Equals(rol) Then
+                rolID = roles(i).RolID
+            End If
+        Next
+
+        MessageBox.Show(UsuariosBL.registrarUsuario(0, nombre, apellidos, correo, pass, ))
+
     End Sub
 End Class
