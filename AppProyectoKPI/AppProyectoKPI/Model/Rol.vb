@@ -12,6 +12,14 @@ Public Class Rol
 
     End Sub
 
+    Public Sub New(pRolId As Integer, pNombre As String, pPermisos As List(Of Permiso), pUsuarios As List(Of Usuario), pListaIndicadores As List(Of KPI))
+        RolID = pRolId
+        Nombre = pNombre
+        Permisos = pPermisos
+        Usuarios = pUsuarios
+        IndicadoresKPI = pListaIndicadores
+    End Sub
+
     Public Property RolID As Integer
         Get
             Return _rolID

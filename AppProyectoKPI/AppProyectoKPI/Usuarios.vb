@@ -1,5 +1,7 @@
 ﻿Public Class Usuarios
 
+    Dim globalID As Integer
+
     Sub New()
 
         ' This call is required by the designer.
@@ -49,7 +51,41 @@
             End If
         Next
 
-        MessageBox.Show(UsuariosBL.registrarUsuario(0, nombre, apellidos, correo, pass, ))
+        MessageBox.Show(UsuariosBL.registrarUsuario(nombre, apellidos, correo, pass, cedula, rolID))
+
+        actualizarListaUsuarios()
 
     End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+
+        btnSalvar.Visible = True
+        btnRegistrar.Visible = False
+
+        For Each row As DataGridViewRow In dtgUsuarios.SelectedRows
+
+            Dim user As Usuario = TryCast(row.DataBoundItem, Usuario)
+            If user IsNot Nothing Then
+                Dim usuarioConsultado = UsuariosBL.consultarUsuario(user.UsuarioID)
+                txtBxNombre.Text = usuarioConsultado.Nombre
+                txtBxApellidos.Text = usuarioConsultado.Apellidos
+                Dim enc = New Encrypt(usuarioConsultado.Contrasena)
+                txtBxContrasena.Text = enc.DecryptData(usuarioConsultado.Contrasena)
+                txtBxCorreo.Text = usuarioConsultado.Correo
+                txtBxID.Text = usuarioConsultado.Cedula
+                CombBxRol.SelectedItem = CombBxRol.FindString(usuarioConsultado.Rol.Nombre)
+                globalID = usuarioConsultado.UsuarioID
+            End If
+
+        Next
+
+    End Sub
+
+
+    'Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
+    '    MessageBox.Show(UsuariosBL.modificarUsuario(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+    '    actualizarListaKPIs()
+    '    btnCancelar.PerformClick()
+    'End Sub
+
 End Class

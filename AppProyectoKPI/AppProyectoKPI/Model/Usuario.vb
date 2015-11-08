@@ -5,8 +5,25 @@
     Private _apellidos As String
     Private _correo As String
     Private _contrasena As String
-    Private _cedula As String
+    Private _cedula As Integer
     Private _isActivo As Boolean
+
+    Private _rol As Rol
+
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(pUserId As Integer, pNombre As String, pApellidos As String, pCorreo As String, pPass As String, pCedula As Integer, pIsActivo As Boolean, pRol As Rol)
+        UsuarioID = pUserId
+        Nombre = pNombre
+        Apellidos = pApellidos
+        Correo = pCorreo
+        Contrasena = pPass
+        Cedula = pCedula
+        IsActivo = pIsActivo
+        Rol = pRol
+    End Sub
 
     Public Property UsuarioID As Integer
         Get
@@ -53,11 +70,11 @@
         End Set
     End Property
 
-    Public Property Cedula As String
+    Public Property Cedula As Integer
         Get
             Return _cedula
         End Get
-        Set(value As String)
+        Set(value As Integer)
             _cedula = value
         End Set
     End Property
@@ -70,4 +87,14 @@
             _isActivo = value
         End Set
     End Property
+
+    Public Property Rol As Rol
+        Get
+            Return _rol
+        End Get
+        Set(value As Rol)
+            _rol = value
+        End Set
+    End Property
+
 End Class
