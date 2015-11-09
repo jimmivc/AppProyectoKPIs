@@ -99,6 +99,8 @@
     <Compile Include="BL\KPIsController.vb" />
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
+    <Compile Include="Model\RegistroMercadeo.vb" />
+    <Compile Include="BL\RegistrosBL.vb" />
     <Compile Include="BL\RolesBL.vb" />
     <Compile Include="BL\TiposFormaContactoBL.vb" />
     <Compile Include="BL\UsuariosBL.vb" />
@@ -244,6 +246,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\RegistroMercadeo.datasource" />
     <None Include="My Project\DataSources\Rol.datasource" />
     <None Include="My Project\DataSources\Usuario.datasource" />
     <None Include="My Project\Settings.settings">

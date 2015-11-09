@@ -55,18 +55,18 @@ Partial Class AsignacionKPIs
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(10, 66)
+        Me.Label1.Location = New System.Drawing.Point(10, 73)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(451, 34)
+        Me.Label1.Size = New System.Drawing.Size(451, 38)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Asignar Indicadores KPI"
         '
         'Label4
         '
         Me.Label4.BackColor = System.Drawing.Color.Silver
-        Me.Label4.Location = New System.Drawing.Point(14, 112)
+        Me.Label4.Location = New System.Drawing.Point(14, 124)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(469, 10)
+        Me.Label4.Size = New System.Drawing.Size(469, 11)
         Me.Label4.TabIndex = 6
         '
         'btnAsignarKPI
@@ -78,9 +78,9 @@ Partial Class AsignacionKPIs
         Me.btnAsignarKPI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAsignarKPI.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.btnAsignarKPI.ForeColor = System.Drawing.Color.Silver
-        Me.btnAsignarKPI.Location = New System.Drawing.Point(698, 308)
+        Me.btnAsignarKPI.Location = New System.Drawing.Point(698, 342)
         Me.btnAsignarKPI.Name = "btnAsignarKPI"
-        Me.btnAsignarKPI.Size = New System.Drawing.Size(95, 31)
+        Me.btnAsignarKPI.Size = New System.Drawing.Size(95, 34)
         Me.btnAsignarKPI.TabIndex = 16
         Me.btnAsignarKPI.Text = "Asignar>>"
         Me.btnAsignarKPI.UseVisualStyleBackColor = False
@@ -93,12 +93,12 @@ Partial Class AsignacionKPIs
         Me.dtgRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgRoles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn})
         Me.dtgRoles.DataSource = Me.RolBindingSource
-        Me.dtgRoles.Location = New System.Drawing.Point(17, 193)
+        Me.dtgRoles.Location = New System.Drawing.Point(17, 214)
         Me.dtgRoles.Name = "dtgRoles"
         Me.dtgRoles.ReadOnly = True
         Me.dtgRoles.RowTemplate.Height = 24
         Me.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgRoles.Size = New System.Drawing.Size(264, 372)
+        Me.dtgRoles.Size = New System.Drawing.Size(264, 413)
         Me.dtgRoles.TabIndex = 17
         '
         'NombreDataGridViewTextBoxColumn
@@ -121,12 +121,12 @@ Partial Class AsignacionKPIs
         Me.dtgListarKPIs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgListarKPIs.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DescKpiDataGridViewTextBoxColumn, Me.FormatoDataGridViewTextBoxColumn, Me.ObjetivoDataGridViewTextBoxColumn})
         Me.dtgListarKPIs.DataSource = Me.KPIBindingSource
-        Me.dtgListarKPIs.Location = New System.Drawing.Point(297, 193)
+        Me.dtgListarKPIs.Location = New System.Drawing.Point(297, 214)
         Me.dtgListarKPIs.Name = "dtgListarKPIs"
         Me.dtgListarKPIs.ReadOnly = True
         Me.dtgListarKPIs.RowTemplate.Height = 24
         Me.dtgListarKPIs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgListarKPIs.Size = New System.Drawing.Size(395, 372)
+        Me.dtgListarKPIs.Size = New System.Drawing.Size(395, 413)
         Me.dtgListarKPIs.TabIndex = 22
         '
         'DescKpiDataGridViewTextBoxColumn
@@ -163,11 +163,11 @@ Partial Class AsignacionKPIs
         Me.dtgIndicadoresAsignados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgIndicadoresAsignados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DescKpiDataGridViewTextBoxColumn1, Me.EstadoDataGridViewCheckBoxColumn})
         Me.dtgIndicadoresAsignados.DataSource = Me.KPIBindingSource
-        Me.dtgIndicadoresAsignados.Location = New System.Drawing.Point(799, 193)
+        Me.dtgIndicadoresAsignados.Location = New System.Drawing.Point(799, 214)
         Me.dtgIndicadoresAsignados.Name = "dtgIndicadoresAsignados"
         Me.dtgIndicadoresAsignados.ReadOnly = True
         Me.dtgIndicadoresAsignados.RowTemplate.Height = 24
-        Me.dtgIndicadoresAsignados.Size = New System.Drawing.Size(341, 372)
+        Me.dtgIndicadoresAsignados.Size = New System.Drawing.Size(341, 413)
         Me.dtgIndicadoresAsignados.TabIndex = 22
         '
         'DescKpiDataGridViewTextBoxColumn1
@@ -191,9 +191,9 @@ Partial Class AsignacionKPIs
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(292, 139)
+        Me.Label2.Location = New System.Drawing.Point(292, 154)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(400, 34)
+        Me.Label2.Size = New System.Drawing.Size(400, 38)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Indicadores KPI"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -203,9 +203,9 @@ Partial Class AsignacionKPIs
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(12, 139)
+        Me.Label3.Location = New System.Drawing.Point(12, 154)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(269, 34)
+        Me.Label3.Size = New System.Drawing.Size(269, 38)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Roles"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -215,9 +215,9 @@ Partial Class AsignacionKPIs
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(811, 139)
+        Me.Label6.Location = New System.Drawing.Point(811, 154)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(329, 34)
+        Me.Label6.Size = New System.Drawing.Size(329, 38)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Indicadores asignados"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -229,10 +229,10 @@ Partial Class AsignacionKPIs
         '
         'AsignacionKPIs
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1162, 633)
+        Me.ClientSize = New System.Drawing.Size(1162, 703)
         Me.Controls.Add(Me.dtgIndicadoresAsignados)
         Me.Controls.Add(Me.dtgListarKPIs)
         Me.Controls.Add(Me.dtgRoles)
@@ -242,7 +242,7 @@ Partial Class AsignacionKPIs
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AsignacionKPIs"

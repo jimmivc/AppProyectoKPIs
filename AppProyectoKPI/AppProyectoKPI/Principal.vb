@@ -100,4 +100,9 @@
         Dim asignarForm As New AsignacionKPIs()
         abrirVentana(asignarForm)
     End Sub
+
+    Private Sub mnu_IndicadoresKpi_Click(sender As Object, e As EventArgs) Handles mnu_IndicadoresKpi.Click
+        Dim reportesKPI As New ReportesKPI()
+        abrirVentana(reportesKPI)
+    End Sub
 End Class
