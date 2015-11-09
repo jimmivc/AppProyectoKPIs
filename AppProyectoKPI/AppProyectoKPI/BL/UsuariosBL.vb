@@ -46,6 +46,18 @@ Public Class UsuariosBL
 
     End Function
 
+    Shared Function consultarUsuarioCorreo(pCorreo As String) As Usuario
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Usuarios/correo/{id}", Method.GET)
+
+        request.AddUrlSegment("id", pCorreo)
+        'execute the request
+        Dim response = client.Execute(Of Usuario)(request)
+
+        Return response.Data
+
+    End Function
+
     Shared Function modificarUsuario(pId As Integer, pNombre As String, pApellidos As String, pCorreo As String, pPass As String, pStatus As Boolean, pRol As Integer, pCedula As Integer) As String
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Usuarios/{id}", Method.PUT)

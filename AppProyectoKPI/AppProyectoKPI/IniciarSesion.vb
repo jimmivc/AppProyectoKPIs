@@ -8,24 +8,20 @@
 
         Dim valid = False
 
-        If TextBoxUser.Text = "" Or TextBoxPass.Text = "" Then
-            MsgBox("Por favor ingrese usuario y contraseña")
-        ElseIf TextBoxUser.Text = "admin@innova.com" And TextBoxPass.Text = "1234" Then
+        Dim pass As String = TextBoxPass.Text
+        Dim correo As String = TextBoxUser.Text
+
+        Try
+            Dim usuario As Usuario = loginController.iniciarSesion(correo, pass)
             valid = True
-        Else
-            MsgBox("Usuario o contraseña incorrecto")
-        End If
+        Catch ex As Exception
+            MessageBox.Show("Correo o aqui")
+        End Try
 
         If valid = True Then
             Principal.Show()
             Me.Hide()
         End If
-
-        Dim enc As New Encrypt(TextBoxPass.Text)
-        Dim StringEnc As String = enc.EncryptData(TextBoxPass.Text)
-        Dim StrNoEnc As String = enc.DecryptData(StringEnc)
-        MsgBox(StringEnc)
-        MsgBox(StrNoEnc)
 
     End Sub
 
