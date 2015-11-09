@@ -10,6 +10,8 @@
         ' Add any initialization after the InitializeComponent() call.
         actualizarListaUsuarios()
         actualizarRoles()
+        ComboBoxEstado.Items.Add("Si")
+        ComboBoxEstado.Items.Add("No")
 
     End Sub
 
@@ -61,6 +63,11 @@
 
         btnSalvar.Visible = True
         btnRegistrar.Visible = False
+        btnEditar.Visible = False
+        lblEstado.Visible = True
+        btnCancelar.Visible = True
+        ComboBoxEstado.Visible = True
+
 
         For Each row As DataGridViewRow In dtgUsuarios.SelectedRows
 
@@ -69,12 +76,21 @@
                 Dim usuarioConsultado = UsuariosBL.consultarUsuario(user.UsuarioID)
                 txtBxNombre.Text = usuarioConsultado.Nombre
                 txtBxApellidos.Text = usuarioConsultado.Apellidos
-                Dim enc = New Encrypt(usuarioConsultado.Contrasena)
-                txtBxContrasena.Text = enc.DecryptData(usuarioConsultado.Contrasena)
+
+                'Dim enc = New Encrypt(usuarioConsultado.Contrasena.ToString)
+                'txtBxContrasena.Text = enc.DecryptData(usuarioConsultado.Contrasena.ToString)
+                txtBxContrasena.Text = "1234"
                 txtBxCorreo.Text = usuarioConsultado.Correo
                 txtBxID.Text = usuarioConsultado.Cedula
-                CombBxRol.SelectedItem = CombBxRol.FindString(usuarioConsultado.Rol.Nombre)
+                CombBxRol.SelectedIndex = CombBxRol.FindString(usuarioConsultado.Rol.Nombre)
                 globalID = usuarioConsultado.UsuarioID
+
+                If usuarioConsultado.IsActivo.Equals(True) Then
+                    ComboBoxEstado.SelectedIndex = ComboBoxEstado.FindString("Si")
+                Else
+                    ComboBoxEstado.SelectedIndex = ComboBoxEstado.FindString("No")
+                End If
+
             End If
 
         Next
@@ -82,10 +98,51 @@
     End Sub
 
 
-    'Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
-    '    MessageBox.Show(UsuariosBL.modificarUsuario(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
-    '    actualizarListaKPIs()
-    '    btnCancelar.PerformClick()
-    'End Sub
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
 
+        Dim estado As String = ComboBoxEstado.SelectedItem.ToString
+        MessageBox.Show(estado)
+        Dim status As Boolean
+
+        Dim rolID As Integer
+        Dim rol As String = CombBxRol.SelectedItem.ToString
+        Dim roles As List(Of Rol) = RolesBL.listarRoles
+
+        For i = 0 To roles.Count - 1
+            If roles(i).Nombre.ToString.Equals(rol) Then
+                rolID = roles(i).RolID
+            End If
+        Next
+
+        Dim pass As String = txtBxContrasena.Text
+        Dim enc = New Encrypt(pass)
+        pass = enc.EncryptData(pass)
+
+        If estado.CompareTo("Si") Then
+            status = False
+        Else
+            status = True
+        End If
+
+        MessageBox.Show(UsuariosBL.modificarUsuario(globalID, txtBxNombre.Text, txtBxApellidos.Text, txtBxCorreo.Text, txtBxContrasena.Text, status, rolID, txtBxID.Text))
+        actualizarListaUsuarios()
+        btnCancelar.PerformClick()
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        btnSalvar.Visible = False
+        btnRegistrar.Visible = True
+        btnEditar.Visible = True
+        lblEstado.Visible = False
+        btnCancelar.Visible = False
+        ComboBoxEstado.Visible = False
+
+        txtBxApellidos.Clear()
+        txtBxContrasena.Clear()
+        txtBxCorreo.Clear()
+        txtBxID.Clear()
+        txtBxNombre.Clear()
+        CombBxRol.SelectedItem = ""
+
+    End Sub
 End Class
