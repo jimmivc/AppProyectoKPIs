@@ -1,11 +1,15 @@
-﻿Public Class Usuario
+﻿Imports AppProyectoKPI
 
-    Private _usuarioID As Integer
-    Private _nombre As String
-    Private _apellidos As String
-    Private _correo As String
-    Private _contrasena As String
-    Private _isActivo As Boolean
+Public Class Usuario
+
+    Dim _usuarioID As Integer
+    Dim _nombre As String
+    Dim _apellidos As String
+    Dim _correo As String
+    Dim _contrasena As String
+    Dim _cedula As Integer
+    Dim _isActivo As Boolean
+    Dim _rol As Rol
 
     Public Property UsuarioID As Integer
         Get
@@ -52,12 +56,30 @@
         End Set
     End Property
 
+    Public Property Cedula As Integer
+        Get
+            Return _cedula
+        End Get
+        Set(value As Integer)
+            _cedula = value
+        End Set
+    End Property
+
     Public Property IsActivo As Boolean
         Get
             Return _isActivo
         End Get
         Set(value As Boolean)
             _isActivo = value
+        End Set
+    End Property
+
+    Public Property Rol As Rol
+        Get
+            Return _rol
+        End Get
+        Set(value As Rol)
+            _rol = value
         End Set
     End Property
 End Class

@@ -6,6 +6,83 @@ AppProyectoKPI
 </name>
 </assembly>
 <members>
+<member name="M:AppProyectoKPI.CargaDataGrids.llenarGrid(System.Windows.Forms.DataGridView,System.Collections.Generic.IEnumerable{System.Object})">
+ <summary>
+ llenarGrid.  
+ Utilitario general para llenar un grid con una lista de objetos.
+ </summary>
+ <param name="Grid">grid - objeto de tipo DataGridView.</param>
+ <param name="Objetos">objetos - lista de objetos para poblar el data grid view.</param>
+ <returns>El método retorna un grid.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.CargaDataGrids.estilizarDataGrid(System.Windows.Forms.DataGridView@)">
+ <summary>
+ estilizarDataGrid.  
+ Utilitario general para estilizar un grid.
+ </summary>
+ <param name="dtg">grid - objeto de tipo DataGridView.</param>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.FormasContactoBL.ObtenerListaFormasContacto">
+ <summary>
+ ObtenerListaFormasContacto.  
+ Método que obtiene una lista de formasde contacto.
+ </summary>
+ <returns>Respuesta con la lista de formas de contacto</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.FormasContactoBL.ObtenerFormasContactoXId(System.Int32)">
+ <summary>
+ ObtenerFormasContactoXId.  
+ Obtiene la forma de contacto por Id.
+ </summary>
+ <param name="Id">id - parámetro de tipo Integer.</param>
+ <returns>Respuesta con el objeto FormasContacto.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.FormasContactoBL.IsFormasContacto(System.Int32)">
+ <summary>
+ IsFormasContacto.  
+ Verifica la existencia de un objeto FormasContacto por Id.
+ </summary>
+ <param name="Id">id - parámetro de tipo Integer.</param>
+ <returns>Respuesta de tipo boleana.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.FormasContactoBL.RegistrarFormaContacto(System.Int32,System.String,AppProyectoKPI.TiposFormaContacto,AppProyectoKPI.GrupoEmpresarial,System.Boolean,AppProyectoKPI.Prospecto)">
+ <summary>
+ RegistrarFormaContacto.  
+ Registra una forma de contacto.
+ </summary>
+ <param name="Id">id - parámetro de tipo Integer.</param>
+ <returns>Respuesta con el objeto FormasContacto.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
 <member name="M:AppProyectoKPI.CreacionKPIs.btnAgregarValor_Click(System.Object,System.EventArgs)">
  <summary>
  Evento para el boton agregar valor, valida el valor ingresado por el usuario y lo agrega a un arreglo

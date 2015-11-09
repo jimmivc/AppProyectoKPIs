@@ -3,8 +3,9 @@
     Private prospecto As Prospecto
     Private formaContacto As FormasContacto
     Private idf As Integer
+    Private gestion As GestionProspectos
 
-    Public Sub New(ByRef pprospecto As Prospecto, ByVal id As Integer)
+    Public Sub New(ByRef pprospecto As Prospecto, ByVal id As Integer, ByRef gestion As GestionProspectos)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
@@ -17,7 +18,7 @@
         Else
             idf = id
         End If
-
+        Me.gestion = gestion
 
     End Sub
     Private Sub AgregarContacto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -91,24 +92,29 @@
         Dim isHabilitada = ckxIsHabilitado.Checked
         Dim idTipoFormaContacto = cbxTipo.SelectedValue
         Dim idEmpresa = cbxEmpresa.SelectedValue
-        Dim empresa As New GrupoEmpresarial()
+        MsgBox(idEmpresa)
+        Dim empresa As GrupoEmpresarial
 
         If (Validaciones.CadenaNoVacia(descripcionFormaContacto) And idTipoFormaContacto > 0) Then
-            If (idEmpresa > 0) Then
+            If (idEmpresa > 1) Then
                 empresa = GrupoEmpresarialBL.ObtenerGrupoEmpresarialXId(idEmpresa)
+                ' MsgBox("CargoEmpresa")
 
             Else
                 empresa = Nothing
             End If
             Dim tipo = TiposFormaContactoBL.ObtenerTipoFormaContactoXId(idTipoFormaContacto)
-
+            'MsgBox(empresa.DescGrupoEmpresarial)
             Dim grabado =
         FormasContactoBL.RegistrarFormaContacto(idf, descripcionFormaContacto, tipo, empresa, isHabilitada, prospecto)
             If (grabado = True) Then
                 MsgBox("Registro guardado satisfactoriamente")
-
+                gestion.cargarProspectoPantalla(prospecto.ProspectoID)
+                Me.Close()
             Else
                 MsgBox("Registro guardado satisfactoriamente")
+                gestion.cargarProspectoPantalla(prospecto.ProspectoID)
+                Me.Close()
             End If
 
 

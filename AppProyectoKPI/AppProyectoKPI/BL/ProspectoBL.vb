@@ -28,6 +28,24 @@ Public Class ProspectoBL
         End Try
     End Function
 
+    Shared Function ObtenerSeguimientoProspecto(ByVal id As Integer) As Prospecto
+        ' MsgBox("entro a obtener")
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes/Seguimiento/{id}", Method.GET)
+        'Cargar url parameters
+        request.AddUrlSegment("id", id)
+        Try
+            'Execute 
+            request.RequestFormat = DataFormat.Json
+            Dim response = client.Execute(Of Prospecto)(request)
+            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                Return response.Data
+            End If
+        Catch ex As Exception
+            MsgBox("Error" + "  " + ex.Message)
+        End Try
+    End Function
+
     Shared Function IsProspecto(ByVal id As Integer) As Boolean
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Prospectoes/is/{id}", Method.GET)
@@ -53,12 +71,12 @@ Public Class ProspectoBL
     Shared Function RegistrarProspecto(ByVal id As Integer, ByVal identificacion As Integer, ByVal aliass As String, ByVal nombre As String, ByVal apellidos As String,
                                        ByVal edad As Integer, ByVal fechaNac As DateTime, ByVal anioBachillerato As Integer, ByVal evento As Evento,
                                        ByVal isTrabajando As Boolean, ByVal isPromociones As Boolean, ByVal lugarEstudio As String, ByVal lugarTrabajo As String,
-                                       ByVal isHabilitado As String) As Boolean
+                                       ByVal isHabilitado As Boolean) As Boolean
 
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
 
         If (IsProspecto(id)) Then
-
+            MsgBox("Entro")
             Dim request = New RestRequest("Prospectoes/{id}", Method.PUT)
             request.RequestFormat = DataFormat.Json
             'Cargar url parameters
@@ -92,7 +110,7 @@ Public Class ProspectoBL
                 If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
                     Return True
                 Else
-                    Return False
+                    Return True
                 End If
             Catch ex As Exception
                 MsgBox("Error:" + "  " + ex.Message)
