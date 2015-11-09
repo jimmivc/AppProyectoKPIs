@@ -133,4 +133,18 @@ Public Class KPIsController
 
         Return resul
     End Function
+
+    Shared Function calcularResultados(idRol As Integer, idRegistro As Integer) As List(Of List(Of String))
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/resultados/{idRol}/{idRegistro}", Method.GET)
+
+        request.AddUrlSegment("idRol", idRol)
+        request.AddUrlSegment("idRegistro", idRegistro)
+
+        Dim response = client.Execute(Of List(Of List(Of String)))(request)
+
+        Return response.Data
+
+    End Function
+
 End Class

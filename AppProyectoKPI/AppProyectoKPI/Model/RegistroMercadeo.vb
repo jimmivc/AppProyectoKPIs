@@ -1,11 +1,12 @@
 ﻿
 Public Class RegistroMercadeo
-    Sub New()
-
-    End Sub
 
     Public _registroMercadeoID As Integer
     Public _fechaHora As Date
+
+    Sub New()
+
+    End Sub
 
     Public Property RegistroMercadeoID As Integer
         Get
