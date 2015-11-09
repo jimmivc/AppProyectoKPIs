@@ -40,8 +40,10 @@ Partial Class Usuarios
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dtgUsuarios = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnSalvar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -227,32 +229,67 @@ Partial Class Usuarios
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Listado de Usuarios"
         '
-        'Button1
+        'btnEditar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
-        Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(344, 529)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 26)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Editar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnEditar.FlatAppearance.BorderSize = 0
+        Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnEditar.ForeColor = System.Drawing.Color.Silver
+        Me.btnEditar.Location = New System.Drawing.Point(344, 529)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(200, 26)
+        Me.btnEditar.TabIndex = 25
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = False
         '
         'UsuarioBindingSource
         '
         Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
+        '
+        'btnSalvar
+        '
+        Me.btnSalvar.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnSalvar.FlatAppearance.BorderSize = 0
+        Me.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalvar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnSalvar.ForeColor = System.Drawing.Color.Silver
+        Me.btnSalvar.Location = New System.Drawing.Point(132, 307)
+        Me.btnSalvar.Name = "btnSalvar"
+        Me.btnSalvar.Size = New System.Drawing.Size(200, 26)
+        Me.btnSalvar.TabIndex = 26
+        Me.btnSalvar.Text = "Guardar Cambios"
+        Me.btnSalvar.UseVisualStyleBackColor = False
+        Me.btnSalvar.Visible = False
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Silver
+        Me.btnCancelar.Location = New System.Drawing.Point(344, 529)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(200, 26)
+        Me.btnCancelar.TabIndex = 27
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1144, 572)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnSalvar)
+        Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dtgUsuarios)
         Me.Controls.Add(Me.btnRegistrar)
@@ -295,6 +332,8 @@ Partial Class Usuarios
     Friend WithEvents btnRegistrar As Button
     Friend WithEvents dtgUsuarios As DataGridView
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnEditar As Button
     Friend WithEvents UsuarioBindingSource As BindingSource
+    Friend WithEvents btnSalvar As Button
+    Friend WithEvents btnCancelar As Button
 End Class
