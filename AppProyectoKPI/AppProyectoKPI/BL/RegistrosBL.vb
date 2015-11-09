@@ -11,7 +11,10 @@ Public Class RegistrosBL
         'execute the request
         Dim response = client.Execute(Of List(Of RegistroMercadeo))(request)
         Dim fechas As New List(Of RegistroMercadeo)
-        fechas.Add(response.Data(0))
+        If (response.Data Is Nothing) Then
+            fechas.Add(response.Data(0))
+
+        End If
 
         For Each registro As RegistroMercadeo In response.Data
             For i = 0 To fechas.Count - 1

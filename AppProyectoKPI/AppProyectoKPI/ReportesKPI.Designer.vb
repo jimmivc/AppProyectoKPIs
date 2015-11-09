@@ -25,7 +25,11 @@ Partial Class ReportesKPI
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportesKPI))
         Me.dtgRegistros = New System.Windows.Forms.DataGridView()
+        Me.FechaHoraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RegistroMercadeoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dtgRoles = New System.Windows.Forms.DataGridView()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,15 +40,11 @@ Partial Class ReportesKPI
         Me.usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.resultados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.FechaHoraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RegistroMercadeoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dtgRegistros, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RegistroMercadeoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dtgRegistros
@@ -62,6 +62,18 @@ Partial Class ReportesKPI
         Me.dtgRegistros.Size = New System.Drawing.Size(264, 418)
         Me.dtgRegistros.TabIndex = 0
         '
+        'FechaHoraDataGridViewTextBoxColumn
+        '
+        Me.FechaHoraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.FechaHoraDataGridViewTextBoxColumn.DataPropertyName = "fechaHora"
+        Me.FechaHoraDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaHoraDataGridViewTextBoxColumn.Name = "FechaHoraDataGridViewTextBoxColumn"
+        Me.FechaHoraDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RegistroMercadeoBindingSource
+        '
+        Me.RegistroMercadeoBindingSource.DataSource = GetType(AppProyectoKPI.RegistroMercadeo)
+        '
         'dtgRoles
         '
         Me.dtgRoles.AllowUserToAddRows = False
@@ -77,6 +89,18 @@ Partial Class ReportesKPI
         Me.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgRoles.Size = New System.Drawing.Size(264, 418)
         Me.dtgRoles.TabIndex = 21
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RolBindingSource
+        '
+        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
         '
         'Label4
         '
@@ -152,12 +176,14 @@ Partial Class ReportesKPI
         Me.descripcion.HeaderText = "Descripción"
         Me.descripcion.Name = "descripcion"
         Me.descripcion.ReadOnly = True
+        Me.descripcion.Width = 150
         '
         'usuario
         '
         Me.usuario.HeaderText = "Usuario"
         Me.usuario.Name = "usuario"
         Me.usuario.ReadOnly = True
+        Me.usuario.Width = 150
         '
         'resultados
         '
@@ -173,33 +199,9 @@ Partial Class ReportesKPI
         Me.color.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.color.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RolBindingSource
-        '
-        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
-        '
-        'FechaHoraDataGridViewTextBoxColumn
-        '
-        Me.FechaHoraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.FechaHoraDataGridViewTextBoxColumn.DataPropertyName = "fechaHora"
-        Me.FechaHoraDataGridViewTextBoxColumn.HeaderText = "Fecha"
-        Me.FechaHoraDataGridViewTextBoxColumn.Name = "FechaHoraDataGridViewTextBoxColumn"
-        Me.FechaHoraDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RegistroMercadeoBindingSource
-        '
-        Me.RegistroMercadeoBindingSource.DataSource = GetType(AppProyectoKPI.RegistroMercadeo)
-        '
         'ReportesKPI
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1162, 712)
@@ -216,10 +218,10 @@ Partial Class ReportesKPI
         Me.Name = "ReportesKPI"
         Me.Text = "ReportesKPI"
         CType(Me.dtgRegistros, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RegistroMercadeoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -235,8 +237,8 @@ Partial Class ReportesKPI
     Friend WithEvents NombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaHoraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RegistroMercadeoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents usuario As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents resultados As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents color As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents usuario As DataGridViewTextBoxColumn
+    Friend WithEvents resultados As DataGridViewTextBoxColumn
+    Friend WithEvents color As DataGridViewTextBoxColumn
 End Class

@@ -7,6 +7,7 @@
         ' Add any initialization after the InitializeComponent() call.
         actualizarListaRoles()
         actualizarRegistrosAsignados(TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol).RolID)
+        CargaDataGrids.estilizarDataGrid(dtgResultados)
     End Sub
 
     Private Sub actualizarListaRoles()
@@ -30,7 +31,7 @@
     End Sub
 
     Private Sub actualizarResultados(idRegistro As Integer)
-        dtgResultados.ClearSelection()
+        dtgResultados.Rows.Clear()
         Dim rol As Rol = TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol)
         Dim resultados As List(Of List(Of String)) = KPIsController.calcularResultados(rol.RolID, idRegistro)
 
