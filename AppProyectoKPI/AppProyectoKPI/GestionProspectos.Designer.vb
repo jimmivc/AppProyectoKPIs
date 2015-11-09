@@ -24,7 +24,6 @@ Partial Class GestionProspectos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionProspectos))
         Me.RegistroProspecto = New System.Windows.Forms.GroupBox()
-        Me.cbxEstatus = New System.Windows.Forms.ComboBox()
         Me.cbxIsPromociones = New System.Windows.Forms.ComboBox()
         Me.cbxIsTrabajando = New System.Windows.Forms.ComboBox()
         Me.cbxEvento = New System.Windows.Forms.ComboBox()
@@ -61,6 +60,8 @@ Partial Class GestionProspectos
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnAgregarContacto = New System.Windows.Forms.Button()
         Me.btnModificarContacto = New System.Windows.Forms.Button()
+        Me.btnSeguimiento = New System.Windows.Forms.Button()
+        Me.cbxIsHabilitado = New System.Windows.Forms.ComboBox()
         Me.RegistroProspecto.SuspendLayout()
         Me.FormasContacto.SuspendLayout()
         CType(Me.dtg_FormasContacto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +69,7 @@ Partial Class GestionProspectos
         '
         'RegistroProspecto
         '
-        Me.RegistroProspecto.Controls.Add(Me.cbxEstatus)
+        Me.RegistroProspecto.Controls.Add(Me.cbxIsHabilitado)
         Me.RegistroProspecto.Controls.Add(Me.cbxIsPromociones)
         Me.RegistroProspecto.Controls.Add(Me.cbxIsTrabajando)
         Me.RegistroProspecto.Controls.Add(Me.cbxEvento)
@@ -99,22 +100,12 @@ Partial Class GestionProspectos
         Me.RegistroProspecto.Controls.Add(Me.Label1)
         Me.RegistroProspecto.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RegistroProspecto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.RegistroProspecto.Location = New System.Drawing.Point(6, 0)
+        Me.RegistroProspecto.Location = New System.Drawing.Point(6, 5)
         Me.RegistroProspecto.Name = "RegistroProspecto"
-        Me.RegistroProspecto.Size = New System.Drawing.Size(360, 412)
+        Me.RegistroProspecto.Size = New System.Drawing.Size(360, 419)
         Me.RegistroProspecto.TabIndex = 0
         Me.RegistroProspecto.TabStop = False
         Me.RegistroProspecto.Text = "Registro de prospecto"
-        '
-        'cbxEstatus
-        '
-        Me.cbxEstatus.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.cbxEstatus.Font = New System.Drawing.Font("Century Gothic", 8.0!)
-        Me.cbxEstatus.FormattingEnabled = True
-        Me.cbxEstatus.Location = New System.Drawing.Point(167, 381)
-        Me.cbxEstatus.Name = "cbxEstatus"
-        Me.cbxEstatus.Size = New System.Drawing.Size(182, 24)
-        Me.cbxEstatus.TabIndex = 32
         '
         'cbxIsPromociones
         '
@@ -419,7 +410,7 @@ Partial Class GestionProspectos
         Me.btnListarProspectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnListarProspectos.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.btnListarProspectos.ForeColor = System.Drawing.Color.Silver
-        Me.btnListarProspectos.Location = New System.Drawing.Point(371, 44)
+        Me.btnListarProspectos.Location = New System.Drawing.Point(371, 49)
         Me.btnListarProspectos.Name = "btnListarProspectos"
         Me.btnListarProspectos.Size = New System.Drawing.Size(73, 27)
         Me.btnListarProspectos.TabIndex = 2
@@ -429,11 +420,11 @@ Partial Class GestionProspectos
         'FormasContacto
         '
         Me.FormasContacto.Controls.Add(Me.dtg_FormasContacto)
-        Me.FormasContacto.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormasContacto.Font = New System.Drawing.Font("Century Gothic", 10.5!)
         Me.FormasContacto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.FormasContacto.Location = New System.Drawing.Point(6, 411)
+        Me.FormasContacto.Location = New System.Drawing.Point(6, 424)
         Me.FormasContacto.Name = "FormasContacto"
-        Me.FormasContacto.Size = New System.Drawing.Size(360, 157)
+        Me.FormasContacto.Size = New System.Drawing.Size(360, 182)
         Me.FormasContacto.TabIndex = 1
         Me.FormasContacto.TabStop = False
         Me.FormasContacto.Text = "Formas de contacto"
@@ -444,6 +435,7 @@ Partial Class GestionProspectos
         Me.dtg_FormasContacto.AllowUserToDeleteRows = False
         Me.dtg_FormasContacto.AllowUserToOrderColumns = True
         Me.dtg_FormasContacto.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.dtg_FormasContacto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dtg_FormasContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtg_FormasContacto.GridColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.dtg_FormasContacto.Location = New System.Drawing.Point(9, 24)
@@ -451,14 +443,14 @@ Partial Class GestionProspectos
         Me.dtg_FormasContacto.Name = "dtg_FormasContacto"
         Me.dtg_FormasContacto.ReadOnly = True
         Me.dtg_FormasContacto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtg_FormasContacto.Size = New System.Drawing.Size(341, 128)
+        Me.dtg_FormasContacto.Size = New System.Drawing.Size(341, 147)
         Me.dtg_FormasContacto.TabIndex = 0
         '
         'pnlGestionProspectos
         '
         Me.pnlGestionProspectos.Location = New System.Drawing.Point(451, 5)
         Me.pnlGestionProspectos.Name = "pnlGestionProspectos"
-        Me.pnlGestionProspectos.Size = New System.Drawing.Size(689, 564)
+        Me.pnlGestionProspectos.Size = New System.Drawing.Size(689, 601)
         Me.pnlGestionProspectos.TabIndex = 2
         '
         'btnRegistrar
@@ -469,7 +461,7 @@ Partial Class GestionProspectos
         Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrar.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
         Me.btnRegistrar.ForeColor = System.Drawing.Color.Silver
-        Me.btnRegistrar.Location = New System.Drawing.Point(371, 112)
+        Me.btnRegistrar.Location = New System.Drawing.Point(371, 117)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(73, 27)
         Me.btnRegistrar.TabIndex = 3
@@ -484,7 +476,7 @@ Partial Class GestionProspectos
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevo.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
         Me.btnNuevo.ForeColor = System.Drawing.Color.Silver
-        Me.btnNuevo.Location = New System.Drawing.Point(371, 78)
+        Me.btnNuevo.Location = New System.Drawing.Point(371, 83)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(73, 27)
         Me.btnNuevo.TabIndex = 4
@@ -499,7 +491,7 @@ Partial Class GestionProspectos
         Me.btnAgregarContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarContacto.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
         Me.btnAgregarContacto.ForeColor = System.Drawing.Color.Silver
-        Me.btnAgregarContacto.Location = New System.Drawing.Point(371, 435)
+        Me.btnAgregarContacto.Location = New System.Drawing.Point(371, 448)
         Me.btnAgregarContacto.Name = "btnAgregarContacto"
         Me.btnAgregarContacto.Size = New System.Drawing.Size(73, 27)
         Me.btnAgregarContacto.TabIndex = 5
@@ -514,19 +506,45 @@ Partial Class GestionProspectos
         Me.btnModificarContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificarContacto.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
         Me.btnModificarContacto.ForeColor = System.Drawing.Color.Silver
-        Me.btnModificarContacto.Location = New System.Drawing.Point(371, 468)
+        Me.btnModificarContacto.Location = New System.Drawing.Point(371, 481)
         Me.btnModificarContacto.Name = "btnModificarContacto"
         Me.btnModificarContacto.Size = New System.Drawing.Size(73, 27)
         Me.btnModificarContacto.TabIndex = 6
         Me.btnModificarContacto.Text = "Modificar"
         Me.btnModificarContacto.UseVisualStyleBackColor = False
         '
+        'btnSeguimiento
+        '
+        Me.btnSeguimiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnSeguimiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnSeguimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSeguimiento.Font = New System.Drawing.Font("Arial Unicode MS", 9.0!)
+        Me.btnSeguimiento.ForeColor = System.Drawing.Color.Silver
+        Me.btnSeguimiento.Location = New System.Drawing.Point(371, 151)
+        Me.btnSeguimiento.Name = "btnSeguimiento"
+        Me.btnSeguimiento.Size = New System.Drawing.Size(73, 27)
+        Me.btnSeguimiento.TabIndex = 7
+        Me.btnSeguimiento.Text = "Historia"
+        Me.btnSeguimiento.UseVisualStyleBackColor = False
+        '
+        'cbxIsHabilitado
+        '
+        Me.cbxIsHabilitado.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.cbxIsHabilitado.Font = New System.Drawing.Font("Century Gothic", 8.0!)
+        Me.cbxIsHabilitado.FormattingEnabled = True
+        Me.cbxIsHabilitado.Location = New System.Drawing.Point(167, 382)
+        Me.cbxIsHabilitado.Name = "cbxIsHabilitado"
+        Me.cbxIsHabilitado.Size = New System.Drawing.Size(182, 24)
+        Me.cbxIsHabilitado.TabIndex = 32
+        '
         'GestionProspectos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1144, 571)
+        Me.ClientSize = New System.Drawing.Size(1164, 612)
+        Me.Controls.Add(Me.btnSeguimiento)
         Me.Controls.Add(Me.btnModificarContacto)
         Me.Controls.Add(Me.btnAgregarContacto)
         Me.Controls.Add(Me.btnNuevo)
@@ -540,7 +558,7 @@ Partial Class GestionProspectos
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "GestionProspectos"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Gestión de Prospectos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.RegistroProspecto.ResumeLayout(False)
@@ -582,11 +600,12 @@ Partial Class GestionProspectos
     Friend WithEvents dtg_FormasContacto As DataGridView
     Friend WithEvents btnListarProspectos As Button
     Friend WithEvents pnlGestionProspectos As Panel
-    Friend WithEvents cbxEstatus As ComboBox
     Friend WithEvents cbxIsPromociones As ComboBox
     Friend WithEvents cbxIsTrabajando As ComboBox
     Friend WithEvents btnRegistrar As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnAgregarContacto As Button
     Friend WithEvents btnModificarContacto As Button
+    Friend WithEvents btnSeguimiento As Button
+    Friend WithEvents cbxIsHabilitado As ComboBox
 End Class

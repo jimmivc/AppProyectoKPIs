@@ -104,6 +104,7 @@ Public Class FormasContacto
         Set(value As GrupoEmpresarial)
             _grupoEmpresarial = value
             If (_grupoEmpresarial Is Nothing) Then
+
                 DescGrupoEmpresarial = ""
             Else
                 DescGrupoEmpresarial = _grupoEmpresarial.DescGrupoEmpresarial

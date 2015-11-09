@@ -29,9 +29,9 @@ Public Class GrupoEmpresarialBL
     End Function
 
     Shared Function ObtenerGrupoEmpresarialXId(ByVal id As Integer) As GrupoEmpresarial
-        ' MsgBox("entro a obtener")
+
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("TipoFormaContactoes/{id}", Method.GET)
+        Dim request = New RestRequest("GrupoEmpresarials/{id}", Method.GET)
 
         request.AddUrlSegment("id", id)
         Try
@@ -44,6 +44,7 @@ Public Class GrupoEmpresarialBL
             End If
         Catch ex As Exception
             MsgBox("Error" + "  " + ex.Message)
+            Return Nothing
         End Try
     End Function
 

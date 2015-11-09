@@ -17,10 +17,11 @@ Public Class Prospecto
     Private _isInscritoPromociones As Boolean
     Private _lugarEstudioAnterior As String
     Private _lugarTrabajo As String
-    Private _isHabilitado As String
+    Private _isHabilitado As Boolean
     Private _usuario As Usuario
     Private _evento As Evento
     Private _formasContacto As List(Of FormasContacto)
+    Private _seguimientos As List(Of Seguimiento)
 
     Sub New()
 
@@ -28,7 +29,7 @@ Public Class Prospecto
     Sub New(ByVal id As Integer, ByVal identificacion As Integer, ByVal aliass As String, ByVal nombre As String, ByVal apellidos As String,
                                        ByVal edad As Integer, ByVal fechaNac As DateTime, ByVal anioBachillerato As Integer, ByVal evento As Evento,
                                        ByVal isTrabajando As Boolean, ByVal isPromociones As Boolean, ByVal lugarEstudio As String, ByVal lugarTrabajo As String,
-                                       ByVal isHabilitado As String)
+                                       ByVal isHabilitado As Boolean)
         Me.ProspectoID = id
         Me.Identificacion = identificacion
         Me.Alias = aliass
@@ -164,11 +165,11 @@ Public Class Prospecto
         End Set
     End Property
 
-    Public Property IsHabilitado As String
+    Public Property IsHabilitado As Boolean
         Get
             Return _isHabilitado
         End Get
-        Set(value As String)
+        Set(value As Boolean)
             _isHabilitado = value
         End Set
     End Property
@@ -197,6 +198,15 @@ Public Class Prospecto
         End Get
         Set(value As List(Of FormasContacto))
             _formasContacto = value
+        End Set
+    End Property
+
+    Public Property Seguimientos As List(Of Seguimiento)
+        Get
+            Return _seguimientos
+        End Get
+        Set(value As List(Of Seguimiento))
+            _seguimientos = value
         End Set
     End Property
 End Class
