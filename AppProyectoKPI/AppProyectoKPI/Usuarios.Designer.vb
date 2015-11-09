@@ -41,9 +41,19 @@ Partial Class Usuarios
         Me.dtgUsuarios = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnEditar = New System.Windows.Forms.Button()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.ComboBoxEstado = New System.Windows.Forms.ComboBox()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuarioIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApellidosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CorreoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContrasenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IsActivoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.RolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -211,10 +221,15 @@ Partial Class Usuarios
         Me.dtgUsuarios.AllowUserToDeleteRows = False
         Me.dtgUsuarios.AllowUserToResizeColumns = False
         Me.dtgUsuarios.AllowUserToResizeRows = False
+        Me.dtgUsuarios.AutoGenerateColumns = False
         Me.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UsuarioIDDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidosDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn, Me.ContrasenaDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.IsActivoDataGridViewCheckBoxColumn, Me.RolDataGridViewTextBoxColumn})
+        Me.dtgUsuarios.DataSource = Me.UsuarioBindingSource
         Me.dtgUsuarios.Location = New System.Drawing.Point(344, 61)
+        Me.dtgUsuarios.MultiSelect = False
         Me.dtgUsuarios.Name = "dtgUsuarios"
         Me.dtgUsuarios.ReadOnly = True
+        Me.dtgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgUsuarios.Size = New System.Drawing.Size(788, 451)
         Me.dtgUsuarios.TabIndex = 23
         '
@@ -245,10 +260,6 @@ Partial Class Usuarios
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = False
         '
-        'UsuarioBindingSource
-        '
-        Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
-        '
         'btnSalvar
         '
         Me.btnSalvar.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
@@ -258,7 +269,7 @@ Partial Class Usuarios
         Me.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalvar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.btnSalvar.ForeColor = System.Drawing.Color.Silver
-        Me.btnSalvar.Location = New System.Drawing.Point(132, 307)
+        Me.btnSalvar.Location = New System.Drawing.Point(132, 350)
         Me.btnSalvar.Name = "btnSalvar"
         Me.btnSalvar.Size = New System.Drawing.Size(200, 26)
         Me.btnSalvar.TabIndex = 26
@@ -281,12 +292,98 @@ Partial Class Usuarios
         Me.btnCancelar.TabIndex = 27
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
+        Me.btnCancelar.Visible = False
+        '
+        'lblEstado
+        '
+        Me.lblEstado.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.lblEstado.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.lblEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.lblEstado.Location = New System.Drawing.Point(12, 307)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(103, 24)
+        Me.lblEstado.TabIndex = 29
+        Me.lblEstado.Text = "Activo :"
+        Me.lblEstado.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.lblEstado.Visible = False
+        '
+        'ComboBoxEstado
+        '
+        Me.ComboBoxEstado.FormattingEnabled = True
+        Me.ComboBoxEstado.Location = New System.Drawing.Point(132, 307)
+        Me.ComboBoxEstado.Name = "ComboBoxEstado"
+        Me.ComboBoxEstado.Size = New System.Drawing.Size(200, 21)
+        Me.ComboBoxEstado.TabIndex = 28
+        Me.ComboBoxEstado.Visible = False
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
+        '
+        'UsuarioIDDataGridViewTextBoxColumn
+        '
+        Me.UsuarioIDDataGridViewTextBoxColumn.DataPropertyName = "UsuarioID"
+        Me.UsuarioIDDataGridViewTextBoxColumn.HeaderText = "UsuarioID"
+        Me.UsuarioIDDataGridViewTextBoxColumn.Name = "UsuarioIDDataGridViewTextBoxColumn"
+        Me.UsuarioIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ApellidosDataGridViewTextBoxColumn
+        '
+        Me.ApellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos"
+        Me.ApellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos"
+        Me.ApellidosDataGridViewTextBoxColumn.Name = "ApellidosDataGridViewTextBoxColumn"
+        Me.ApellidosDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CorreoDataGridViewTextBoxColumn
+        '
+        Me.CorreoDataGridViewTextBoxColumn.DataPropertyName = "Correo"
+        Me.CorreoDataGridViewTextBoxColumn.HeaderText = "Correo"
+        Me.CorreoDataGridViewTextBoxColumn.Name = "CorreoDataGridViewTextBoxColumn"
+        Me.CorreoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ContrasenaDataGridViewTextBoxColumn
+        '
+        Me.ContrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena"
+        Me.ContrasenaDataGridViewTextBoxColumn.HeaderText = "Contrasena"
+        Me.ContrasenaDataGridViewTextBoxColumn.Name = "ContrasenaDataGridViewTextBoxColumn"
+        Me.ContrasenaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ContrasenaDataGridViewTextBoxColumn.Visible = False
+        '
+        'CedulaDataGridViewTextBoxColumn
+        '
+        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula"
+        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "Cedula"
+        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
+        Me.CedulaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IsActivoDataGridViewCheckBoxColumn
+        '
+        Me.IsActivoDataGridViewCheckBoxColumn.DataPropertyName = "IsActivo"
+        Me.IsActivoDataGridViewCheckBoxColumn.HeaderText = "IsActivo"
+        Me.IsActivoDataGridViewCheckBoxColumn.Name = "IsActivoDataGridViewCheckBoxColumn"
+        Me.IsActivoDataGridViewCheckBoxColumn.ReadOnly = True
+        '
+        'RolDataGridViewTextBoxColumn
+        '
+        Me.RolDataGridViewTextBoxColumn.DataPropertyName = "Rol"
+        Me.RolDataGridViewTextBoxColumn.HeaderText = "Rol"
+        Me.RolDataGridViewTextBoxColumn.Name = "RolDataGridViewTextBoxColumn"
+        Me.RolDataGridViewTextBoxColumn.ReadOnly = True
         '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1144, 572)
+        Me.Controls.Add(Me.lblEstado)
+        Me.Controls.Add(Me.ComboBoxEstado)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.btnEditar)
@@ -336,4 +433,14 @@ Partial Class Usuarios
     Friend WithEvents UsuarioBindingSource As BindingSource
     Friend WithEvents btnSalvar As Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents lblEstado As Label
+    Friend WithEvents ComboBoxEstado As ComboBox
+    Friend WithEvents UsuarioIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ApellidosDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CorreoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ContrasenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IsActivoDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
+    Friend WithEvents RolDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
