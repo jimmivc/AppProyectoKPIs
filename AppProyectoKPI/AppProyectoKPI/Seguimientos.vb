@@ -76,9 +76,7 @@
                         isEfectiva = cbxEfectiva.SelectedValue
                     End If
                     Dim isContactoValido = cbxIsValido.SelectedValue
-                    Dim usuario As New Usuario()
-                    usuario.UsuarioID = 5
-                    usuario.Nombre = "Admin"
+                    Dim usuario = loginController.getUser()
                     Dim response = ProspectoBL.ObtenerProspecto(gestionProspectos.getProspectoId())
                     If (response Is Nothing) Then
                         MsgBox("Seleccionó un prospecto vacío")
