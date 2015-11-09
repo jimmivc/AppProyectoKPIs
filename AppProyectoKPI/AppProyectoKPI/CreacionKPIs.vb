@@ -47,7 +47,6 @@
         Dim operador = CType(sender, Button).Text
         If (Not operador.Equals("")) Then
             armarFormula(operador)
-            variable.Add("operador")
             txtValor.Text = ""
         End If
     End Sub
@@ -65,6 +64,7 @@
         Else
             If (operador = True And isOperador(dato)) Then
                 formula.Add(dato)
+                variable.Add("operador")
                 operador = False
                 detalle = True
             Else
@@ -130,11 +130,10 @@
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-
         If (validarCampos()) Then
             MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
             actualizarListaKPIs()
-
+            reiniciarTodo()
         End If
 
     End Sub
@@ -154,7 +153,6 @@
                 limiteSuperior = configurarObjetivo.lstLimiteSuperior.GetItemText(configurarObjetivo.lstLimiteSuperior.SelectedIndex)
                 limiteInferior = configurarObjetivo.lstLimiteInferior.GetItemText(configurarObjetivo.lstLimiteInferior.SelectedIndex)
                 limiteDefinido = True
-                'txtFormula.Text = limiteInferior.ToString + limiteSuperior.ToString + limiteDefinido.ToString
             End If
         Catch ex As Exception
             MessageBox.Show("Objetivo no valido")
@@ -178,10 +176,8 @@
     End Sub
 
     Private Sub actualizarListaKPIs()
-        Dim bs As BindingSource = New BindingSource()
-        bs.DataSource = KPIsController.listarIndicadoresKPI()
-        dtgListarKPIs.DataSource = bs
-        bs.ResetBindings(False)
+        CargaDataGrids.llenarGrid(dtgListarKPIs, KPIsController.listarIndicadoresKPI())
+
     End Sub
 
     Private Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
@@ -289,27 +285,7 @@
         btnModificar.Visible = True
         btnRegistrar.Visible = True
 
-        txtDescripcion.Clear()
-        txtValor.Clear()
-        txtFormula.Clear()
-        txtObjetivo.Clear()
-        limiteDefinido = False
-
-        btnSumar.Visible = True
-        btnRestar.Visible = True
-        btnMultiplicar.Visible = True
-        btnDividir.Visible = True
-        btnBorrar.Visible = True
-        btnConfigurar.Enabled = True
-
-        txtValor.Visible = True
-        btnAgregarValor.Visible = True
-
-        lstCampo.Visible = True
-
-        txtObjetivo.Enabled = True
-
-        formula.Clear()
+        reiniciarTodo()
     End Sub
 
     Private Sub reiniciarTodo()
@@ -320,6 +296,10 @@
         txtObjetivo.Clear()
         limiteDefinido = False
 
+        operador = False
+        detalle = True
+
+
         btnSumar.Visible = True
         btnRestar.Visible = True
         btnMultiplicar.Visible = True
@@ -335,6 +315,8 @@
         txtObjetivo.Enabled = True
 
         formula.Clear()
+        variable.Clear()
+        
     End Sub
 
     Private Sub btnDeshabilitar_Click(sender As Object, e As EventArgs) Handles btnDeshabilitar.Click
@@ -346,6 +328,6 @@
                 actualizarListaKPIs()
             End If
         Next
-        btnCancelar.PerformClick()
+        reiniciarTodo()
     End Sub
 End Class

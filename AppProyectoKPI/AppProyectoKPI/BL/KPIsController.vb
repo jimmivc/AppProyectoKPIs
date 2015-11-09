@@ -104,4 +104,47 @@ Public Class KPIsController
         Return result
     End Function
 
+    Shared Function listarIndicadoresAsignadosRol(idRol As Integer) As List(Of KPI)
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/indicadoresAsignados/{idRol}", Method.GET)
+
+        request.AddUrlSegment("idRol", idRol)
+
+        Dim response = client.Execute(Of List(Of KPI))(request)
+
+        Return response.Data
+
+    End Function
+
+    Shared Function asignarIndicadorKPI(idRol As Integer, idKPI As Integer) As String
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/asignar/{idKPI}/{idRol}", Method.GET)
+        Dim resul As String
+
+        request.AddUrlSegment("idKPI", idKPI)
+        request.AddUrlSegment("idRol", idRol)
+        'execute the request
+        Dim response = client.Execute(request)
+        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
+            resul = "Indicador KPI asignado"
+        Else
+            resul = response.Content
+        End If
+
+        Return resul
+    End Function
+
+    Shared Function calcularResultados(idRol As Integer, idRegistro As Integer) As List(Of List(Of String))
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/resultados/{idRol}/{idRegistro}", Method.GET)
+
+        request.AddUrlSegment("idRol", idRol)
+        request.AddUrlSegment("idRegistro", idRegistro)
+
+        Dim response = client.Execute(Of List(Of List(Of String)))(request)
+
+        Return response.Data
+
+    End Function
+
 End Class

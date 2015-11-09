@@ -95,4 +95,14 @@
         Dim xy As New Roles()
         abrirVentana(xy)
     End Sub
+
+    Private Sub mnu_AsignarKpis_Click(sender As Object, e As EventArgs) Handles mnu_AsignarKpis.Click
+        Dim asignarForm As New AsignacionKPIs()
+        abrirVentana(asignarForm)
+    End Sub
+
+    Private Sub mnu_IndicadoresKpi_Click(sender As Object, e As EventArgs) Handles mnu_IndicadoresKpi.Click
+        Dim reportesKPI As New ReportesKPI()
+        abrirVentana(reportesKPI)
+    End Sub
 End Class

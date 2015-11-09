@@ -1,15 +1,29 @@
-﻿Imports AppProyectoKPI
+﻿Public Class Usuario
 
-Public Class Usuario
+    Private _usuarioID As Integer
+    Private _nombre As String
+    Private _apellidos As String
+    Private _correo As String
+    Private _contrasena As String
+    Private _cedula As Integer
+    Private _isActivo As Boolean
 
-    Dim _usuarioID As Integer
-    Dim _nombre As String
-    Dim _apellidos As String
-    Dim _correo As String
-    Dim _contrasena As String
-    Dim _cedula As Integer
-    Dim _isActivo As Boolean
-    Dim _rol As Rol
+    Private _rol As Rol
+
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(pUserId As Integer, pNombre As String, pApellidos As String, pCorreo As String, pPass As String, pCedula As Integer, pIsActivo As Boolean, pRol As Rol)
+        UsuarioID = pUserId
+        Nombre = pNombre
+        Apellidos = pApellidos
+        Correo = pCorreo
+        Contrasena = pPass
+        Cedula = pCedula
+        IsActivo = pIsActivo
+        Rol = pRol
+    End Sub
 
     Public Property UsuarioID As Integer
         Get
@@ -82,4 +96,5 @@ Public Class Usuario
             _rol = value
         End Set
     End Property
+
 End Class
