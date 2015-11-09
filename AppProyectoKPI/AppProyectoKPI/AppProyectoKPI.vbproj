@@ -99,6 +99,8 @@
     <Compile Include="BL\KPIsController.vb" />
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
+    <Compile Include="Model\RegistroMercadeo.vb" />
+    <Compile Include="BL\RegistrosBL.vb" />
     <Compile Include="BL\RolesBL.vb" />
     <Compile Include="BL\TiposFormaContactoBL.vb" />
     <Compile Include="BL\UsuariosBL.vb" />
@@ -176,6 +178,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ReportesKPI.Designer.vb">
+      <DependentUpon>ReportesKPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesKPI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Roles.Designer.vb">
       <DependentUpon>Roles.vb</DependentUpon>
     </Compile>
@@ -223,6 +231,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesKPI.resx">
+      <DependentUpon>ReportesKPI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Roles.resx">
       <DependentUpon>Roles.vb</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +246,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\RegistroMercadeo.datasource" />
     <None Include="My Project\DataSources\Rol.datasource" />
     <None Include="My Project\DataSources\Usuario.datasource" />
     <None Include="My Project\Settings.settings">

@@ -33,6 +33,10 @@ Partial Class CreacionKPIs
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dtgListarKPIs = New System.Windows.Forms.DataGridView()
+        Me.DescKpiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FormatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ObjetivoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KPIBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.lstCampo = New System.Windows.Forms.ComboBox()
         Me.btnRestar = New System.Windows.Forms.Button()
         Me.btnDividir = New System.Windows.Forms.Button()
@@ -52,10 +56,6 @@ Partial Class CreacionKPIs
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DescKpiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FormatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ObjetivoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KPIBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dtgListarKPIs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KPIBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,11 +168,39 @@ Partial Class CreacionKPIs
         Me.dtgListarKPIs.Size = New System.Drawing.Size(446, 379)
         Me.dtgListarKPIs.TabIndex = 17
         '
+        'DescKpiDataGridViewTextBoxColumn
+        '
+        Me.DescKpiDataGridViewTextBoxColumn.DataPropertyName = "DescKpi"
+        Me.DescKpiDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescKpiDataGridViewTextBoxColumn.Name = "DescKpiDataGridViewTextBoxColumn"
+        Me.DescKpiDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescKpiDataGridViewTextBoxColumn.Width = 140
+        '
+        'FormatoDataGridViewTextBoxColumn
+        '
+        Me.FormatoDataGridViewTextBoxColumn.DataPropertyName = "Formato"
+        Me.FormatoDataGridViewTextBoxColumn.HeaderText = "Formato"
+        Me.FormatoDataGridViewTextBoxColumn.Name = "FormatoDataGridViewTextBoxColumn"
+        Me.FormatoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FormatoDataGridViewTextBoxColumn.Width = 130
+        '
+        'ObjetivoDataGridViewTextBoxColumn
+        '
+        Me.ObjetivoDataGridViewTextBoxColumn.DataPropertyName = "Objetivo"
+        Me.ObjetivoDataGridViewTextBoxColumn.HeaderText = "Objetivo"
+        Me.ObjetivoDataGridViewTextBoxColumn.Name = "ObjetivoDataGridViewTextBoxColumn"
+        Me.ObjetivoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ObjetivoDataGridViewTextBoxColumn.Width = 130
+        '
+        'KPIBindingSource
+        '
+        Me.KPIBindingSource.DataSource = GetType(AppProyectoKPI.KPI)
+        '
         'lstCampo
         '
         Me.lstCampo.AutoCompleteCustomSource.AddRange(New String() {"Llamadas", "Llamadas Efectivas", "Promedio duracion llamadas efectivas", "Duracion llamadas efectivas", "Prospectos matriculados", "Monto ventas"})
         Me.lstCampo.FormattingEnabled = True
-        Me.lstCampo.Items.AddRange(New Object() {"Llamadas", "Llamadas efectivas", "Promedio Duracion Efectivas", "Duracion Llamadas Efectivas", "Cantidad Ventas", "Monto Ventas"})
+        Me.lstCampo.Items.AddRange(New Object() {"", "Llamadas", "Llamadas efectivas", "Promedio Duracion Efectivas", "Duracion Llamadas Efectivas", "Cantidad Ventas", "Monto Ventas"})
         Me.lstCampo.Location = New System.Drawing.Point(120, 327)
         Me.lstCampo.Name = "lstCampo"
         Me.lstCampo.Size = New System.Drawing.Size(223, 28)
@@ -436,34 +464,6 @@ Partial Class CreacionKPIs
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Campo : "
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'DescKpiDataGridViewTextBoxColumn
-        '
-        Me.DescKpiDataGridViewTextBoxColumn.DataPropertyName = "DescKpi"
-        Me.DescKpiDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescKpiDataGridViewTextBoxColumn.Name = "DescKpiDataGridViewTextBoxColumn"
-        Me.DescKpiDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DescKpiDataGridViewTextBoxColumn.Width = 140
-        '
-        'FormatoDataGridViewTextBoxColumn
-        '
-        Me.FormatoDataGridViewTextBoxColumn.DataPropertyName = "Formato"
-        Me.FormatoDataGridViewTextBoxColumn.HeaderText = "Formato"
-        Me.FormatoDataGridViewTextBoxColumn.Name = "FormatoDataGridViewTextBoxColumn"
-        Me.FormatoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FormatoDataGridViewTextBoxColumn.Width = 130
-        '
-        'ObjetivoDataGridViewTextBoxColumn
-        '
-        Me.ObjetivoDataGridViewTextBoxColumn.DataPropertyName = "Objetivo"
-        Me.ObjetivoDataGridViewTextBoxColumn.HeaderText = "Objetivo"
-        Me.ObjetivoDataGridViewTextBoxColumn.Name = "ObjetivoDataGridViewTextBoxColumn"
-        Me.ObjetivoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ObjetivoDataGridViewTextBoxColumn.Width = 130
-        '
-        'KPIBindingSource
-        '
-        Me.KPIBindingSource.DataSource = GetType(AppProyectoKPI.KPI)
         '
         'CreacionKPIs
         '
