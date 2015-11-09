@@ -16,19 +16,7 @@
     End Sub
 
     Private Sub actualizarListaRoles()
-        Dim listaRoles As List(Of Rol) = New List(Of Rol)
-        Dim rol = New Rol()
-        rol.RolID = "1"
-        rol.Nombre = "Administrador"
-        listaRoles.Add(rol)
-        rol = New Rol()
-        rol.RolID = "2"
-        rol.Nombre = "Mercadeo"
-        listaRoles.Add(rol)
-        rol = New Rol()
-        rol.RolID = "3"
-        rol.Nombre = "Soporte"
-        listaRoles.Add(rol)
+        Dim listaRoles As List(Of Rol) = RolesBL.listarRoles()
 
         CargaDataGrids.llenarGrid(dtgRoles, listaRoles)
     End Sub

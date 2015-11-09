@@ -90,3 +90,4 @@ C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.AgregarContacto.resources
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.ConsultarKPI.resources
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.ListarProspectos.resources
+C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.ReportesKPI.resources
