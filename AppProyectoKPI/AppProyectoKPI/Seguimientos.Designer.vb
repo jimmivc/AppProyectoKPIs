@@ -61,6 +61,7 @@ Partial Class Seguimientos
         Me.dtgSeguimientos.Location = New System.Drawing.Point(12, 41)
         Me.dtgSeguimientos.Name = "dtgSeguimientos"
         Me.dtgSeguimientos.ReadOnly = True
+        Me.dtgSeguimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgSeguimientos.Size = New System.Drawing.Size(566, 146)
         Me.dtgSeguimientos.TabIndex = 0
         '
