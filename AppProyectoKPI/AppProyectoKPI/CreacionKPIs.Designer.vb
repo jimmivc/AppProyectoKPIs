@@ -50,6 +50,8 @@ Partial Class CreacionKPIs
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.DescKpiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FormatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObjetivoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,7 +78,7 @@ Partial Class CreacionKPIs
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(11, 201)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 24)
+        Me.Label2.Size = New System.Drawing.Size(103, 24)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Objetivo :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -128,7 +130,7 @@ Partial Class CreacionKPIs
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(13, 256)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(87, 24)
+        Me.Label7.Size = New System.Drawing.Size(101, 24)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Formato :"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -168,12 +170,12 @@ Partial Class CreacionKPIs
         '
         'lstCampo
         '
-        Me.lstCampo.AutoCompleteCustomSource.AddRange(New String() {"Llamadas", "Llamadas Efectivas"})
+        Me.lstCampo.AutoCompleteCustomSource.AddRange(New String() {"Llamadas", "Llamadas Efectivas", "Promedio duracion llamadas efectivas", "Duracion llamadas efectivas", "Prospectos matriculados", "Monto ventas"})
         Me.lstCampo.FormattingEnabled = True
-        Me.lstCampo.Items.AddRange(New Object() {"", "Llamadas", "Llamadas efectivas"})
-        Me.lstCampo.Location = New System.Drawing.Point(19, 331)
+        Me.lstCampo.Items.AddRange(New Object() {"Llamadas", "Llamadas efectivas", "Promedio Duracion Efectivas", "Duracion Llamadas Efectivas", "Cantidad Ventas", "Monto Ventas"})
+        Me.lstCampo.Location = New System.Drawing.Point(120, 327)
         Me.lstCampo.Name = "lstCampo"
-        Me.lstCampo.Size = New System.Drawing.Size(121, 28)
+        Me.lstCampo.Size = New System.Drawing.Size(223, 28)
         Me.lstCampo.TabIndex = 18
         '
         'btnRestar
@@ -185,7 +187,7 @@ Partial Class CreacionKPIs
         Me.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRestar.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestar.ForeColor = System.Drawing.Color.Silver
-        Me.btnRestar.Location = New System.Drawing.Point(401, 331)
+        Me.btnRestar.Location = New System.Drawing.Point(406, 367)
         Me.btnRestar.Name = "btnRestar"
         Me.btnRestar.Size = New System.Drawing.Size(27, 29)
         Me.btnRestar.TabIndex = 16
@@ -201,7 +203,7 @@ Partial Class CreacionKPIs
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDividir.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDividir.ForeColor = System.Drawing.Color.Silver
-        Me.btnDividir.Location = New System.Drawing.Point(444, 331)
+        Me.btnDividir.Location = New System.Drawing.Point(353, 367)
         Me.btnDividir.Name = "btnDividir"
         Me.btnDividir.Size = New System.Drawing.Size(27, 29)
         Me.btnDividir.TabIndex = 16
@@ -217,7 +219,7 @@ Partial Class CreacionKPIs
         Me.btnSumar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSumar.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSumar.ForeColor = System.Drawing.Color.Silver
-        Me.btnSumar.Location = New System.Drawing.Point(357, 331)
+        Me.btnSumar.Location = New System.Drawing.Point(456, 367)
         Me.btnSumar.Name = "btnSumar"
         Me.btnSumar.Size = New System.Drawing.Size(27, 29)
         Me.btnSumar.TabIndex = 16
@@ -233,7 +235,7 @@ Partial Class CreacionKPIs
         Me.btnAgregarValor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarValor.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.btnAgregarValor.ForeColor = System.Drawing.Color.Silver
-        Me.btnAgregarValor.Location = New System.Drawing.Point(260, 328)
+        Me.btnAgregarValor.Location = New System.Drawing.Point(208, 361)
         Me.btnAgregarValor.Name = "btnAgregarValor"
         Me.btnAgregarValor.Size = New System.Drawing.Size(81, 32)
         Me.btnAgregarValor.TabIndex = 16
@@ -249,7 +251,7 @@ Partial Class CreacionKPIs
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMultiplicar.Font = New System.Drawing.Font("Arial Unicode MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMultiplicar.ForeColor = System.Drawing.Color.Silver
-        Me.btnMultiplicar.Location = New System.Drawing.Point(487, 331)
+        Me.btnMultiplicar.Location = New System.Drawing.Point(304, 367)
         Me.btnMultiplicar.Name = "btnMultiplicar"
         Me.btnMultiplicar.Size = New System.Drawing.Size(27, 29)
         Me.btnMultiplicar.TabIndex = 16
@@ -258,17 +260,18 @@ Partial Class CreacionKPIs
         '
         'txtFormula
         '
-        Me.txtFormula.Location = New System.Drawing.Point(19, 397)
+        Me.txtFormula.Location = New System.Drawing.Point(18, 408)
         Me.txtFormula.Multiline = True
         Me.txtFormula.Name = "txtFormula"
         Me.txtFormula.ReadOnly = True
-        Me.txtFormula.Size = New System.Drawing.Size(495, 81)
+        Me.txtFormula.Size = New System.Drawing.Size(465, 81)
         Me.txtFormula.TabIndex = 20
         '
         'lstFormatoKPI
         '
+        Me.lstFormatoKPI.AutoCompleteCustomSource.AddRange(New String() {"%", "1234", "1234.56"})
         Me.lstFormatoKPI.FormattingEnabled = True
-        Me.lstFormatoKPI.Items.AddRange(New Object() {"%"})
+        Me.lstFormatoKPI.Items.AddRange(New Object() {"%", "123", "123.4"})
         Me.lstFormatoKPI.Location = New System.Drawing.Point(120, 254)
         Me.lstFormatoKPI.Name = "lstFormatoKPI"
         Me.lstFormatoKPI.Size = New System.Drawing.Size(121, 28)
@@ -279,9 +282,9 @@ Partial Class CreacionKPIs
         Me.txtValor.BackColor = System.Drawing.SystemColors.Control
         Me.txtValor.Font = New System.Drawing.Font("Arial Unicode MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtValor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtValor.Location = New System.Drawing.Point(152, 332)
+        Me.txtValor.Location = New System.Drawing.Point(120, 363)
         Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(93, 29)
+        Me.txtValor.Size = New System.Drawing.Size(82, 29)
         Me.txtValor.TabIndex = 22
         Me.txtValor.Tag = ""
         '
@@ -410,6 +413,30 @@ Partial Class CreacionKPIs
         Me.btnCancelar.UseVisualStyleBackColor = False
         Me.btnCancelar.Visible = False
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(14, 367)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(100, 24)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Valor :"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label8
+        '
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(14, 329)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(100, 24)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "Campo : "
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'DescKpiDataGridViewTextBoxColumn
         '
         Me.DescKpiDataGridViewTextBoxColumn.DataPropertyName = "DescKpi"
@@ -461,6 +488,8 @@ Partial Class CreacionKPIs
         Me.Controls.Add(Me.btnRestar)
         Me.Controls.Add(Me.btnBorrar)
         Me.Controls.Add(Me.txtObjetivo)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtDescripcion)
@@ -514,4 +543,6 @@ Partial Class CreacionKPIs
     Friend WithEvents DescKpiDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FormatoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ObjetivoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class
