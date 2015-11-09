@@ -99,6 +99,7 @@
     <Compile Include="BL\KPIsController.vb" />
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
+    <Compile Include="BL\SeguimientoBL.vb" />
     <Compile Include="Model\RegistroMercadeo.vb" />
     <Compile Include="BL\RegistrosBL.vb" />
     <Compile Include="BL\RolesBL.vb" />
@@ -190,6 +191,12 @@
     <Compile Include="Roles.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Seguimientos.Designer.vb">
+      <DependentUpon>Seguimientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Seguimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Usuarios.Designer.vb">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
@@ -236,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Roles.resx">
       <DependentUpon>Roles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguimientos.resx">
+      <DependentUpon>Seguimientos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
