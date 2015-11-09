@@ -92,7 +92,6 @@
         Dim isHabilitada = ckxIsHabilitado.Checked
         Dim idTipoFormaContacto = cbxTipo.SelectedValue
         Dim idEmpresa = cbxEmpresa.SelectedValue
-        MsgBox(idEmpresa)
         Dim empresa As GrupoEmpresarial
 
         If (Validaciones.CadenaNoVacia(descripcionFormaContacto) And idTipoFormaContacto > 0) Then

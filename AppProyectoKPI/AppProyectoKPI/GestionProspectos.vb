@@ -348,6 +348,7 @@ Public Class GestionProspectos
 
             configurarColumnasListadoSeguimientos(CargaDataGrids.llenarGrid(formListarSeguimientos.dtgSeguimientos,
                                                   ProspectoBL.ObtenerSeguimientoProspecto(prospectoId).Seguimientos))
+            formListarSeguimientos.btnNuevo_Click(sender, e)
         End If
     End Sub
     Private Sub configurarColumnasListadoSeguimientos(ByRef dtg As DataGridView)

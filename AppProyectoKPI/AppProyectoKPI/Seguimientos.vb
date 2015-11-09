@@ -11,8 +11,10 @@
 
     End Sub
     Private Sub Seguimientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.btnNuevo_Click(sender, e)
         PrepararComboBoxBooleano(cbxEfectiva)
         PrepararComboBoxBooleano(cbxIsValido)
+
     End Sub
 
     Private Sub dtgSeguimientos_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dtgSeguimientos.CellClick
@@ -74,9 +76,7 @@
                         isEfectiva = cbxEfectiva.SelectedValue
                     End If
                     Dim isContactoValido = cbxIsValido.SelectedValue
-                    Dim usuario As New Usuario()
-                    usuario.UsuarioID = 5
-                    usuario.Nombre = "Admin"
+                    Dim usuario = loginController.getUser()
                     Dim response = ProspectoBL.ObtenerProspecto(gestionProspectos.getProspectoId())
                     If (response Is Nothing) Then
                         MsgBox("Seleccionó un prospecto vacío")
@@ -136,7 +136,7 @@
         cbx.DisplayMember = "Descripcion"
     End Sub
 
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+    Public Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Limpiar_Formulario(Me.RegistroSeguimiento)
         txtNumLlamadas.Focus()
     End Sub
