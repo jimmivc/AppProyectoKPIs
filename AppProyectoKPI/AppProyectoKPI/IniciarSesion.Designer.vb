@@ -34,18 +34,20 @@ Partial Class IniciarSesion
         '
         'TextBoxUser
         '
-        Me.TextBoxUser.Location = New System.Drawing.Point(92, 61)
+        Me.TextBoxUser.Location = New System.Drawing.Point(123, 75)
+        Me.TextBoxUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBoxUser.Name = "TextBoxUser"
-        Me.TextBoxUser.Size = New System.Drawing.Size(203, 20)
+        Me.TextBoxUser.Size = New System.Drawing.Size(269, 22)
         Me.TextBoxUser.TabIndex = 4
-        Me.TextBoxUser.Text = "Usuario"
+        Me.TextBoxUser.Text = "Correo"
         '
         'TextBoxPass
         '
-        Me.TextBoxPass.Location = New System.Drawing.Point(92, 94)
+        Me.TextBoxPass.Location = New System.Drawing.Point(123, 116)
+        Me.TextBoxPass.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBoxPass.Name = "TextBoxPass"
         Me.TextBoxPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBoxPass.Size = New System.Drawing.Size(203, 20)
+        Me.TextBoxPass.Size = New System.Drawing.Size(269, 22)
         Me.TextBoxPass.TabIndex = 5
         Me.TextBoxPass.Text = "Contraseña"
         '
@@ -58,9 +60,10 @@ Partial Class IniciarSesion
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(92, 129)
+        Me.Button1.Location = New System.Drawing.Point(123, 159)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(203, 26)
+        Me.Button1.Size = New System.Drawing.Size(271, 32)
         Me.Button1.TabIndex = 19
         Me.Button1.Text = "Ingresar"
         Me.Button1.UseVisualStyleBackColor = False
@@ -70,9 +73,10 @@ Partial Class IniciarSesion
         Me.TextBox3.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox3.Font = New System.Drawing.Font("Arial Unicode MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox3.Location = New System.Drawing.Point(-268, -250)
+        Me.TextBox3.Location = New System.Drawing.Point(-357, -308)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(375, 25)
+        Me.TextBox3.Size = New System.Drawing.Size(499, 29)
         Me.TextBox3.TabIndex = 18
         '
         'Label3
@@ -80,9 +84,10 @@ Partial Class IniciarSesion
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(-377, -243)
+        Me.Label3.Location = New System.Drawing.Point(-503, -299)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(103, 22)
+        Me.Label3.Size = New System.Drawing.Size(137, 27)
         Me.Label3.TabIndex = 17
         Me.Label3.Text = "Descripcion : "
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -91,9 +96,10 @@ Partial Class IniciarSesion
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!)
-        Me.Label4.Location = New System.Drawing.Point(131, 27)
+        Me.Label4.Location = New System.Drawing.Point(175, 33)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(124, 22)
+        Me.Label4.Size = New System.Drawing.Size(167, 30)
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "Iniciar Sesión"
         '
@@ -102,18 +108,19 @@ Partial Class IniciarSesion
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel1.Location = New System.Drawing.Point(132, 172)
+        Me.LinkLabel1.Location = New System.Drawing.Point(176, 212)
+        Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(119, 13)
+        Me.LinkLabel1.Size = New System.Drawing.Size(158, 17)
         Me.LinkLabel1.TabIndex = 25
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "¿Olvidó su contraseña?"
         '
         'IniciarSesion
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 236)
+        Me.ClientSize = New System.Drawing.Size(512, 290)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button1)
@@ -122,7 +129,9 @@ Partial Class IniciarSesion
         Me.Controls.Add(Me.TextBoxPass)
         Me.Controls.Add(Me.TextBoxUser)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "IniciarSesion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Iniciar Sesión"
         Me.ResumeLayout(False)
         Me.PerformLayout()

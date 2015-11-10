@@ -48,9 +48,10 @@ Public Class UsuariosBL
 
     Shared Function consultarUsuarioCorreo(pCorreo As String) As Usuario
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("Usuarios/correo/{id}", Method.GET)
+        Dim request = New RestRequest("Usuarios/correo/{id}/{a}", Method.GET)
 
         request.AddUrlSegment("id", pCorreo)
+        request.AddUrlSegment("a", "a")
         'execute the request
         Dim response = client.Execute(Of Usuario)(request)
 
