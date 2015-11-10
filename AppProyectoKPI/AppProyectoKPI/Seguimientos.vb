@@ -139,6 +139,8 @@
     Public Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Limpiar_Formulario(Me.RegistroSeguimiento)
         txtNumLlamadas.Focus()
+        'txtUsuario.Text = loginController.getUser().Nombre
+        txtUsuario.Text = "Admin"
     End Sub
 
     Private Sub txtNumLlamadas_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumLlamadas.KeyPress

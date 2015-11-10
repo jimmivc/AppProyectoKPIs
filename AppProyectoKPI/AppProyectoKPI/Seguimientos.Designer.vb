@@ -27,7 +27,7 @@ Partial Class Seguimientos
         Me.RegistroSeguimiento = New System.Windows.Forms.GroupBox()
         Me.cbxIsValido = New System.Windows.Forms.ComboBox()
         Me.cbxEfectiva = New System.Windows.Forms.ComboBox()
-        Me.TextUsuario = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.txtDuracionLlamada = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtFechaSeguimiento = New System.Windows.Forms.TextBox()
@@ -69,7 +69,7 @@ Partial Class Seguimientos
         '
         Me.RegistroSeguimiento.Controls.Add(Me.cbxIsValido)
         Me.RegistroSeguimiento.Controls.Add(Me.cbxEfectiva)
-        Me.RegistroSeguimiento.Controls.Add(Me.TextUsuario)
+        Me.RegistroSeguimiento.Controls.Add(Me.txtUsuario)
         Me.RegistroSeguimiento.Controls.Add(Me.txtDuracionLlamada)
         Me.RegistroSeguimiento.Controls.Add(Me.txtDescripcion)
         Me.RegistroSeguimiento.Controls.Add(Me.txtFechaSeguimiento)
@@ -115,16 +115,16 @@ Partial Class Seguimientos
         Me.cbxEfectiva.Size = New System.Drawing.Size(126, 24)
         Me.cbxEfectiva.TabIndex = 31
         '
-        'TextUsuario
+        'txtUsuario
         '
-        Me.TextUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.TextUsuario.Enabled = False
-        Me.TextUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextUsuario.Location = New System.Drawing.Point(431, 122)
-        Me.TextUsuario.Name = "TextUsuario"
-        Me.TextUsuario.Size = New System.Drawing.Size(126, 23)
-        Me.TextUsuario.TabIndex = 23
+        Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtUsuario.Enabled = False
+        Me.txtUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtUsuario.Location = New System.Drawing.Point(431, 122)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(126, 23)
+        Me.txtUsuario.TabIndex = 23
         '
         'txtDuracionLlamada
         '
@@ -366,7 +366,7 @@ Partial Class Seguimientos
     Friend WithEvents txtId As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextUsuario As TextBox
+    Friend WithEvents txtUsuario As TextBox
     Friend WithEvents btnRegistrar As Button
     Friend WithEvents cbxIsValido As ComboBox
     Friend WithEvents cbxEfectiva As ComboBox
