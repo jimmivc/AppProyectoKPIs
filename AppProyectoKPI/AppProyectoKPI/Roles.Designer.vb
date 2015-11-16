@@ -22,6 +22,7 @@ Partial Class Roles
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Roles))
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -29,20 +30,27 @@ Partial Class Roles
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblPermiso = New System.Windows.Forms.Label()
         Me.ComboBxPermisos = New System.Windows.Forms.ComboBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.dtgRoles = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnGuardarRol = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dtgPermisos = New System.Windows.Forms.DataGridView()
+        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RolIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PermisoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdPermisoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtBoxNombre = New System.Windows.Forms.TextBox()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.btnEditarPermiso = New System.Windows.Forms.Button()
+        Me.btnEditarRol = New System.Windows.Forms.Button()
+        Me.btnGuardarPermiso = New System.Windows.Forms.Button()
+        CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PermisoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnRegistrar
@@ -54,9 +62,9 @@ Partial Class Roles
         Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
         Me.btnRegistrar.ForeColor = System.Drawing.Color.Silver
-        Me.btnRegistrar.Location = New System.Drawing.Point(153, 524)
+        Me.btnRegistrar.Location = New System.Drawing.Point(552, 521)
         Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.Size = New System.Drawing.Size(100, 30)
+        Me.btnRegistrar.Size = New System.Drawing.Size(103, 30)
         Me.btnRegistrar.TabIndex = 19
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = False
@@ -114,30 +122,16 @@ Partial Class Roles
         Me.ComboBxPermisos.Size = New System.Drawing.Size(363, 21)
         Me.ComboBxPermisos.TabIndex = 22
         '
-        'DataGridView1
+        'dtgRoles
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 69)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(447, 355)
-        Me.DataGridView1.TabIndex = 23
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Descripción"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 200
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Ver Permisos"
-        Me.Column3.Name = "Column3"
+        Me.dtgRoles.AutoGenerateColumns = False
+        Me.dtgRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgRoles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RolIDDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
+        Me.dtgRoles.DataSource = Me.RolBindingSource
+        Me.dtgRoles.Location = New System.Drawing.Point(24, 69)
+        Me.dtgRoles.Name = "dtgRoles"
+        Me.dtgRoles.Size = New System.Drawing.Size(492, 303)
+        Me.dtgRoles.TabIndex = 23
         '
         'Label2
         '
@@ -150,73 +144,169 @@ Partial Class Roles
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Listado de Roles"
         '
-        'btnGuardar
+        'btnGuardarRol
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
-        Me.btnGuardar.ForeColor = System.Drawing.Color.Silver
-        Me.btnGuardar.Location = New System.Drawing.Point(484, 394)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(119, 30)
-        Me.btnGuardar.TabIndex = 25
-        Me.btnGuardar.Text = "Guardar Cambios"
-        Me.btnGuardar.UseVisualStyleBackColor = False
+        Me.btnGuardarRol.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnGuardarRol.FlatAppearance.BorderSize = 0
+        Me.btnGuardarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnGuardarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnGuardarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardarRol.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnGuardarRol.ForeColor = System.Drawing.Color.Silver
+        Me.btnGuardarRol.Location = New System.Drawing.Point(24, 378)
+        Me.btnGuardarRol.Name = "btnGuardarRol"
+        Me.btnGuardarRol.Size = New System.Drawing.Size(119, 30)
+        Me.btnGuardarRol.TabIndex = 25
+        Me.btnGuardarRol.Text = "Guardar Cambios"
+        Me.btnGuardarRol.UseVisualStyleBackColor = False
+        Me.btnGuardarRol.Visible = False
         '
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(614, 28)
+        Me.Label3.Location = New System.Drawing.Point(548, 28)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(188, 26)
         Me.Label3.TabIndex = 26
         Me.Label3.Text = "Permisos de Rol"
         '
-        'DataGridView2
+        'dtgPermisos
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column4, Me.Column5, Me.Column6, Me.Column7})
-        Me.DataGridView2.Location = New System.Drawing.Point(618, 69)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(503, 355)
-        Me.DataGridView2.TabIndex = 27
+        Me.dtgPermisos.AutoGenerateColumns = False
+        Me.dtgPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgPermisos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPermisoDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.AccionDataGridViewTextBoxColumn})
+        Me.dtgPermisos.DataSource = Me.PermisoBindingSource
+        Me.dtgPermisos.Location = New System.Drawing.Point(552, 69)
+        Me.dtgPermisos.Name = "dtgPermisos"
+        Me.dtgPermisos.Size = New System.Drawing.Size(569, 303)
+        Me.dtgPermisos.TabIndex = 27
         '
-        'Column4
+        'RolBindingSource
         '
-        Me.Column4.HeaderText = "ID"
-        Me.Column4.Name = "Column4"
+        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
         '
-        'Column5
+        'RolIDDataGridViewTextBoxColumn
         '
-        Me.Column5.HeaderText = "Descripción"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 150
+        Me.RolIDDataGridViewTextBoxColumn.DataPropertyName = "RolID"
+        Me.RolIDDataGridViewTextBoxColumn.HeaderText = "RolID"
+        Me.RolIDDataGridViewTextBoxColumn.Name = "RolIDDataGridViewTextBoxColumn"
         '
-        'Column6
+        'NombreDataGridViewTextBoxColumn
         '
-        Me.Column6.HeaderText = "Acción"
-        Me.Column6.Name = "Column6"
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
         '
-        'Column7
+        'PermisoBindingSource
         '
-        Me.Column7.HeaderText = "Seleccionar"
-        Me.Column7.Name = "Column7"
+        Me.PermisoBindingSource.DataSource = GetType(AppProyectoKPI.Permiso)
+        '
+        'IdPermisoDataGridViewTextBoxColumn
+        '
+        Me.IdPermisoDataGridViewTextBoxColumn.DataPropertyName = "IdPermiso"
+        Me.IdPermisoDataGridViewTextBoxColumn.HeaderText = "IdPermiso"
+        Me.IdPermisoDataGridViewTextBoxColumn.Name = "IdPermisoDataGridViewTextBoxColumn"
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        '
+        'AccionDataGridViewTextBoxColumn
+        '
+        Me.AccionDataGridViewTextBoxColumn.DataPropertyName = "Accion"
+        Me.AccionDataGridViewTextBoxColumn.HeaderText = "Accion"
+        Me.AccionDataGridViewTextBoxColumn.Name = "AccionDataGridViewTextBoxColumn"
+        '
+        'txtBoxNombre
+        '
+        Me.txtBoxNombre.BackColor = System.Drawing.SystemColors.Control
+        Me.txtBoxNombre.Font = New System.Drawing.Font("Arial Unicode MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBoxNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtBoxNombre.Location = New System.Drawing.Point(153, 521)
+        Me.txtBoxNombre.Name = "txtBoxNombre"
+        Me.txtBoxNombre.Size = New System.Drawing.Size(363, 25)
+        Me.txtBoxNombre.TabIndex = 29
+        '
+        'lblNombre
+        '
+        Me.lblNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.lblNombre.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.lblNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.lblNombre.Location = New System.Drawing.Point(21, 521)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(103, 24)
+        Me.lblNombre.TabIndex = 28
+        Me.lblNombre.Text = "Nombre :"
+        Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'btnEditarPermiso
+        '
+        Me.btnEditarPermiso.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnEditarPermiso.FlatAppearance.BorderSize = 0
+        Me.btnEditarPermiso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnEditarPermiso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnEditarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditarPermiso.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnEditarPermiso.ForeColor = System.Drawing.Color.Silver
+        Me.btnEditarPermiso.Location = New System.Drawing.Point(552, 378)
+        Me.btnEditarPermiso.Name = "btnEditarPermiso"
+        Me.btnEditarPermiso.Size = New System.Drawing.Size(119, 30)
+        Me.btnEditarPermiso.TabIndex = 30
+        Me.btnEditarPermiso.Text = "Editar Permiso"
+        Me.btnEditarPermiso.UseVisualStyleBackColor = False
+        '
+        'btnEditarRol
+        '
+        Me.btnEditarRol.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnEditarRol.FlatAppearance.BorderSize = 0
+        Me.btnEditarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnEditarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnEditarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditarRol.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnEditarRol.ForeColor = System.Drawing.Color.Silver
+        Me.btnEditarRol.Location = New System.Drawing.Point(24, 378)
+        Me.btnEditarRol.Name = "btnEditarRol"
+        Me.btnEditarRol.Size = New System.Drawing.Size(119, 30)
+        Me.btnEditarRol.TabIndex = 31
+        Me.btnEditarRol.Text = "Editar Rol"
+        Me.btnEditarRol.UseVisualStyleBackColor = False
+        '
+        'btnGuardarPermiso
+        '
+        Me.btnGuardarPermiso.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnGuardarPermiso.FlatAppearance.BorderSize = 0
+        Me.btnGuardarPermiso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnGuardarPermiso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnGuardarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardarPermiso.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnGuardarPermiso.ForeColor = System.Drawing.Color.Silver
+        Me.btnGuardarPermiso.Location = New System.Drawing.Point(552, 378)
+        Me.btnGuardarPermiso.Name = "btnGuardarPermiso"
+        Me.btnGuardarPermiso.Size = New System.Drawing.Size(119, 30)
+        Me.btnGuardarPermiso.TabIndex = 32
+        Me.btnGuardarPermiso.Text = "Guardar Cambios"
+        Me.btnGuardarPermiso.UseVisualStyleBackColor = False
+        Me.btnGuardarPermiso.Visible = False
         '
         'Roles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1144, 572)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.btnGuardarPermiso)
+        Me.Controls.Add(Me.btnEditarRol)
+        Me.Controls.Add(Me.btnEditarPermiso)
+        Me.Controls.Add(Me.txtBoxNombre)
+        Me.Controls.Add(Me.lblNombre)
+        Me.Controls.Add(Me.dtgPermisos)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.btnGuardarRol)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dtgRoles)
         Me.Controls.Add(Me.ComboBxPermisos)
         Me.Controls.Add(Me.lblPermiso)
         Me.Controls.Add(Me.Label1)
@@ -228,8 +318,10 @@ Partial Class Roles
         Me.MinimumSize = New System.Drawing.Size(1160, 610)
         Me.Name = "Roles"
         Me.Text = "Roles"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgPermisos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PermisoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,16 +333,21 @@ Partial Class Roles
     Friend WithEvents Label1 As Label
     Friend WithEvents lblPermiso As Label
     Friend WithEvents ComboBxPermisos As ComboBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewButtonColumn
+    Friend WithEvents dtgRoles As DataGridView
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnGuardarRol As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewCheckBoxColumn
+    Friend WithEvents dtgPermisos As DataGridView
+    Friend WithEvents RolIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents RolBindingSource As BindingSource
+    Friend WithEvents IdPermisoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AccionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PermisoBindingSource As BindingSource
+    Friend WithEvents txtBoxNombre As TextBox
+    Friend WithEvents lblNombre As Label
+    Friend WithEvents btnEditarPermiso As Button
+    Friend WithEvents btnEditarRol As Button
+    Friend WithEvents btnGuardarPermiso As Button
 End Class
