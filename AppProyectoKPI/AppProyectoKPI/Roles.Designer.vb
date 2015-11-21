@@ -35,22 +35,22 @@ Partial Class Roles
         Me.btnGuardarRol = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtgPermisos = New System.Windows.Forms.DataGridView()
-        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RolIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PermisoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IdPermisoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtBoxNombre = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.btnEditarPermiso = New System.Windows.Forms.Button()
         Me.btnEditarRol = New System.Windows.Forms.Button()
         Me.btnGuardarPermiso = New System.Windows.Forms.Button()
+        Me.IdPermisoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PermisoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RolIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PermisoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnRegistrar
@@ -174,52 +174,17 @@ Partial Class Roles
         '
         'dtgPermisos
         '
+        Me.dtgPermisos.AllowUserToDeleteRows = False
+        Me.dtgPermisos.AllowUserToResizeColumns = False
         Me.dtgPermisos.AutoGenerateColumns = False
         Me.dtgPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgPermisos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPermisoDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.AccionDataGridViewTextBoxColumn})
         Me.dtgPermisos.DataSource = Me.PermisoBindingSource
         Me.dtgPermisos.Location = New System.Drawing.Point(552, 69)
         Me.dtgPermisos.Name = "dtgPermisos"
+        Me.dtgPermisos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dtgPermisos.Size = New System.Drawing.Size(569, 303)
         Me.dtgPermisos.TabIndex = 27
-        '
-        'RolBindingSource
-        '
-        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
-        '
-        'RolIDDataGridViewTextBoxColumn
-        '
-        Me.RolIDDataGridViewTextBoxColumn.DataPropertyName = "RolID"
-        Me.RolIDDataGridViewTextBoxColumn.HeaderText = "RolID"
-        Me.RolIDDataGridViewTextBoxColumn.Name = "RolIDDataGridViewTextBoxColumn"
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'PermisoBindingSource
-        '
-        Me.PermisoBindingSource.DataSource = GetType(AppProyectoKPI.Permiso)
-        '
-        'IdPermisoDataGridViewTextBoxColumn
-        '
-        Me.IdPermisoDataGridViewTextBoxColumn.DataPropertyName = "IdPermiso"
-        Me.IdPermisoDataGridViewTextBoxColumn.HeaderText = "IdPermiso"
-        Me.IdPermisoDataGridViewTextBoxColumn.Name = "IdPermisoDataGridViewTextBoxColumn"
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        '
-        'AccionDataGridViewTextBoxColumn
-        '
-        Me.AccionDataGridViewTextBoxColumn.DataPropertyName = "Accion"
-        Me.AccionDataGridViewTextBoxColumn.HeaderText = "Accion"
-        Me.AccionDataGridViewTextBoxColumn.Name = "AccionDataGridViewTextBoxColumn"
         '
         'txtBoxNombre
         '
@@ -292,6 +257,48 @@ Partial Class Roles
         Me.btnGuardarPermiso.UseVisualStyleBackColor = False
         Me.btnGuardarPermiso.Visible = False
         '
+        'IdPermisoDataGridViewTextBoxColumn
+        '
+        Me.IdPermisoDataGridViewTextBoxColumn.DataPropertyName = "IdPermiso"
+        Me.IdPermisoDataGridViewTextBoxColumn.HeaderText = "IdPermiso"
+        Me.IdPermisoDataGridViewTextBoxColumn.Name = "IdPermisoDataGridViewTextBoxColumn"
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        '
+        'AccionDataGridViewTextBoxColumn
+        '
+        Me.AccionDataGridViewTextBoxColumn.DataPropertyName = "Accion"
+        Me.AccionDataGridViewTextBoxColumn.HeaderText = "Accion"
+        Me.AccionDataGridViewTextBoxColumn.Name = "AccionDataGridViewTextBoxColumn"
+        '
+        'PermisoBindingSource
+        '
+        Me.PermisoBindingSource.DataSource = GetType(AppProyectoKPI.Permiso)
+        '
+        'RolIDDataGridViewTextBoxColumn
+        '
+        Me.RolIDDataGridViewTextBoxColumn.DataPropertyName = "RolID"
+        Me.RolIDDataGridViewTextBoxColumn.HeaderText = "RolID"
+        Me.RolIDDataGridViewTextBoxColumn.Name = "RolIDDataGridViewTextBoxColumn"
+        Me.RolIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.RolIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NombreDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'RolBindingSource
+        '
+        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
+        '
         'Roles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -320,8 +327,8 @@ Partial Class Roles
         Me.Text = "Roles"
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgPermisos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PermisoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -338,8 +345,6 @@ Partial Class Roles
     Friend WithEvents btnGuardarRol As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents dtgPermisos As DataGridView
-    Friend WithEvents RolIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RolBindingSource As BindingSource
     Friend WithEvents IdPermisoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -350,4 +355,6 @@ Partial Class Roles
     Friend WithEvents btnEditarPermiso As Button
     Friend WithEvents btnEditarRol As Button
     Friend WithEvents btnGuardarPermiso As Button
+    Friend WithEvents RolIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
