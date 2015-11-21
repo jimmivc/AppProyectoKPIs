@@ -47,13 +47,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PracticaExamen">
-      <HintPath>..\..\..\..\Visual Studio 2013\Projects\PracticaExamen\PracticaExamen\bin\Debug\PracticaExamen.dll</HintPath>
-    </Reference>
-    <Reference Include="PrimerControlWindows">
-      <HintPath>..\..\..\..\Visual Studio 2013\Projects\PrimerControlWindows\PrimerControlWindows\bin\Debug\PrimerControlWindows.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
@@ -79,10 +78,38 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarContacto.Designer.vb">
+      <DependentUpon>AgregarContacto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarContacto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AsignacionKPIs.Designer.vb">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
     </Compile>
     <Compile Include="AsignacionKPIs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BL\CargaDataGrids.vb" />
+    <Compile Include="BL\ContactoController.vb" />
+    <Compile Include="BL\EventoBL.vb" />
+    <Compile Include="BL\FormasContactoBL.vb" />
+    <Compile Include="BL\GrupoEmpresarialBL.vb" />
+    <Compile Include="BL\loginController.vb" />
+    <Compile Include="BL\KPIsController.vb" />
+    <Compile Include="BL\Paneles.vb" />
+    <Compile Include="BL\ProspectoBL.vb" />
+    <Compile Include="BL\SeguimientoBL.vb" />
+    <Compile Include="Model\RegistroMercadeo.vb" />
+    <Compile Include="BL\RegistrosBL.vb" />
+    <Compile Include="BL\RolesBL.vb" />
+    <Compile Include="BL\TiposFormaContactoBL.vb" />
+    <Compile Include="BL\UsuariosBL.vb" />
+    <Compile Include="BL\Validaciones.vb" />
+    <Compile Include="ConsultarKPI.Designer.vb">
+      <DependentUpon>ConsultarKPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarKPI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreacionKPIs.Designer.vb">
@@ -91,6 +118,39 @@
     <Compile Include="CreacionKPIs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ElegirRangoKPI.Designer.vb">
+      <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ElegirRangoKPI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionProspectos.Designer.vb">
+      <DependentUpon>GestionProspectos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionProspectos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarProspectos.Designer.vb">
+      <DependentUpon>ListarProspectos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProspectos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\AreaInteres.vb" />
+    <Compile Include="Model\Contacto.vb" />
+    <Compile Include="Model\DetalleFormula.vb" />
+    <Compile Include="Model\Encrypt.vb" />
+    <Compile Include="Model\Evento.vb" />
+    <Compile Include="Model\FormasContacto.vb" />
+    <Compile Include="Model\GrupoEmpresarial.vb" />
+    <Compile Include="Model\KPI.vb" />
+    <Compile Include="Model\ParametroKPI.vb" />
+    <Compile Include="Model\Permiso.vb" />
+    <Compile Include="Model\Prospecto.vb" />
+    <Compile Include="Model\Rol.vb" />
+    <Compile Include="Model\Seguimiento.vb" />
+    <Compile Include="Model\TiposFormaContacto.vb" />
+    <Compile Include="Model\Usuario.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -119,13 +179,55 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ReportesKPI.Designer.vb">
+      <DependentUpon>ReportesKPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesKPI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles.Designer.vb">
+      <DependentUpon>Roles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguimientos.Designer.vb">
+      <DependentUpon>Seguimientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Seguimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.vb">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AgregarContacto.resx">
+      <DependentUpon>AgregarContacto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsignacionKPIs.resx">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarKPI.resx">
+      <DependentUpon>ConsultarKPI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreacionKPIs.resx">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElegirRangoKPI.resx">
+      <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionProspectos.resx">
+      <DependentUpon>GestionProspectos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarProspectos.resx">
+      <DependentUpon>ListarProspectos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
@@ -136,19 +238,36 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesKPI.resx">
+      <DependentUpon>ReportesKPI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles.resx">
+      <DependentUpon>Roles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguimientos.resx">
+      <DependentUpon>Seguimientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\RegistroMercadeo.datasource" />
+    <None Include="My Project\DataSources\Rol.datasource" />
+    <None Include="My Project\DataSources\Usuario.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
