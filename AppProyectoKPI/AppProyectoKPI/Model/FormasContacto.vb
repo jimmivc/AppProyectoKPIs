@@ -12,6 +12,7 @@ Public Class FormasContacto
     Private _grupoEmpresarial As GrupoEmpresarial
     Private _prospecto As Prospecto
 
+
     Sub New()
 
     End Sub
@@ -120,7 +121,6 @@ Public Class FormasContacto
             _prospecto = value
         End Set
     End Property
-
 
 End Class
 

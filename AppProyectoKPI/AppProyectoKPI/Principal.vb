@@ -105,4 +105,8 @@
         Dim reportesKPI As New ReportesKPI()
         abrirVentana(reportesKPI)
     End Sub
+
+    Private Sub mnu_ImportarProspecto_Click(sender As Object, e As EventArgs) Handles mnu_ImportarProspecto.Click
+        abrirVentana(ImportarProspecto)
+    End Sub
 End Class

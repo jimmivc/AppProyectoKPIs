@@ -47,6 +47,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\InteropOfficeWordAndExcel.1.0.0\lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\InteropOfficeWordAndExcel.1.0.0\lib\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -100,6 +108,13 @@
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
+    <Compile Include="ImportarProspecto.Designer.vb">
+      <DependentUpon>ImportarProspecto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarProspecto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FormaContactoFake.vb" />
     <Compile Include="Model\RegistroMercadeo.vb" />
     <Compile Include="BL\RegistrosBL.vb" />
     <Compile Include="BL\RolesBL.vb" />
@@ -223,6 +238,9 @@
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImportarProspecto.resx">
+      <DependentUpon>ImportarProspecto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.vb</DependentUpon>
     </EmbeddedResource>
@@ -267,7 +285,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

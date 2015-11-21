@@ -39,13 +39,6 @@ Partial Class Usuarios
         Me.txtBxID = New System.Windows.Forms.TextBox()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dtgUsuarios = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.lblEstado = New System.Windows.Forms.Label()
-        Me.ComboBoxEstado = New System.Windows.Forms.ComboBox()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsuarioIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +47,13 @@ Partial Class Usuarios
         Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IsActivoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.RolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnSalvar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.ComboBoxEstado = New System.Windows.Forms.ComboBox()
         CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -233,6 +233,67 @@ Partial Class Usuarios
         Me.dtgUsuarios.Size = New System.Drawing.Size(788, 451)
         Me.dtgUsuarios.TabIndex = 23
         '
+        'UsuarioIDDataGridViewTextBoxColumn
+        '
+        Me.UsuarioIDDataGridViewTextBoxColumn.DataPropertyName = "UsuarioID"
+        Me.UsuarioIDDataGridViewTextBoxColumn.HeaderText = "UsuarioID"
+        Me.UsuarioIDDataGridViewTextBoxColumn.Name = "UsuarioIDDataGridViewTextBoxColumn"
+        Me.UsuarioIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ApellidosDataGridViewTextBoxColumn
+        '
+        Me.ApellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos"
+        Me.ApellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos"
+        Me.ApellidosDataGridViewTextBoxColumn.Name = "ApellidosDataGridViewTextBoxColumn"
+        Me.ApellidosDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CorreoDataGridViewTextBoxColumn
+        '
+        Me.CorreoDataGridViewTextBoxColumn.DataPropertyName = "Correo"
+        Me.CorreoDataGridViewTextBoxColumn.HeaderText = "Correo"
+        Me.CorreoDataGridViewTextBoxColumn.Name = "CorreoDataGridViewTextBoxColumn"
+        Me.CorreoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ContrasenaDataGridViewTextBoxColumn
+        '
+        Me.ContrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena"
+        Me.ContrasenaDataGridViewTextBoxColumn.HeaderText = "Contrasena"
+        Me.ContrasenaDataGridViewTextBoxColumn.Name = "ContrasenaDataGridViewTextBoxColumn"
+        Me.ContrasenaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ContrasenaDataGridViewTextBoxColumn.Visible = False
+        '
+        'CedulaDataGridViewTextBoxColumn
+        '
+        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula"
+        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "Cedula"
+        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
+        Me.CedulaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IsActivoDataGridViewCheckBoxColumn
+        '
+        Me.IsActivoDataGridViewCheckBoxColumn.DataPropertyName = "IsActivo"
+        Me.IsActivoDataGridViewCheckBoxColumn.HeaderText = "IsActivo"
+        Me.IsActivoDataGridViewCheckBoxColumn.Name = "IsActivoDataGridViewCheckBoxColumn"
+        Me.IsActivoDataGridViewCheckBoxColumn.ReadOnly = True
+        '
+        'RolDataGridViewTextBoxColumn
+        '
+        Me.RolDataGridViewTextBoxColumn.DataPropertyName = "Rol"
+        Me.RolDataGridViewTextBoxColumn.HeaderText = "Rol"
+        Me.RolDataGridViewTextBoxColumn.Name = "RolDataGridViewTextBoxColumn"
+        Me.RolDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
+        '
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.Transparent
@@ -315,67 +376,6 @@ Partial Class Usuarios
         Me.ComboBoxEstado.Size = New System.Drawing.Size(200, 21)
         Me.ComboBoxEstado.TabIndex = 28
         Me.ComboBoxEstado.Visible = False
-        '
-        'UsuarioBindingSource
-        '
-        Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
-        '
-        'UsuarioIDDataGridViewTextBoxColumn
-        '
-        Me.UsuarioIDDataGridViewTextBoxColumn.DataPropertyName = "UsuarioID"
-        Me.UsuarioIDDataGridViewTextBoxColumn.HeaderText = "UsuarioID"
-        Me.UsuarioIDDataGridViewTextBoxColumn.Name = "UsuarioIDDataGridViewTextBoxColumn"
-        Me.UsuarioIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ApellidosDataGridViewTextBoxColumn
-        '
-        Me.ApellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos"
-        Me.ApellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos"
-        Me.ApellidosDataGridViewTextBoxColumn.Name = "ApellidosDataGridViewTextBoxColumn"
-        Me.ApellidosDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CorreoDataGridViewTextBoxColumn
-        '
-        Me.CorreoDataGridViewTextBoxColumn.DataPropertyName = "Correo"
-        Me.CorreoDataGridViewTextBoxColumn.HeaderText = "Correo"
-        Me.CorreoDataGridViewTextBoxColumn.Name = "CorreoDataGridViewTextBoxColumn"
-        Me.CorreoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ContrasenaDataGridViewTextBoxColumn
-        '
-        Me.ContrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena"
-        Me.ContrasenaDataGridViewTextBoxColumn.HeaderText = "Contrasena"
-        Me.ContrasenaDataGridViewTextBoxColumn.Name = "ContrasenaDataGridViewTextBoxColumn"
-        Me.ContrasenaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ContrasenaDataGridViewTextBoxColumn.Visible = False
-        '
-        'CedulaDataGridViewTextBoxColumn
-        '
-        Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula"
-        Me.CedulaDataGridViewTextBoxColumn.HeaderText = "Cedula"
-        Me.CedulaDataGridViewTextBoxColumn.Name = "CedulaDataGridViewTextBoxColumn"
-        Me.CedulaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IsActivoDataGridViewCheckBoxColumn
-        '
-        Me.IsActivoDataGridViewCheckBoxColumn.DataPropertyName = "IsActivo"
-        Me.IsActivoDataGridViewCheckBoxColumn.HeaderText = "IsActivo"
-        Me.IsActivoDataGridViewCheckBoxColumn.Name = "IsActivoDataGridViewCheckBoxColumn"
-        Me.IsActivoDataGridViewCheckBoxColumn.ReadOnly = True
-        '
-        'RolDataGridViewTextBoxColumn
-        '
-        Me.RolDataGridViewTextBoxColumn.DataPropertyName = "Rol"
-        Me.RolDataGridViewTextBoxColumn.HeaderText = "Rol"
-        Me.RolDataGridViewTextBoxColumn.Name = "RolDataGridViewTextBoxColumn"
-        Me.RolDataGridViewTextBoxColumn.ReadOnly = True
         '
         'Usuarios
         '
