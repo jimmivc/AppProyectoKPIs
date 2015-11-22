@@ -106,6 +106,7 @@
     <Compile Include="BL\loginController.vb" />
     <Compile Include="BL\KPIsController.vb" />
     <Compile Include="BL\Paneles.vb" />
+    <Compile Include="BL\PermisosBL.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
     <Compile Include="BL\VentaBL.vb" />
@@ -285,6 +286,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Permiso.datasource" />
     <None Include="My Project\DataSources\RegistroMercadeo.datasource" />
     <None Include="My Project\DataSources\Rol.datasource" />
     <None Include="My Project\DataSources\Usuario.datasource" />
