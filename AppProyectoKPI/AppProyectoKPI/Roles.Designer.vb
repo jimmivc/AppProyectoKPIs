@@ -130,6 +130,7 @@ Partial Class Roles
         Me.dtgRoles.DataSource = Me.RolBindingSource
         Me.dtgRoles.Location = New System.Drawing.Point(24, 69)
         Me.dtgRoles.Name = "dtgRoles"
+        Me.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgRoles.Size = New System.Drawing.Size(492, 303)
         Me.dtgRoles.TabIndex = 23
         '

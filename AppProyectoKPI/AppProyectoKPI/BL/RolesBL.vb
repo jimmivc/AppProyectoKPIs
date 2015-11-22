@@ -3,12 +3,6 @@ Imports RestSharp
 
 Public Class RolesBL
 
-    Sub New()
-
-        listarRoles()
-
-    End Sub
-
     Shared Function listarRoles() As List(Of Rol)
 
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))

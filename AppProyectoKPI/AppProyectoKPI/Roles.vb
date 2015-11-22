@@ -17,7 +17,11 @@
         bs.ResetBindings(False)
     End Sub
 
-    Private Sub dtgRoles_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgRoles.CellContentClick
+    Private Sub actualizarPermisosAsignados(id As Integer)
+        CargaDataGrids.llenarGrid(dtgPermisos, PermisosBL.listarPermisosRol(id))
+    End Sub
+
+    Private Sub dtgRoles_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgRoles.CellClick
         For Each row As DataGridViewRow In dtgRoles.SelectedRows
 
             Dim rol As Rol = TryCast(row.DataBoundItem, Rol)
@@ -25,9 +29,5 @@
                 actualizarPermisosAsignados(rol.RolID)
             End If
         Next
-    End Sub
-
-    Private Sub actualizarPermisosAsignados(id As Integer)
-        CargaDataGrids.llenarGrid(dtgPermisos, PermisosBL.listarPermisos(id))
     End Sub
 End Class
