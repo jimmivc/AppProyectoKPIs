@@ -93,3 +93,4 @@ C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Seguimientos.resources
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Seguimientos.resources
+C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
