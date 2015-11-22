@@ -131,3 +131,6 @@ C:\Users\Owner\Desktop\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Ro
 C:\Users\Owner\Desktop\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Seguimientos.resources
 C:\Users\Owner\Desktop\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Usuarios.resources
 C:\Users\Owner\Desktop\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbproj.GenerateResource.Cache
+C:\Users\MARJORIE\Documents\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\bin\Debug\AppProyectoKPI.exe.config
+C:\Users\MARJORIE\Documents\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.exe
+C:\Users\MARJORIE\Documents\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.xml

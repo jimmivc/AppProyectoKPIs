@@ -108,6 +108,7 @@
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
+    <Compile Include="BL\VentaBL.vb" />
     <Compile Include="ImportarProspecto.Designer.vb">
       <DependentUpon>ImportarProspecto.vb</DependentUpon>
     </Compile>
@@ -166,6 +167,7 @@
     <Compile Include="Model\Seguimiento.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
     <Compile Include="Model\Usuario.vb" />
+    <Compile Include="Model\Venta.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -193,6 +195,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RegistrarVenta.Designer.vb">
+      <DependentUpon>RegistrarVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarVenta.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportesKPI.Designer.vb">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
@@ -255,6 +263,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarVenta.resx">
+      <DependentUpon>RegistrarVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesKPI.resx">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
