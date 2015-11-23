@@ -108,6 +108,12 @@
     <Compile Include="BL\Paneles.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
+    <Compile Include="GestionEventos.Designer.vb">
+      <DependentUpon>GestionEventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEventos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ImportarProspecto.Designer.vb">
       <DependentUpon>ImportarProspecto.vb</DependentUpon>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ElegirRangoKPI.resx">
       <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEventos.resx">
+      <DependentUpon>GestionEventos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
