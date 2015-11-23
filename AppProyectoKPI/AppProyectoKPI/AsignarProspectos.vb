@@ -1,14 +1,13 @@
 ﻿
 
-
 Imports System.Configuration
-    Imports RestSharp
-    Imports System.Net
-    Imports System.IO
-    Imports AppProyectoKPI
+Imports RestSharp
+Imports System.Net
+Imports System.IO
+Imports AppProyectoKPI
 
 
-Public Class AsignarProspectos
+Public Class AsignarListaProspectos
 
     Dim Dt As New DataTable
     Public Property BtnActualizar As Object
@@ -223,5 +222,4 @@ Public Class AsignarProspectos
 
     End Sub
 End Class
-
 
