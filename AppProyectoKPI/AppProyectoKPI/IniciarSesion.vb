@@ -15,7 +15,7 @@
             Dim usuario As Usuario = loginController.iniciarSesion(correo, pass)
             valid = True
         Catch ex As Exception
-            MessageBox.Show("Correo o aqui")
+            MessageBox.Show("Correo o contraseña invalido")
         End Try
 
         If valid = True Then

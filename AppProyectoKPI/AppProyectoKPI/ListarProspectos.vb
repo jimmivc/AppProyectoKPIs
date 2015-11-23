@@ -19,9 +19,15 @@ Public Class ListarProspectos
     End Sub
     Private Sub dtgListaProspectos_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dtgListaProspectos.CellClick
         Dim i As Integer
-        i = dtgListaProspectos.CurrentRow.Index
-        gestionProspectos.cargarProspectoPantalla(dtgListaProspectos.Item(0, i).Value)
-        gestionProspectos.LimpiarFormaContacto()
+        If (dtgListaProspectos.CurrentRow Is Nothing) Then
+            MsgBox("No existen prospectos para seleccionar")
+        Else
+            i = dtgListaProspectos.CurrentRow.Index
+            gestionProspectos.cargarProspectoPantalla(dtgListaProspectos.Item(0, i).Value)
+            gestionProspectos.LimpiarFormaContacto()
+        End If
+
+
     End Sub
 
     Private Sub ListarProspectos_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -12,7 +12,6 @@ Public Class GestionProspectos
 
     Private Sub GestionProspectos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ContactoController.CrearContacto()
-        '
         PrepararComboBoxEvento()
         PrepararComboBoxBooleano(cbxIsTrabajando)
         PrepararComboBoxBooleano(cbxIsPromociones)
@@ -23,6 +22,16 @@ Public Class GestionProspectos
     Private Function validarNumeros(ByVal texto As String) As Boolean
         Return IsNumeric(texto)
     End Function
+    ''' <summary>
+    ''' btnRegistrar_Click.  
+    ''' Acción que envia la información que se encuentra en el formulario de prospectos al controlador para que sea grabada.
+    ''' </summary>
+    ''' <param name="sender">parámetro de tipo Object.</param>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Dim pasaVerificacion As Boolean = False
         If (txtIdentificacion.Text = "" And txtNombre.Text = "" And txtAlias.Text = "") Then
@@ -48,14 +57,15 @@ Public Class GestionProspectos
             If (edad = "") Then
                 edad = 0
             End If
-            Dim fechaNac = txtFechaNac.Text
-            If (IsDate(fechaNac)) = False And Not (fechaNac = "") Then
+            Dim fechaNac As New DateTime?()
+            If (IsDate(txtFechaNac.Text)) = False And Not (txtFechaNac.Text = "") Then
                 MsgBox("Formato de fecha no válido")
 
             Else
 
-                If (fechaNac = "") Then
-                    fechaNac = DateTime.Now
+                If (txtFechaNac.Text = "") Then
+                    fechaNac = Nothing
+
                 Else
                     fechaNac = CDate(txtFechaNac.Text)
                 End If
@@ -67,8 +77,9 @@ Public Class GestionProspectos
                     Dim isPromociones = cbxIsPromociones.SelectedValue
                     Dim lugarEstudio = txtLugarEstudio.Text
                     Dim lugarTrabajo = txtLugarTrabajo.Text
-                    Dim isHabilitado = cbxIsHabilitado.SelectedValue
-                    Dim evento = EventoBL.ObtenerEventoXId(cbxEvento.SelectedValue)
+                Dim isHabilitado = cbxIsHabilitado.SelectedValue
+
+                Dim evento = EventoBL.ObtenerEventoXId(cbxEvento.SelectedValue)
                     Dim grabado =
             ProspectoBL.RegistrarProspecto(id, identificacion, aliass, nombre, apellidos, edad, fechaNac, anioBachillerato, evento,
                                             isTrabajando, isPromociones, lugarEstudio, lugarTrabajo, isHabilitado)
@@ -83,7 +94,16 @@ Public Class GestionProspectos
 
 
     End Sub
-
+    ''' <summary>
+    ''' btnListarProspectos_Click. 
+    ''' Acción que lista los prospectos.
+    ''' </summary>
+    ''' <param name="sender">parámetro de tipo Object.</param>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub btnListarProspectos_Click(sender As Object, e As EventArgs) Handles btnListarProspectos.Click
         Paneles.EliminarFormularioEnPanel(formListarSeguimientos, pnlGestionProspectos)
         formListarProspectos = Paneles.AgregarFormularioEnPanel(formListarProspectos, pnlGestionProspectos)
@@ -92,7 +112,16 @@ Public Class GestionProspectos
         formListarProspectos.cargarBsParaBusquedas()
 
     End Sub
-
+    ''' <summary>
+    ''' cargarProspectoPantalla. 
+    ''' Procedimiento que carga la información de un prospecto en el formulario.
+    ''' </summary>
+    ''' <param name="id">parámetro de tipo Integer.</param>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Public Sub cargarProspectoPantalla(ByVal id As Integer)
         Dim response = ProspectoBL.ObtenerProspecto(id)
         If (response Is Nothing) Then
@@ -112,29 +141,42 @@ Public Class GestionProspectos
             Else
                 Me.txtEdad.Text = response.Edad
             End If
-            Me.txtFechaNac.Text = response.FechaNac
-            ' Me.txtFechaNac.Text = Format(txtFechaNac, "yyyy/MM/dd")
+            If (response.FechaNac Is Nothing) Then
+                Me.txtFechaNac.Text = ""
+            Else
+                Me.txtFechaNac.Text = response.FechaNac
+            End If
+
             If (response.AnioBachillerato = 0) Then
-                Me.txtAnioBachillerato.Text = ""
-            Else
-                Me.txtAnioBachillerato.Text = response.AnioBachillerato
+                    Me.txtAnioBachillerato.Text = ""
+                Else
+                    Me.txtAnioBachillerato.Text = response.AnioBachillerato
+                End If
+                Me.cbxIsTrabajando.SelectedValue = response.IsTrabajando
+                Me.cbxIsPromociones.SelectedValue = response.IsInscritoPromociones
+                Me.txtLugarEstudio.Text = response.LugarEstudioAnterior
+                Me.txtLugarTrabajo.Text = response.LugarTrabajo
+                Me.cbxIsHabilitado.SelectedValue = response.IsHabilitado
+                If (response.Evento Is Nothing) Then
+                    Me.cbxEvento.SelectedValue = ""
+                Else
+                    Me.cbxEvento.SelectedValue = response.Evento.EventoID
+                End If
+                CargaDataGrids.llenarGrid(Me.dtg_FormasContacto, response.FormasContacto)
+                configurarColumnasListadoFormasContacto(dtg_FormasContacto)
             End If
-            Me.cbxIsTrabajando.SelectedValue = response.IsTrabajando
-            Me.cbxIsPromociones.SelectedValue = response.IsInscritoPromociones
-            Me.txtLugarEstudio.Text = response.LugarEstudioAnterior
-            Me.txtLugarTrabajo.Text = response.LugarTrabajo
-            Me.cbxIsHabilitado.SelectedValue = response.IsHabilitado
-            If (response.Evento Is Nothing) Then
-                Me.cbxEvento.SelectedValue = ""
-            Else
-                Me.cbxEvento.SelectedValue = response.Evento.EventoID
-            End If
-            CargaDataGrids.llenarGrid(Me.dtg_FormasContacto, response.FormasContacto)
-            configurarColumnasListadoFormasContacto(dtg_FormasContacto)
-        End If
 
     End Sub
-
+    ''' <summary>
+    ''' configurarColumnasListadoProspectos. 
+    ''' Procedimiento que define las columnas del la lista de prospectos mostradas en pantalla.
+    ''' </summary>
+    ''' <param name="dtg">parámetro de tipo DataGridView.</param>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Public Sub configurarColumnasListadoProspectos(ByRef dtg As DataGridView)
         bsProspecto = dtg.DataSource
 
@@ -172,7 +214,16 @@ Public Class GestionProspectos
         End Try
 
     End Sub
-
+    ''' <summary>
+    ''' configurarColumnasListadoFormasContacto. 
+    ''' Procedimiento que define las columnas del la lista de formas de contacto mostradas en pantalla.
+    ''' </summary>
+    ''' <param name="dtg">parámetro de tipo DataGridView.</param>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub configurarColumnasListadoFormasContacto(ByRef dtg As DataGridView)
         Try
             With dtg
@@ -200,7 +251,15 @@ Public Class GestionProspectos
     End Sub
 
 
-
+    ''' <summary>
+    ''' PrepararComboBoxEvento.
+    ''' Procedimiento que define la lista de eventos para la selección única dentro del formulario de prospectos.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub PrepararComboBoxEvento()
         Dim response = EventoBL.ObtenerListaEventosEnProspectos()
         Dim dt As DataTable
@@ -223,7 +282,15 @@ Public Class GestionProspectos
         End If
 
     End Sub
-
+    ''' <summary>
+    ''' PrepararComboBoxBooleano
+    ''' Procedimiento que prepara las selecciones únicas de las repuestas booleanas.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub PrepararComboBoxBooleano(ByRef cbx As ComboBox)
         Dim dt As DataTable
         dt = New DataTable("Tabla")
@@ -247,7 +314,15 @@ Public Class GestionProspectos
         cbx.ValueMember = "Codigo"
         cbx.DisplayMember = "Descripcion"
     End Sub
-
+    ''' <summary>
+    ''' Limpiar_Formulario
+    ''' Procedimiento que limpia el formulario de prospecto y su lista de formas de contacto.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub Limpiar_Formulario(ByVal f As Object)
         ' recorrer todos los controles del formulario indicado  
 
@@ -260,7 +335,15 @@ Public Class GestionProspectos
         Next
         Me.dtg_FormasContacto.Rows.Clear()
     End Sub
-
+    ''' <summary>
+    ''' btnNuevo_Click
+    ''' Acción que prepara el formulario para el ingreso de un nuevo prospecto.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         btnListarProspectos_Click(sender, e)
         Limpiar_Formulario(Me.RegistroProspecto)
@@ -282,7 +365,15 @@ Public Class GestionProspectos
     Private Sub txtAnioBachilleraro_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtAnioBachillerato.KeyPress
         Validaciones.VerificarNumeros(e)
     End Sub
-
+    ''' <summary>
+    ''' btnAgregarContacto_Click
+    ''' Acción para agregar una forma de contacto a un prospecto.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub btnAgregarContacto_Click(sender As Object, e As EventArgs) Handles btnAgregarContacto.Click
         Dim id = txtId.Text
         If (id = "") Then
@@ -298,7 +389,15 @@ Public Class GestionProspectos
         End If
     End Sub
 
-
+    ''' <summary>
+    ''' dtg_FormasContacto_CellClick
+    ''' Acción que recupera el id del prospecto seleccionado en la lista.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub dtg_FormasContacto_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dtg_FormasContacto.CellClick
         Dim i As Integer
         i = dtg_FormasContacto.CurrentRow.Index
@@ -306,7 +405,15 @@ Public Class GestionProspectos
 
 
     End Sub
-
+    ''' <summary>
+    ''' btnModificarContacto_Click
+    ''' Acción utilizada para modificar una forma de contacto específica perteneciente a un prospecto.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub btnModificarContacto_Click(sender As Object, e As EventArgs) Handles btnModificarContacto.Click
         Dim id = txtId.Text
         If (id = "") Then
@@ -336,6 +443,15 @@ Public Class GestionProspectos
     Public Function getProspectoId()
         Return prospectoId
     End Function
+    ''' <summary>
+    ''' btnModificarContacto_Click
+    ''' Acción utilizada para activar el panel de seguimientos de un prospecto.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Public Sub btnSeguimiento_Click(sender As Object, e As EventArgs) Handles btnSeguimiento.Click
         If (txtId.Text = "") Then
             MsgBox("Se debe seleccionar un prospecto para solicitar su historial de seguimiento")
@@ -351,6 +467,15 @@ Public Class GestionProspectos
             formListarSeguimientos.btnNuevo_Click(sender, e)
         End If
     End Sub
+    ''' <summary>
+    ''' btnModificarContacto_Click
+    ''' Procedimiento utilizado para definir las columnas de la lista de seguimientos de un prospecto.
+    ''' </summary>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Private Sub configurarColumnasListadoSeguimientos(ByRef dtg As DataGridView)
         Try
             With dtg

@@ -110,9 +110,14 @@ Public Class FormasContactoBL
 
     ''' <summary>
     ''' RegistrarFormaContacto.  
-    ''' Registra una forma de contacto.
+    ''' Registra o modifica una forma de contacto.
     ''' </summary>
     ''' <param name="Id">id - parámetro de tipo Integer.</param>
+    ''' <param name="descripcionFormaContacto">parámetro de tipo Integer.</param>
+    ''' <param name="tipoFormaContacto">parámetro de tipo TipoFormaContacto.</param>
+    ''' <param name="grupoEmpresarial">parámetro de tipo GrupoEmpresarial.</param>
+    ''' <param name="isHabilitado">parámetro de tipo Boolean.</param>
+    ''' <param name="prospecto">parámetro de tipo Prospecto.</param>
     ''' <returns>Respuesta con el objeto FormasContacto.</returns>
     ''' <remarks><para>Historia de Creación y modificaciones:
     ''' <list type="bullet">
