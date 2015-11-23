@@ -106,11 +106,17 @@
     <Compile Include="BL\loginController.vb" />
     <Compile Include="BL\KPIsController.vb" />
     <Compile Include="BL\Paneles.vb" />
+    <Compile Include="BL\PermisosBL.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
-    <Compile Include="GestionEventos.Designer.vb">
-      <DependentUpon>GestionEventos.vb</DependentUpon>
+    <Compile Include="BL\VentaBL.vb" />
+    <Compile Include="GestionEmpresarial.Designer.vb">
+      <DependentUpon>GestionEmpresarial.vb</DependentUpon>
     </Compile>
+    <Compile Include="GestionEmpresarial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEventos.Designer.vb" />
     <Compile Include="GestionEventos.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
       <DependentUpon>ImportarProspecto.vb</DependentUpon>
     </Compile>
     <Compile Include="ImportarProspecto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarUsuarios.Designer.vb">
+      <DependentUpon>ImportarUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\FormaContactoFake.vb" />
@@ -172,6 +184,7 @@
     <Compile Include="Model\Seguimiento.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
     <Compile Include="Model\Usuario.vb" />
+    <Compile Include="Model\Venta.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -199,6 +212,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RegistrarVentas.Designer.vb" />
+    <Compile Include="RegistrarVentas.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportesKPI.Designer.vb">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
@@ -241,14 +258,16 @@
     <EmbeddedResource Include="ElegirRangoKPI.resx">
       <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionEventos.resx">
-      <DependentUpon>GestionEventos.vb</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmpresarial.resx" />
+    <EmbeddedResource Include="GestionEventos.resx" />
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportarProspecto.resx">
       <DependentUpon>ImportarProspecto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarUsuarios.resx">
+      <DependentUpon>ImportarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.vb</DependentUpon>
@@ -265,6 +284,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarVentas.resx" />
     <EmbeddedResource Include="ReportesKPI.resx">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +303,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Permiso.datasource" />
     <None Include="My Project\DataSources\RegistroMercadeo.datasource" />
     <None Include="My Project\DataSources\Rol.datasource" />
     <None Include="My Project\DataSources\Usuario.datasource" />

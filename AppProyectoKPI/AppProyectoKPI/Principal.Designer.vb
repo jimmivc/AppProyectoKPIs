@@ -27,6 +27,7 @@ Partial Class Principal
         Me.mnu_Operaciones = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_GestionarProspectos = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_ImportarProspecto = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnu_ImportarUsuarios = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_GenerarRegistroMercadeo = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_AsignarKpis = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu_GestionarVentas = New System.Windows.Forms.ToolStripMenuItem()
@@ -64,7 +65,7 @@ Partial Class Principal
         '
         'mnu_Operaciones
         '
-        Me.mnu_Operaciones.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu_GestionarProspectos, Me.mnu_ImportarProspecto, Me.mnu_GenerarRegistroMercadeo, Me.mnu_AsignarKpis, Me.mnu_GestionarVentas})
+        Me.mnu_Operaciones.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnu_GestionarProspectos, Me.mnu_ImportarProspecto, Me.mnu_ImportarUsuarios, Me.mnu_GenerarRegistroMercadeo, Me.mnu_AsignarKpis, Me.mnu_GestionarVentas})
         Me.mnu_Operaciones.ForeColor = System.Drawing.Color.Silver
         Me.mnu_Operaciones.Name = "mnu_Operaciones"
         Me.mnu_Operaciones.Size = New System.Drawing.Size(93, 22)
@@ -78,7 +79,7 @@ Partial Class Principal
         Me.mnu_GestionarProspectos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_GestionarProspectos.Image = CType(resources.GetObject("mnu_GestionarProspectos.Image"), System.Drawing.Image)
         Me.mnu_GestionarProspectos.Name = "mnu_GestionarProspectos"
-        Me.mnu_GestionarProspectos.Size = New System.Drawing.Size(234, 26)
+        Me.mnu_GestionarProspectos.Size = New System.Drawing.Size(267, 26)
         Me.mnu_GestionarProspectos.Text = "Gestionar prospectos"
         Me.mnu_GestionarProspectos.Visible = False
         '
@@ -87,15 +88,24 @@ Partial Class Principal
         Me.mnu_ImportarProspecto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_ImportarProspecto.Image = CType(resources.GetObject("mnu_ImportarProspecto.Image"), System.Drawing.Image)
         Me.mnu_ImportarProspecto.Name = "mnu_ImportarProspecto"
-        Me.mnu_ImportarProspecto.Size = New System.Drawing.Size(234, 26)
+        Me.mnu_ImportarProspecto.Size = New System.Drawing.Size(267, 26)
         Me.mnu_ImportarProspecto.Text = "Importar prospectos"
+        '
+        'mnu_ImportarUsuarios
+        '
+        Me.mnu_ImportarUsuarios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.mnu_ImportarUsuarios.Image = CType(resources.GetObject("mnu_ImportarUsuarios.Image"), System.Drawing.Image)
+        Me.mnu_ImportarUsuarios.Name = "mnu_ImportarUsuarios"
+        Me.mnu_ImportarUsuarios.Size = New System.Drawing.Size(267, 26)
+        Me.mnu_ImportarUsuarios.Text = "Importar Profesores/Estudiantes"
+        Me.mnu_ImportarUsuarios.Visible = False
         '
         'mnu_GenerarRegistroMercadeo
         '
         Me.mnu_GenerarRegistroMercadeo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_GenerarRegistroMercadeo.Image = CType(resources.GetObject("mnu_GenerarRegistroMercadeo.Image"), System.Drawing.Image)
         Me.mnu_GenerarRegistroMercadeo.Name = "mnu_GenerarRegistroMercadeo"
-        Me.mnu_GenerarRegistroMercadeo.Size = New System.Drawing.Size(234, 26)
+        Me.mnu_GenerarRegistroMercadeo.Size = New System.Drawing.Size(267, 26)
         Me.mnu_GenerarRegistroMercadeo.Text = "Generar registro mercadeo"
         Me.mnu_GenerarRegistroMercadeo.Visible = False
         '
@@ -104,7 +114,7 @@ Partial Class Principal
         Me.mnu_AsignarKpis.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_AsignarKpis.Image = CType(resources.GetObject("mnu_AsignarKpis.Image"), System.Drawing.Image)
         Me.mnu_AsignarKpis.Name = "mnu_AsignarKpis"
-        Me.mnu_AsignarKpis.Size = New System.Drawing.Size(234, 26)
+        Me.mnu_AsignarKpis.Size = New System.Drawing.Size(267, 26)
         Me.mnu_AsignarKpis.Text = "Asignar KPIs"
         Me.mnu_AsignarKpis.Visible = False
         '
@@ -114,7 +124,7 @@ Partial Class Principal
         Me.mnu_GestionarVentas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.mnu_GestionarVentas.Image = CType(resources.GetObject("mnu_GestionarVentas.Image"), System.Drawing.Image)
         Me.mnu_GestionarVentas.Name = "mnu_GestionarVentas"
-        Me.mnu_GestionarVentas.Size = New System.Drawing.Size(234, 26)
+        Me.mnu_GestionarVentas.Size = New System.Drawing.Size(267, 26)
         Me.mnu_GestionarVentas.Text = "Gestionar ventas"
         Me.mnu_GestionarVentas.Visible = False
         '
@@ -283,4 +293,5 @@ Partial Class Principal
     Friend WithEvents mnu_Permisos As ToolStripMenuItem
     Friend WithEvents mnu_FuentesProspecto As ToolStripMenuItem
     Friend WithEvents mnu_ImportarProspecto As ToolStripMenuItem
+    Friend WithEvents mnu_ImportarUsuarios As ToolStripMenuItem
 End Class

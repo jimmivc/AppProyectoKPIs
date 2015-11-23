@@ -398,6 +398,26 @@ Public Class ProspectoBL
             Return Nothing
         End Try
     End Function
+
+    Shared Function ObtenerProspectoXIdentificacionConUsuario(ByVal identificacion As Integer) As Prospecto
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes/usuario/{id}", Method.GET)
+        'Cargar url parameters
+        request.AddUrlSegment("id", identificacion)
+        Try
+            'Execute 
+            request.RequestFormat = DataFormat.Json
+            Dim response = client.Execute(Of Prospecto)(request)
+            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                Return response.Data
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox("Error" + "  " + ex.Message)
+            Return Nothing
+        End Try
+    End Function
     ''' <summary>
     ''' IsProspecto.  
     ''' Obtiene un valor Booleano ante la existencia de un objeto.

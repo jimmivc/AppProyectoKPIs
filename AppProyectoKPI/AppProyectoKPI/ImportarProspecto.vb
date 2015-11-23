@@ -2,7 +2,7 @@
 
 Public Class ImportarProspecto
     Private path As String = ""
-    Private Sub btnListarProspectos_Click(sender As Object, e As EventArgs) Handles btnListarProspectos.Click
+    Private Sub btnCargarArchivo_Click(sender As Object, e As EventArgs) Handles btnCargarArchivo.Click
         Dim openFile As OpenFileDialog = New OpenFileDialog
         openFile.Filter = "Excel Worksheets|*.xlsx"
         openFile.ShowDialog()
@@ -16,7 +16,5 @@ Public Class ImportarProspecto
 
     End Sub
 
-    Private Sub ImportarProspecto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class

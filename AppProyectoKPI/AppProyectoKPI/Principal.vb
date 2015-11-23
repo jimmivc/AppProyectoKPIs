@@ -1,7 +1,7 @@
 ﻿Public Class Principal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         activarColorFondoMDI(sender, e)
-        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "GenerarRegistroMercadeo", "AsignarKpis",
+        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "ImportarUsuarios", "GenerarRegistroMercadeo", "AsignarKpis",
             "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi",
             "FuentesProspectos", "Seguridad", "Usuarios", "Roles", "Permisos"}
         accederMenuPrincipal(permisos)
@@ -108,5 +108,21 @@
 
     Private Sub mnu_ImportarProspecto_Click(sender As Object, e As EventArgs) Handles mnu_ImportarProspecto.Click
         abrirVentana(ImportarProspecto)
+    End Sub
+
+    Private Sub mnu_ImportarUsuarios_Click(sender As Object, e As EventArgs) Handles mnu_ImportarUsuarios.Click
+        abrirVentana(ImportarUsuarios)
+    End Sub
+
+    Private Sub mnu_Entidades_Click(sender As Object, e As EventArgs) Handles mnu_Entidades.Click
+        abrirVentana(GestionEmpresarial)
+    End Sub
+
+    Private Sub mnu_Eventos_Click(sender As Object, e As EventArgs) Handles mnu_Eventos.Click
+        abrirVentana(GestionEventos)
+    End Sub
+
+    Private Sub mnu_GestionarVentas_Click(sender As Object, e As EventArgs) Handles mnu_GestionarVentas.Click
+        abrirVentana(RegistrarVentas)
     End Sub
 End Class

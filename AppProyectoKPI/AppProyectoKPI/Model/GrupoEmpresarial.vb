@@ -1,17 +1,7 @@
-﻿
-
-Imports AppProyectoKPI
-Imports Newtonsoft.Json
-
-
-Public Class GrupoEmpresarial
+﻿Public Class GrupoEmpresarial
 
     Private _grupoEmpresarialID As Integer
     Private _descGrupoEmpresarial As String
-
-
-
-
     Public Sub New()
     End Sub
 
@@ -21,8 +11,6 @@ Public Class GrupoEmpresarial
         DescGrupoEmpresarial = _descGrupoEmpresarial
 
     End Sub
-
-
     Public Property GrupoEmpresarialID As Integer
         Get
             Return _grupoEmpresarialID

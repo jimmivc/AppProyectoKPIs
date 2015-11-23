@@ -23,26 +23,26 @@ Partial Class ImportarProspecto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ImportarProspecto))
-        Me.btnListarProspectos = New System.Windows.Forms.Button()
+        Me.btnCargarArchivo = New System.Windows.Forms.Button()
         Me.txtPath = New System.Windows.Forms.TextBox()
         Me.btnImportar = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.SuspendLayout()
         '
-        'btnListarProspectos
+        'btnCargarArchivo
         '
-        Me.btnListarProspectos.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnListarProspectos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnListarProspectos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.btnListarProspectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnListarProspectos.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
-        Me.btnListarProspectos.ForeColor = System.Drawing.Color.Silver
-        Me.btnListarProspectos.Location = New System.Drawing.Point(12, 167)
-        Me.btnListarProspectos.Name = "btnListarProspectos"
-        Me.btnListarProspectos.Size = New System.Drawing.Size(195, 27)
-        Me.btnListarProspectos.TabIndex = 3
-        Me.btnListarProspectos.Text = "Cargar archivo excel"
-        Me.btnListarProspectos.UseVisualStyleBackColor = False
+        Me.btnCargarArchivo.BackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnCargarArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnCargarArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnCargarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCargarArchivo.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnCargarArchivo.ForeColor = System.Drawing.Color.Silver
+        Me.btnCargarArchivo.Location = New System.Drawing.Point(12, 167)
+        Me.btnCargarArchivo.Name = "btnCargarArchivo"
+        Me.btnCargarArchivo.Size = New System.Drawing.Size(195, 27)
+        Me.btnCargarArchivo.TabIndex = 3
+        Me.btnCargarArchivo.Text = "Cargar archivo excel"
+        Me.btnCargarArchivo.UseVisualStyleBackColor = False
         '
         'txtPath
         '
@@ -82,7 +82,7 @@ Partial Class ImportarProspecto
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.btnImportar)
         Me.Controls.Add(Me.txtPath)
-        Me.Controls.Add(Me.btnListarProspectos)
+        Me.Controls.Add(Me.btnCargarArchivo)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ImportarProspecto"
         Me.Text = "ImportarProspecto"
@@ -91,7 +91,7 @@ Partial Class ImportarProspecto
 
     End Sub
 
-    Friend WithEvents btnListarProspectos As Button
+    Friend WithEvents btnCargarArchivo As Button
     Friend WithEvents txtPath As TextBox
     Friend WithEvents btnImportar As Button
     Friend WithEvents ProgressBar1 As ProgressBar
