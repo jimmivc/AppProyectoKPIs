@@ -7,14 +7,14 @@ Public Class Permiso
     Private _accion As String
     Private _roles As List(Of Rol)
 
-    Private Sub New()
+    Public Sub New()
 
     End Sub
 
     Public Sub New(pId As Integer, pDesc As String, pAccion As String, pRoles As List(Of Rol))
         PermisoID = pId
         Descripcion = pDesc
-        Accion = pAccion
+        pAccion = pAccion
         Roles = pRoles
     End Sub
 
@@ -36,7 +36,7 @@ Public Class Permiso
         End Set
     End Property
 
-    Public Property Accion As String
+    Public Property pAccion As String
         Get
             Return _accion
         End Get
