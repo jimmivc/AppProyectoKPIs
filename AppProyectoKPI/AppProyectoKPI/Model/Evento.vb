@@ -1,15 +1,9 @@
-﻿
-Imports AppProyectoKPI
-Imports Newtonsoft.Json
+﻿Public Class Evento
 
-
-
-Public Class Evento
-
-    Public Property _eventoID As Integer
-    Public Property _descEventoCaptacion As String
-    Public Property _fechaEvento As Date
-    Public Property _lugarEvento As String
+    Private _eventoID As Integer
+    Private _descEventoCaptacion As String
+    Private _fechaEvento As DateTime
+    Private _lugarEvento As String
 
 
     Public Sub New()
@@ -22,7 +16,6 @@ Public Class Evento
         FechaEvento = _fechaEvento
         LugarEvento = lugar
     End Sub
-
     Public Property EventoID As Integer
         Get
             Return _eventoID
@@ -31,7 +24,6 @@ Public Class Evento
             _eventoID = value
         End Set
     End Property
-
 
     Public Property DescEventoCaptacion As String
         Get
@@ -59,7 +51,4 @@ Public Class Evento
             _lugarEvento = value
         End Set
     End Property
-
-
 End Class
-

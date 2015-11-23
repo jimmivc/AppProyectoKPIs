@@ -392,6 +392,19 @@ AppProyectoKPI
  <item>07/11/2015 - Creación</item>
  </list></para></remarks>
 </member>
+<member name="M:AppProyectoKPI.RolesBL.ObtenerRol(System.Int32)">
+ <summary>
+ ObtenerRol.  
+ Obtiene un Rol por ID .
+ </summary>
+ <param name="Id">id - parámetro de tipo Integer.</param>
+ <returns>Respuesta con el objeto Rol.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
 <member name="M:AppProyectoKPI.TiposFormaContactoBL.ObtenerListaTiposFormaContacto">
  <summary>
  ObtenerListaTiposFormaContacto.  
@@ -411,6 +424,46 @@ AppProyectoKPI
  </summary>
  <param name="Id">id - parámetro de tipo Integer.</param>
  <returns>Respuesta con el objeto TiposFormaContacto.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.UsuariosBL.ImportarUsuarios(System.String,System.Windows.Forms.ProgressBar@,System.Int32)">
+ <summary>
+ ImportarUsuarios.  
+ Importa los datos de los usuarios profesores y estudiantes de un archivo de excel.
+ </summary>
+ <param name="path">parámetro de tipo String.</param>
+ <param name="progressBar">parámetro de tipo ProgressBar.</param>
+ <returns>Respuesta con un booleano.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.UsuariosBL.RegistrarListaUsuarios(System.Collections.Generic.List{AppProyectoKPI.Usuario})">
+ <summary>
+ RegistrarListaProspectos.  
+ Registra una lista de prospectos de manera simultanea.
+ </summary>
+ <param name="listaUsuariosI">parámetro de tipo Lista de Prospecto.</param>
+ <returns>Respuesta con un booleano.</returns>
+ <remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+ <item>Autor.: Christian Ulloa Tosso </item>
+ <item>07/11/2015 - Creación</item>
+ </list></para></remarks>
+</member>
+<member name="M:AppProyectoKPI.UsuariosBL.ObtenerUsuarioXIdentificacion(System.Int32)">
+ <summary>
+ ObtenerUsuarioXIdentificacion.  
+ Obtiene un usuario por Identificación sin cargar objetos internos.
+ </summary>
+ <param name="identificacion">id - parámetro de tipo Integer.</param>
+ <returns>Respuesta con el objeto usuario.</returns>
  <remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
  <item>Autor.: Christian Ulloa Tosso </item>
