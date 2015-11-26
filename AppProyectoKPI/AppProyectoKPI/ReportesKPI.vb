@@ -69,4 +69,13 @@
 
     End Sub
 
+    Private Sub dtgRoles_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgRoles.CellClick
+        For Each row As DataGridViewRow In dtgRoles.SelectedRows
+
+            Dim rol As Rol = TryCast(row.DataBoundItem, Rol)
+            If rol IsNot Nothing Then
+                actualizarRegistrosAsignados(rol.RolID)
+            End If
+        Next
+    End Sub
 End Class
