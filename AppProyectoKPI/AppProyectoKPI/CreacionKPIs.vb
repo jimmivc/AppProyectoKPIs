@@ -131,7 +131,7 @@
     ''' <remarks></remarks>
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If (validarCampos()) Then
-            MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+            MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior, lstPeriodicidad.SelectedItem))
             actualizarListaKPIs()
             reiniciarTodo()
         End If
@@ -215,6 +215,11 @@
 
         btnConfigurar.Enabled = False
 
+        lblCampo.Visible = False
+        lblFormula.Visible = False
+        lblValor.Visible = False
+
+
         For Each row As DataGridViewRow In dtgListarKPIs.SelectedRows
 
             Dim kpi As KPI = TryCast(row.DataBoundItem, KPI)
@@ -254,7 +259,7 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If (validarCampos()) Then
-            MessageBox.Show(KPIsController.modificarKPI(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+            MessageBox.Show(KPIsController.modificarKPI(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, lstPeriodicidad.SelectedItem, formula, variable, limiteSuperior, limiteInferior))
             actualizarListaKPIs()
             btnCancelar.PerformClick()
         End If
@@ -263,7 +268,7 @@
     Private Function validarCampos() As Boolean
         Dim result = False
 
-        If (Not txtDescripcion.Text.Equals("") And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
+        If (Not txtDescripcion.Text.Equals("") And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("") And Not lstPeriodicidad.SelectedItem = Nothing) Then
             If (Not variable(variable.Count - 1).Equals("operador")) Then
                 If (Not limiteDefinido) Then
                     calcularLimite()
@@ -285,6 +290,10 @@
         btnModificar.Visible = True
         btnRegistrar.Visible = True
 
+
+        lblCampo.Visible = True
+        lblFormula.Visible = True
+        lblValor.Visible = True
         reiniciarTodo()
     End Sub
 
