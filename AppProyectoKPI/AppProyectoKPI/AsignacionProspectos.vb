@@ -219,9 +219,6 @@ Imports System.Configuration
 
         End Sub
 
-
-
-
     Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
         Dim result As DialogResult
         Dim user = ComboBoxEjecutivos
@@ -230,44 +227,50 @@ Imports System.Configuration
 
         Dim total As Integer
 
-        Dim selectedCellCount As Integer = DataGridView1.GetCellCount(DataGridViewElementStates.Selected)
+        If (DataGridView1.CurrentRow Is Nothing) Then
+            MessageBox.Show("seleccione los prospectos que quiere asignar")
+        Else
 
-
-
-        Dim prospecto As Prospecto = TryCast(DataGridView1.SelectedRows(0).DataBoundItem, Prospecto)
-
-        result = MessageBox.Show("Desea asignar los prospectos al usuario:" + ComboBoxEjecutivos.Text, "Modificando registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-
-
-
-        If (result = DialogResult.OK) Then
+            Dim prospecto As Prospecto = TryCast(DataGridView1.SelectedRows(0).DataBoundItem, Prospecto)
             If prospecto IsNot Nothing And user IsNot Nothing Then
 
-                For Each row As DataGridViewRow In DataGridView1.SelectedRows
 
-                    If (DataGridView1.SelectedRows.Count > 0) Then
-                        row.Selected.ToString()
-                        '  total += row.Index
-                        prospecto.ProspectoID = row.Index
-                        ProspectoBL.asignarListaProspectos(ComboBoxEjecutivos.SelectedValue, prospecto.ProspectoID)
+                result = MessageBox.Show("Desea asignar los prospectos al usuario:" + ComboBoxEjecutivos.Text, "Modificando registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
 
 
-                    Else
 
-                        MessageBox.Show("no selecciono prospectos")
-                        result = DialogResult.Cancel
-                        actualizarListaUsuariosAsignados(ComboBoxEjecutivos.SelectedValue)
-                    End If
-                Next
+                If (result = DialogResult.OK) Then
+
+
+                    For Each row As DataGridViewRow In DataGridView1.SelectedRows
+
+                        If (DataGridView1.SelectedRows.Count > 0) Then
+                            row.Selected.ToString()
+                            total += DataGridView1.SelectedRows(0).Selected
+
+
+                            prospecto.ProspectoID = row.Index
+                            ProspectoBL.asignarListaProspectos(ComboBoxEjecutivos.SelectedValue, prospecto.ProspectoID)
+
+
+                        Else
+
+
+                            result = DialogResult.Cancel
+                            actualizarListaUsuariosAsignados(ComboBoxEjecutivos.SelectedValue)
+                        End If
+                    Next
+                End If
             End If
 
 
-
         End If
-
+        MessageBox.Show(total, "prospectos para" + ComboBoxEjecutivos.Text)
 
         actualizarListaUsuariosAsignados(ComboBoxEjecutivos.SelectedValue)
     End Sub
+
+
 
 End Class
 
