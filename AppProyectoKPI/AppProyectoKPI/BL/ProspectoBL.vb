@@ -28,10 +28,10 @@ Public Class ProspectoBL
             Dim listaFormasContactosI As New List(Of FormaContactoFake)
             Dim listaFormasContacto As New List(Of FormasContacto)
             Dim listaProspectosI As New List(Of Prospecto)
-            Dim APP As New Excel.Application
-            Dim worksheet As Excel.Worksheet
-            Dim workbook As Excel.Workbook
-            Dim rango As Excel.Range
+            '  Dim APP As New Excel.Application
+            ' Dim worksheet As Excel.Worksheet
+            'Dim workbook As Excel.Workbook
+            'Dim rango As Excel.Range
             Dim rowNum As Integer
             Dim fieldNum As Integer
             Dim rowCount As Integer
@@ -337,6 +337,55 @@ Public Class ProspectoBL
             Return Nothing
         End Try
     End Function
+
+
+
+
+    Shared Function asignarListaProspectos(idUsuario As Integer, idProspeto As Integer) As String
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes/asignar/{idUsuario}/{idProspecto}", Method.GET)
+        Dim resul As String
+
+
+        request.AddUrlSegment("idUsuario", idUsuario)
+        request.AddUrlSegment("idProspecto", idProspeto)
+
+        Dim response = client.Execute(request)
+        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
+            resul = "prospecto asignado"
+        Else
+            resul = response.Content
+        End If
+
+        Return resul
+    End Function
+
+
+
+
+
+    Shared Function getListaProspectoUsuario() As List(Of Prospecto)
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes/Usuarios", Method.GET)
+
+        Try
+            'Execute 
+
+            Dim response = client.Execute(Of List(Of Prospecto))(request)
+            Dim eventos As List(Of Prospecto) = JsonConvert.DeserializeObject(Of List(Of Prospecto))(response.Content)
+            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                Return response.Data
+
+            End If
+
+        Catch ex As Exception
+            MsgBox("Error" + "  " + ex.Message)
+        End Try
+
+    End Function
+
+
+
     ''' <summary>
     ''' ObtenerSeguimientoProspecto.  
     ''' Obtiene un prospecto por ID y lo devuelve con sus registros de seguimiento.
@@ -348,6 +397,7 @@ Public Class ProspectoBL
     ''' <item>Autor.: Christian Ulloa Tosso </item>
     ''' <item>07/11/2015 - Creación</item>
     ''' </list></para></remarks>
+    ''' 
     Shared Function ObtenerSeguimientoProspecto(ByVal id As Integer) As Prospecto
         ' MsgBox("entro a obtener")
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
