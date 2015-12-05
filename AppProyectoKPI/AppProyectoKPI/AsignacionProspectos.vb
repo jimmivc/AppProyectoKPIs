@@ -7,7 +7,7 @@ Imports System.IO
 Imports AppProyectoKPI
 
 
-Public Class AsignarListaProspectos
+Public Class AsignacionProspectos
 
     Dim Dt As New DataTable
     Public Property BtnActualizar As Object
@@ -198,21 +198,33 @@ Public Class AsignarListaProspectos
 
 
     Private Sub actualizarListaUsuariosAsignados(iduser As Integer)
-
+        Dim response = ProspectoBL.getListaProspectoUsuario()
+        Dim dt As DataTable
+        dt = New DataTable("Tabla")
 
 
         Dim row = DataGridView1.CurrentRow()
         Dim prospecto As New Prospecto()
 
-        prospecto = ProspectoBL.getProspectoUsuario(iduser)
+        'prospecto = ProspectoBL.getProspectoUsuario(iduser)
+        dt.Columns.Add("Usuario")
+        dt.Columns.Add("Nombre")
+        dt.Columns.Add("Prospecto")
 
-        If (IsNothing(prospecto)) Then
-            MsgBox("valor invalido, no se encontro el evento que busca")
 
+
+        If (response Is Nothing) Then
         Else
+            For Each item As Prospecto In response
+                Dim dr As DataRow
+                dr = dt.NewRow()
+                dr("Usuario") = item.Usuario.UsuarioID
+                dr(1) = item.Usuario.Nombre
+                dr(2) = item.ProspectoID
+                dt.Rows.Add(dr)
+            Next
+            DataGridView2.DataSource = dt
 
-
-            configurarColumnasListadoUsuariosAsignados(CargaDataGrids.llenarGrid(DataGridView2, ProspectoBL.getListaProspectoUsuario()))
 
         End If
 
@@ -250,6 +262,7 @@ Public Class AsignarListaProspectos
 
 
                         If (DataGridView1.SelectedRows.Count > 0) Then
+
                             row.Selected.ToString()
                             total += DataGridView1.SelectedRows(0).Selected
 
