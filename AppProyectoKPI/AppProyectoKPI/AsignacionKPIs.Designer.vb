@@ -34,7 +34,6 @@ Partial Class AsignacionKPIs
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.FormulaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.btnQuitar = New System.Windows.Forms.Button()
         Me.DescKpiDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.KPIBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -130,7 +129,6 @@ Partial Class AsignacionKPIs
         Me.dtgIndicadoresAsignados.Name = "dtgIndicadoresAsignados"
         Me.dtgIndicadoresAsignados.ReadOnly = True
         Me.dtgIndicadoresAsignados.RowTemplate.Height = 24
-        Me.dtgIndicadoresAsignados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgIndicadoresAsignados.Size = New System.Drawing.Size(341, 413)
         Me.dtgIndicadoresAsignados.TabIndex = 22
         '
@@ -174,22 +172,6 @@ Partial Class AsignacionKPIs
         '
         Me.FormulaBindingSource.DataMember = "Formula"
         Me.FormulaBindingSource.DataSource = Me.KPIBindingSource
-        '
-        'btnQuitar
-        '
-        Me.btnQuitar.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.btnQuitar.FlatAppearance.BorderSize = 0
-        Me.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
-        Me.btnQuitar.ForeColor = System.Drawing.Color.Silver
-        Me.btnQuitar.Location = New System.Drawing.Point(698, 393)
-        Me.btnQuitar.Name = "btnQuitar"
-        Me.btnQuitar.Size = New System.Drawing.Size(95, 34)
-        Me.btnQuitar.TabIndex = 23
-        Me.btnQuitar.Text = "<<Quitar"
-        Me.btnQuitar.UseVisualStyleBackColor = False
         '
         'DescKpiDataGridViewTextBoxColumn1
         '
@@ -247,11 +229,10 @@ Partial Class AsignacionKPIs
         '
         'AsignacionKPIs
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1162, 703)
-        Me.Controls.Add(Me.btnQuitar)
         Me.Controls.Add(Me.dtgIndicadoresAsignados)
         Me.Controls.Add(Me.dtgListarKPIs)
         Me.Controls.Add(Me.dtgRoles)
@@ -294,5 +275,4 @@ Partial Class AsignacionKPIs
     Friend WithEvents FormulaBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DescKpiDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EstadoDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents btnQuitar As System.Windows.Forms.Button
 End Class

@@ -78,13 +78,9 @@
 
     Private Sub abrirVentana(form As Form)
         Dim active As Form = Me.ActiveMdiChild
-
         If (Not active Is Nothing) Then
-            If (Not active.Equals(form)) Then
-                active.Close()
-            End If
+            active.Close()
         End If
-
         form.MdiParent = Me
         form.WindowState = FormWindowState.Maximized
         form.Show()
