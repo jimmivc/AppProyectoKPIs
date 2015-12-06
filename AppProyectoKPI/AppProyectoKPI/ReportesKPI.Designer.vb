@@ -59,6 +59,7 @@ Partial Class ReportesKPI
         Me.dtgRegistros.Name = "dtgRegistros"
         Me.dtgRegistros.ReadOnly = True
         Me.dtgRegistros.RowTemplate.Height = 24
+        Me.dtgRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgRegistros.Size = New System.Drawing.Size(264, 418)
         Me.dtgRegistros.TabIndex = 0
         '
@@ -155,7 +156,7 @@ Partial Class ReportesKPI
         Me.dtgResultados.Name = "dtgResultados"
         Me.dtgResultados.ReadOnly = True
         Me.dtgResultados.RowTemplate.Height = 24
-        Me.dtgResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.dtgResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgResultados.Size = New System.Drawing.Size(534, 418)
         Me.dtgResultados.TabIndex = 0
         '
@@ -201,7 +202,7 @@ Partial Class ReportesKPI
         '
         'ReportesKPI
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1162, 712)
