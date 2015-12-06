@@ -19,7 +19,7 @@ Public Class KPIsController
     ''' <item>Autor.: Jimmi Vila </item>
     ''' <item>07/11/2015 - Creación</item>
     ''' </list></para></remarks>
-    Shared Function registrarIndicadorKPI(descripcion As String, formato As String, objetivo As Double, formula As List(Of String), variables As List(Of String), limiteSup As Integer, limiteInf As Integer) As String
+    Shared Function registrarIndicadorKPI(descripcion As String, formato As String, objetivo As Double, formula As List(Of String), variables As List(Of String), limiteSup As Integer, limiteInf As Integer, periodicidad As String) As String
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("kpis", Method.POST)
         Dim result As String
@@ -30,7 +30,7 @@ Public Class KPIsController
             formulaCompleta.Add(New DetalleFormula(i, variables(i), formula(i)))
         Next
 
-        Dim kpi = New KPI(0, descripcion, formato, objetivo, New ParametroKPI(limiteSup, limiteInf), formulaCompleta)
+        Dim kpi = New KPI(0, descripcion, formato, objetivo, periodicidad, New ParametroKPI(limiteSup, limiteInf), formulaCompleta)
         'cargar url parameters
         request.AddJsonBody(kpi)
         'execute the request
@@ -102,7 +102,7 @@ Public Class KPIsController
     ''' <item>Autor.: Jimmi Vila </item>
     ''' <item>07/11/2015 - Creación</item>
     ''' </list></para></remarks>
-    Shared Function modificarKPI(modificar As Integer, descripcion As String, formato As Object, objetivo As String, formula As List(Of String), variables As List(Of String), limiteSup As Integer, limiteInf As Integer) As String
+    Shared Function modificarKPI(modificar As Integer, descripcion As String, formato As Object, objetivo As String, peridiocidad As String, formula As List(Of String), variables As List(Of String), limiteSup As Integer, limiteInf As Integer) As String
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("kpis/{id}", Method.PUT)
         Dim result As String
@@ -113,7 +113,7 @@ Public Class KPIsController
         '    formulaCompleta.Add(New DetalleFormula(i, variables(i), formula(i)))
         'Next
 
-        Dim kpi = New KPI(modificar, descripcion, formato, objetivo, New ParametroKPI(limiteSup, limiteInf), Nothing)
+        Dim kpi = New KPI(modificar, descripcion, formato, objetivo, peridiocidad, New ParametroKPI(limiteSup, limiteInf), Nothing)
         kpi.Estado = True
         'cargar url parameters
         request.AddUrlSegment("id", modificar)
@@ -232,6 +232,24 @@ Public Class KPIsController
 
         Return response.Data
 
+    End Function
+
+    Shared Function quitarIndicadorKPI(idRol As Integer, idKPI As Integer) As String
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/desasignar/{idKPI}/{idRol}", Method.GET)
+        Dim resul As String
+
+        request.AddUrlSegment("idKPI", idKPI)
+        request.AddUrlSegment("idRol", idRol)
+        'execute the request
+        Dim response = client.Execute(request)
+        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
+            resul = "Indicador KPI desasignado"
+        Else
+            resul = response.Content
+        End If
+
+        Return resul
     End Function
 
 End Class

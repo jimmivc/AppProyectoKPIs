@@ -3,6 +3,7 @@
     Private _descKpi As String
     Private _formato As String
     Private _objetivo As Double
+    Private _periodicidad As String
 
     Private _parametro As ParametroKPI
     Private _formula As List(Of DetalleFormula)
@@ -13,13 +14,15 @@
     Public Sub New()
 
     End Sub
-    Public Sub New(pid As Integer, pdesc As String, pformato As String, pobjetivo As Double, pparam As ParametroKPI, pformula As List(Of DetalleFormula))
+
+    Public Sub New(pid As Integer, pdesc As String, pformato As String, pobjetivo As Double, pperiodicidad As String, pparam As ParametroKPI, pformula As List(Of DetalleFormula))
         KPIID = pid
         DescKpi = pdesc
         Formato = pformato
         Objetivo = pobjetivo
         Parametro = pparam
         Formula = pformula
+        Periodicidad = pperiodicidad
     End Sub
 
     Public Property KPIID As Integer
@@ -93,4 +96,14 @@
             _roles = value
         End Set
     End Property
+
+    Public Property Periodicidad As String
+        Get
+            Return _periodicidad
+        End Get
+        Set(value As String)
+            _periodicidad = value
+        End Set
+    End Property
+
 End Class
