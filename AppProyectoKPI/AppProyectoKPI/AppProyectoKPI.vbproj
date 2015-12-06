@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="BL\CargaDataGrids.vb" />
     <Compile Include="BL\ContactoController.vb" />
+    <Compile Include="BL\CursosBL.vb" />
     <Compile Include="BL\EventoBL.vb" />
     <Compile Include="BL\FormasContactoBL.vb" />
     <Compile Include="BL\GrupoEmpresarialBL.vb" />
@@ -110,14 +111,10 @@
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
     <Compile Include="BL\VentaBL.vb" />
-    <Compile Include="GestionEmpresarial.Designer.vb">
-      <DependentUpon>GestionEmpresarial.vb</DependentUpon>
+    <Compile Include="ImportarCursos.Designer.vb">
+      <DependentUpon>ImportarCursos.vb</DependentUpon>
     </Compile>
-    <Compile Include="GestionEmpresarial.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionEventos.Designer.vb" />
-    <Compile Include="GestionEventos.vb">
+    <Compile Include="ImportarCursos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ImportarProspecto.Designer.vb">
@@ -132,6 +129,25 @@
     <Compile Include="ImportarUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ListarCursos.Designer.vb">
+      <DependentUpon>ListarCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarEstudiantes.Designer.vb">
+      <DependentUpon>ListarEstudiantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEstudiantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarProfesores.Designer.vb">
+      <DependentUpon>ListarProfesores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProfesores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Curso.vb" />
     <Compile Include="Model\FormaContactoFake.vb" />
     <Compile Include="Model\RegistroMercadeo.vb" />
     <Compile Include="BL\RegistrosBL.vb" />
@@ -180,8 +196,10 @@
     <Compile Include="Model\ParametroKPI.vb" />
     <Compile Include="Model\Permiso.vb" />
     <Compile Include="Model\Prospecto.vb" />
+    <Compile Include="Model\RelacionCursos.vb" />
     <Compile Include="Model\Rol.vb" />
     <Compile Include="Model\Seguimiento.vb" />
+    <Compile Include="Model\TipoCurso.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
     <Compile Include="Model\Usuario.vb" />
     <Compile Include="Model\Venta.vb" />
@@ -212,10 +230,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="RegistrarVentas.Designer.vb" />
-    <Compile Include="RegistrarVentas.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportesKPI.Designer.vb">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
@@ -258,10 +272,11 @@
     <EmbeddedResource Include="ElegirRangoKPI.resx">
       <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionEmpresarial.resx" />
-    <EmbeddedResource Include="GestionEventos.resx" />
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarCursos.resx">
+      <DependentUpon>ImportarCursos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportarProspecto.resx">
       <DependentUpon>ImportarProspecto.vb</DependentUpon>
@@ -271,6 +286,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarCursos.resx">
+      <DependentUpon>ListarCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarEstudiantes.resx">
+      <DependentUpon>ListarEstudiantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarProfesores.resx">
+      <DependentUpon>ListarProfesores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarProspectos.resx">
       <DependentUpon>ListarProspectos.vb</DependentUpon>
@@ -284,7 +308,6 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarVentas.resx" />
     <EmbeddedResource Include="ReportesKPI.resx">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
     </EmbeddedResource>

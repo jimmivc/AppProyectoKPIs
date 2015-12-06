@@ -491,8 +491,10 @@ Public Class GestionProspectos
                 .Columns(6).Visible = False
                 .Columns(7).Visible = False
                 .Columns(8).Visible = False
-                .Columns(2).Width = 230
-                .Columns(9).HeaderText = "Usuario"
+                .Columns(9).Visible = False
+                .Columns(10).Width = 160
+                .Columns(10).HeaderText = "Usuario"
+
 
                 .ColumnHeadersDefaultCellStyle.Font = New Font("Century Gothic", 8.5)
                 .DefaultCellStyle.Font = New Font("Century Gothic", 9)

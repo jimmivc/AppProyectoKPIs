@@ -3,7 +3,7 @@
         activarColorFondoMDI(sender, e)
         Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "ImportarUsuarios", "GenerarRegistroMercadeo", "AsignarKpis",
             "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi",
-            "FuentesProspectos", "Seguridad", "Usuarios", "Roles", "Permisos"}
+            "FuentesProspectos", "ListarProfesores", "ListarEstudiantes", "ListarCursos", "Seguridad", "Usuarios", "Roles", "Permisos"}
         accederMenuPrincipal(permisos)
 
     End Sub
@@ -78,13 +78,9 @@
 
     Private Sub abrirVentana(form As Form)
         Dim active As Form = Me.ActiveMdiChild
-
         If (Not active Is Nothing) Then
-            If (Not active.Equals(form)) Then
-                active.Close()
-            End If
+            active.Close()
         End If
-
         form.MdiParent = Me
         form.WindowState = FormWindowState.Maximized
         form.Show()
@@ -119,14 +115,30 @@
     End Sub
 
     Private Sub mnu_Entidades_Click(sender As Object, e As EventArgs) Handles mnu_Entidades.Click
-        abrirVentana(GestionEmpresarial)
+        'abrirVentana(GestionEmpresarial)
     End Sub
 
     Private Sub mnu_Eventos_Click(sender As Object, e As EventArgs) Handles mnu_Eventos.Click
-        abrirVentana(GestionEventos)
+        ' abrirVentana(GestionEventos)
     End Sub
 
     Private Sub mnu_GestionarVentas_Click(sender As Object, e As EventArgs) Handles mnu_GestionarVentas.Click
-        abrirVentana(RegistrarVentas)
+        'abrirVentana(RegistrarVentas)
+    End Sub
+
+    Private Sub mnu_ImportarCursos_Click(sender As Object, e As EventArgs) Handles mnu_ImportarCursos.Click
+        abrirVentana(ImportarCursos)
+    End Sub
+
+    Private Sub mnu_ListarProfesores_Click(sender As Object, e As EventArgs) Handles mnu_ListarProfesores.Click
+        abrirVentana(ListarProfesores)
+    End Sub
+
+    Private Sub mnu_ListarEstudiantes_Click(sender As Object, e As EventArgs) Handles mnu_ListarEstudiantes.Click
+        abrirVentana(ListarEstudiantes)
+    End Sub
+
+    Private Sub mnu_ListarCursos_Click(sender As Object, e As EventArgs) Handles mnu_ListarCursos.Click
+        abrirVentana(ListarCursos)
     End Sub
 End Class

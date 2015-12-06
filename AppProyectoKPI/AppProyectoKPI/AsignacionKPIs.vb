@@ -43,13 +43,4 @@
         End If
         actualizarIndicadoresAsignados(TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol).RolID)
     End Sub
-
-    Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
-        Dim rol As Rol = TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol)
-        Dim kpi As KPI = TryCast(dtgIndicadoresAsignados.SelectedRows(0).DataBoundItem, KPI)
-        If rol IsNot Nothing And kpi IsNot Nothing Then
-            MessageBox.Show(KPIsController.quitarIndicadorKPI(rol.RolID, kpi.KPIID))
-        End If
-        actualizarIndicadoresAsignados(TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol).RolID)
-    End Sub
 End Class

@@ -13,6 +13,7 @@ Public Class Seguimiento
     Dim _isEfectiva As Boolean
     Dim _isFormaContactoValida As Boolean
     Dim _usuario As Usuario
+    Dim _descUsuario As String
 
     Sub New()
 
@@ -118,8 +119,16 @@ Public Class Seguimiento
         End Get
         Set(value As Usuario)
             _usuario = value
+            DescUsuario = _usuario.Nombre
         End Set
     End Property
 
-
+    Public Property DescUsuario As String
+        Get
+            Return _descUsuario
+        End Get
+        Set(value As String)
+            _descUsuario = value
+        End Set
+    End Property
 End Class
