@@ -190,10 +190,7 @@ Public Class GestionEventos
 
 
         End If
-        DataGridView1.Columns(4).Visible = False
-        DataGridView1.Columns(5).Visible = False
-        DataGridView1.Columns(6).Visible = False
-        DataGridView1.Columns(7).Visible = False
+
     End Sub
 
     Public Sub configurarColumnasListadoEventos(ByRef dtg As DataGridView)
