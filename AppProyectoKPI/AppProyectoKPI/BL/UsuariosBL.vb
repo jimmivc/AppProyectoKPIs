@@ -288,7 +288,54 @@ Public Class UsuariosBL
         End Try
     End Function
 
+<<<<<<< HEAD
     Shared Function ObtenerUsuarioXRol(ByVal tipo As Integer) As List(Of Usuario)
+=======
+    Shared Function listarUsuariosMercadeo() As List(Of Usuario)
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Usuarios/Mercadeo", Method.GET)
+
+        'execute the request
+        Dim response = client.Execute(Of List(Of Usuario))(request)
+
+        Return response.Data
+
+    End Function
+
+
+    Shared Function listarUsuarios() As List(Of Usuario)
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Usuarios", Method.GET)
+
+        'execute the request
+        Dim response = client.Execute(Of List(Of Usuario))(request)
+
+        Return response.Data
+
+    End Function
+
+    Shared Function registrarUsuario(pNombre As String, pApellidos As String, pCorreo As String, pPass As String, pCedula As Integer, pRolId As Integer) As String
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Usuarios", Method.POST)
+        Dim result As String
+
+        Dim user As Usuario = New Usuario(0, pNombre, pApellidos, pCorreo, pPass, pCedula, True, New Rol(pRolId, Nothing, Nothing, Nothing, Nothing))
+
+        request.AddJsonBody(user)
+
+        Dim response = client.Execute(request)
+
+        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
+            result = "Usuario registrado"
+        Else
+            result = response.ErrorMessage
+        End If
+
+        Return result
+    End Function
+
+    Shared Function consultarUsuario(idUser As Integer) As Usuario
+>>>>>>> c136a1cc86a00bb6b61a5b297b6e78c092d45759
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Usuarios/Tipo/{id}", Method.GET)
         'Cargar url parameters
