@@ -11,7 +11,7 @@ Public Class AsignarProspectos
     Dim Dt As New DataTable
     Public Property BtnActualizar As Object
     Private bsEvento As New BindingSource()
-    Private chk As CheckBox = New CheckBox()
+
     Dim listaProspectos As New List(Of Prospecto)
     Dim bs As New BindingSource()
 
