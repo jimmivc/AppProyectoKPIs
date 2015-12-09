@@ -363,29 +363,6 @@ Public Class ProspectoBL
 
 
 
-
-    Shared Function getListaProspectoUsuario() As List(Of Prospecto)
-        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("Prospectoes/Usuarios", Method.GET)
-
-        Try
-            'Execute 
-
-            Dim response = client.Execute(Of List(Of Prospecto))(request)
-            Dim eventos As List(Of Prospecto) = JsonConvert.DeserializeObject(Of List(Of Prospecto))(response.Content)
-            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
-                Return response.Data
-
-            End If
-
-        Catch ex As Exception
-            MsgBox("Error" + "  " + ex.Message)
-        End Try
-
-    End Function
-
-
-
     ''' <summary>
     ''' ObtenerSeguimientoProspecto.  
     ''' Obtiene un prospecto por ID y lo devuelve con sus registros de seguimiento.
@@ -600,24 +577,7 @@ Public Class ProspectoBL
         End Try
 
     End Function
-    Shared Function asignarListaProspectos(idUsuario As Integer, idProspeto As Integer) As String
-        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("Prospectoes/asignar/{idUsuario}/{idProspecto}", Method.GET)
-        Dim resul As String
 
-
-        request.AddUrlSegment("idUsuario", idUsuario)
-        request.AddUrlSegment("idProspecto", idProspeto)
-
-        Dim response = client.Execute(request)
-        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
-            resul = "prospecto asignado"
-        Else
-            resul = response.Content
-        End If
-
-        Return resul
-    End Function
     Shared Function getListaProspectoUsuario() As List(Of Prospecto)
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Prospectoes/Usuarios", Method.GET)

@@ -288,19 +288,6 @@ Public Class UsuariosBL
         End Try
     End Function
 
-<<<<<<< HEAD
-    Shared Function ObtenerUsuarioXRol(ByVal tipo As Integer) As List(Of Usuario)
-=======
-    Shared Function listarUsuariosMercadeo() As List(Of Usuario)
-        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("Usuarios/Mercadeo", Method.GET)
-
-        'execute the request
-        Dim response = client.Execute(Of List(Of Usuario))(request)
-
-        Return response.Data
-
-    End Function
 
 
     Shared Function listarUsuarios() As List(Of Usuario)
@@ -335,7 +322,7 @@ Public Class UsuariosBL
     End Function
 
     Shared Function consultarUsuario(idUser As Integer) As Usuario
->>>>>>> c136a1cc86a00bb6b61a5b297b6e78c092d45759
+
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Usuarios/Tipo/{id}", Method.GET)
         'Cargar url parameters
