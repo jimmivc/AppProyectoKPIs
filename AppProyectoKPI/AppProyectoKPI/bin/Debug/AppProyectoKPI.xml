@@ -6,7 +6,7 @@ AppProyectoKPI
 </name>
 </assembly>
 <members>
-<member name="M:AppProyectoKPI.KPIsController.registrarIndicadorKPI(System.String,System.String,System.Double,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+<member name="M:AppProyectoKPI.KPIsController.registrarIndicadorKPI(System.String,System.String,System.Double,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.String)">
 	<summary>
  registrarIndicadorKPI
  Metodo que recibe los datos necesarios para la creacion de un nuevo indicador KPI
@@ -45,7 +45,7 @@ AppProyectoKPI
 				<item>Autor.: Jimmi Vila </item>
 				<item>07/11/2015 - Creación</item>
 			</list></para></remarks>
-</member><member name="M:AppProyectoKPI.KPIsController.modificarKPI(System.Int32,System.String,System.Object,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+</member><member name="M:AppProyectoKPI.KPIsController.modificarKPI(System.Int32,System.String,System.Object,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
 	<summary>
  modificar KPI
  </summary>
