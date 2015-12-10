@@ -111,18 +111,6 @@
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
     <Compile Include="BL\VentaBL.vb" />
-    <Compile Include="GestionEmpresarial.designer.vb">
-      <DependentUpon>GestionEmpresarial.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GestionEmpresarial.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionEventos.designer.vb">
-      <DependentUpon>GestionEventos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GestionEventos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ImportarCursos.Designer.vb">
       <DependentUpon>ImportarCursos.vb</DependentUpon>
     </Compile>
@@ -243,12 +231,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RegistrarVentas.designer.vb">
-      <DependentUpon>RegistrarVentas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrarVentas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ReportesKPI.Designer.vb">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
     </Compile>
@@ -290,12 +272,6 @@
     <EmbeddedResource Include="ElegirRangoKPI.resx">
       <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionEmpresarial.resx">
-      <DependentUpon>GestionEmpresarial.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionEventos.resx">
-      <DependentUpon>GestionEventos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
     </EmbeddedResource>
@@ -331,9 +307,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarVentas.resx">
-      <DependentUpon>RegistrarVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesKPI.resx">
       <DependentUpon>ReportesKPI.vb</DependentUpon>

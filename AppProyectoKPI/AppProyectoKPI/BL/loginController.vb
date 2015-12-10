@@ -1,6 +1,13 @@
 ﻿Public Class loginController
 
-    Public Shared user As Usuario
+    Private Shared user As Usuario
+
+    'Shared Function crearUsuario() As Boolean
+
+    '    user = Usuario
+    '    Return True
+
+    'End Function
 
     Shared Function getUser() As Usuario
 
@@ -14,7 +21,7 @@
         Dim pass = enc.EncryptData(pPass)
 
         Try
-            user = UsuariosBL.consultarUsuarioCorreo(pCorreo)
+            Dim user As Usuario = UsuariosBL.consultarUsuarioCorreo(pCorreo)
             If user.Contrasena.Equals(pass) Then
 
                 Return user
