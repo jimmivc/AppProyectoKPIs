@@ -124,38 +124,47 @@
     End Sub
 
     Private Sub mnu_ImportarProspecto_Click(sender As Object, e As EventArgs) Handles mnu_ImportarProspecto.Click
-        abrirVentana(ImportarProspecto)
+        Dim impPros As New ImportarProspecto
+        abrirVentana(impPros)
     End Sub
 
     Private Sub mnu_ImportarUsuarios_Click(sender As Object, e As EventArgs) Handles mnu_ImportarUsuarios.Click
-        abrirVentana(ImportarUsuarios)
+        Dim imporUsers As New ImportarUsuarios
+        abrirVentana(imporUsers)
     End Sub
 
     Private Sub mnu_Entidades_Click(sender As Object, e As EventArgs) Handles mnu_Entidades.Click
-        abrirVentana(GestionEmpresarial)
+        Dim gestEmp As New GestionEmpresarial
+        abrirVentana(gestEmp)
     End Sub
 
     Private Sub mnu_Eventos_Click(sender As Object, e As EventArgs) Handles mnu_Eventos.Click
-        abrirVentana(GestionEventos)
+        Dim gestEvent As New GestionEmpresarial
+        abrirVentana(gestEvent)
     End Sub
 
     Private Sub mnu_GestionarVentas_Click(sender As Object, e As EventArgs) Handles mnu_GestionarVentas.Click
-        abrirVentana(RegistrarVentas)
+        Dim regVent As New RegistrarVentas
+        abrirVentana(regVent)
     End Sub
 
     Private Sub mnu_ImportarCursos_Click(sender As Object, e As EventArgs) Handles mnu_ImportarCursos.Click
-        abrirVentana(ImportarCursos)
+        Dim impCur As New ImportarCursos
+        abrirVentana(impCur)
     End Sub
 
     Private Sub mnu_ListarProfesores_Click(sender As Object, e As EventArgs) Handles mnu_ListarProfesores.Click
-        abrirVentana(ListarProfesores)
+        Dim listPro As New ListarProfesores
+        abrirVentana(listPro)
     End Sub
 
     Private Sub mnu_ListarEstudiantes_Click(sender As Object, e As EventArgs) Handles mnu_ListarEstudiantes.Click
-        abrirVentana(ListarEstudiantes)
+        Dim listEstu As New ListarEstudiantes
+        abrirVentana(listEstu)
     End Sub
 
     Private Sub mnu_ListarCursos_Click(sender As Object, e As EventArgs) Handles mnu_ListarCursos.Click
+        Dim listCur As New ListarCursos
         abrirVentana(ListarCursos)
     End Sub
 End Class
