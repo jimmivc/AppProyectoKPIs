@@ -551,5 +551,44 @@ Public Class ProspectoBL
 
     End Function
 
+    Shared Function asignarListaProspectos(idUsuario As Integer, idProspeto As Integer) As String
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes/asignar/{idUsuario}/{idProspecto}", Method.GET)
+        Dim resul As String
+
+
+        request.AddUrlSegment("idUsuario", idUsuario)
+        request.AddUrlSegment("idProspecto", idProspeto)
+
+
+        'execute the request
+        Dim response = client.Execute(request)
+        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
+            resul = "prospecto asignado"
+        Else
+            resul = response.Content
+        End If
+
+        Return resul
+    End Function
+
+    Shared Function getProspectoUsuario(iduser As Integer) As Prospecto
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes/Usuarios/{id}", Method.GET)
+        'Cargar url parameters
+        request.AddUrlSegment("id", iduser)
+        Try
+            'Execute 
+            request.RequestFormat = DataFormat.Json
+            Dim response = client.Execute(Of Prospecto)(request)
+            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                Return response.Data
+            End If
+        Catch ex As Exception
+            MsgBox("Error" + "  " + ex.Message)
+        End Try
+
+    End Function
+
 
 End Class
