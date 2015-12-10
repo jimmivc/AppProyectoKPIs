@@ -1,9 +1,26 @@
 ﻿Public Class Principal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         activarColorFondoMDI(sender, e)
-        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "ImportarUsuarios", "GenerarRegistroMercadeo", "AsignarKpis",
-            "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi",
-            "FuentesProspectos", "ListarProfesores", "ListarEstudiantes", "ListarCursos", "Seguridad", "Usuarios", "Roles", "Permisos"}
+        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "ImportarUsuarios", "GenerarRegistroMercadeo", "AsignarKpis", "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi", "FuentesProspectos", "ListarProfesores", "ListarEstudiantes", "ListarCursos", "Seguridad", "Usuarios", "Roles", "Permisos"}
+
+        'Dim pRol As Rol = loginController.user.Rol
+        'Dim str As String = ""
+        'Dim permisosLista As List(Of Permiso) = PermisosBL.listarPermisosRol(pRol.RolID)
+        'Dim count As Integer = 0
+
+        'For Each x As Permiso In permisosLista
+        '    Str = Str() + x.pAccion
+        '    count = count + 1
+        'Next
+        'For Index As Integer = 1 To permisosLista.Count
+        '    If (Index <> count) Then
+
+        '    Else
+
+        '    End If
+
+        'Next
+
         accederMenuPrincipal(permisos)
 
     End Sub
@@ -115,15 +132,15 @@
     End Sub
 
     Private Sub mnu_Entidades_Click(sender As Object, e As EventArgs) Handles mnu_Entidades.Click
-        'abrirVentana(GestionEmpresarial)
+        abrirVentana(GestionEmpresarial)
     End Sub
 
     Private Sub mnu_Eventos_Click(sender As Object, e As EventArgs) Handles mnu_Eventos.Click
-        ' abrirVentana(GestionEventos)
+        abrirVentana(GestionEventos)
     End Sub
 
     Private Sub mnu_GestionarVentas_Click(sender As Object, e As EventArgs) Handles mnu_GestionarVentas.Click
-        'abrirVentana(RegistrarVentas)
+        abrirVentana(RegistrarVentas)
     End Sub
 
     Private Sub mnu_ImportarCursos_Click(sender As Object, e As EventArgs) Handles mnu_ImportarCursos.Click
