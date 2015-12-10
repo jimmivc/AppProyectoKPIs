@@ -1,0 +1,7 @@
+diff a/AppProyectoKPI/AppProyectoKPI/AsignacionKPIs.Designer.vb b/AppProyectoKPI/AppProyectoKPI/AsignacionKPIs.Designer.vb	(rejected hunks)
+@@ -294,4 +294,5 @@
+     Friend WithEvents FormulaBindingSource As System.Windows.Forms.BindingSource
+     Friend WithEvents DescKpiDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+     Friend WithEvents EstadoDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
++    Friend WithEvents btnQuitar As System.Windows.Forms.Button
+ End Class

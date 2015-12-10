@@ -1,0 +1,24 @@
+diff a/AppProyectoKPI/AppProyectoKPI/BL/KPIsController.vb b/AppProyectoKPI/AppProyectoKPI/BL/KPIsController.vb	(rejected hunks)
+@@ -234,4 +234,22 @@
+ 
+     End Function
+ 
++    Shared Function quitarIndicadorKPI(idRol As Integer, idKPI As Integer) As String
++        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
++        Dim request = New RestRequest("kpis/desasignar/{idKPI}/{idRol}", Method.GET)
++        Dim resul As String
++
++        request.AddUrlSegment("idKPI", idKPI)
++        request.AddUrlSegment("idRol", idRol)
++        'execute the request
++        Dim response = client.Execute(request)
++        If (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)) Then
++            resul = "Indicador KPI desasignado"
++        Else
++            resul = response.Content
++        End If
++
++        Return resul
++    End Function
++
+ End Class
