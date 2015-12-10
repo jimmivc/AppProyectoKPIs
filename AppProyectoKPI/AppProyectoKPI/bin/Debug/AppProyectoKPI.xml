@@ -6,814 +6,749 @@ AppProyectoKPI
 </name>
 </assembly>
 <members>
-<member name="M:AppProyectoKPI.CargaDataGrids.llenarGrid(System.Windows.Forms.DataGridView,System.Collections.Generic.IEnumerable{System.Object})">
- <summary>
- llenarGrid.  
- Utilitario general para llenar un grid con una lista de objetos.
- </summary>
- <param name="Grid">grid - objeto de tipo DataGridView.</param>
- <param name="Objetos">objetos - lista de objetos para poblar el data grid view.</param>
- <returns>El método retorna un grid.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.CargaDataGrids.estilizarDataGrid(System.Windows.Forms.DataGridView@)">
- <summary>
- estilizarDataGrid.  
- Utilitario general para estilizar un grid.
- </summary>
- <param name="dtg">grid - objeto de tipo DataGridView.</param>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.CursosBL.ImportarCursos(System.String,System.Windows.Forms.ProgressBar@)">
- <summary>
- ImportarUsuarios.  
- Importa los datos de los usuarios profesores y estudiantes de un archivo de excel.
- </summary>
- <param name="path">parámetro de tipo String.</param>
- <param name="progressBar">parámetro de tipo ProgressBar.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.CursosBL.RegistrarListaCursos(System.Collections.Generic.List{AppProyectoKPI.Curso})">
- <summary>
- RegistrarListaCursos.  
- Registra una lista de Cursos de manera simultanea.
- </summary>
- <param name="listaCursosI">parámetro de tipo Lista de Cursos.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>21/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.CursosBL.ObtenerCursoXCodigo(System.String)">
- <summary>
- ObtenerCursoXCodigo.  
- Obtiene un Curso por su codigo.
- </summary>
- <param name="codigo">id - parámetro de tipo String.</param>
- <returns>Respuesta con el objeto Curso.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.CursosBL.ObtenerTipoCursoXId(System.Int32)">
- <summary>
- ObtenerTipoCursoXId.
- Obtiene un objeto Tipo de Curso x ID
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto TiposFormaContacto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>21/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.CursosBL.RegistrarListaRelacionCursos(System.Collections.Generic.List{AppProyectoKPI.RelacionCursos})">
- <summary>
- RegistrarListaRelacionCursos.  
- Registra una lista de Cursos de manera simultanea.
- </summary>
- <param name="listaRelacionCursosI">parámetro de tipo Lista de Relación de Cursos.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>21/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.FormasContactoBL.ObtenerListaFormasContacto">
- <summary>
- ObtenerListaFormasContacto.  
- Método que obtiene una lista de formasde contacto.
- </summary>
- <returns>Respuesta con la lista de formas de contacto</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.FormasContactoBL.ObtenerFormasContactoXId(System.Int32)">
- <summary>
- ObtenerFormasContactoXId.  
- Obtiene la forma de contacto por Id.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto FormasContacto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.FormasContactoBL.IsFormasContacto(System.Int32)">
- <summary>
- IsFormasContacto.  
- Verifica la existencia de un objeto FormasContacto por Id.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta de tipo boleana.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.FormasContactoBL.RegistrarFormaContacto(System.Int32,System.String,AppProyectoKPI.TiposFormaContacto,AppProyectoKPI.GrupoEmpresarial,System.Boolean,AppProyectoKPI.Prospecto)">
- <summary>
- RegistrarFormaContacto.  
- Registra o modifica una forma de contacto.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <param name="descripcionFormaContacto">parámetro de tipo Integer.</param>
- <param name="tipoFormaContacto">parámetro de tipo TipoFormaContacto.</param>
- <param name="grupoEmpresarial">parámetro de tipo GrupoEmpresarial.</param>
- <param name="isHabilitado">parámetro de tipo Boolean.</param>
- <param name="prospecto">parámetro de tipo Prospecto.</param>
- <returns>Respuesta con el objeto FormasContacto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.registrarIndicadorKPI(System.String,System.String,System.Double,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
- <summary>
+<member name="M:AppProyectoKPI.KPIsController.registrarIndicadorKPI(System.String,System.String,System.Double,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.String)">
+	<summary>
  registrarIndicadorKPI
  Metodo que recibe los datos necesarios para la creacion de un nuevo indicador KPI
  </summary>
- <param name="descripcion">String</param>
- <param name="formato">String</param>
- <param name="objetivo">Double</param>
- <param name="formula">List(Of String)</param>
- <param name="variables">List(Of String)</param>
- <param name="limiteSup">Integer</param>
- <param name="limiteInf">Integer</param>
- <returns>Mensaje de confirmacion o error</returns>
- <remarks><para>registrar un indicador
+	<param name="descripcion">String</param>
+	<param name="formato">String</param>
+	<param name="objetivo">Double</param>
+	<param name="formula">List(Of String)</param>
+	<param name="variables">List(Of String)</param>
+	<param name="limiteSup">Integer</param>
+	<param name="limiteInf">Integer</param>
+	<returns>Mensaje de confirmacion o error</returns>
+	<remarks><para>registrar un indicador
  <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.listarIndicadoresKPI">
- <summary>
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.KPIsController.listarIndicadoresKPI">
+	<summary>
  listarIndicadoresKPI
  </summary>
- <returns>lista de indicadores registrados</returns>
- <remarks><para>
- <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.consultarKPI(System.Int32)">
- <summary>
+	<returns>lista de indicadores registrados</returns>
+	<remarks><para>
+			<list type="bullet">
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.KPIsController.consultarKPI(System.Int32)">
+	<summary>
  consultar kpi
  </summary>
- <param name="idKPI"></param>
- <returns>kpi consultado</returns>
- <remarks><para>
- <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.modificarKPI(System.Int32,System.String,System.Object,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
- <summary>
+	<param name="idKPI"></param>
+	<returns>kpi consultado</returns>
+	<remarks><para>
+			<list type="bullet">
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.KPIsController.modificarKPI(System.Int32,System.String,System.Object,System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+	<summary>
  modificar KPI
  </summary>
- <param name="modificar">Integer</param>
- <param name="descripcion">String</param>
- <param name="formato">Object</param>
- <param name="objetivo">String</param>
- <param name="formula">List(Of String)</param>
- <param name="variables">List(Of String)</param>
- <param name="limiteSup">Integer</param>
- <param name="limiteInf">Integer</param>
- <returns>mensaje de confirmacion o error</returns>
- <remarks><para>
- <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.deshabilitarKPI(System.Int32)">
- <summary>
+	<param name="modificar">Integer</param>
+	<param name="descripcion">String</param>
+	<param name="formato">Object</param>
+	<param name="objetivo">String</param>
+	<param name="formula">List(Of String)</param>
+	<param name="variables">List(Of String)</param>
+	<param name="limiteSup">Integer</param>
+	<param name="limiteInf">Integer</param>
+	<returns>mensaje de confirmacion o error</returns>
+	<remarks><para>
+			<list type="bullet">
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.KPIsController.deshabilitarKPI(System.Int32)">
+	<summary>
  deshabilitar KPI
  </summary>
- <param name="id"></param>
- <returns>mensaje de confirmacion o error</returns>
- <remarks><para>
- <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.listarIndicadoresAsignadosRol(System.Int32)">
- <summary>
+	<param name="id"></param>
+	<returns>mensaje de confirmacion o error</returns>
+	<remarks><para>
+			<list type="bullet">
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.KPIsController.listarIndicadoresAsignadosRol(System.Int32)">
+	<summary>
  listarIndicadoresAsignadosRol
  </summary>
- <param name="idRol">Integer</param>
- <returns>lista de los indicadores asignados a un rol</returns>
- <remarks><para>
- <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.asignarIndicadorKPI(System.Int32,System.Int32)">
- <summary>
+	<param name="idRol">Integer</param>
+	<returns>lista de los indicadores asignados a un rol</returns>
+	<remarks><para>
+			<list type="bullet">
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.KPIsController.asignarIndicadorKPI(System.Int32,System.Int32)">
+	<summary>
  asignarindicadoresKPI
  </summary>
- <param name="idRol">Integer</param>
- <param name="idKPI">integer</param>
- <returns>mensaje de confirmacion o error</returns>
- <remarks><para>
- <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.KPIsController.calcularResultados(System.Int32,System.Int32)">
- <summary>
+	<param name="idRol">Integer</param>
+	<param name="idKPI">integer</param>
+	<returns>mensaje de confirmacion o error</returns>
+	<remarks><para>
+			<list type="bullet">
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.KPIsController.calcularResultados(System.Int32,System.Int32)">
+	<summary>
  calcularResultados
  </summary>
- <param name="idRol"></param>
- <param name="idRegistro"></param>
- <returns>matriz con los resultados del indicador KPI</returns>
- <remarks><para>
- <list type="bullet">
- <item>Autor.: Jimmi Vila </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.Paneles.AgregarFormularioEnPanel(System.Windows.Forms.Form@,System.Windows.Forms.Panel@)">
- <summary>
- AgregarFormularioEnPanel.  
- Agrega un formulario específico a un panel.
- </summary>
- <param name="form">id - parámetro de tipo Form.</param>
- <param name="panel">id - parámetro de tipo Panel.</param>
- <returns>Retorna el form</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.Paneles.EliminarFormularioEnPanel(System.Windows.Forms.Form@,System.Windows.Forms.Panel@)">
- <summary>
- EliminarFormularioEnPanel.  
- Elimina un formulario específico a un panel.
- </summary>
- <param name="form">id - parámetro de tipo Form.</param>
- <param name="panel">id - parámetro de tipo Panel.</param>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.ImportarProspectos(System.String,System.Windows.Forms.ProgressBar@)">
- <summary>
- ImportarProspectos.  
- Importa los datos de Prospectos y formas de contacto de un archivo de excel.
- </summary>
- <param name="path">parámetro de tipo String.</param>
- <param name="progressBar">parámetro de tipo ProgressBar.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.RegistrarListaProspectos(System.Collections.Generic.List{AppProyectoKPI.Prospecto})">
- <summary>
- RegistrarListaProspectos.  
- Registra una lista de prospectos de manera simultanea.
- </summary>
- <param name="listaProspectosI">parámetro de tipo Lista de Prospecto.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.RegistrarListaFormasContacto(System.Collections.Generic.List{AppProyectoKPI.FormasContacto})">
- <summary>
- RegistrarListaFormasContacto.  
- Registra una lista de formas de contacto de manera simultanea.
- </summary>
- <param name="listaFormasContactoI">parámetro de tipo Lista de FormasContacto.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.ObtenerProspecto(System.Int32)">
- <summary>
- ObtenerProspecto.  
- Obtiene un prospecto por ID y lo devuelve con todos sus objetos internos menos la lista de seguimiento.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto Prospecto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.ObtenerSeguimientoProspecto(System.Int32)">
- <summary>
- ObtenerSeguimientoProspecto.  
- Obtiene un prospecto por ID y lo devuelve con sus registros de seguimiento.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto Prospecto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.ObtenerProspectoXIdentificacion(System.Int32)">
- <summary>
- ObtenerProspectoXIdentificacion.  
- Obtiene un prospecto por Identificación sin cargar objetos internos.
- </summary>
- <param name="identificacion">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto Prospecto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.IsProspecto(System.Int32)">
- <summary>
- IsProspecto.  
- Obtiene un valor Booleano ante la existencia de un objeto.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto Prospecto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.ProspectoBL.RegistrarProspecto(System.Int32,System.Int32,System.String,System.String,System.String,System.Int32,System.Nullable{System.DateTime},System.Int32,AppProyectoKPI.Evento,System.Boolean,System.Boolean,System.String,System.String,System.Boolean)">
- <summary>
- RegistrarProspecto.  
- Registra o modifica un prospecto.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <param name="identificacion">id - parámetro de tipo Integer.</param>
- <param name="aliass">id - parámetro de tipo String.</param>
- <param name="nombre">id - parámetro de tipo String.</param>
- <param name="apellidos">id - parámetro de tipo String.</param>
- <param name="edad">id - parámetro de tipo Integer.</param>
- <param name="fechaNac">id - parámetro de tipo DateTime.</param>
- <param name="anioBachillerato">id - parámetro de tipo Integer.</param>
- <param name="evento">id - parámetro de tipo Evento.</param>
- <param name="isTrabajando">id - parámetro de tipo Booleano.</param>
- <param name="isPromociones">id - parámetro de tipo Booleano.</param>
- <param name="lugarEstudio">id - parámetro de tipo String.</param>
- <param name="lugarTrabajo">id - parámetro de tipo String.</param>
- <param name="isHabilitado">id - parámetro de tipo Booleano.</param>
- <returns>Booleano en respuesta del registro o modificación realizada.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.SeguimientoBL.ObtenerSeguimiento(System.Int32)">
- <summary>
- ObtenerSeguimiento.  
- Obtiene un registro de seguimiento por id con todos sus objetos internos.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto Seguimiento.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.SeguimientoBL.IsSeguimiento(System.Int32)">
- <summary>
- IsSeguimiento.  
- Obtiene un valor Booleano en respuesta a la existencia de un seguimiento.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con valor booleano sobre existencia del objeto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.SeguimientoBL.RegistrarSeguimiento(System.Int32,System.DateTime,System.DateTime,AppProyectoKPI.Prospecto,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean,AppProyectoKPI.Usuario)">
- <summary>
- RegistrarSeguimiento.  
- Registra un nuevo seguimiento.
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <param name="fechaHora">id - parámetro de tipo DateTime.</param>
- <param name="fechaSeguimiento">id - parámetro de tipo DateTime.</param>
- <param name="prospecto">id - parámetro de tipo Prospecto.</param>
- <param name="descSeguimiento">id - parámetro de tipo String.</param>
- <param name="numeroLlamadas">id - parámetro de tipo Integer.</param>
- <param name="duracion">id - parámetro de tipo Integer.</param>
- <param name="isEfectiva">id - parámetro de tipo Boolean.</param>
- <param name="isContactoValido">id - parámetro de tipo Boolean.</param>
- <param name="usuario">id - parámetro de tipo Usuario.</param>
- <returns>Respuesta con valor booleano en respuesta al registro satisfactorio.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.RolesBL.ObtenerRol(System.Int32)">
- <summary>
- ObtenerRol.  
- Obtiene un Rol por ID .
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto Rol.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.TiposFormaContactoBL.ObtenerListaTiposFormaContacto">
- <summary>
- ObtenerListaTiposFormaContacto.  
- Obtiene una lista de formas de contacto.
- </summary>
- <returns>Respuesta lista de formas de contacto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.TiposFormaContactoBL.ObtenerTipoFormaContactoXId(System.Int32)">
- <summary>
- ObtenerTipoFormaContactoXId.
- Obtiene un objeto TiposFormaContacto x ID
- </summary>
- <param name="Id">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto TiposFormaContacto.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.UsuariosBL.ImportarUsuarios(System.String,System.Windows.Forms.ProgressBar@,System.Int32)">
- <summary>
- ImportarUsuarios.  
- Importa los datos de los usuarios profesores y estudiantes de un archivo de excel.
- </summary>
- <param name="path">parámetro de tipo String.</param>
- <param name="progressBar">parámetro de tipo ProgressBar.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.UsuariosBL.RegistrarListaUsuarios(System.Collections.Generic.List{AppProyectoKPI.Usuario})">
- <summary>
- RegistrarListaProspectos.  
- Registra una lista de prospectos de manera simultanea.
- </summary>
- <param name="listaUsuariosI">parámetro de tipo Lista de Prospecto.</param>
- <returns>Respuesta con un booleano.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.UsuariosBL.ObtenerUsuarioXIdentificacion(System.Int32)">
- <summary>
- ObtenerUsuarioXIdentificacion.  
- Obtiene un usuario por Identificación sin cargar objetos internos.
- </summary>
- <param name="identificacion">id - parámetro de tipo Integer.</param>
- <returns>Respuesta con el objeto usuario.</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.Validaciones.VerificarNumeros(System.Windows.Forms.KeyPressEventArgs)">
- <summary>
- VerificarNumeros.  
- Valida que los campos solo contengan números.
- </summary>
- <param name="e">parámetro de tipo System.Windows.Forms.KeyPressEventArgs.</param>
- <returns>Booleano acetando o denegando la inclusión</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.Validaciones.VerificarLetras(System.Windows.Forms.KeyPressEventArgs)">
- <summary>
- VerificarLetras.  
- Valida que los campos solo contengan letras.
- </summary>
- <param name="e">parámetro de tipo System.Windows.Forms.KeyPressEventArgs.</param>
- <returns>Booleano acetando o denegando la inclusión</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.Validaciones.CadenaNoVacia(System.String)">
- <summary>
- VerificarLetras.  
- Valida que los campos no esten vacios
- </summary>
- <param name="texto">parámetro de tipo String</param>
- <returns>Booleano acetando o denegando la inclusión</returns>
- <remarks><para>Historia de Creación y modificaciones:
- <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.btnAgregarValor_Click(System.Object,System.EventArgs)">
- <summary>
- Evento para el boton agregar valor, valida el valor ingresado por el usuario y lo agrega a un arreglo
- para su posterior envio al api
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.btnOperador_Click(System.Object,System.EventArgs)">
- <summary>
- Evento para todos los botones operadores, sirven para crear la formula, se agrega al arreglo
- el operador seleccionado 
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.armarFormula(System.String)">
- <summary>
- Metodo que sirve para armar la formula del indicador kpi, recibe un valor y lo agrega al arreglo de la formula
- </summary>
- <param name="dato">tabla,operador o valor</param>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.lstCampo_SelectedIndexChanged(System.Object,System.EventArgs)">
- <summary>
- metodo que agrega el nombre del campo a la formula
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.isOperador(System.String)">
- <summary>
- Validacion si el dato que llega es un operador matematico o no
- </summary>
- <param name="dato"></param>
- <returns></returns>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.txtValor_TextChanged(System.Object,System.EventArgs)">
- <summary>
- Metodo que evita que el usuario ingrese valores que no sean numeros
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.Button1_Click(System.Object,System.EventArgs)">
- <summary>
- Validaciones de todos los campos, evento para registrar todos los datos ingresados por el usuario
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.CreacionKPIs.btnConfigurar_Click(System.Object,System.EventArgs)">
- <summary>
- Evento cuando el usuario configura un rango deseado para el despliegue del resultado kpi 
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
- <remarks></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.btnRegistrar_Click(System.Object,System.EventArgs)">
- <summary>
+	<param name="idRol"></param>
+	<param name="idRegistro"></param>
+	<returns>matriz con los resultados del indicador KPI</returns>
+	<remarks><para>
+			<list type="bullet">
+				<item>Autor.: Jimmi Vila </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.btnRegistrar_Click(System.Object,System.EventArgs)">
+	<summary>
  btnRegistrar_Click.  
  Acción que envia la información que se encuentra en el formulario de prospectos al controlador para que sea grabada.
  </summary>
- <param name="sender">parámetro de tipo Object.</param>
- <remarks><para>Historia de Creación y modificaciones:
+	<param name="sender">parámetro de tipo Object.</param>
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.btnListarProspectos_Click(System.Object,System.EventArgs)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.btnListarProspectos_Click(System.Object,System.EventArgs)">
+	<summary>
  btnListarProspectos_Click. 
  Acción que lista los prospectos.
  </summary>
- <param name="sender">parámetro de tipo Object.</param>
- <remarks><para>Historia de Creación y modificaciones:
+	<param name="sender">parámetro de tipo Object.</param>
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.cargarProspectoPantalla(System.Int32)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.cargarProspectoPantalla(System.Int32)">
+	<summary>
  cargarProspectoPantalla. 
  Procedimiento que carga la información de un prospecto en el formulario.
  </summary>
- <param name="id">parámetro de tipo Integer.</param>
- <remarks><para>Historia de Creación y modificaciones:
+	<param name="id">parámetro de tipo Integer.</param>
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.configurarColumnasListadoProspectos(System.Windows.Forms.DataGridView@)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.configurarColumnasListadoProspectos(System.Windows.Forms.DataGridView@)">
+	<summary>
  configurarColumnasListadoProspectos. 
  Procedimiento que define las columnas del la lista de prospectos mostradas en pantalla.
  </summary>
- <param name="dtg">parámetro de tipo DataGridView.</param>
- <remarks><para>Historia de Creación y modificaciones:
+	<param name="dtg">parámetro de tipo DataGridView.</param>
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.configurarColumnasListadoFormasContacto(System.Windows.Forms.DataGridView@)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.configurarColumnasListadoFormasContacto(System.Windows.Forms.DataGridView@)">
+	<summary>
  configurarColumnasListadoFormasContacto. 
  Procedimiento que define las columnas del la lista de formas de contacto mostradas en pantalla.
  </summary>
- <param name="dtg">parámetro de tipo DataGridView.</param>
- <remarks><para>Historia de Creación y modificaciones:
+	<param name="dtg">parámetro de tipo DataGridView.</param>
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.PrepararComboBoxEvento">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.PrepararComboBoxEvento">
+	<summary>
  PrepararComboBoxEvento.
  Procedimiento que define la lista de eventos para la selección única dentro del formulario de prospectos.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.PrepararComboBoxBooleano(System.Windows.Forms.ComboBox@)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.PrepararComboBoxBooleano(System.Windows.Forms.ComboBox@)">
+	<summary>
  PrepararComboBoxBooleano
  Procedimiento que prepara las selecciones únicas de las repuestas booleanas.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.Limpiar_Formulario(System.Object)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.Limpiar_Formulario(System.Object)">
+	<summary>
  Limpiar_Formulario
  Procedimiento que limpia el formulario de prospecto y su lista de formas de contacto.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.btnNuevo_Click(System.Object,System.EventArgs)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.btnNuevo_Click(System.Object,System.EventArgs)">
+	<summary>
  btnNuevo_Click
  Acción que prepara el formulario para el ingreso de un nuevo prospecto.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.btnAgregarContacto_Click(System.Object,System.EventArgs)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.btnAgregarContacto_Click(System.Object,System.EventArgs)">
+	<summary>
  btnAgregarContacto_Click
  Acción para agregar una forma de contacto a un prospecto.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.dtg_FormasContacto_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.dtg_FormasContacto_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+	<summary>
  dtg_FormasContacto_CellClick
  Acción que recupera el id del prospecto seleccionado en la lista.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.btnModificarContacto_Click(System.Object,System.EventArgs)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.btnModificarContacto_Click(System.Object,System.EventArgs)">
+	<summary>
  btnModificarContacto_Click
  Acción utilizada para modificar una forma de contacto específica perteneciente a un prospecto.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.btnSeguimiento_Click(System.Object,System.EventArgs)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.btnSeguimiento_Click(System.Object,System.EventArgs)">
+	<summary>
  btnModificarContacto_Click
  Acción utilizada para activar el panel de seguimientos de un prospecto.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="M:AppProyectoKPI.GestionProspectos.configurarColumnasListadoSeguimientos(System.Windows.Forms.DataGridView@)">
- <summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.GestionProspectos.configurarColumnasListadoSeguimientos(System.Windows.Forms.DataGridView@)">
+	<summary>
  btnModificarContacto_Click
  Procedimiento utilizado para definir las columnas de la lista de seguimientos de un prospecto.
  </summary>
- <remarks><para>Historia de Creación y modificaciones:
+	<remarks><para>Historia de Creación y modificaciones:
  <list type="bullet">
- <item>Autor.: Christian Ulloa Tosso </item>
- <item>07/11/2015 - Creación</item>
- </list></para></remarks>
-</member>
-<member name="T:AppProyectoKPI.My.Resources.Resources">
-<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member>
-<member name="P:AppProyectoKPI.My.Resources.Resources.ResourceManager">
-<summary>
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="P:AppProyectoKPI.My.Resources.Resources.ResourceManager">
+	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member>
-<member name="P:AppProyectoKPI.My.Resources.Resources.Culture">
-<summary>
+</member><member name="P:AppProyectoKPI.My.Resources.Resources.Culture">
+	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="T:AppProyectoKPI.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:AppProyectoKPI.CursosBL.ImportarCursos(System.String,System.Windows.Forms.ProgressBar@)">
+	<summary>
+ ImportarUsuarios.  
+ Importa los datos de los usuarios profesores y estudiantes de un archivo de excel.
+ </summary>
+	<param name="path">parámetro de tipo String.</param>
+	<param name="progressBar">parámetro de tipo ProgressBar.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.CursosBL.RegistrarListaCursos(System.Collections.Generic.List{AppProyectoKPI.Curso})">
+	<summary>
+ RegistrarListaCursos.  
+ Registra una lista de Cursos de manera simultanea.
+ </summary>
+	<param name="listaCursosI">parámetro de tipo Lista de Cursos.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>21/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.CursosBL.ObtenerCursoXCodigo(System.String)">
+	<summary>
+ ObtenerCursoXCodigo.  
+ Obtiene un Curso por su codigo.
+ </summary>
+	<param name="codigo">id - parámetro de tipo String.</param>
+	<returns>Respuesta con el objeto Curso.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.CursosBL.ObtenerTipoCursoXId(System.Int32)">
+	<summary>
+ ObtenerTipoCursoXId.
+ Obtiene un objeto Tipo de Curso x ID
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto TiposFormaContacto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>21/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.CursosBL.RegistrarListaRelacionCursos(System.Collections.Generic.List{AppProyectoKPI.RelacionCursos})">
+	<summary>
+ RegistrarListaRelacionCursos.  
+ Registra una lista de Cursos de manera simultanea.
+ </summary>
+	<param name="listaRelacionCursosI">parámetro de tipo Lista de Relación de Cursos.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>21/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.UsuariosBL.ImportarUsuarios(System.String,System.Windows.Forms.ProgressBar@,System.Int32)">
+	<summary>
+ ImportarUsuarios.  
+ Importa los datos de los usuarios profesores y estudiantes de un archivo de excel.
+ </summary>
+	<param name="path">parámetro de tipo String.</param>
+	<param name="progressBar">parámetro de tipo ProgressBar.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.UsuariosBL.RegistrarListaUsuarios(System.Collections.Generic.List{AppProyectoKPI.Usuario})">
+	<summary>
+ RegistrarListaProspectos.  
+ Registra una lista de prospectos de manera simultanea.
+ </summary>
+	<param name="listaUsuariosI">parámetro de tipo Lista de Prospecto.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.UsuariosBL.ObtenerUsuarioXIdentificacion(System.Int32)">
+	<summary>
+ ObtenerUsuarioXIdentificacion.  
+ Obtiene un usuario por Identificación sin cargar objetos internos.
+ </summary>
+	<param name="identificacion">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto usuario.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.FormasContactoBL.ObtenerListaFormasContacto">
+	<summary>
+ ObtenerListaFormasContacto.  
+ Método que obtiene una lista de formasde contacto.
+ </summary>
+	<returns>Respuesta con la lista de formas de contacto</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.FormasContactoBL.ObtenerFormasContactoXId(System.Int32)">
+	<summary>
+ ObtenerFormasContactoXId.  
+ Obtiene la forma de contacto por Id.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto FormasContacto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.FormasContactoBL.IsFormasContacto(System.Int32)">
+	<summary>
+ IsFormasContacto.  
+ Verifica la existencia de un objeto FormasContacto por Id.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta de tipo boleana.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.FormasContactoBL.RegistrarFormaContacto(System.Int32,System.String,AppProyectoKPI.TiposFormaContacto,AppProyectoKPI.GrupoEmpresarial,System.Boolean,AppProyectoKPI.Prospecto)">
+	<summary>
+ RegistrarFormaContacto.  
+ Registra o modifica una forma de contacto.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<param name="descripcionFormaContacto">parámetro de tipo Integer.</param>
+	<param name="tipoFormaContacto">parámetro de tipo TipoFormaContacto.</param>
+	<param name="grupoEmpresarial">parámetro de tipo GrupoEmpresarial.</param>
+	<param name="isHabilitado">parámetro de tipo Boolean.</param>
+	<param name="prospecto">parámetro de tipo Prospecto.</param>
+	<returns>Respuesta con el objeto FormasContacto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.ImportarProspectos(System.String,System.Windows.Forms.ProgressBar@)">
+	<summary>
+ ImportarProspectos.  
+ Importa los datos de Prospectos y formas de contacto de un archivo de excel.
+ </summary>
+	<param name="path">parámetro de tipo String.</param>
+	<param name="progressBar">parámetro de tipo ProgressBar.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.RegistrarListaProspectos(System.Collections.Generic.List{AppProyectoKPI.Prospecto})">
+	<summary>
+ RegistrarListaProspectos.  
+ Registra una lista de prospectos de manera simultanea.
+ </summary>
+	<param name="listaProspectosI">parámetro de tipo Lista de Prospecto.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.RegistrarListaFormasContacto(System.Collections.Generic.List{AppProyectoKPI.FormasContacto})">
+	<summary>
+ RegistrarListaFormasContacto.  
+ Registra una lista de formas de contacto de manera simultanea.
+ </summary>
+	<param name="listaFormasContactoI">parámetro de tipo Lista de FormasContacto.</param>
+	<returns>Respuesta con un booleano.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.ObtenerProspecto(System.Int32)">
+	<summary>
+ ObtenerProspecto.  
+ Obtiene un prospecto por ID y lo devuelve con todos sus objetos internos menos la lista de seguimiento.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto Prospecto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.ObtenerSeguimientoProspecto(System.Int32)">
+	<summary>
+ ObtenerSeguimientoProspecto.  
+ Obtiene un prospecto por ID y lo devuelve con sus registros de seguimiento.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto Prospecto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.ObtenerProspectoXIdentificacion(System.Int32)">
+	<summary>
+ ObtenerProspectoXIdentificacion.  
+ Obtiene un prospecto por Identificación sin cargar objetos internos.
+ </summary>
+	<param name="identificacion">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto Prospecto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.IsProspecto(System.Int32)">
+	<summary>
+ IsProspecto.  
+ Obtiene un valor Booleano ante la existencia de un objeto.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto Prospecto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.ProspectoBL.RegistrarProspecto(System.Int32,System.Int32,System.String,System.String,System.String,System.Int32,System.Nullable{System.DateTime},System.Int32,AppProyectoKPI.Evento,System.Boolean,System.Boolean,System.String,System.String,System.Boolean)">
+	<summary>
+ RegistrarProspecto.  
+ Registra o modifica un prospecto.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<param name="identificacion">id - parámetro de tipo Integer.</param>
+	<param name="aliass">id - parámetro de tipo String.</param>
+	<param name="nombre">id - parámetro de tipo String.</param>
+	<param name="apellidos">id - parámetro de tipo String.</param>
+	<param name="edad">id - parámetro de tipo Integer.</param>
+	<param name="fechaNac">id - parámetro de tipo DateTime.</param>
+	<param name="anioBachillerato">id - parámetro de tipo Integer.</param>
+	<param name="evento">id - parámetro de tipo Evento.</param>
+	<param name="isTrabajando">id - parámetro de tipo Booleano.</param>
+	<param name="isPromociones">id - parámetro de tipo Booleano.</param>
+	<param name="lugarEstudio">id - parámetro de tipo String.</param>
+	<param name="lugarTrabajo">id - parámetro de tipo String.</param>
+	<param name="isHabilitado">id - parámetro de tipo Booleano.</param>
+	<returns>Booleano en respuesta del registro o modificación realizada.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.btnAgregarValor_Click(System.Object,System.EventArgs)">
+	<summary>
+ Evento para el boton agregar valor, valida el valor ingresado por el usuario y lo agrega a un arreglo
+ para su posterior envio al api
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.btnOperador_Click(System.Object,System.EventArgs)">
+	<summary>
+ Evento para todos los botones operadores, sirven para crear la formula, se agrega al arreglo
+ el operador seleccionado 
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.armarFormula(System.String)">
+	<summary>
+ Metodo que sirve para armar la formula del indicador kpi, recibe un valor y lo agrega al arreglo de la formula
+ </summary>
+	<param name="dato">tabla,operador o valor</param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.lstCampo_SelectedIndexChanged(System.Object,System.EventArgs)">
+	<summary>
+ metodo que agrega el nombre del campo a la formula
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.isOperador(System.String)">
+	<summary>
+ Validacion si el dato que llega es un operador matematico o no
+ </summary>
+	<param name="dato"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.txtValor_TextChanged(System.Object,System.EventArgs)">
+	<summary>
+ Metodo que evita que el usuario ingrese valores que no sean numeros
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.Button1_Click(System.Object,System.EventArgs)">
+	<summary>
+ Validaciones de todos los campos, evento para registrar todos los datos ingresados por el usuario
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CreacionKPIs.btnConfigurar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Evento cuando el usuario configura un rango deseado para el despliegue del resultado kpi 
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AppProyectoKPI.CargaDataGrids.llenarGrid(System.Windows.Forms.DataGridView,System.Collections.Generic.IEnumerable{System.Object})">
+	<summary>
+ llenarGrid.  
+ Utilitario general para llenar un grid con una lista de objetos.
+ </summary>
+	<param name="Grid">grid - objeto de tipo DataGridView.</param>
+	<param name="Objetos">objetos - lista de objetos para poblar el data grid view.</param>
+	<returns>El método retorna un grid.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.CargaDataGrids.estilizarDataGrid(System.Windows.Forms.DataGridView@)">
+	<summary>
+ estilizarDataGrid.  
+ Utilitario general para estilizar un grid.
+ </summary>
+	<param name="dtg">grid - objeto de tipo DataGridView.</param>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.SeguimientoBL.ObtenerSeguimiento(System.Int32)">
+	<summary>
+ ObtenerSeguimiento.  
+ Obtiene un registro de seguimiento por id con todos sus objetos internos.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto Seguimiento.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.SeguimientoBL.IsSeguimiento(System.Int32)">
+	<summary>
+ IsSeguimiento.  
+ Obtiene un valor Booleano en respuesta a la existencia de un seguimiento.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con valor booleano sobre existencia del objeto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.SeguimientoBL.RegistrarSeguimiento(System.Int32,System.DateTime,System.DateTime,AppProyectoKPI.Prospecto,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean,AppProyectoKPI.Usuario)">
+	<summary>
+ RegistrarSeguimiento.  
+ Registra un nuevo seguimiento.
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<param name="fechaHora">id - parámetro de tipo DateTime.</param>
+	<param name="fechaSeguimiento">id - parámetro de tipo DateTime.</param>
+	<param name="prospecto">id - parámetro de tipo Prospecto.</param>
+	<param name="descSeguimiento">id - parámetro de tipo String.</param>
+	<param name="numeroLlamadas">id - parámetro de tipo Integer.</param>
+	<param name="duracion">id - parámetro de tipo Integer.</param>
+	<param name="isEfectiva">id - parámetro de tipo Boolean.</param>
+	<param name="isContactoValido">id - parámetro de tipo Boolean.</param>
+	<param name="usuario">id - parámetro de tipo Usuario.</param>
+	<returns>Respuesta con valor booleano en respuesta al registro satisfactorio.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.TiposFormaContactoBL.ObtenerListaTiposFormaContacto">
+	<summary>
+ ObtenerListaTiposFormaContacto.  
+ Obtiene una lista de formas de contacto.
+ </summary>
+	<returns>Respuesta lista de formas de contacto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.TiposFormaContactoBL.ObtenerTipoFormaContactoXId(System.Int32)">
+	<summary>
+ ObtenerTipoFormaContactoXId.
+ Obtiene un objeto TiposFormaContacto x ID
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto TiposFormaContacto.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.Validaciones.VerificarNumeros(System.Windows.Forms.KeyPressEventArgs)">
+	<summary>
+ VerificarNumeros.  
+ Valida que los campos solo contengan números.
+ </summary>
+	<param name="e">parámetro de tipo System.Windows.Forms.KeyPressEventArgs.</param>
+	<returns>Booleano acetando o denegando la inclusión</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.Validaciones.VerificarLetras(System.Windows.Forms.KeyPressEventArgs)">
+	<summary>
+ VerificarLetras.  
+ Valida que los campos solo contengan letras.
+ </summary>
+	<param name="e">parámetro de tipo System.Windows.Forms.KeyPressEventArgs.</param>
+	<returns>Booleano acetando o denegando la inclusión</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.Validaciones.CadenaNoVacia(System.String)">
+	<summary>
+ VerificarLetras.  
+ Valida que los campos no esten vacios
+ </summary>
+	<param name="texto">parámetro de tipo String</param>
+	<returns>Booleano acetando o denegando la inclusión</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.Paneles.AgregarFormularioEnPanel(System.Windows.Forms.Form@,System.Windows.Forms.Panel@)">
+	<summary>
+ AgregarFormularioEnPanel.  
+ Agrega un formulario específico a un panel.
+ </summary>
+	<param name="form">id - parámetro de tipo Form.</param>
+	<param name="panel">id - parámetro de tipo Panel.</param>
+	<returns>Retorna el form</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.Paneles.EliminarFormularioEnPanel(System.Windows.Forms.Form@,System.Windows.Forms.Panel@)">
+	<summary>
+ EliminarFormularioEnPanel.  
+ Elimina un formulario específico a un panel.
+ </summary>
+	<param name="form">id - parámetro de tipo Form.</param>
+	<param name="panel">id - parámetro de tipo Panel.</param>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
+</member><member name="M:AppProyectoKPI.RolesBL.ObtenerRol(System.Int32)">
+	<summary>
+ ObtenerRol.  
+ Obtiene un Rol por ID .
+ </summary>
+	<param name="Id">id - parámetro de tipo Integer.</param>
+	<returns>Respuesta con el objeto Rol.</returns>
+	<remarks><para>Historia de Creación y modificaciones:
+ <list type="bullet">
+				<item>Autor.: Christian Ulloa Tosso </item>
+				<item>07/11/2015 - Creación</item>
+			</list></para></remarks>
 </member>
 </members>
 </doc>

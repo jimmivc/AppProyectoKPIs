@@ -35,11 +35,11 @@ Partial Class ReportesKPI
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtgResultados = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.resultados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dtgRegistros, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RegistroMercadeoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +59,7 @@ Partial Class ReportesKPI
         Me.dtgRegistros.Name = "dtgRegistros"
         Me.dtgRegistros.ReadOnly = True
         Me.dtgRegistros.RowTemplate.Height = 24
+        Me.dtgRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgRegistros.Size = New System.Drawing.Size(264, 418)
         Me.dtgRegistros.TabIndex = 0
         '
@@ -155,21 +156,9 @@ Partial Class ReportesKPI
         Me.dtgResultados.Name = "dtgResultados"
         Me.dtgResultados.ReadOnly = True
         Me.dtgResultados.RowTemplate.Height = 24
-        Me.dtgResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.dtgResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgResultados.Size = New System.Drawing.Size(534, 418)
         Me.dtgResultados.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(611, 158)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(539, 38)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "Resultados Indicadores KPI"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'descripcion
         '
@@ -198,6 +187,18 @@ Partial Class ReportesKPI
         Me.color.ReadOnly = True
         Me.color.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.color.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(611, 158)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(539, 38)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Resultados Indicadores KPI"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ReportesKPI
         '
