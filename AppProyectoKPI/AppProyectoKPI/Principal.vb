@@ -1,9 +1,26 @@
 ﻿Public Class Principal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         activarColorFondoMDI(sender, e)
-        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "GenerarRegistroMercadeo", "AsignarKpis",
-            "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi",
-            "FuentesProspectos", "Seguridad", "Usuarios", "Roles", "Permisos"}
+        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "ImportarUsuarios", "GenerarRegistroMercadeo", "AsignarKpis", "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi", "FuentesProspectos", "ListarProfesores", "ListarEstudiantes", "ListarCursos", "Seguridad", "Usuarios", "Roles", "Permisos"}
+
+        'Dim pRol As Rol = loginController.user.Rol
+        'Dim str As String = ""
+        'Dim permisosLista As List(Of Permiso) = PermisosBL.listarPermisosRol(pRol.RolID)
+        'Dim count As Integer = 0
+
+        'For Each x As Permiso In permisosLista
+        '    Str = Str() + x.pAccion
+        '    count = count + 1
+        'Next
+        'For Index As Integer = 1 To permisosLista.Count
+        '    If (Index <> count) Then
+
+        '    Else
+
+        '    End If
+
+        'Next
+
         accederMenuPrincipal(permisos)
 
     End Sub
@@ -104,5 +121,50 @@
     Private Sub mnu_IndicadoresKpi_Click(sender As Object, e As EventArgs) Handles mnu_IndicadoresKpi.Click
         Dim reportesKPI As New ReportesKPI()
         abrirVentana(reportesKPI)
+    End Sub
+
+    Private Sub mnu_ImportarProspecto_Click(sender As Object, e As EventArgs) Handles mnu_ImportarProspecto.Click
+        Dim impPros As New ImportarProspecto
+        abrirVentana(impPros)
+    End Sub
+
+    Private Sub mnu_ImportarUsuarios_Click(sender As Object, e As EventArgs) Handles mnu_ImportarUsuarios.Click
+        Dim imporUsers As New ImportarUsuarios
+        abrirVentana(imporUsers)
+    End Sub
+
+    Private Sub mnu_Entidades_Click(sender As Object, e As EventArgs) Handles mnu_Entidades.Click
+        Dim gestEmp As New GestionEmpresarial
+        abrirVentana(gestEmp)
+    End Sub
+
+    Private Sub mnu_Eventos_Click(sender As Object, e As EventArgs) Handles mnu_Eventos.Click
+        Dim gestEvent As New GestionEmpresarial
+        abrirVentana(gestEvent)
+    End Sub
+
+    Private Sub mnu_GestionarVentas_Click(sender As Object, e As EventArgs) Handles mnu_GestionarVentas.Click
+        Dim regVent As New RegistrarVentas
+        abrirVentana(regVent)
+    End Sub
+
+    Private Sub mnu_ImportarCursos_Click(sender As Object, e As EventArgs) Handles mnu_ImportarCursos.Click
+        Dim impCur As New ImportarCursos
+        abrirVentana(impCur)
+    End Sub
+
+    Private Sub mnu_ListarProfesores_Click(sender As Object, e As EventArgs) Handles mnu_ListarProfesores.Click
+        Dim listPro As New ListarProfesores
+        abrirVentana(listPro)
+    End Sub
+
+    Private Sub mnu_ListarEstudiantes_Click(sender As Object, e As EventArgs) Handles mnu_ListarEstudiantes.Click
+        Dim listEstu As New ListarEstudiantes
+        abrirVentana(listEstu)
+    End Sub
+
+    Private Sub mnu_ListarCursos_Click(sender As Object, e As EventArgs) Handles mnu_ListarCursos.Click
+        Dim listCur As New ListarCursos
+        abrirVentana(listCur)
     End Sub
 End Class

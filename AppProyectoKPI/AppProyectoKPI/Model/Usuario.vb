@@ -7,7 +7,6 @@
     Private _contrasena As String
     Private _cedula As Integer
     Private _isActivo As Boolean
-
     Private _rol As Rol
 
     Public Sub New()

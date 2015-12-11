@@ -10,9 +10,9 @@ Public Class Prospecto
     Private _nombre As String
     Private _apellidos As String
     Private _edad As Integer
-    Private _fechaNac As DateTime
+    Private _fechaNac As DateTime?
     Private _anioBachillerato As Integer
-    Private _fechaIngresoBase As DateTime
+    Private _fechaIngresoBase As DateTime?
     Private _isTrabajando As Boolean
     Private _isInscritoPromociones As Boolean
     Private _lugarEstudioAnterior As String
@@ -27,7 +27,7 @@ Public Class Prospecto
 
     End Sub
     Sub New(ByVal id As Integer, ByVal identificacion As Integer, ByVal aliass As String, ByVal nombre As String, ByVal apellidos As String,
-                                       ByVal edad As Integer, ByVal fechaNac As DateTime, ByVal anioBachillerato As Integer, ByVal evento As Evento,
+                                       ByVal edad As Integer, ByVal fechaNac As DateTime?, ByVal anioBachillerato As Integer, ByVal evento As Evento,
                                        ByVal isTrabajando As Boolean, ByVal isPromociones As Boolean, ByVal lugarEstudio As String, ByVal lugarTrabajo As String,
                                        ByVal isHabilitado As Boolean)
         Me.ProspectoID = id
@@ -45,7 +45,6 @@ Public Class Prospecto
         Me.LugarTrabajo = lugarTrabajo
         Me.IsHabilitado = isHabilitado
         Me.FechaIngresoBase = DateTime.Now
-
 
     End Sub
     Public Property ProspectoID As Integer
@@ -102,11 +101,11 @@ Public Class Prospecto
         End Set
     End Property
 
-    Public Property FechaNac As Date
+    Public Property FechaNac As Date?
         Get
             Return _fechaNac
         End Get
-        Set(value As Date)
+        Set(value As Date?)
             _fechaNac = value
         End Set
     End Property
@@ -209,4 +208,6 @@ Public Class Prospecto
             _seguimientos = value
         End Set
     End Property
+
+
 End Class

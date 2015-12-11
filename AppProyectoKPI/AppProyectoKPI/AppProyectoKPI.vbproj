@@ -47,6 +47,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\InteropOfficeWordAndExcel.1.0.0\lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\InteropOfficeWordAndExcel.1.0.0\lib\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -92,14 +100,67 @@
     </Compile>
     <Compile Include="BL\CargaDataGrids.vb" />
     <Compile Include="BL\ContactoController.vb" />
+    <Compile Include="BL\CursosBL.vb" />
     <Compile Include="BL\EventoBL.vb" />
     <Compile Include="BL\FormasContactoBL.vb" />
     <Compile Include="BL\GrupoEmpresarialBL.vb" />
     <Compile Include="BL\loginController.vb" />
     <Compile Include="BL\KPIsController.vb" />
     <Compile Include="BL\Paneles.vb" />
+    <Compile Include="BL\PermisosBL.vb" />
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
+    <Compile Include="BL\VentaBL.vb" />
+    <Compile Include="GestionEmpresarial.designer.vb">
+      <DependentUpon>GestionEmpresarial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmpresarial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEventos.designer.vb">
+      <DependentUpon>GestionEventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEventos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarCursos.Designer.vb">
+      <DependentUpon>ImportarCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarCursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarProspecto.Designer.vb">
+      <DependentUpon>ImportarProspecto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarProspecto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarUsuarios.Designer.vb">
+      <DependentUpon>ImportarUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarCursos.Designer.vb">
+      <DependentUpon>ListarCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCursos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarEstudiantes.Designer.vb">
+      <DependentUpon>ListarEstudiantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEstudiantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarProfesores.Designer.vb">
+      <DependentUpon>ListarProfesores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProfesores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Curso.vb" />
+    <Compile Include="Model\FormaContactoFake.vb" />
     <Compile Include="Model\RegistroMercadeo.vb" />
     <Compile Include="BL\RegistrosBL.vb" />
     <Compile Include="BL\RolesBL.vb" />
@@ -147,10 +208,13 @@
     <Compile Include="Model\ParametroKPI.vb" />
     <Compile Include="Model\Permiso.vb" />
     <Compile Include="Model\Prospecto.vb" />
+    <Compile Include="Model\RelacionCursos.vb" />
     <Compile Include="Model\Rol.vb" />
     <Compile Include="Model\Seguimiento.vb" />
+    <Compile Include="Model\TipoCurso.vb" />
     <Compile Include="Model\TiposFormaContacto.vb" />
     <Compile Include="Model\Usuario.vb" />
+    <Compile Include="Model\Venta.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -178,6 +242,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RegistrarVentas.designer.vb">
+      <DependentUpon>RegistrarVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarVentas.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportesKPI.Designer.vb">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
@@ -220,11 +290,35 @@
     <EmbeddedResource Include="ElegirRangoKPI.resx">
       <DependentUpon>ElegirRangoKPI.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmpresarial.resx">
+      <DependentUpon>GestionEmpresarial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEventos.resx">
+      <DependentUpon>GestionEventos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionProspectos.resx">
       <DependentUpon>GestionProspectos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImportarCursos.resx">
+      <DependentUpon>ImportarCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarProspecto.resx">
+      <DependentUpon>ImportarProspecto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarUsuarios.resx">
+      <DependentUpon>ImportarUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarCursos.resx">
+      <DependentUpon>ListarCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarEstudiantes.resx">
+      <DependentUpon>ListarEstudiantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarProfesores.resx">
+      <DependentUpon>ListarProfesores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarProspectos.resx">
       <DependentUpon>ListarProspectos.vb</DependentUpon>
@@ -237,6 +331,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarVentas.resx">
+      <DependentUpon>RegistrarVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesKPI.resx">
       <DependentUpon>ReportesKPI.vb</DependentUpon>
@@ -256,6 +353,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Permiso.datasource" />
     <None Include="My Project\DataSources\RegistroMercadeo.datasource" />
     <None Include="My Project\DataSources\Rol.datasource" />
     <None Include="My Project\DataSources\Usuario.datasource" />
@@ -267,7 +365,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

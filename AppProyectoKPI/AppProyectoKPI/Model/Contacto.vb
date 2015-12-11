@@ -93,10 +93,6 @@ Public Class Contacto
         End Property
 
 
-        Public Function ObtenerDescripcionTipoFormaContacto() As String
-            Return "celular"
-        End Function
-
 
 
 End Class

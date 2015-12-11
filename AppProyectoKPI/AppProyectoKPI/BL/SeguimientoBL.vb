@@ -10,6 +10,17 @@ Public Class SeguimientoBL
     Private Shared seguimiento As Seguimiento
 
     'Solicitar al backend el las respuestas'
+    ''' <summary>
+    ''' ObtenerSeguimiento.  
+    ''' Obtiene un registro de seguimiento por id con todos sus objetos internos.
+    ''' </summary>
+    ''' <param name="Id">id - parámetro de tipo Integer.</param>
+    ''' <returns>Respuesta con el objeto Seguimiento.</returns>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Shared Function ObtenerSeguimiento(ByVal id As Integer) As Seguimiento
         ' MsgBox("entro a obtener")
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
@@ -27,7 +38,17 @@ Public Class SeguimientoBL
             MsgBox("Error" + "  " + ex.Message)
         End Try
     End Function
-
+    ''' <summary>
+    ''' IsSeguimiento.  
+    ''' Obtiene un valor Booleano en respuesta a la existencia de un seguimiento.
+    ''' </summary>
+    ''' <param name="Id">id - parámetro de tipo Integer.</param>
+    ''' <returns>Respuesta con valor booleano sobre existencia del objeto.</returns>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Shared Function IsSeguimiento(ByVal id As Integer) As Boolean
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Seguimientoes/is/{id}", Method.GET)
@@ -49,7 +70,26 @@ Public Class SeguimientoBL
         End Try
     End Function
 
-
+    ''' <summary>
+    ''' RegistrarSeguimiento.  
+    ''' Registra un nuevo seguimiento.
+    ''' </summary>
+    ''' <param name="Id">id - parámetro de tipo Integer.</param>
+    ''' <param name="fechaHora">id - parámetro de tipo DateTime.</param>
+    ''' <param name="fechaSeguimiento">id - parámetro de tipo DateTime.</param>
+    ''' <param name="prospecto">id - parámetro de tipo Prospecto.</param>
+    ''' <param name="descSeguimiento">id - parámetro de tipo String.</param>
+    ''' <param name="numeroLlamadas">id - parámetro de tipo Integer.</param>
+    ''' <param name="duracion">id - parámetro de tipo Integer.</param>
+    ''' <param name="isEfectiva">id - parámetro de tipo Boolean.</param>
+    ''' <param name="isContactoValido">id - parámetro de tipo Boolean.</param>
+    ''' <param name="usuario">id - parámetro de tipo Usuario.</param>
+    ''' <returns>Respuesta con valor booleano en respuesta al registro satisfactorio.</returns>
+    ''' <remarks><para>Historia de Creación y modificaciones:
+    ''' <list type="bullet">
+    ''' <item>Autor.: Christian Ulloa Tosso </item>
+    ''' <item>07/11/2015 - Creación</item>
+    ''' </list></para></remarks>
     Shared Function RegistrarSeguimiento(ByVal id As Integer, ByVal fechaHora As DateTime, ByVal fechaSeguimiento As DateTime, ByVal prospecto As Prospecto, ByVal descSeguimiento As String, ByVal numeroLlamadas As Integer,
             ByVal duracion As Integer, ByVal isEfectiva As Boolean, ByVal isContactoValido As Boolean, ByVal usuario As Usuario) As Boolean
 

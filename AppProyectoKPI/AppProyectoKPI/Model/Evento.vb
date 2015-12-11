@@ -5,6 +5,17 @@
     Private _fechaEvento As DateTime
     Private _lugarEvento As String
 
+
+    Public Sub New()
+    End Sub
+
+    Public Sub New(ByVal _eventoID As Integer, ByVal _descEventoCaptacion As String, ByVal _fechaEvento As Date, ByVal lugar As String)
+
+        EventoID = _eventoID
+        DescEventoCaptacion = _descEventoCaptacion
+        FechaEvento = _fechaEvento
+        LugarEvento = lugar
+    End Sub
     Public Property EventoID As Integer
         Get
             Return _eventoID
