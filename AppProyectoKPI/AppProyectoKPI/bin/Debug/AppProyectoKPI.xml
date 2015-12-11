@@ -97,12 +97,11 @@ AppProyectoKPI
 				<item>Autor.: Jimmi Vila </item>
 				<item>07/11/2015 - Creación</item>
 			</list></para></remarks>
-</member><member name="M:AppProyectoKPI.KPIsController.calcularResultados(System.Int32,System.Int32)">
+</member><member name="M:AppProyectoKPI.KPIsController.calcularResultados(System.Int32)">
 	<summary>
  calcularResultados
  </summary>
 	<param name="idRol"></param>
-	<param name="idRegistro"></param>
 	<returns>matriz con los resultados del indicador KPI</returns>
 	<remarks><para>
 			<list type="bullet">

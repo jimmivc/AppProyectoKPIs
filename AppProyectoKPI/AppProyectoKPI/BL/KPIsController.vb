@@ -214,19 +214,17 @@ Public Class KPIsController
     ''' calcularResultados
     ''' </summary>
     ''' <param name="idRol"></param>
-    ''' <param name="idRegistro"></param>
     ''' <returns>matriz con los resultados del indicador KPI</returns>
     ''' <remarks><para>
     ''' <list type="bullet">
     ''' <item>Autor.: Jimmi Vila </item>
     ''' <item>07/11/2015 - Creación</item>
     ''' </list></para></remarks>
-    Shared Function calcularResultados(idRol As Integer, idRegistro As Integer) As List(Of List(Of String))
+    Shared Function calcularResultados(idRol As Integer) As List(Of List(Of String))
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("kpis/resultados/{idRol}/{idRegistro}", Method.GET)
+        Dim request = New RestRequest("kpis/resultados/{idRol}", Method.GET)
 
         request.AddUrlSegment("idRol", idRol)
-        request.AddUrlSegment("idRegistro", idRegistro)
 
         Dim response = client.Execute(Of List(Of List(Of String)))(request)
 

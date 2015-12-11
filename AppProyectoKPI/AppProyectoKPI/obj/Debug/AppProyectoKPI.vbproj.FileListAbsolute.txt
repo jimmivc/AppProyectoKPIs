@@ -146,3 +146,4 @@ C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\ob
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.exe
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.xml
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.pdb
+C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
