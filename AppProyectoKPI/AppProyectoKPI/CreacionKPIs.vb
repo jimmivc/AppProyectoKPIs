@@ -17,7 +17,7 @@
 
         ' Add any initialization after the InitializeComponent() call.
         actualizarListaKPIs()
-
+        cargarDatos()
     End Sub
 
     ''' <summary>
@@ -88,6 +88,7 @@
         If (lstCampo.SelectedIndex <> 0) Then
             armarFormula(lstCampo.SelectedItem)
             variable.Add("campo")
+            lstCampo.SelectedIndex = 0
         End If
 
 
@@ -339,4 +340,15 @@
         Next
         reiniciarTodo()
     End Sub
+
+    Private Sub cargarDatos()
+        Dim datos As List(Of String) = KPIsController.cargarCampos()
+        lstCampo.Items.Clear()
+        lstCampo.Items.Add("")
+        For Each dat As String In datos
+            lstCampo.Items.Add(dat)
+        Next
+
+    End Sub
+
 End Class

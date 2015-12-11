@@ -250,4 +250,17 @@ Public Class KPIsController
         Return resul
     End Function
 
+
+    Shared Function cargarCampos() As List(Of String)
+
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("kpis/datos/{campos}", Method.GET)
+        Dim resul As String
+
+        request.AddUrlSegment("campos", "mercadeo")
+        'execute the request
+        Dim response = client.Execute(Of List(Of String))(request)
+
+        Return response.Data
+    End Function
 End Class

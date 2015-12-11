@@ -25,23 +25,23 @@ Partial Class ReportesKPI
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportesKPI))
         Me.dtgRoles = New System.Windows.Forms.DataGridView()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtgResultados = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RegistroMercadeoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Formato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Objetivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.resultados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.RegistroMercadeoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RegistroMercadeoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,8 +58,20 @@ Partial Class ReportesKPI
         Me.dtgRoles.ReadOnly = True
         Me.dtgRoles.RowTemplate.Height = 24
         Me.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgRoles.Size = New System.Drawing.Size(264, 418)
+        Me.dtgRoles.Size = New System.Drawing.Size(264, 370)
         Me.dtgRoles.TabIndex = 21
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RolBindingSource
+        '
+        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
         '
         'Label4
         '
@@ -103,36 +115,8 @@ Partial Class ReportesKPI
         Me.dtgResultados.ReadOnly = True
         Me.dtgResultados.RowTemplate.Height = 24
         Me.dtgResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgResultados.Size = New System.Drawing.Size(827, 418)
+        Me.dtgResultados.Size = New System.Drawing.Size(827, 370)
         Me.dtgResultados.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(319, 158)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(831, 38)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "Resultados Indicadores KPI"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RolBindingSource
-        '
-        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
-        '
-        'RegistroMercadeoBindingSource
-        '
-        Me.RegistroMercadeoBindingSource.DataSource = GetType(AppProyectoKPI.RegistroMercadeo)
         '
         'descripcion
         '
@@ -174,12 +158,28 @@ Partial Class ReportesKPI
         Me.color.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.color.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(319, 158)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(831, 38)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Resultados Indicadores KPI"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'RegistroMercadeoBindingSource
+        '
+        Me.RegistroMercadeoBindingSource.DataSource = GetType(AppProyectoKPI.RegistroMercadeo)
+        '
         'ReportesKPI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1162, 712)
+        Me.ClientSize = New System.Drawing.Size(1164, 612)
         Me.Controls.Add(Me.dtgRoles)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label5)
@@ -191,8 +191,8 @@ Partial Class ReportesKPI
         Me.Name = "ReportesKPI"
         Me.Text = "ReportesKPI"
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RegistroMercadeoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
