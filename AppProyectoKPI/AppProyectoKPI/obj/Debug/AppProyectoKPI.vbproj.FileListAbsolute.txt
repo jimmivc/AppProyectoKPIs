@@ -90,7 +90,6 @@ C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.ReportesKPI.resources
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.ReportesKPI.resources
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Seguimientos.resources
-C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.Seguimientos.resources
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.dll
 C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\bin\Debug\RestSharp.xml
