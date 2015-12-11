@@ -28,26 +28,27 @@ Partial Class AsignacionKPIs
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnAsignarKPI = New System.Windows.Forms.Button()
         Me.dtgRoles = New System.Windows.Forms.DataGridView()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dtgListarKPIs = New System.Windows.Forms.DataGridView()
+        Me.DescKpiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FormatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ObjetivoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KPIBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dtgIndicadoresAsignados = New System.Windows.Forms.DataGridView()
+        Me.DescKpiDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.FormulaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DescKpiDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.KPIBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DescKpiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FormatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ObjetivoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnQuitar = New System.Windows.Forms.Button()
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgListarKPIs, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KPIBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgIndicadoresAsignados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormulaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KPIBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -98,8 +99,20 @@ Partial Class AsignacionKPIs
         Me.dtgRoles.ReadOnly = True
         Me.dtgRoles.RowTemplate.Height = 24
         Me.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgRoles.Size = New System.Drawing.Size(264, 413)
+        Me.dtgRoles.Size = New System.Drawing.Size(264, 386)
         Me.dtgRoles.TabIndex = 17
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RolBindingSource
+        '
+        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
         '
         'dtgListarKPIs
         '
@@ -114,8 +127,34 @@ Partial Class AsignacionKPIs
         Me.dtgListarKPIs.ReadOnly = True
         Me.dtgListarKPIs.RowTemplate.Height = 24
         Me.dtgListarKPIs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtgListarKPIs.Size = New System.Drawing.Size(395, 413)
+        Me.dtgListarKPIs.Size = New System.Drawing.Size(395, 386)
         Me.dtgListarKPIs.TabIndex = 22
+        '
+        'DescKpiDataGridViewTextBoxColumn
+        '
+        Me.DescKpiDataGridViewTextBoxColumn.DataPropertyName = "DescKpi"
+        Me.DescKpiDataGridViewTextBoxColumn.HeaderText = "Descripción"
+        Me.DescKpiDataGridViewTextBoxColumn.Name = "DescKpiDataGridViewTextBoxColumn"
+        Me.DescKpiDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescKpiDataGridViewTextBoxColumn.Width = 150
+        '
+        'FormatoDataGridViewTextBoxColumn
+        '
+        Me.FormatoDataGridViewTextBoxColumn.DataPropertyName = "Formato"
+        Me.FormatoDataGridViewTextBoxColumn.HeaderText = "Formato"
+        Me.FormatoDataGridViewTextBoxColumn.Name = "FormatoDataGridViewTextBoxColumn"
+        Me.FormatoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ObjetivoDataGridViewTextBoxColumn
+        '
+        Me.ObjetivoDataGridViewTextBoxColumn.DataPropertyName = "Objetivo"
+        Me.ObjetivoDataGridViewTextBoxColumn.HeaderText = "Objetivo"
+        Me.ObjetivoDataGridViewTextBoxColumn.Name = "ObjetivoDataGridViewTextBoxColumn"
+        Me.ObjetivoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'KPIBindingSource
+        '
+        Me.KPIBindingSource.DataSource = GetType(AppProyectoKPI.KPI)
         '
         'dtgIndicadoresAsignados
         '
@@ -129,8 +168,25 @@ Partial Class AsignacionKPIs
         Me.dtgIndicadoresAsignados.Name = "dtgIndicadoresAsignados"
         Me.dtgIndicadoresAsignados.ReadOnly = True
         Me.dtgIndicadoresAsignados.RowTemplate.Height = 24
-        Me.dtgIndicadoresAsignados.Size = New System.Drawing.Size(341, 413)
+        Me.dtgIndicadoresAsignados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtgIndicadoresAsignados.Size = New System.Drawing.Size(341, 386)
         Me.dtgIndicadoresAsignados.TabIndex = 22
+        '
+        'DescKpiDataGridViewTextBoxColumn1
+        '
+        Me.DescKpiDataGridViewTextBoxColumn1.DataPropertyName = "DescKpi"
+        Me.DescKpiDataGridViewTextBoxColumn1.HeaderText = "Descripción"
+        Me.DescKpiDataGridViewTextBoxColumn1.Name = "DescKpiDataGridViewTextBoxColumn1"
+        Me.DescKpiDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DescKpiDataGridViewTextBoxColumn1.Width = 150
+        '
+        'EstadoDataGridViewCheckBoxColumn
+        '
+        Me.EstadoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.EstadoDataGridViewCheckBoxColumn.DataPropertyName = "Estado"
+        Me.EstadoDataGridViewCheckBoxColumn.HeaderText = "Estado"
+        Me.EstadoDataGridViewCheckBoxColumn.Name = "EstadoDataGridViewCheckBoxColumn"
+        Me.EstadoDataGridViewCheckBoxColumn.ReadOnly = True
         '
         'Label2
         '
@@ -173,66 +229,29 @@ Partial Class AsignacionKPIs
         Me.FormulaBindingSource.DataMember = "Formula"
         Me.FormulaBindingSource.DataSource = Me.KPIBindingSource
         '
-        'DescKpiDataGridViewTextBoxColumn1
+        'btnQuitar
         '
-        Me.DescKpiDataGridViewTextBoxColumn1.DataPropertyName = "DescKpi"
-        Me.DescKpiDataGridViewTextBoxColumn1.HeaderText = "Descripción"
-        Me.DescKpiDataGridViewTextBoxColumn1.Name = "DescKpiDataGridViewTextBoxColumn1"
-        Me.DescKpiDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DescKpiDataGridViewTextBoxColumn1.Width = 150
-        '
-        'EstadoDataGridViewCheckBoxColumn
-        '
-        Me.EstadoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.EstadoDataGridViewCheckBoxColumn.DataPropertyName = "Estado"
-        Me.EstadoDataGridViewCheckBoxColumn.HeaderText = "Estado"
-        Me.EstadoDataGridViewCheckBoxColumn.Name = "EstadoDataGridViewCheckBoxColumn"
-        Me.EstadoDataGridViewCheckBoxColumn.ReadOnly = True
-        '
-        'KPIBindingSource
-        '
-        Me.KPIBindingSource.DataSource = GetType(AppProyectoKPI.KPI)
-        '
-        'DescKpiDataGridViewTextBoxColumn
-        '
-        Me.DescKpiDataGridViewTextBoxColumn.DataPropertyName = "DescKpi"
-        Me.DescKpiDataGridViewTextBoxColumn.HeaderText = "Descripción"
-        Me.DescKpiDataGridViewTextBoxColumn.Name = "DescKpiDataGridViewTextBoxColumn"
-        Me.DescKpiDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DescKpiDataGridViewTextBoxColumn.Width = 150
-        '
-        'FormatoDataGridViewTextBoxColumn
-        '
-        Me.FormatoDataGridViewTextBoxColumn.DataPropertyName = "Formato"
-        Me.FormatoDataGridViewTextBoxColumn.HeaderText = "Formato"
-        Me.FormatoDataGridViewTextBoxColumn.Name = "FormatoDataGridViewTextBoxColumn"
-        Me.FormatoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ObjetivoDataGridViewTextBoxColumn
-        '
-        Me.ObjetivoDataGridViewTextBoxColumn.DataPropertyName = "Objetivo"
-        Me.ObjetivoDataGridViewTextBoxColumn.HeaderText = "Objetivo"
-        Me.ObjetivoDataGridViewTextBoxColumn.Name = "ObjetivoDataGridViewTextBoxColumn"
-        Me.ObjetivoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RolBindingSource
-        '
-        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
+        Me.btnQuitar.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnQuitar.FlatAppearance.BorderSize = 0
+        Me.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitar.Font = New System.Drawing.Font("Arial Unicode MS", 9.5!)
+        Me.btnQuitar.ForeColor = System.Drawing.Color.Silver
+        Me.btnQuitar.Location = New System.Drawing.Point(698, 393)
+        Me.btnQuitar.Name = "btnQuitar"
+        Me.btnQuitar.Size = New System.Drawing.Size(95, 34)
+        Me.btnQuitar.TabIndex = 23
+        Me.btnQuitar.Text = "<<Quitar"
+        Me.btnQuitar.UseVisualStyleBackColor = False
         '
         'AsignacionKPIs
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1162, 703)
+        Me.ClientSize = New System.Drawing.Size(1164, 612)
+        Me.Controls.Add(Me.btnQuitar)
         Me.Controls.Add(Me.dtgIndicadoresAsignados)
         Me.Controls.Add(Me.dtgListarKPIs)
         Me.Controls.Add(Me.dtgRoles)
@@ -248,11 +267,11 @@ Partial Class AsignacionKPIs
         Me.Name = "AsignacionKPIs"
         Me.Text = "Principal"
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgListarKPIs, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KPIBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgIndicadoresAsignados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FormulaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KPIBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -275,4 +294,5 @@ Partial Class AsignacionKPIs
     Friend WithEvents FormulaBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DescKpiDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EstadoDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents btnQuitar As System.Windows.Forms.Button
 End Class

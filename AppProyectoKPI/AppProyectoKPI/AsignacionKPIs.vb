@@ -36,11 +36,28 @@
     End Sub
 
     Private Sub btnAsignarKPI_Click(sender As Object, e As EventArgs) Handles btnAsignarKPI.Click
-        Dim rol As Rol = TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol)
-        Dim kpi As KPI = TryCast(dtgListarKPIs.SelectedRows(0).DataBoundItem, KPI)
-        If rol IsNot Nothing And kpi IsNot Nothing Then
-            MessageBox.Show(KPIsController.asignarIndicadorKPI(rol.RolID, kpi.KPIID))
+        If dtgListarKPIs.Rows.Count > 0 Then
+            Dim rol As Rol = TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol)
+            Dim kpi As KPI = TryCast(dtgListarKPIs.SelectedRows(0).DataBoundItem, KPI)
+            If rol IsNot Nothing And kpi IsNot Nothing Then
+                MessageBox.Show(KPIsController.asignarIndicadorKPI(rol.RolID, kpi.KPIID))
+            End If
+            actualizarIndicadoresAsignados(TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol).RolID)
         End If
-        actualizarIndicadoresAsignados(TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol).RolID)
+
+    End Sub
+
+    Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
+        If dtgIndicadoresAsignados.Rows.Count > 0 Then
+
+            Dim rol As Rol = TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol)
+            Dim kpi As KPI = TryCast(dtgIndicadoresAsignados.SelectedRows(0).DataBoundItem, KPI)
+            If rol IsNot Nothing And kpi IsNot Nothing Then
+                MessageBox.Show(KPIsController.quitarIndicadorKPI(rol.RolID, kpi.KPIID))
+            End If
+            actualizarIndicadoresAsignados(TryCast(dtgRoles.SelectedRows(0).DataBoundItem, Rol).RolID)
+
+        End If
+
     End Sub
 End Class
