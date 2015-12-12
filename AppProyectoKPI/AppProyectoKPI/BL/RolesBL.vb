@@ -17,6 +17,21 @@ Public Class RolesBL
 
     End Function
 
+    Shared Function registrarRol(pNombre As String) As Rol
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Rols", Method.POST)
+
+        Dim rol As New Rol(0, pNombre, Nothing, Nothing, Nothing)
+
+        request.AddJsonBody(rol)
+
+        'execute the request
+        Dim response = client.Execute(Of Rol)(request)
+
+        Return response.Data
+
+    End Function
+
     Shared Function consultarUsuario(idUser As Integer) As Usuario
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Usuarios/{id}", Method.GET)

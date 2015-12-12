@@ -43,18 +43,21 @@ Partial Class Usuarios
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContrasenaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CedulaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IsActivoDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.RolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DescRolDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsuarioBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.ComboBoxEstado = New System.Windows.Forms.ComboBox()
+        Me.UsuarioBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsuarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuarioBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuarioBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,7 +67,7 @@ Partial Class Usuarios
         Me.CombBxRol.Location = New System.Drawing.Point(132, 266)
         Me.CombBxRol.Name = "CombBxRol"
         Me.CombBxRol.Size = New System.Drawing.Size(200, 21)
-        Me.CombBxRol.TabIndex = 0
+        Me.CombBxRol.TabIndex = 6
         '
         'Label1
         '
@@ -85,7 +88,7 @@ Partial Class Usuarios
         Me.txtBxApellidos.Location = New System.Drawing.Point(132, 101)
         Me.txtBxApellidos.Name = "txtBxApellidos"
         Me.txtBxApellidos.Size = New System.Drawing.Size(200, 25)
-        Me.txtBxApellidos.TabIndex = 11
+        Me.txtBxApellidos.TabIndex = 2
         '
         'txtBxNombre
         '
@@ -95,7 +98,7 @@ Partial Class Usuarios
         Me.txtBxNombre.Location = New System.Drawing.Point(132, 61)
         Me.txtBxNombre.Name = "txtBxNombre"
         Me.txtBxNombre.Size = New System.Drawing.Size(200, 25)
-        Me.txtBxNombre.TabIndex = 12
+        Me.txtBxNombre.TabIndex = 1
         '
         'lblApellidos
         '
@@ -176,8 +179,9 @@ Partial Class Usuarios
         Me.txtBxContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.txtBxContrasena.Location = New System.Drawing.Point(132, 223)
         Me.txtBxContrasena.Name = "txtBxContrasena"
+        Me.txtBxContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtBxContrasena.Size = New System.Drawing.Size(200, 25)
-        Me.txtBxContrasena.TabIndex = 19
+        Me.txtBxContrasena.TabIndex = 5
         '
         'txtBxCorreo
         '
@@ -187,7 +191,7 @@ Partial Class Usuarios
         Me.txtBxCorreo.Location = New System.Drawing.Point(132, 183)
         Me.txtBxCorreo.Name = "txtBxCorreo"
         Me.txtBxCorreo.Size = New System.Drawing.Size(200, 25)
-        Me.txtBxCorreo.TabIndex = 20
+        Me.txtBxCorreo.TabIndex = 4
         '
         'txtBxID
         '
@@ -197,7 +201,7 @@ Partial Class Usuarios
         Me.txtBxID.Location = New System.Drawing.Point(132, 141)
         Me.txtBxID.Name = "txtBxID"
         Me.txtBxID.Size = New System.Drawing.Size(200, 25)
-        Me.txtBxID.TabIndex = 21
+        Me.txtBxID.TabIndex = 3
         '
         'btnRegistrar
         '
@@ -223,8 +227,8 @@ Partial Class Usuarios
         Me.dtgUsuarios.AllowUserToResizeRows = False
         Me.dtgUsuarios.AutoGenerateColumns = False
         Me.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UsuarioIDDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidosDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn, Me.ContrasenaDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.IsActivoDataGridViewCheckBoxColumn, Me.RolDataGridViewTextBoxColumn})
-        Me.dtgUsuarios.DataSource = Me.UsuarioBindingSource
+        Me.dtgUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UsuarioIDDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidosDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn, Me.CedulaDataGridViewTextBoxColumn, Me.IsActivoDataGridViewCheckBoxColumn, Me.DescRolDataGridViewTextBoxColumn})
+        Me.dtgUsuarios.DataSource = Me.UsuarioBindingSource2
         Me.dtgUsuarios.Location = New System.Drawing.Point(344, 61)
         Me.dtgUsuarios.MultiSelect = False
         Me.dtgUsuarios.Name = "dtgUsuarios"
@@ -261,14 +265,6 @@ Partial Class Usuarios
         Me.CorreoDataGridViewTextBoxColumn.Name = "CorreoDataGridViewTextBoxColumn"
         Me.CorreoDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'ContrasenaDataGridViewTextBoxColumn
-        '
-        Me.ContrasenaDataGridViewTextBoxColumn.DataPropertyName = "Contrasena"
-        Me.ContrasenaDataGridViewTextBoxColumn.HeaderText = "Contrasena"
-        Me.ContrasenaDataGridViewTextBoxColumn.Name = "ContrasenaDataGridViewTextBoxColumn"
-        Me.ContrasenaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ContrasenaDataGridViewTextBoxColumn.Visible = False
-        '
         'CedulaDataGridViewTextBoxColumn
         '
         Me.CedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula"
@@ -283,16 +279,16 @@ Partial Class Usuarios
         Me.IsActivoDataGridViewCheckBoxColumn.Name = "IsActivoDataGridViewCheckBoxColumn"
         Me.IsActivoDataGridViewCheckBoxColumn.ReadOnly = True
         '
-        'RolDataGridViewTextBoxColumn
+        'DescRolDataGridViewTextBoxColumn
         '
-        Me.RolDataGridViewTextBoxColumn.DataPropertyName = "Rol"
-        Me.RolDataGridViewTextBoxColumn.HeaderText = "Rol"
-        Me.RolDataGridViewTextBoxColumn.Name = "RolDataGridViewTextBoxColumn"
-        Me.RolDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescRolDataGridViewTextBoxColumn.DataPropertyName = "DescRol"
+        Me.DescRolDataGridViewTextBoxColumn.HeaderText = "DescRol"
+        Me.DescRolDataGridViewTextBoxColumn.Name = "DescRolDataGridViewTextBoxColumn"
+        Me.DescRolDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'UsuarioBindingSource
+        'UsuarioBindingSource2
         '
-        Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
+        Me.UsuarioBindingSource2.DataSource = GetType(AppProyectoKPI.Usuario)
         '
         'Label2
         '
@@ -374,8 +370,16 @@ Partial Class Usuarios
         Me.ComboBoxEstado.Location = New System.Drawing.Point(132, 307)
         Me.ComboBoxEstado.Name = "ComboBoxEstado"
         Me.ComboBoxEstado.Size = New System.Drawing.Size(200, 21)
-        Me.ComboBoxEstado.TabIndex = 28
+        Me.ComboBoxEstado.TabIndex = 7
         Me.ComboBoxEstado.Visible = False
+        '
+        'UsuarioBindingSource1
+        '
+        Me.UsuarioBindingSource1.DataSource = GetType(AppProyectoKPI.Usuario)
+        '
+        'UsuarioBindingSource
+        '
+        Me.UsuarioBindingSource.DataSource = GetType(AppProyectoKPI.Usuario)
         '
         'Usuarios
         '
@@ -407,6 +411,8 @@ Partial Class Usuarios
         Me.Name = "Usuarios"
         Me.Text = "Usuarios"
         CType(Me.dtgUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuarioBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuarioBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsuarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -435,12 +441,13 @@ Partial Class Usuarios
     Friend WithEvents btnCancelar As Button
     Friend WithEvents lblEstado As Label
     Friend WithEvents ComboBoxEstado As ComboBox
+    Friend WithEvents UsuarioBindingSource1 As BindingSource
+    Friend WithEvents UsuarioBindingSource2 As BindingSource
     Friend WithEvents UsuarioIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ApellidosDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CorreoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ContrasenaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CedulaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IsActivoDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
-    Friend WithEvents RolDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescRolDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

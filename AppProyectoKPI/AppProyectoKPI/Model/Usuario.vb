@@ -8,6 +8,7 @@
     Private _cedula As Integer
     Private _isActivo As Boolean
     Private _rol As Rol
+    Private _descRol As String
 
     Public Sub New()
 
@@ -93,7 +94,16 @@
         End Get
         Set(value As Rol)
             _rol = value
+            DescRol = _rol.Nombre
         End Set
     End Property
 
+    Public Property DescRol As String
+        Get
+            Return _descRol
+        End Get
+        Set(value As String)
+            _descRol = value
+        End Set
+    End Property
 End Class

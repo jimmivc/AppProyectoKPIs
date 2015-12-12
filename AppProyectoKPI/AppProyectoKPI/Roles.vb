@@ -28,6 +28,28 @@
             If rol IsNot Nothing Then
                 actualizarPermisosAsignados(rol.RolID)
             End If
+
         Next
+        'For index = 0 To dtgPermisos.RowCount
+        '    dtgPermisos.Rows(index).Cells(3).Value = True
+        'Next
     End Sub
+
+    Private Sub btnEditarRol_Click(sender As Object, e As EventArgs) Handles btnEditarRol.Click
+        btnEditarRol.Visible = False
+    End Sub
+
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+        Dim pNombre As String = txtBoxNombre.Text
+        If pNombre = Nothing Then
+            MessageBox.Show("Por favor ingrese un nombre válido.")
+            txtBoxNombre.Clear()
+        Else
+            RolesBL.registrarRol(pNombre)
+            actualizarListaRoles()
+            txtBoxNombre.Clear()
+        End If
+
+    End Sub
+
 End Class
