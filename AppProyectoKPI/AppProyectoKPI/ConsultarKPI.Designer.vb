@@ -109,68 +109,72 @@ Partial Class ConsultarKPI
         'amarillo
         '
         Me.amarillo.BackColor = System.Drawing.Color.Yellow
-        Me.amarillo.Font = New System.Drawing.Font("Arial Unicode MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.amarillo.Font = New System.Drawing.Font("Arial Unicode MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.amarillo.Location = New System.Drawing.Point(292, 307)
         Me.amarillo.Name = "amarillo"
-        Me.amarillo.Size = New System.Drawing.Size(100, 23)
+        Me.amarillo.Size = New System.Drawing.Size(137, 47)
         Me.amarillo.TabIndex = 13
         Me.amarillo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'verde
         '
         Me.verde.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.verde.Font = New System.Drawing.Font("Arial Unicode MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.verde.Font = New System.Drawing.Font("Arial Unicode MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.verde.Location = New System.Drawing.Point(435, 307)
         Me.verde.Name = "verde"
-        Me.verde.Size = New System.Drawing.Size(100, 23)
+        Me.verde.Size = New System.Drawing.Size(127, 47)
         Me.verde.TabIndex = 14
         Me.verde.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'rojo
         '
         Me.rojo.BackColor = System.Drawing.Color.Red
-        Me.rojo.Font = New System.Drawing.Font("Arial Unicode MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rojo.Font = New System.Drawing.Font("Arial Unicode MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rojo.Location = New System.Drawing.Point(140, 307)
         Me.rojo.Name = "rojo"
-        Me.rojo.Size = New System.Drawing.Size(100, 23)
+        Me.rojo.Size = New System.Drawing.Size(146, 47)
         Me.rojo.TabIndex = 15
         Me.rojo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblDescripcion
         '
         Me.lblDescripcion.AutoSize = True
+        Me.lblDescripcion.Font = New System.Drawing.Font("Arial Unicode MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescripcion.Location = New System.Drawing.Point(208, 92)
         Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(0, 19)
+        Me.lblDescripcion.Size = New System.Drawing.Size(0, 21)
         Me.lblDescripcion.TabIndex = 16
         '
         'lblFormato
         '
         Me.lblFormato.AutoSize = True
+        Me.lblFormato.Font = New System.Drawing.Font("Arial Unicode MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFormato.Location = New System.Drawing.Point(208, 137)
         Me.lblFormato.Name = "lblFormato"
-        Me.lblFormato.Size = New System.Drawing.Size(0, 19)
+        Me.lblFormato.Size = New System.Drawing.Size(0, 21)
         Me.lblFormato.TabIndex = 16
         '
         'lblObjetivo
         '
         Me.lblObjetivo.AutoSize = True
+        Me.lblObjetivo.Font = New System.Drawing.Font("Arial Unicode MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblObjetivo.Location = New System.Drawing.Point(208, 189)
         Me.lblObjetivo.Name = "lblObjetivo"
-        Me.lblObjetivo.Size = New System.Drawing.Size(0, 19)
+        Me.lblObjetivo.Size = New System.Drawing.Size(0, 21)
         Me.lblObjetivo.TabIndex = 16
         '
         'lblFormula
         '
         Me.lblFormula.AutoSize = True
+        Me.lblFormula.Font = New System.Drawing.Font("Arial Unicode MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFormula.Location = New System.Drawing.Point(208, 240)
         Me.lblFormula.Name = "lblFormula"
-        Me.lblFormula.Size = New System.Drawing.Size(0, 19)
+        Me.lblFormula.Size = New System.Drawing.Size(0, 21)
         Me.lblFormula.TabIndex = 16
         '
         'ConsultarKPI
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(668, 415)
         Me.Controls.Add(Me.lblFormula)

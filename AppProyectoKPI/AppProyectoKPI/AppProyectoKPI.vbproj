@@ -98,6 +98,12 @@
     <Compile Include="AsignacionKPIs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AsignacionProspectos.designer.vb">
+      <DependentUpon>AsignacionProspectos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AsignacionProspectos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BL\CargaDataGrids.vb" />
     <Compile Include="BL\ContactoController.vb" />
     <Compile Include="BL\CursosBL.vb" />
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AsignacionKPIs.resx">
       <DependentUpon>AsignacionKPIs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignacionProspectos.resx">
+      <DependentUpon>AsignacionProspectos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarKPI.resx">
       <DependentUpon>ConsultarKPI.vb</DependentUpon>

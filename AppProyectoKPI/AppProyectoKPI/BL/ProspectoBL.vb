@@ -590,5 +590,22 @@ Public Class ProspectoBL
 
     End Function
 
+    Shared Function getListaProspectoxUsuario(iduser As Integer) As List(Of Prospecto)
+        Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
+        Dim request = New RestRequest("Prospectoes/Usuarios/{id}", Method.GET)
+        'Cargar url parameters
+        request.AddUrlSegment("id", iduser)
+        Try
+            'Execute 
+            request.RequestFormat = DataFormat.Json
+            Dim response = client.Execute(Of List(Of Prospecto))(request)
+            If (response.StatusCode.Equals(HttpStatusCode.OK)) Then
+                Return response.Data
+            End If
+        Catch ex As Exception
+            MsgBox("Error" + "  " + ex.Message)
+        End Try
+
+    End Function
 
 End Class

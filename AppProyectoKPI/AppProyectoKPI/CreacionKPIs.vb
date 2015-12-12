@@ -17,7 +17,7 @@
 
         ' Add any initialization after the InitializeComponent() call.
         actualizarListaKPIs()
-
+        cargarDatos()
     End Sub
 
     ''' <summary>
@@ -29,8 +29,9 @@
     ''' <remarks></remarks>
     Private Sub btnAgregarValor_Click(sender As Object, e As EventArgs) Handles btnAgregarValor.Click
         If (txtValor.Text <> "") Then
-            armarFormula(txtValor.Text)
-            variable.Add("valor")
+            If (armarFormula(txtValor.Text)) Then
+                variable.Add("valor")
+            End If
             txtValor.Text = ""
         End If
 
@@ -56,17 +57,21 @@
     ''' </summary>
     ''' <param name="dato">tabla,operador o valor</param>
     ''' <remarks></remarks>
-    Private Sub armarFormula(dato As String)
+    Private Function armarFormula(dato As String) As Boolean
+
+        Dim agregado As Boolean = False
 
         If (operador = False And Not isOperador(dato)) Then
             formula.Add(dato)
             operador = True
+            agregado = True
         Else
             If (operador = True And isOperador(dato)) Then
                 formula.Add(dato)
                 variable.Add("operador")
                 operador = False
                 detalle = True
+                agregado = True
             Else
                 MessageBox.Show("orden de parametros incorrectos")
             End If
@@ -77,7 +82,10 @@
         For Each dat As String In formula
             txtFormula.Text += dat
         Next
-    End Sub
+
+        Return agregado
+
+    End Function
     ''' <summary>
     ''' metodo que agrega el nombre del campo a la formula
     ''' </summary>
@@ -86,10 +94,12 @@
     ''' <remarks></remarks>
     Private Sub lstCampo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstCampo.SelectedIndexChanged
         If (lstCampo.SelectedIndex <> 0) Then
-            armarFormula(lstCampo.SelectedItem)
-            variable.Add("campo")
-        End If
+            If (armarFormula(lstCampo.SelectedItem)) Then
 
+                variable.Add("campo")
+                lstCampo.SelectedIndex = 0
+            End If
+        End If
 
     End Sub
     ''' <summary>
@@ -131,7 +141,7 @@
     ''' <remarks></remarks>
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If (validarCampos()) Then
-            MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+            MessageBox.Show(KPIsController.registrarIndicadorKPI(txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior, lstPeriodicidad.SelectedItem))
             actualizarListaKPIs()
             reiniciarTodo()
         End If
@@ -215,6 +225,10 @@
 
         btnConfigurar.Enabled = False
 
+        lblCampo.Visible = False
+        lblFormula.Visible = False
+        lblValor.Visible = False
+
         For Each row As DataGridViewRow In dtgListarKPIs.SelectedRows
 
             Dim kpi As KPI = TryCast(row.DataBoundItem, KPI)
@@ -254,16 +268,17 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If (validarCampos()) Then
-            MessageBox.Show(KPIsController.modificarKPI(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, formula, variable, limiteSuperior, limiteInferior))
+            MessageBox.Show(KPIsController.modificarKPI(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, lstPeriodicidad.SelectedItem, formula, variable, limiteSuperior, limiteInferior))
             actualizarListaKPIs()
             btnCancelar.PerformClick()
+
         End If
     End Sub
 
     Private Function validarCampos() As Boolean
         Dim result = False
 
-        If (Not txtDescripcion.Text.Equals("") And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("")) Then
+        If (Not txtDescripcion.Text.Equals("") And Not txtFormula.Text.Equals("") And Not lstFormatoKPI.SelectedItem = Nothing And Not txtObjetivo.Text.Equals("") And Not lstPeriodicidad.SelectedItem = Nothing) Then
             If (Not variable(variable.Count - 1).Equals("operador")) Then
                 If (Not limiteDefinido) Then
                     calcularLimite()
@@ -284,7 +299,9 @@
         btnCancelar.Visible = False
         btnModificar.Visible = True
         btnRegistrar.Visible = True
-
+        lblCampo.Visible = True
+        lblFormula.Visible = True
+        lblValor.Visible = True
         reiniciarTodo()
     End Sub
 
@@ -330,4 +347,15 @@
         Next
         reiniciarTodo()
     End Sub
+
+    Private Sub cargarDatos()
+        Dim datos As List(Of String) = KPIsController.cargarCampos()
+        lstCampo.Items.Clear()
+        lstCampo.Items.Add("")
+        For Each dat As String In datos
+            lstCampo.Items.Add(dat)
+        Next
+
+    End Sub
+
 End Class
