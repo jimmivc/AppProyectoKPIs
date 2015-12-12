@@ -1,17 +1,22 @@
-﻿Public Class Principal
+﻿Imports AppProyectoKPI.loginController
+
+Public Class Principal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         activarColorFondoMDI(sender, e)
-        Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "ImportarUsuarios", "GenerarRegistroMercadeo", "AsignarKpis", "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi", "FuentesProspectos", "ListarProfesores", "ListarEstudiantes", "ListarCursos", "Seguridad", "Usuarios", "Roles", "Permisos"}
+        'Dim permisos() As String = {"Operaciones", "GestionarProspectos", "ImportarProspectos", "ImportarUsuarios", "GenerarRegistroMercadeo", "AsignarKpis", "GestionarVentas", "Configuracion", "Eventos", "Entidades", "Kpis", "Reportes", "IngresosUsuario", "Ventas", "IndicadoresKpi", "FuentesProspectos", "ListarProfesores", "ListarEstudiantes", "ListarCursos", "Seguridad", "Usuarios", "Roles", "Permisos"}
+
+
 
         'Dim pRol As Rol = loginController.user.Rol
         'Dim str As String = ""
-        'Dim permisosLista As List(Of Permiso) = PermisosBL.listarPermisosRol(pRol.RolID)
+        'Dim permisosLista As List(Of Permiso) = PermisosBL.listarPermisosRol(globalUser.Rol.RolID)
+        'MessageBox.Show(permisosLista(1).pAccion
+        Dim permisos() As String = New String(globalUser.Rol.Permisos.Count) {}
         'Dim count As Integer = 0
 
-        'For Each x As Permiso In permisosLista
-        '    Str = Str() + x.pAccion
-        '    count = count + 1
-        'Next
+        For Each x As Permiso In globalUser.Rol.Permisos
+            permisos(globalUser.Rol.Permisos.IndexOf(x)) = x.pAccion
+        Next
         'For Index As Integer = 1 To permisosLista.Count
         '    If (Index <> count) Then
 

@@ -117,6 +117,12 @@
     <Compile Include="BL\ProspectoBL.vb" />
     <Compile Include="BL\SeguimientoBL.vb" />
     <Compile Include="BL\VentaBL.vb" />
+    <Compile Include="DetalleRol.Designer.vb">
+      <DependentUpon>DetalleRol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleRol.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionEmpresarial.designer.vb">
       <DependentUpon>GestionEmpresarial.vb</DependentUpon>
     </Compile>
@@ -221,6 +227,7 @@
     <Compile Include="Model\TiposFormaContacto.vb" />
     <Compile Include="Model\Usuario.vb" />
     <Compile Include="Model\Venta.vb" />
+    <Compile Include="Modules\LoginMudole.vb" />
     <Compile Include="Principal.Designer.vb">
       <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
@@ -295,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreacionKPIs.resx">
       <DependentUpon>CreacionKPIs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleRol.resx">
+      <DependentUpon>DetalleRol.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ElegirRangoKPI.resx">
       <DependentUpon>ElegirRangoKPI.vb</DependentUpon>

@@ -25,6 +25,11 @@
             Throw
         End Try
 
+        user = UsuariosBL.consultarUsuarioCorreo(pCorreo)
+        user = UsuariosBL.rolPorIdUser(user.UsuarioID)
+        user.Rol.Permisos = PermisosBL.listarPermisosRol(user.Rol.RolID)
+        globalUser = user
+
         Return Nothing
 
     End Function

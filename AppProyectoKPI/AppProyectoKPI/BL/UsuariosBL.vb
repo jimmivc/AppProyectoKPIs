@@ -5,10 +5,6 @@ Imports System.Net
 
 Public Class UsuariosBL
 
-
-
-
-
     Shared Function listarUsuarios() As List(Of Usuario)
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
         Dim request = New RestRequest("Usuarios", Method.GET)
@@ -310,12 +306,13 @@ Public Class UsuariosBL
         End Try
     End Function
 
-    Shared Function listarUsuariosMercadeo() As List(Of Usuario)
+    Shared Function rolPorIdUser(idUser As Integer) As Usuario
         Dim client = New RestClient(ConfigurationManager.AppSettings.Get("endpoint"))
-        Dim request = New RestRequest("Usuarios/Mercadeo", Method.GET)
+        Dim request = New RestRequest("Usuarios/idUser/{id}", Method.GET)
 
+        request.AddUrlSegment("id", idUser)
         'execute the request
-        Dim response = client.Execute(Of List(Of Usuario))(request)
+        Dim response = client.Execute(Of Usuario)(request)
 
         Return response.Data
 

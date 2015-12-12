@@ -153,36 +153,36 @@ Public Class AsignacionProspectos
 
     End Sub
 
-    Private Sub PrepararComboBoxUsuarios()
-        Dim response = UsuariosBL.listarUsuariosMercadeo()
-        Dim dt As DataTable
-        dt = New DataTable("Tabla")
+    'Private Sub PrepararComboBoxUsuarios()
+    '    Dim response = UsuariosBL.listarUsuariosMercadeo()
+    '    Dim dt As DataTable
+    '    dt = New DataTable("Tabla")
 
-        dt.Columns.Add("Codigo")
-        dt.Columns.Add("Descripcion")
-        If (response Is Nothing) Then
-        Else
-            For Each item As Usuario In response
-                Dim dr As DataRow
-                dr = dt.NewRow()
-                dr("Codigo") = item.UsuarioID
-                dr(1) = item.Nombre
-                dt.Rows.Add(dr)
-            Next
-            ComboBoxEjecutivos.DataSource = dt
-            ComboBoxEjecutivos.ValueMember = "Codigo"
-            ComboBoxEjecutivos.DisplayMember = "Descripcion"
-        End If
-    End Sub
-
-
+    '    dt.Columns.Add("Codigo")
+    '    dt.Columns.Add("Descripcion")
+    '    If (response Is Nothing) Then
+    '    Else
+    '        For Each item As Usuario In response
+    '            Dim dr As DataRow
+    '            dr = dt.NewRow()
+    '            dr("Codigo") = item.UsuarioID
+    '            dr(1) = item.Nombre
+    '            dt.Rows.Add(dr)
+    '        Next
+    '        ComboBoxEjecutivos.DataSource = dt
+    '        ComboBoxEjecutivos.ValueMember = "Codigo"
+    '        ComboBoxEjecutivos.DisplayMember = "Descripcion"
+    '    End If
+    'End Sub
 
 
-    Private Sub AsignarListaProspectos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PrepararComboBoxUsuarios()
 
 
-    End Sub
+    'Private Sub AsignarListaProspectos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    PrepararComboBoxUsuarios()
+
+
+    'End Sub
 
 
 

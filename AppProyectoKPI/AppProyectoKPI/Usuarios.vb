@@ -44,20 +44,36 @@
         pass = enc.EncryptData(pass)
         Dim rol = CombBxRol.Text
         Dim rolID As Integer
+        Dim validacion = True
 
         Dim roles As List(Of Rol) = RolesBL.listarRoles
 
-        For i = 0 To roles.Count - 1
-            If roles(i).Nombre.ToString.Equals(rol) Then
-                rolID = roles(i).RolID
-            End If
-        Next
+        If nombre = Nothing Or apellidos = Nothing Or cedula = Nothing Or correo = Nothing Or pass = Nothing Or rol = Nothing Or ValidateEmail(correo) = False Then
+            validacion = False
+            MessageBox.Show("Por favor verifique que todos los campos hayan sido rellenado y que la dirección de correo electrónico sea válida")
+        Else
+            For i = 0 To roles.Count - 1
+                If roles(i).Nombre.ToString.Equals(rol) Then
+                    rolID = roles(i).RolID
+                End If
+            Next
 
-        MessageBox.Show(UsuariosBL.registrarUsuario(nombre, apellidos, correo, pass, cedula, rolID))
+
+            MessageBox.Show(UsuariosBL.registrarUsuario(nombre, apellidos, correo, pass, cedula, rolID))
+            actualizarListaUsuarios()
+        End If
 
         actualizarListaUsuarios()
 
     End Sub
+
+    Function ValidateEmail(ByVal email As String) As Boolean
+        Dim emailRegex As New System.Text.RegularExpressions.Regex(
+        "^(?<user>[^@]+)@(?<host>.+)$")
+        Dim emailMatch As System.Text.RegularExpressions.Match =
+       emailRegex.Match(email)
+        Return emailMatch.Success
+    End Function
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
 
@@ -124,7 +140,6 @@
             status = True
         End If
 
-        MessageBox.Show(UsuariosBL.modificarUsuario(globalID, txtBxNombre.Text, txtBxApellidos.Text, txtBxCorreo.Text, txtBxContrasena.Text, status, rolID, txtBxID.Text))
         actualizarListaUsuarios()
         btnCancelar.PerformClick()
     End Sub
