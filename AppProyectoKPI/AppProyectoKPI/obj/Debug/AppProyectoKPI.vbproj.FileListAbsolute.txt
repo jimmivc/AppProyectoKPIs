@@ -130,3 +130,7 @@ C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\ob
 C:\Users\Owner\Documents\Repos\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.vbprojResolveAssemblyReference.cache
 C:\Users\Jimmi\Documents\GitHub\AppProyectoKPIs\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.AsignacionProspectos.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.AsignacionProspectos.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.GestionEmpresarial.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.GestionEventos.resources
+C:\Users\Chris\Desktop\RepoLocalFront\AppProyectoKPI\AppProyectoKPI\obj\Debug\AppProyectoKPI.RegistrarVentas.resources
