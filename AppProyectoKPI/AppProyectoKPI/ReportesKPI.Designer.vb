@@ -25,8 +25,6 @@ Partial Class ReportesKPI
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportesKPI))
         Me.dtgRoles = New System.Windows.Forms.DataGridView()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,10 +36,12 @@ Partial Class ReportesKPI
         Me.resultados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.color = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RolBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RegistroMercadeoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RegistroMercadeoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,18 +60,6 @@ Partial Class ReportesKPI
         Me.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtgRoles.Size = New System.Drawing.Size(264, 370)
         Me.dtgRoles.TabIndex = 21
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RolBindingSource
-        '
-        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
         '
         'Label4
         '
@@ -110,11 +98,12 @@ Partial Class ReportesKPI
         Me.dtgResultados.AllowUserToDeleteRows = False
         Me.dtgResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgResultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.descripcion, Me.usuario, Me.Formato, Me.Objetivo, Me.resultados, Me.color})
+        Me.dtgResultados.Enabled = False
         Me.dtgResultados.Location = New System.Drawing.Point(323, 218)
         Me.dtgResultados.Name = "dtgResultados"
         Me.dtgResultados.ReadOnly = True
         Me.dtgResultados.RowTemplate.Height = 24
-        Me.dtgResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtgResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dtgResultados.Size = New System.Drawing.Size(827, 370)
         Me.dtgResultados.TabIndex = 0
         '
@@ -170,6 +159,18 @@ Partial Class ReportesKPI
         Me.Label5.Text = "Resultados Indicadores KPI"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RolBindingSource
+        '
+        Me.RolBindingSource.DataSource = GetType(AppProyectoKPI.Rol)
+        '
         'RegistroMercadeoBindingSource
         '
         Me.RegistroMercadeoBindingSource.DataSource = GetType(AppProyectoKPI.RegistroMercadeo)
@@ -191,8 +192,8 @@ Partial Class ReportesKPI
         Me.Name = "ReportesKPI"
         Me.Text = "ReportesKPI"
         CType(Me.dtgRoles, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgResultados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RolBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RegistroMercadeoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
