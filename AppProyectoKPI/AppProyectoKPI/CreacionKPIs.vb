@@ -271,6 +271,7 @@
             MessageBox.Show(KPIsController.modificarKPI(modificar, txtDescripcion.Text, lstFormatoKPI.SelectedItem, txtObjetivo.Text, lstPeriodicidad.SelectedItem, formula, variable, limiteSuperior, limiteInferior))
             actualizarListaKPIs()
             btnCancelar.PerformClick()
+
         End If
     End Sub
 
@@ -298,7 +299,9 @@
         btnCancelar.Visible = False
         btnModificar.Visible = True
         btnRegistrar.Visible = True
-
+        lblCampo.Visible = True
+        lblFormula.Visible = True
+        lblValor.Visible = True
         reiniciarTodo()
     End Sub
 
